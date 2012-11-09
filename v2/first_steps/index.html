@@ -83,9 +83,10 @@
 
 <p>Copy the public and private keys so you can use them in your application.</p>
 
-<pre><code>$public_key = "rspZJxEnswelpvS0)tdwM]7uPjkcgR%@k_mN[Z1ac_3a=#EN%r=]cKwxq98-XQdK";
-$private_key = "IlUyZP5TISBSxRzEm0mil$L}-0FxeX(24W1d#TkY{qNkh42Q3B}m2)XJi_nYqrl^";
-</code></pre>
+<pre><code class="language-php"><span class="cp">&lt;?php</span>
+<span class="nv">$public_key</span> <span class="o">=</span> <span class="s2">"rspZJxEnswelpvS0)tdwM]7uPjkcgR%@k_mN[Z1ac_3a=#EN%r=]cKwxq98-XQdK"</span><span class="p">;</span>
+<span class="nv">$private_key</span> <span class="o">=</span> <span class="s2">"IlUyZP5TISBSxRzEm0mil</span><span class="si">$L</span><span class="s2">}-0FxeX(24W1d#TkY{qNkh42Q3B}m2)XJi_nYqrl^"</span><span class="p">;</span>
+<span class="cp">?&gt;</span><span class="x"></span></code></pre>
 
 <p>That’s it! In the next step we’ll show some API calls in action.</p>
 
@@ -94,12 +95,13 @@ $private_key = "IlUyZP5TISBSxRzEm0mil$L}-0FxeX(24W1d#TkY{qNkh42Q3B}m2)XJi_nYqrl^
 <h3 id="basic-get-call">Basic GET call</h3>
 <p>In this tutorial I will demonstrate how to make API calls using some command-line PHP scripts. In all examples, we’ll assume the following constant values:</p>
 
-<pre><code>$url = 'http://api.sandbox.mygengo.com/v2/';
-$public_key = "rspZJxEnswelpvS0)tdwM]7uPjkcgR%@k_mN[Z1ac_3a=#EN%r=]cKwxq98-XQdK";
-$private_key = "IlUyZP5TISBSxRzEm0mil$L}-0FxeX(24W1d#TkY{qNkh42Q3B}m2)XJi_nYqrl^";
-$response_type = 'json'; // choose response type; 'json' or 'xml'
-$header = array('Accept: application/'.$response_type);
-</code></pre>
+<pre><code class="language-php"><span class="cp">&lt;?php</span>
+<span class="nv">$url</span> <span class="o">=</span> <span class="s1">'http://api.sandbox.mygengo.com/v2/'</span><span class="p">;</span>
+<span class="nv">$public_key</span> <span class="o">=</span> <span class="s2">"rspZJxEnswelpvS0)tdwM]7uPjkcgR%@k_mN[Z1ac_3a=#EN%r=]cKwxq98-XQdK"</span><span class="p">;</span>
+<span class="nv">$private_key</span> <span class="o">=</span> <span class="s2">"IlUyZP5TISBSxRzEm0mil</span><span class="si">$L</span><span class="s2">}-0FxeX(24W1d#TkY{qNkh42Q3B}m2)XJi_nYqrl^"</span><span class="p">;</span>
+<span class="nv">$response_type</span> <span class="o">=</span> <span class="s1">'json'</span><span class="p">;</span> <span class="c1">// choose response type; 'json' or 'xml'</span>
+<span class="nv">$header</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span><span class="s1">'Accept: application/'</span><span class="o">.</span><span class="nv">$response_type</span><span class="p">);</span>
+<span class="cp">?&gt;</span><span class="x"></span></code></pre>
 
 <h3 id="retrieving-language-pairs">Retrieving language pairs</h3>
 
@@ -107,21 +109,22 @@ $header = array('Accept: application/'.$response_type);
 
 <p>So, to retrieve languages Gengo can translate Japanese into, we pass “ja” as the parameter to “translate/service/language_pairs”.</p>
 
-<pre><code>$query = array('api_key' =&gt; $public_key, 'ts' =&gt; gmdate('U'), 'lc_src' = 'ja');
-$query = http_build_query($query);
+<pre><code class="language-php"><span class="cp">&lt;?php</span>
+<span class="nv">$query</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span><span class="s1">'api_key'</span> <span class="o">=&gt;</span> <span class="nv">$public_key</span><span class="p">,</span> <span class="s1">'ts'</span> <span class="o">=&gt;</span> <span class="nb">gmdate</span><span class="p">(</span><span class="s1">'U'</span><span class="p">),</span> <span class="s1">'lc_src'</span> <span class="o">=</span> <span class="s1">'ja'</span><span class="p">);</span>
+<span class="nv">$query</span> <span class="o">=</span> <span class="nb">http_build_query</span><span class="p">(</span><span class="nv">$query</span><span class="p">);</span>
 
-// calculate the API signature required for this call
-$hmac = hash_hmac('sha1', $query['ts'], $private_key);
-$query .= "&amp;api_sig={$hmac}";
-$url .= 'translate/service/language_pairs?' . $query;
+<span class="c1">// calculate the API signature required for this call</span>
+<span class="nv">$hmac</span> <span class="o">=</span> <span class="nb">hash_hmac</span><span class="p">(</span><span class="s1">'sha1'</span><span class="p">,</span> <span class="nv">$query</span><span class="p">[</span><span class="s1">'ts'</span><span class="p">],</span> <span class="nv">$private_key</span><span class="p">);</span>
+<span class="nv">$query</span> <span class="o">.=</span> <span class="s2">"&amp;api_sig=</span><span class="si">{</span><span class="nv">$hmac</span><span class="si">}</span><span class="s2">"</span><span class="p">;</span>
+<span class="nv">$url</span> <span class="o">.=</span> <span class="s1">'translate/service/language_pairs?'</span> <span class="o">.</span> <span class="nv">$query</span><span class="p">;</span>
 
-$ch = curl_init($url);
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-curl_setopt($ch, CURLOPT_HTTPHEADER, $header);
-$response = curl_exec($ch);
-curl_close($ch);
-print_r(json_decode($response));
-</code></pre>
+<span class="nv">$ch</span> <span class="o">=</span> <span class="nb">curl_init</span><span class="p">(</span><span class="nv">$url</span><span class="p">);</span>
+<span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$ch</span><span class="p">,</span> <span class="nx">CURLOPT_RETURNTRANSFER</span><span class="p">,</span> <span class="k">true</span><span class="p">);</span>
+<span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$ch</span><span class="p">,</span> <span class="nx">CURLOPT_HTTPHEADER</span><span class="p">,</span> <span class="nv">$header</span><span class="p">);</span>
+<span class="nv">$response</span> <span class="o">=</span> <span class="nb">curl_exec</span><span class="p">(</span><span class="nv">$ch</span><span class="p">);</span>
+<span class="nb">curl_close</span><span class="p">(</span><span class="nv">$ch</span><span class="p">);</span>
+<span class="nb">print_r</span><span class="p">(</span><span class="nb">json_decode</span><span class="p">(</span><span class="nv">$response</span><span class="p">));</span>
+<span class="cp">?&gt;</span><span class="x"></span></code></pre>
 
 <p>Return value:</p>
 
@@ -131,52 +134,52 @@ print_r(json_decode($response));
   <span class="s2">"opstat"</span><span class="o">:</span> <span class="s2">"ok"</span><span class="p">,</span>
   <span class="s2">"response"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
-      <span class="s2">"unit_price"</span><span class="o">:</span> <span class="s2">"0.0"</span><span class="p">,</span>
       <span class="s2">"lc_tgt"</span><span class="o">:</span> <span class="s2">"en"</span><span class="p">,</span>
+      <span class="s2">"lc_src"</span><span class="o">:</span> <span class="s2">"ja"</span><span class="p">,</span>
       <span class="s2">"tier"</span><span class="o">:</span> <span class="s2">"machine"</span><span class="p">,</span>
-      <span class="s2">"lc_src"</span><span class="o">:</span> <span class="s2">"ja"</span>
+      <span class="s2">"unit_price"</span><span class="o">:</span> <span class="s2">"0.0"</span>
     <span class="p">},</span>
     <span class="p">{</span>
-      <span class="s2">"unit_price"</span><span class="o">:</span> <span class="s2">"0.0"</span><span class="p">,</span>
       <span class="s2">"lc_tgt"</span><span class="o">:</span> <span class="s2">"es"</span><span class="p">,</span>
+      <span class="s2">"lc_src"</span><span class="o">:</span> <span class="s2">"ja"</span><span class="p">,</span>
       <span class="s2">"tier"</span><span class="o">:</span> <span class="s2">"machine"</span><span class="p">,</span>
-      <span class="s2">"lc_src"</span><span class="o">:</span> <span class="s2">"ja"</span>
+      <span class="s2">"unit_price"</span><span class="o">:</span> <span class="s2">"0.0"</span>
     <span class="p">},</span>
     <span class="p">{</span>
-      <span class="s2">"unit_price"</span><span class="o">:</span> <span class="s2">"0.0300"</span><span class="p">,</span>
       <span class="s2">"lc_tgt"</span><span class="o">:</span> <span class="s2">"en"</span><span class="p">,</span>
+      <span class="s2">"lc_src"</span><span class="o">:</span> <span class="s2">"ja"</span><span class="p">,</span>
       <span class="s2">"tier"</span><span class="o">:</span> <span class="s2">"standard"</span><span class="p">,</span>
-      <span class="s2">"lc_src"</span><span class="o">:</span> <span class="s2">"ja"</span>
+      <span class="s2">"unit_price"</span><span class="o">:</span> <span class="s2">"0.0300"</span>
     <span class="p">},</span>
     <span class="p">{</span>
-      <span class="s2">"unit_price"</span><span class="o">:</span> <span class="s2">"0.0300"</span><span class="p">,</span>
       <span class="s2">"lc_tgt"</span><span class="o">:</span> <span class="s2">"es"</span><span class="p">,</span>
+      <span class="s2">"lc_src"</span><span class="o">:</span> <span class="s2">"ja"</span><span class="p">,</span>
       <span class="s2">"tier"</span><span class="o">:</span> <span class="s2">"standard"</span><span class="p">,</span>
-      <span class="s2">"lc_src"</span><span class="o">:</span> <span class="s2">"ja"</span>
+      <span class="s2">"unit_price"</span><span class="o">:</span> <span class="s2">"0.0300"</span>
     <span class="p">},</span>
     <span class="p">{</span>
-      <span class="s2">"unit_price"</span><span class="o">:</span> <span class="s2">"0.0600"</span><span class="p">,</span>
       <span class="s2">"lc_tgt"</span><span class="o">:</span> <span class="s2">"en"</span><span class="p">,</span>
+      <span class="s2">"lc_src"</span><span class="o">:</span> <span class="s2">"ja"</span><span class="p">,</span>
       <span class="s2">"tier"</span><span class="o">:</span> <span class="s2">"pro"</span><span class="p">,</span>
-      <span class="s2">"lc_src"</span><span class="o">:</span> <span class="s2">"ja"</span>
+      <span class="s2">"unit_price"</span><span class="o">:</span> <span class="s2">"0.0600"</span>
     <span class="p">},</span>
     <span class="p">{</span>
-      <span class="s2">"unit_price"</span><span class="o">:</span> <span class="s2">"0.0600"</span><span class="p">,</span>
       <span class="s2">"lc_tgt"</span><span class="o">:</span> <span class="s2">"es"</span><span class="p">,</span>
+      <span class="s2">"lc_src"</span><span class="o">:</span> <span class="s2">"ja"</span><span class="p">,</span>
       <span class="s2">"tier"</span><span class="o">:</span> <span class="s2">"pro"</span><span class="p">,</span>
-      <span class="s2">"lc_src"</span><span class="o">:</span> <span class="s2">"ja"</span>
+      <span class="s2">"unit_price"</span><span class="o">:</span> <span class="s2">"0.0600"</span>
     <span class="p">},</span>
     <span class="p">{</span>
-      <span class="s2">"unit_price"</span><span class="o">:</span> <span class="s2">"0.0900"</span><span class="p">,</span>
       <span class="s2">"lc_tgt"</span><span class="o">:</span> <span class="s2">"en"</span><span class="p">,</span>
+      <span class="s2">"lc_src"</span><span class="o">:</span> <span class="s2">"ja"</span><span class="p">,</span>
       <span class="s2">"tier"</span><span class="o">:</span> <span class="s2">"ultra"</span><span class="p">,</span>
-      <span class="s2">"lc_src"</span><span class="o">:</span> <span class="s2">"ja"</span>
+      <span class="s2">"unit_price"</span><span class="o">:</span> <span class="s2">"0.0900"</span>
     <span class="p">},</span>
     <span class="p">{</span>
-      <span class="s2">"unit_price"</span><span class="o">:</span> <span class="s2">"0.0900"</span><span class="p">,</span>
       <span class="s2">"lc_tgt"</span><span class="o">:</span> <span class="s2">"es"</span><span class="p">,</span>
+      <span class="s2">"lc_src"</span><span class="o">:</span> <span class="s2">"ja"</span><span class="p">,</span>
       <span class="s2">"tier"</span><span class="o">:</span> <span class="s2">"ultra"</span><span class="p">,</span>
-      <span class="s2">"lc_src"</span><span class="o">:</span> <span class="s2">"ja"</span>
+      <span class="s2">"unit_price"</span><span class="o">:</span> <span class="s2">"0.0900"</span>
     <span class="p">}</span>
   <span class="p">]</span>
 <span class="p">}</span></code></pre>
@@ -191,51 +194,52 @@ print_r(json_decode($response));
 
 <p>Once that’s done, open the example jobs-post.php script and edit fields for two jobs to submit. Add some text to have translated in the ‘body_src’ field, and check that the source, target, and tier parameters are what we want. We can also send some custom data to associate with each job; this is data specific to your service and won’t be touched at any time. Custom data will be returned verbatim whenever the job is requested.</p>
 
-<pre><code>$job1 = array(
-    'slug' =&gt; 'job test 1',
-    'body_src' =&gt; 'one two three four',
-    'lc_src' =&gt; 'en',
-    'lc_tgt' =&gt; 'ja',
-    'tier' =&gt; 'standard',
-    'auto_approve' =&gt; 1,
-    'custom_data' =&gt; 'some custom data untouched by Gengo.',
-    );
+<pre><code class="language-php"><span class="cp">&lt;?php</span>
+<span class="nv">$job1</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+    <span class="s1">'slug'</span> <span class="o">=&gt;</span> <span class="s1">'job test 1'</span><span class="p">,</span>
+    <span class="s1">'body_src'</span> <span class="o">=&gt;</span> <span class="s1">'one two three four'</span><span class="p">,</span>
+    <span class="s1">'lc_src'</span> <span class="o">=&gt;</span> <span class="s1">'en'</span><span class="p">,</span>
+    <span class="s1">'lc_tgt'</span> <span class="o">=&gt;</span> <span class="s1">'ja'</span><span class="p">,</span>
+    <span class="s1">'tier'</span> <span class="o">=&gt;</span> <span class="s1">'standard'</span><span class="p">,</span>
+    <span class="s1">'auto_approve'</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="s1">'custom_data'</span> <span class="o">=&gt;</span> <span class="s1">'some custom data untouched by Gengo.'</span><span class="p">,</span>
+    <span class="p">);</span>
 
-$job2 = array(
-    'slug' =&gt; 'job test 2',
-    'body_src' =&gt; 'five six seven eight',
-    'lc_src' =&gt; 'en',
-    'lc_tgt' =&gt; 'ja',
-    'tier' =&gt; 'standard',
-    'comment' =&gt; 'This one has a comment.'
-    );
+<span class="nv">$job2</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+    <span class="s1">'slug'</span> <span class="o">=&gt;</span> <span class="s1">'job test 2'</span><span class="p">,</span>
+    <span class="s1">'body_src'</span> <span class="o">=&gt;</span> <span class="s1">'five six seven eight'</span><span class="p">,</span>
+    <span class="s1">'lc_src'</span> <span class="o">=&gt;</span> <span class="s1">'en'</span><span class="p">,</span>
+    <span class="s1">'lc_tgt'</span> <span class="o">=&gt;</span> <span class="s1">'ja'</span><span class="p">,</span>
+    <span class="s1">'tier'</span> <span class="o">=&gt;</span> <span class="s1">'standard'</span><span class="p">,</span>
+    <span class="s1">'comment'</span> <span class="o">=&gt;</span> <span class="s1">'This one has a comment.'</span>
+    <span class="p">);</span>
 
-$jobs = array('job_1' =&gt; $job1, 'job_2' =&gt; $job2);
-$data = array('jobs' =&gt; $jobs);
+<span class="nv">$jobs</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span><span class="s1">'job_1'</span> <span class="o">=&gt;</span> <span class="nv">$job1</span><span class="p">,</span> <span class="s1">'job_2'</span> <span class="o">=&gt;</span> <span class="nv">$job2</span><span class="p">);</span>
+<span class="nv">$data</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span><span class="s1">'jobs'</span> <span class="o">=&gt;</span> <span class="nv">$jobs</span><span class="p">);</span>
 
-// if you wanted these done by the same translator, add the "as_group" parameter
-// $data = array('jobs' =&gt; $jobs, 'as_group' =&gt; 1);
+<span class="c1">// if you wanted these done by the same translator, add the "as_group" parameter</span>
+<span class="c1">// $data = array('jobs' =&gt; $jobs, 'as_group' =&gt; 1);</span>
 
-$params = array(
-    'api_key' =&gt; $api_key,
-    'ts' =&gt; gmdate('U'),
-    'data' =&gt; json_encode($data)
-);
+<span class="nv">$params</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+    <span class="s1">'api_key'</span> <span class="o">=&gt;</span> <span class="nv">$api_key</span><span class="p">,</span>
+    <span class="s1">'ts'</span> <span class="o">=&gt;</span> <span class="nb">gmdate</span><span class="p">(</span><span class="s1">'U'</span><span class="p">),</span>
+    <span class="s1">'data'</span> <span class="o">=&gt;</span> <span class="nb">json_encode</span><span class="p">(</span><span class="nv">$data</span><span class="p">)</span>
+<span class="p">);</span>
 
 
-$hmac = hash_hmac('sha1', $params['ts'], $private_key);
-$params['api_sig'] = $hmac;
-$enc_params = json_encode($params);
+<span class="nv">$hmac</span> <span class="o">=</span> <span class="nb">hash_hmac</span><span class="p">(</span><span class="s1">'sha1'</span><span class="p">,</span> <span class="nv">$params</span><span class="p">[</span><span class="s1">'ts'</span><span class="p">],</span> <span class="nv">$private_key</span><span class="p">);</span>
+<span class="nv">$params</span><span class="p">[</span><span class="s1">'api_sig'</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$hmac</span><span class="p">;</span>
+<span class="nv">$enc_params</span> <span class="o">=</span> <span class="nb">json_encode</span><span class="p">(</span><span class="nv">$params</span><span class="p">);</span>
 
-$url .= 'translate/jobs';
-$ch = curl_init($url);
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-curl_setopt($ch, CURLOPT_POST, true);
-curl_setopt($ch, CURLOPT_POSTFIELDS, $params);
-curl_setopt($ch, CURLOPT_HTTPHEADER, $header);
-$response = curl_exec($ch);
-curl_close($ch);
-</code></pre>
+<span class="nv">$url</span> <span class="o">.=</span> <span class="s1">'translate/jobs'</span><span class="p">;</span>
+<span class="nv">$ch</span> <span class="o">=</span> <span class="nb">curl_init</span><span class="p">(</span><span class="nv">$url</span><span class="p">);</span>
+<span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$ch</span><span class="p">,</span> <span class="nx">CURLOPT_RETURNTRANSFER</span><span class="p">,</span> <span class="k">true</span><span class="p">);</span>
+<span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$ch</span><span class="p">,</span> <span class="nx">CURLOPT_POST</span><span class="p">,</span> <span class="k">true</span><span class="p">);</span>
+<span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$ch</span><span class="p">,</span> <span class="nx">CURLOPT_POSTFIELDS</span><span class="p">,</span> <span class="nv">$params</span><span class="p">);</span>
+<span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$ch</span><span class="p">,</span> <span class="nx">CURLOPT_HTTPHEADER</span><span class="p">,</span> <span class="nv">$header</span><span class="p">);</span>
+<span class="nv">$response</span> <span class="o">=</span> <span class="nb">curl_exec</span><span class="p">(</span><span class="nv">$ch</span><span class="p">);</span>
+<span class="nb">curl_close</span><span class="p">(</span><span class="nv">$ch</span><span class="p">);</span>
+<span class="cp">?&gt;</span><span class="x"></span></code></pre>
 
 <p>You’ll want to review documentation for the “translate/jobs” entry-point to see what other parameters are available, but for this example we will turn job-grouping off (which means different translators can work on each job).</p>
 
@@ -253,9 +257,9 @@ php -f jobs-post.php
   <span class="s2">"opstat"</span><span class="o">:</span> <span class="s2">"ok"</span><span class="p">,</span>
   <span class="s2">"response"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"order_id"</span><span class="o">:</span> <span class="s2">"109655"</span><span class="p">,</span>
-    <span class="s2">"job_count"</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
+    <span class="s2">"currency"</span><span class="o">:</span> <span class="s2">"USD"</span><span class="p">,</span>
     <span class="s2">"credits_used"</span><span class="o">:</span> <span class="s2">"0.30"</span><span class="p">,</span>
-    <span class="s2">"currency"</span><span class="o">:</span> <span class="s2">"USD"</span>
+    <span class="s2">"job_count"</span><span class="o">:</span> <span class="mi">3</span>
   <span class="p">}</span>
 <span class="p">}</span></code></pre>
 
@@ -267,16 +271,16 @@ php -f jobs-post.php
   <span class="s2">"opstat"</span><span class="o">:</span> <span class="s2">"ok"</span><span class="p">,</span>
   <span class="s2">"response"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"order"</span><span class="o">:</span> <span class="p">{</span>
+      <span class="s2">"total_jobs"</span><span class="o">:</span> <span class="s2">"3"</span><span class="p">,</span>
+      <span class="s2">"currency"</span><span class="o">:</span> <span class="s2">"USD"</span><span class="p">,</span>
+      <span class="s2">"total_credits"</span><span class="o">:</span> <span class="s2">"0.30"</span><span class="p">,</span>
+      <span class="s2">"total_units"</span><span class="o">:</span> <span class="mi">6</span><span class="p">,</span>
       <span class="s2">"jobs_available"</span><span class="o">:</span> <span class="p">[</span>
         <span class="s2">"243646"</span><span class="p">,</span>
         <span class="s2">"243647"</span><span class="p">,</span>
         <span class="s2">"243645"</span>
       <span class="p">],</span>
-      <span class="s2">"total_credits"</span><span class="o">:</span> <span class="s2">"0.30"</span><span class="p">,</span>
-      <span class="s2">"total_jobs"</span><span class="o">:</span> <span class="s2">"3"</span><span class="p">,</span>
-      <span class="s2">"as_group"</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
-      <span class="s2">"currency"</span><span class="o">:</span> <span class="s2">"USD"</span><span class="p">,</span>
-      <span class="s2">"total_units"</span><span class="o">:</span> <span class="mi">6</span>
+      <span class="s2">"as_group"</span><span class="o">:</span> <span class="mi">0</span>
     <span class="p">}</span>
   <span class="p">}</span>
 <span class="p">}</span></code></pre>

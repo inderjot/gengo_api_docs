@@ -78,20 +78,19 @@
 </dd>
 </dl><p><strong>Example call</strong></p>
 
-<pre><code>#!/usr/bin/env ruby
+<pre><code class="language-ruby"><span class="c1">#!/usr/bin/env ruby</span>
 
-require 'mygengo'
+<span class="nb">require</span> <span class="s1">'mygengo'</span>
 
-@mygengo_client = MyGengo::API.new({
-    :public_key =&gt; 'pub_key',
-    :private_key =&gt; 'priv_key',
-    :sandbox =&gt; false,
-})
+<span class="vi">@mygengo_client</span> <span class="o">=</span> <span class="no">MyGengo</span><span class="o">::</span><span class="no">API</span><span class="o">.</span><span class="n">new</span><span class="p">({</span>
+    <span class="ss">:public_key</span> <span class="o">=&gt;</span> <span class="s1">'pub_key'</span><span class="p">,</span>
+    <span class="ss">:private_key</span> <span class="o">=&gt;</span> <span class="s1">'priv_key'</span><span class="p">,</span>
+    <span class="ss">:sandbox</span> <span class="o">=&gt;</span> <span class="kp">false</span><span class="p">,</span>
+<span class="p">})</span>
 
-puts @mygengo_client.getTranslationOrderJobs({
-    :order_id =&gt; 559516
-})
-</code></pre>
+<span class="nb">puts</span> <span class="vi">@mygengo_client</span><span class="o">.</span><span class="n">getTranslationOrderJobs</span><span class="p">({</span>
+    <span class="ss">:order_id</span> <span class="o">=&gt;</span> <span class="mi">559516</span>
+<span class="p">})</span></code></pre>
 
 <p><strong>Response</strong></p>
 
@@ -101,9 +100,13 @@ puts @mygengo_client.getTranslationOrderJobs({
   <span class="s2">"opstat"</span><span class="o">:</span> <span class="s2">"ok"</span><span class="p">,</span>
   <span class="s2">"response"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"order"</span><span class="o">:</span> <span class="p">{</span>
+      <span class="s2">"total_jobs"</span><span class="o">:</span> <span class="s2">"10"</span><span class="p">,</span>
       <span class="s2">"jobs_pending"</span><span class="o">:</span> <span class="p">[</span>
         <span class="s2">"989290"</span>
       <span class="p">],</span>
+      <span class="s2">"currency"</span><span class="o">:</span> <span class="s2">"USD"</span><span class="p">,</span>
+      <span class="s2">"total_credits"</span><span class="o">:</span> <span class="s2">"5.00"</span><span class="p">,</span>
+      <span class="s2">"total_units"</span><span class="o">:</span> <span class="s2">"100"</span><span class="p">,</span>
       <span class="s2">"jobs_available"</span><span class="o">:</span> <span class="p">[</span>
         <span class="s2">"989291"</span><span class="p">,</span>
         <span class="s2">"989292"</span><span class="p">,</span>
@@ -114,14 +117,10 @@ puts @mygengo_client.getTranslationOrderJobs({
         <span class="s2">"989297"</span><span class="p">,</span>
         <span class="s2">"989298"</span>
       <span class="p">],</span>
+      <span class="s2">"as_group"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
       <span class="s2">"jobs_reviewable"</span><span class="o">:</span> <span class="p">[</span>
         <span class="s2">"989289"</span>
-      <span class="p">],</span>
-      <span class="s2">"total_credits"</span><span class="o">:</span> <span class="s2">"5.00"</span><span class="p">,</span>
-      <span class="s2">"total_jobs"</span><span class="o">:</span> <span class="s2">"10"</span><span class="p">,</span>
-      <span class="s2">"as_group"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-      <span class="s2">"currency"</span><span class="o">:</span> <span class="s2">"USD"</span><span class="p">,</span>
-      <span class="s2">"total_units"</span><span class="o">:</span> <span class="s2">"100"</span>
+      <span class="p">]</span>
     <span class="p">}</span>
   <span class="p">}</span>
 <span class="p">}</span></code></pre>

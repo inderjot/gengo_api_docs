@@ -81,20 +81,19 @@
 </dd>
 </dl><p><strong>Example call</strong></p>
 
-<pre><code># -*- coding: utf-8 -*-
-#!/usr/bin/python
-from mygengo import MyGengo
+<pre><code class="language-python"><span class="c"># -*- coding: utf-8 -*-</span>
+<span class="c">#!/usr/bin/python</span>
+<span class="kn">from</span> <span class="nn">mygengo</span> <span class="kn">import</span> <span class="n">MyGengo</span>
 
-# Get an instance of MyGengo to work with...
-gengo = MyGengo(
-    public_key = 'your_public_key',
-    private_key = 'your_private_key',
-    sandbox = True, # possibly false, depending on your dev needs )
+<span class="c"># Get an instance of MyGengo to work with...</span>
+<span class="n">gengo</span> <span class="o">=</span> <span class="n">MyGengo</span><span class="p">(</span>
+    <span class="n">public_key</span><span class="o">=</span><span class="s">'your_public_key'</span><span class="p">,</span>
+    <span class="n">private_key</span><span class="o">=</span><span class="s">'your_private_key'</span><span class="p">,</span>
+    <span class="n">sandbox</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="c"># possibly false, depending on your dev needs )</span>
 
-# If you have one job id, but want to get the id of every other job that
-# was submitted with it, you can do this.
-print gengo.getTranslationJobBatch(id = 42)
-</code></pre>
+<span class="c"># If you have one job id, but want to get the id of every other job that</span>
+<span class="c"># was submitted with it, you can do this.</span>
+<span class="k">print</span> <span class="n">gengo</span><span class="o">.</span><span class="n">getTranslationJobBatch</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span></code></pre>
 
 <p><strong>Response</strong></p>
 
@@ -148,54 +147,53 @@ print gengo.getTranslationJobBatch(id = 42)
 </dd>
 </dl><p><strong>Example call</strong></p>
 
-<pre><code># -*- coding: utf-8 -*-
-#!/usr/bin/python
-from mygengo import MyGengo
+<pre><code class="language-python"><span class="c"># -*- coding: utf-8 -*-</span>
+<span class="c">#!/usr/bin/python</span>
+<span class="kn">from</span> <span class="nn">mygengo</span> <span class="kn">import</span> <span class="n">MyGengo</span>
 
-# Get an instance of MyGengo to work with...
+<span class="c"># Get an instance of MyGengo to work with...</span>
 
-gengo = MyGengo(
-    public_key = 'your_public_key',
-    private_key = 'your_private_key',
-    sandbox = True, # possibly false, depending on your dev needs
-    )
+<span class="n">gengo</span> <span class="o">=</span> <span class="n">MyGengo</span><span class="p">(</span>
+    <span class="n">public_key</span><span class="o">=</span><span class="s">'your_public_key'</span><span class="p">,</span>
+    <span class="n">private_key</span><span class="o">=</span><span class="s">'your_private_key'</span><span class="p">,</span>
+    <span class="n">sandbox</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="c"># possibly false, depending on your dev needs</span>
+    <span class="p">)</span>
 
-# This is an exhaustive view of this object; chances are your code will never
-# have to be this verbose because you'd want to build it up programmatically.
-data = {
-    'jobs': {
-        'job_1': {
-            'type': 'text', # REQUIRED. Type to translate, you'll probably always put 'text' here.
-            'slug': 'Single :: English to Japanese', # REQUIRED. Slug for internally storing, can be generic.
-            'body_src': 'Testing Gengo API library calls.', # REQUIRED. The text you're translating.
-            'lc_src': 'en', # REQUIRED. source_language_code (see getServiceLanguages() for a list of codes)
-            'lc_tgt': 'ja', # REQUIRED. target_language_code (see getServiceLanguages() for a list of codes)
-            'tier': 'standard', # REQUIRED. tier type ("machine", "standard", "pro", or "ultra")  
-            'auto_approve': 0, # OPTIONAL. Hopefully self explanatory (1 = yes, 0 = no)
-            'comment': 'HEY THERE TRANSLATOR', # OPTIONAL. Comment to leave for translator.
-            'callback_url': 'http://...', # OPTIONAL. Callback URL that updates are sent to.
-            'custom_data': 'your optional custom data, limited to 1kb.' # OPTIONAL
-        },
-        'job_2': {
-            'type': 'text', # REQUIRED. Type to translate, you'll probably always put 'text' here.
-            'slug': 'Single :: English to Japanese', # REQUIRED. Slug for internally storing, can be generic.
-            'body_src': 'Testing Gengo API library calls.', # REQUIRED. The text you're translating.
-            'lc_src': 'en', # REQUIRED. source_language_code (see getServiceLanguages() for a list of codes)
-            'lc_tgt': 'ja', # REQUIRED. target_language_code (see getServiceLanguages() for a list of codes)
-            'tier': 'standard', # REQUIRED. tier type ("machine", "standard", "pro", or "ultra")
-            'auto_approve': 0, # OPTIONAL. Hopefully self explanatory (1 = yes, 0 = no)
-            'comment': 'HEY THERE TRANSLATOR', # OPTIONAL. Comment to leave for translator.
-            'callback_url': 'http://...', # OPTIONAL. Callback URL that updates are sent to.
-            'custom_data':'your optional custom data, limited to 1kb.' # OPTIONAL
-        },
-        ...
-    }
-    'as_group': 1, # OPTIONAL. 1 (true) / 0 (false, default). Whether all jobs in this group should be done by one translator.
-    'allow_fork': 0, # OPTIONAL. 1 (true, default) / 0 (false). Whether jobs unfinished by a translator in a group order should be cancelled automatically, or to manually choose to let another translator try or manually cancel.
-}
-# And now we post them over...
-prints gengo.postTranslationJobs(jobs = data)
-</code></pre>
+<span class="c"># This is an exhaustive view of this object; chances are your code will never</span>
+<span class="c"># have to be this verbose because you'd want to build it up programmatically.</span>
+<span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s">'jobs'</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s">'job_1'</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s">'type'</span><span class="p">:</span> <span class="s">'text'</span><span class="p">,</span> <span class="c"># REQUIRED. Type to translate, you'll probably always put 'text' here.</span>
+            <span class="s">'slug'</span><span class="p">:</span> <span class="s">'Single :: English to Japanese'</span><span class="p">,</span> <span class="c"># REQUIRED. Slug for internally storing, can be generic.</span>
+            <span class="s">'body_src'</span><span class="p">:</span> <span class="s">'Testing Gengo API library calls.'</span><span class="p">,</span> <span class="c"># REQUIRED. The text you're translating.</span>
+            <span class="s">'lc_src'</span><span class="p">:</span> <span class="s">'en'</span><span class="p">,</span> <span class="c"># REQUIRED. source_language_code (see getServiceLanguages() for a list of codes)</span>
+            <span class="s">'lc_tgt'</span><span class="p">:</span> <span class="s">'ja'</span><span class="p">,</span> <span class="c"># REQUIRED. target_language_code (see getServiceLanguages() for a list of codes)</span>
+            <span class="s">'tier'</span><span class="p">:</span> <span class="s">'standard'</span><span class="p">,</span> <span class="c"># REQUIRED. tier type ("machine", "standard", "pro", or "ultra")</span>
+            <span class="s">'auto_approve'</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="c"># OPTIONAL. Hopefully self explanatory (1 = yes, 0 = no)</span>
+            <span class="s">'comment'</span><span class="p">:</span> <span class="s">'HEY THERE TRANSLATOR'</span><span class="p">,</span> <span class="c"># OPTIONAL. Comment to leave for translator.</span>
+            <span class="s">'callback_url'</span><span class="p">:</span> <span class="s">'http://...'</span><span class="p">,</span> <span class="c"># OPTIONAL. Callback URL that updates are sent to.</span>
+            <span class="s">'custom_data'</span><span class="p">:</span> <span class="s">'your optional custom data, limited to 1kb.'</span> <span class="c"># OPTIONAL</span>
+        <span class="p">},</span>
+        <span class="s">'job_2'</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s">'type'</span><span class="p">:</span> <span class="s">'text'</span><span class="p">,</span> <span class="c"># REQUIRED. Type to translate, you'll probably always put 'text' here.</span>
+            <span class="s">'slug'</span><span class="p">:</span> <span class="s">'Single :: English to Japanese'</span><span class="p">,</span> <span class="c"># REQUIRED. Slug for internally storing, can be generic.</span>
+            <span class="s">'body_src'</span><span class="p">:</span> <span class="s">'Testing Gengo API library calls.'</span><span class="p">,</span> <span class="c"># REQUIRED. The text you're translating.</span>
+            <span class="s">'lc_src'</span><span class="p">:</span> <span class="s">'en'</span><span class="p">,</span> <span class="c"># REQUIRED. source_language_code (see getServiceLanguages() for a list of codes)</span>
+            <span class="s">'lc_tgt'</span><span class="p">:</span> <span class="s">'ja'</span><span class="p">,</span> <span class="c"># REQUIRED. target_language_code (see getServiceLanguages() for a list of codes)</span>
+            <span class="s">'tier'</span><span class="p">:</span> <span class="s">'standard'</span><span class="p">,</span> <span class="c"># REQUIRED. tier type ("machine", "standard", "pro", or "ultra")</span>
+            <span class="s">'auto_approve'</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="c"># OPTIONAL. Hopefully self explanatory (1 = yes, 0 = no)</span>
+            <span class="s">'comment'</span><span class="p">:</span> <span class="s">'HEY THERE TRANSLATOR'</span><span class="p">,</span> <span class="c"># OPTIONAL. Comment to leave for translator.</span>
+            <span class="s">'callback_url'</span><span class="p">:</span> <span class="s">'http://...'</span><span class="p">,</span> <span class="c"># OPTIONAL. Callback URL that updates are sent to.</span>
+            <span class="s">'custom_data'</span><span class="p">:</span><span class="s">'your optional custom data, limited to 1kb.'</span> <span class="c"># OPTIONAL</span>
+        <span class="p">},</span>
+        <span class="o">...</span>
+    <span class="p">}</span>
+    <span class="s">'as_group'</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="c"># OPTIONAL. 1 (true) / 0 (false, default). Whether all jobs in this group should be done by one translator.</span>
+    <span class="s">'allow_fork'</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="c"># OPTIONAL. 1 (true, default) / 0 (false). Whether jobs unfinished by a translator in a group order should be cancelled automatically, or to manually choose to let another translator try or manually cancel.</span>
+<span class="p">}</span>
+<span class="c"># And now we post them over...</span>
+<span class="n">prints</span> <span class="n">gengo</span><span class="o">.</span><span class="n">postTranslationJobs</span><span class="p">(</span><span class="n">jobs</span><span class="o">=</span><span class="n">data</span><span class="p">)</span></code></pre>
 
 <p><strong>Response</strong></p>
 
@@ -211,10 +209,10 @@ prints gengo.postTranslationJobs(jobs = data)
   <span class="s2">"opstat"</span><span class="o">:</span> <span class="s2">"ok"</span><span class="p">,</span>
   <span class="s2">"response"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"order_id"</span><span class="o">:</span> <span class="s2">"139370"</span><span class="p">,</span>
-    <span class="s2">"job_count"</span><span class="o">:</span> <span class="s2">"10"</span><span class="p">,</span>
+    <span class="s2">"currency"</span><span class="o">:</span> <span class="s2">"USD"</span><span class="p">,</span>
     <span class="s2">"credits_used"</span><span class="o">:</span> <span class="s2">"100.45"</span><span class="p">,</span>
     <span class="s2">"group_id"</span><span class="o">:</span> <span class="mi">23015</span><span class="p">,</span>
-    <span class="s2">"currency"</span><span class="o">:</span> <span class="s2">"USD"</span>
+    <span class="s2">"job_count"</span><span class="o">:</span> <span class="s2">"10"</span>
   <span class="p">}</span>
 <span class="p">}</span></code></pre>
 
@@ -230,38 +228,38 @@ prints gengo.postTranslationJobs(jobs = data)
     <span class="s2">"jobs"</span><span class="o">:</span> <span class="p">{</span>
       <span class="s2">"job_2"</span><span class="o">:</span> <span class="p">[</span>
         <span class="p">{</span>
-          <span class="s2">"body_src"</span><span class="o">:</span> <span class="s2">"This is another random string"</span><span class="p">,</span>
           <span class="s2">"job_id"</span><span class="o">:</span> <span class="s2">"922560"</span><span class="p">,</span>
-          <span class="s2">"lc_tgt"</span><span class="o">:</span> <span class="s2">"ja"</span><span class="p">,</span>
-          <span class="s2">"auto_approve"</span><span class="o">:</span> <span class="s2">"0"</span><span class="p">,</span>
-          <span class="s2">"tier"</span><span class="o">:</span> <span class="s2">"ultra_pro"</span><span class="p">,</span>
-          <span class="s2">"unit_count"</span><span class="o">:</span> <span class="s2">"10"</span><span class="p">,</span>
-          <span class="s2">"body_tgt"</span><span class="o">:</span> <span class="s2">"This is another random string in japanese"</span><span class="p">,</span>
           <span class="s2">"eta"</span><span class="o">:</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span>
-          <span class="s2">"slug"</span><span class="o">:</span> <span class="s2">"slug 0"</span><span class="p">,</span>
-          <span class="s2">"ctime"</span><span class="o">:</span> <span class="mi">1348045507</span><span class="p">,</span>
+          <span class="s2">"lc_tgt"</span><span class="o">:</span> <span class="s2">"ja"</span><span class="p">,</span>
+          <span class="s2">"lc_src"</span><span class="o">:</span> <span class="s2">"en"</span><span class="p">,</span>
+          <span class="s2">"body_src"</span><span class="o">:</span> <span class="s2">"This is another random string"</span><span class="p">,</span>
           <span class="s2">"currency"</span><span class="o">:</span> <span class="s2">"USD"</span><span class="p">,</span>
           <span class="s2">"credits"</span><span class="o">:</span> <span class="s2">"1.70"</span><span class="p">,</span>
+          <span class="s2">"unit_count"</span><span class="o">:</span> <span class="s2">"10"</span><span class="p">,</span>
+          <span class="s2">"body_tgt"</span><span class="o">:</span> <span class="s2">"This is another random string in japanese"</span><span class="p">,</span>
           <span class="s2">"status"</span><span class="o">:</span> <span class="s2">"approved"</span><span class="p">,</span>
-          <span class="s2">"lc_src"</span><span class="o">:</span> <span class="s2">"en"</span>
+          <span class="s2">"tier"</span><span class="o">:</span> <span class="s2">"ultra_pro"</span><span class="p">,</span>
+          <span class="s2">"ctime"</span><span class="o">:</span> <span class="mi">1348045507</span><span class="p">,</span>
+          <span class="s2">"slug"</span><span class="o">:</span> <span class="s2">"slug 0"</span><span class="p">,</span>
+          <span class="s2">"auto_approve"</span><span class="o">:</span> <span class="s2">"0"</span>
         <span class="p">}</span>
       <span class="p">],</span>
       <span class="s2">"job_1"</span><span class="o">:</span> <span class="p">[</span>
         <span class="p">{</span>
-          <span class="s2">"body_src"</span><span class="o">:</span> <span class="s2">"This is a random string"</span><span class="p">,</span>
           <span class="s2">"job_id"</span><span class="o">:</span> <span class="s2">"922599"</span><span class="p">,</span>
-          <span class="s2">"lc_tgt"</span><span class="o">:</span> <span class="s2">"ja"</span><span class="p">,</span>
-          <span class="s2">"auto_approve"</span><span class="o">:</span> <span class="s2">"0"</span><span class="p">,</span>
-          <span class="s2">"tier"</span><span class="o">:</span> <span class="s2">"ultra_pro"</span><span class="p">,</span>
-          <span class="s2">"unit_count"</span><span class="o">:</span> <span class="s2">"10"</span><span class="p">,</span>
-          <span class="s2">"body_tgt"</span><span class="o">:</span> <span class="s2">"This is a random string in japanese"</span><span class="p">,</span>
           <span class="s2">"eta"</span><span class="o">:</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span>
-          <span class="s2">"slug"</span><span class="o">:</span> <span class="s2">"slug 0"</span><span class="p">,</span>
-          <span class="s2">"ctime"</span><span class="o">:</span> <span class="mi">1348045507</span><span class="p">,</span>
+          <span class="s2">"lc_tgt"</span><span class="o">:</span> <span class="s2">"ja"</span><span class="p">,</span>
+          <span class="s2">"lc_src"</span><span class="o">:</span> <span class="s2">"en"</span><span class="p">,</span>
+          <span class="s2">"body_src"</span><span class="o">:</span> <span class="s2">"This is a random string"</span><span class="p">,</span>
           <span class="s2">"currency"</span><span class="o">:</span> <span class="s2">"USD"</span><span class="p">,</span>
           <span class="s2">"credits"</span><span class="o">:</span> <span class="s2">"1.70"</span><span class="p">,</span>
+          <span class="s2">"unit_count"</span><span class="o">:</span> <span class="s2">"10"</span><span class="p">,</span>
+          <span class="s2">"body_tgt"</span><span class="o">:</span> <span class="s2">"This is a random string in japanese"</span><span class="p">,</span>
           <span class="s2">"status"</span><span class="o">:</span> <span class="s2">"approved"</span><span class="p">,</span>
-          <span class="s2">"lc_src"</span><span class="o">:</span> <span class="s2">"en"</span>
+          <span class="s2">"tier"</span><span class="o">:</span> <span class="s2">"ultra_pro"</span><span class="p">,</span>
+          <span class="s2">"ctime"</span><span class="o">:</span> <span class="mi">1348045507</span><span class="p">,</span>
+          <span class="s2">"slug"</span><span class="o">:</span> <span class="s2">"slug 0"</span><span class="p">,</span>
+          <span class="s2">"auto_approve"</span><span class="o">:</span> <span class="s2">"0"</span>
         <span class="p">}</span>
       <span class="p">]</span>
     <span class="p">}</span>
@@ -278,9 +276,8 @@ prints gengo.postTranslationJobs(jobs = data)
   <span class="s2">"opstat"</span><span class="o">:</span> <span class="s2">"ok"</span><span class="p">,</span>
   <span class="s2">"response"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"order_id"</span><span class="o">:</span> <span class="s2">"122900"</span><span class="p">,</span>
-    <span class="s2">"job_count"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
-    <span class="s2">"credits_used"</span><span class="o">:</span> <span class="s2">"0.40"</span><span class="p">,</span>
     <span class="s2">"currency"</span><span class="o">:</span> <span class="s2">"USD"</span><span class="p">,</span>
+    <span class="s2">"credits_used"</span><span class="o">:</span> <span class="s2">"0.40"</span><span class="p">,</span>
     <span class="s2">"jobs"</span><span class="o">:</span> <span class="p">{</span>
       <span class="s2">"job_4"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"custom_data"</span><span class="o">:</span> <span class="s2">""</span><span class="p">,</span>
@@ -294,7 +291,8 @@ prints gengo.postTranslationJobs(jobs = data)
         <span class="s2">"custom_data"</span><span class="o">:</span> <span class="s2">""</span><span class="p">,</span>
         <span class="s2">"duplicate"</span><span class="o">:</span> <span class="s2">"job_1"</span>
       <span class="p">}</span>
-    <span class="p">}</span>
+    <span class="p">},</span>
+    <span class="s2">"job_count"</span><span class="o">:</span> <span class="mi">2</span>
   <span class="p">}</span>
 <span class="p">}</span></code></pre>
 
@@ -308,9 +306,8 @@ prints gengo.postTranslationJobs(jobs = data)
   <span class="s2">"opstat"</span><span class="o">:</span> <span class="s2">"ok"</span><span class="p">,</span>
   <span class="s2">"response"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"order_id"</span><span class="o">:</span> <span class="s2">"139370"</span><span class="p">,</span>
-    <span class="s2">"job_count"</span><span class="o">:</span> <span class="s2">"5"</span><span class="p">,</span>
-    <span class="s2">"credits_used"</span><span class="o">:</span> <span class="s2">"14.50"</span><span class="p">,</span>
     <span class="s2">"currency"</span><span class="o">:</span> <span class="s2">"USD"</span><span class="p">,</span>
+    <span class="s2">"credits_used"</span><span class="o">:</span> <span class="s2">"14.50"</span><span class="p">,</span>
     <span class="s2">"jobs"</span><span class="o">:</span> <span class="p">{</span>
       <span class="s2">"job_2"</span><span class="o">:</span> <span class="p">[</span>
         <span class="p">{</span>
@@ -325,7 +322,8 @@ prints gengo.postTranslationJobs(jobs = data)
           <span class="s2">"job_id"</span><span class="o">:</span> <span class="s2">"352692"</span>
         <span class="p">}</span>
       <span class="p">]</span>
-    <span class="p">}</span>
+    <span class="p">},</span>
+    <span class="s2">"job_count"</span><span class="o">:</span> <span class="s2">"5"</span>
   <span class="p">}</span>
 <span class="p">}</span></code></pre>
 
@@ -361,19 +359,18 @@ prints gengo.postTranslationJobs(jobs = data)
   <li>If you only use timestamp_after, you’ll get all jobs submitted since timestamp_after.</li>
 </ul><p><strong>Example call</strong></p>
 
-<pre><code># -*- coding: utf-8 -*-
-#!/usr/bin/python
-from mygengo import MyGengo
+<pre><code class="language-python"><span class="c"># -*- coding: utf-8 -*-</span>
+<span class="c">#!/usr/bin/python</span>
+<span class="kn">from</span> <span class="nn">mygengo</span> <span class="kn">import</span> <span class="n">MyGengo</span>
 
-# Get an instance of MyGengo to work with...
-gengo = MyGengo(
-    public_key = 'your_public_key',
-    private_key = 'your_private_key',
-    sandbox = True, # possibly false, depending on your dev needs )
+<span class="c"># Get an instance of MyGengo to work with...</span>
+<span class="n">gengo</span> <span class="o">=</span> <span class="n">MyGengo</span><span class="p">(</span>
+    <span class="n">public_key</span><span class="o">=</span><span class="s">'your_public_key'</span><span class="p">,</span>
+    <span class="n">private_key</span><span class="o">=</span><span class="s">'your_private_key'</span><span class="p">,</span>
+    <span class="n">sandbox</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="c"># possibly false, depending on your dev needs )</span>
 
-# Think of this as a "search my jobs" method, and it becomes very self-explanatory.
-print gengo.getTranslationJobs(status = "upaid", count = 15)
-</code></pre>
+<span class="c"># Think of this as a "search my jobs" method, and it becomes very self-explanatory.</span>
+<span class="k">print</span> <span class="n">gengo</span><span class="o">.</span><span class="n">getTranslationJobs</span><span class="p">(</span><span class="n">status</span><span class="o">=</span><span class="s">"upaid"</span><span class="p">,</span> <span class="n">count</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span></code></pre>
 
 <p><strong>Response</strong></p>
 
@@ -415,18 +412,17 @@ print gengo.getTranslationJobs(status = "upaid", count = 15)
 </dd>
 </dl><p><strong>Example call</strong></p>
 
-<pre><code>#!/usr/bin/env ruby
+<pre><code class="language-ruby"><span class="c1">#!/usr/bin/env ruby</span>
 
-require 'mygengo'
+<span class="nb">require</span> <span class="s1">'mygengo'</span>
 
-@mygengo_client = MyGengo::API.new({
-    :public_key =&gt; 'pub_key',
-    :private_key =&gt; 'priv_key',
-    :sandbox =&gt; false,
-})
+<span class="vi">@mygengo_client</span> <span class="o">=</span> <span class="no">MyGengo</span><span class="o">::</span><span class="no">API</span><span class="o">.</span><span class="n">new</span><span class="p">({</span>
+    <span class="ss">:public_key</span> <span class="o">=&gt;</span> <span class="s1">'pub_key'</span><span class="p">,</span>
+    <span class="ss">:private_key</span> <span class="o">=&gt;</span> <span class="s1">'priv_key'</span><span class="p">,</span>
+    <span class="ss">:sandbox</span> <span class="o">=&gt;</span> <span class="kp">false</span><span class="p">,</span>
+<span class="p">})</span>
 
-puts @mygengo_client.getTranslationJobs(:ids =&gt; [1,2,3,4,5])
-</code></pre>
+<span class="nb">puts</span> <span class="vi">@mygengo_client</span><span class="o">.</span><span class="n">getTranslationJobs</span><span class="p">(</span><span class="ss">:ids</span> <span class="o">=&gt;</span> <span class="o">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="o">]</span><span class="p">)</span></code></pre>
 
 <p><strong>Response</strong></p>
 
@@ -439,28 +435,28 @@ puts @mygengo_client.getTranslationJobs(:ids =&gt; [1,2,3,4,5])
       <span class="p">{</span>
         <span class="s2">"job_id"</span><span class="o">:</span> <span class="s2">"1"</span><span class="p">,</span>
         <span class="s2">"body_src"</span><span class="o">:</span> <span class="s2">"This is a short story."</span><span class="p">,</span>
-        <span class="s2">"lc_tgt"</span><span class="o">:</span> <span class="s2">"ja"</span><span class="p">,</span>
-        <span class="s2">"auto_approve"</span><span class="o">:</span> <span class="s2">"0"</span><span class="p">,</span>
-        <span class="s2">"tier"</span><span class="o">:</span> <span class="s2">"standard"</span><span class="p">,</span>
-        <span class="s2">"unit_count"</span><span class="o">:</span> <span class="s2">"5"</span><span class="p">,</span>
-        <span class="s2">"eta"</span><span class="o">:</span> <span class="s2">""</span><span class="p">,</span>
-        <span class="s2">"ctime"</span><span class="o">:</span> <span class="mi">1317279055</span><span class="p">,</span>
-        <span class="s2">"credits"</span><span class="o">:</span> <span class="s2">"0.25"</span><span class="p">,</span>
         <span class="s2">"lc_src"</span><span class="o">:</span> <span class="s2">"en"</span><span class="p">,</span>
-        <span class="s2">"status"</span><span class="o">:</span> <span class="s2">"available"</span>
+        <span class="s2">"lc_tgt"</span><span class="o">:</span> <span class="s2">"ja"</span><span class="p">,</span>
+        <span class="s2">"eta"</span><span class="o">:</span> <span class="s2">""</span><span class="p">,</span>
+        <span class="s2">"credits"</span><span class="o">:</span> <span class="s2">"0.25"</span><span class="p">,</span>
+        <span class="s2">"unit_count"</span><span class="o">:</span> <span class="s2">"5"</span><span class="p">,</span>
+        <span class="s2">"tier"</span><span class="o">:</span> <span class="s2">"standard"</span><span class="p">,</span>
+        <span class="s2">"status"</span><span class="o">:</span> <span class="s2">"available"</span><span class="p">,</span>
+        <span class="s2">"ctime"</span><span class="o">:</span> <span class="mi">1317279055</span><span class="p">,</span>
+        <span class="s2">"auto_approve"</span><span class="o">:</span> <span class="s2">"0"</span>
       <span class="p">},</span>
       <span class="p">{</span>
         <span class="s2">"job_id"</span><span class="o">:</span> <span class="s2">"2"</span><span class="p">,</span>
         <span class="s2">"body_src"</span><span class="o">:</span> <span class="s2">"This is a short story."</span><span class="p">,</span>
-        <span class="s2">"lc_tgt"</span><span class="o">:</span> <span class="s2">"ja"</span><span class="p">,</span>
-        <span class="s2">"auto_approve"</span><span class="o">:</span> <span class="s2">"0"</span><span class="p">,</span>
-        <span class="s2">"tier"</span><span class="o">:</span> <span class="s2">"standard"</span><span class="p">,</span>
-        <span class="s2">"unit_count"</span><span class="o">:</span> <span class="s2">"5"</span><span class="p">,</span>
-        <span class="s2">"eta"</span><span class="o">:</span> <span class="s2">""</span><span class="p">,</span>
-        <span class="s2">"ctime"</span><span class="o">:</span> <span class="mi">1317279055</span><span class="p">,</span>
-        <span class="s2">"credits"</span><span class="o">:</span> <span class="s2">"0.25"</span><span class="p">,</span>
         <span class="s2">"lc_src"</span><span class="o">:</span> <span class="s2">"en"</span><span class="p">,</span>
-        <span class="s2">"status"</span><span class="o">:</span> <span class="s2">"available"</span>
+        <span class="s2">"lc_tgt"</span><span class="o">:</span> <span class="s2">"ja"</span><span class="p">,</span>
+        <span class="s2">"eta"</span><span class="o">:</span> <span class="s2">""</span><span class="p">,</span>
+        <span class="s2">"credits"</span><span class="o">:</span> <span class="s2">"0.25"</span><span class="p">,</span>
+        <span class="s2">"unit_count"</span><span class="o">:</span> <span class="s2">"5"</span><span class="p">,</span>
+        <span class="s2">"tier"</span><span class="o">:</span> <span class="s2">"standard"</span><span class="p">,</span>
+        <span class="s2">"status"</span><span class="o">:</span> <span class="s2">"available"</span><span class="p">,</span>
+        <span class="s2">"ctime"</span><span class="o">:</span> <span class="mi">1317279055</span><span class="p">,</span>
+        <span class="s2">"auto_approve"</span><span class="o">:</span> <span class="s2">"0"</span>
       <span class="p">}</span>
     <span class="p">]</span>
   <span class="p">}</span>

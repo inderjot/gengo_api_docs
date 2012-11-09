@@ -80,19 +80,18 @@
 </dd>
 </dl><p><strong>Example call</strong></p>
 
-<pre><code># -*- coding: utf-8 -*-
-#!/usr/bin/python
-from mygengo import MyGengo
+<pre><code class="language-python"><span class="c"># -*- coding: utf-8 -*-</span>
+<span class="c">#!/usr/bin/python</span>
+<span class="kn">from</span> <span class="nn">mygengo</span> <span class="kn">import</span> <span class="n">MyGengo</span>
 
-# Get an instance of MyGengo to work with...
-gengo = MyGengo(
-    public_key = 'your_public_key',
-    private_key = 'your_private_key',
-    sandbox = True, # possibly false, depending on your dev needs )
+<span class="c"># Get an instance of MyGengo to work with...</span>
+<span class="n">gengo</span> <span class="o">=</span> <span class="n">MyGengo</span><span class="p">(</span>
+    <span class="n">public_key</span><span class="o">=</span><span class="s">'your_public_key'</span><span class="p">,</span>
+    <span class="n">private_key</span><span class="o">=</span><span class="s">'your_private_key'</span><span class="p">,</span>
+    <span class="n">sandbox</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="c"># possibly false, depending on your dev needs )</span>
 
-# Useful for figuring out what language paths are supported - e.g, if # we use 'en' below, we'll see what languages we can translate TO from 'en'.
-print gengo.getServiceLanguagePairs()
-</code></pre>
+<span class="c"># Useful for figuring out what language paths are supported - e.g, if # we use 'en' below, we'll see what languages we can translate TO from 'en'.</span>
+<span class="k">print</span> <span class="n">gengo</span><span class="o">.</span><span class="n">getServiceLanguagePairs</span><span class="p">()</span></code></pre>
 
 <p><strong>Response</strong></p>
 
@@ -102,22 +101,22 @@ print gengo.getServiceLanguagePairs()
   <span class="s2">"opstat"</span><span class="o">:</span> <span class="s2">"ok"</span><span class="p">,</span>
   <span class="s2">"response"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
-      <span class="s2">"unit_price"</span><span class="o">:</span> <span class="s2">"0.0500"</span><span class="p">,</span>
       <span class="s2">"lc_tgt"</span><span class="o">:</span> <span class="s2">"en"</span><span class="p">,</span>
+      <span class="s2">"lc_src"</span><span class="o">:</span> <span class="s2">"de"</span><span class="p">,</span>
       <span class="s2">"tier"</span><span class="o">:</span> <span class="s2">"standard"</span><span class="p">,</span>
-      <span class="s2">"lc_src"</span><span class="o">:</span> <span class="s2">"de"</span>
+      <span class="s2">"unit_price"</span><span class="o">:</span> <span class="s2">"0.0500"</span>
     <span class="p">},</span>
     <span class="p">{</span>
-      <span class="s2">"unit_price"</span><span class="o">:</span> <span class="s2">"0.1000"</span><span class="p">,</span>
       <span class="s2">"lc_tgt"</span><span class="o">:</span> <span class="s2">"en"</span><span class="p">,</span>
+      <span class="s2">"lc_src"</span><span class="o">:</span> <span class="s2">"de"</span><span class="p">,</span>
       <span class="s2">"tier"</span><span class="o">:</span> <span class="s2">"pro"</span><span class="p">,</span>
-      <span class="s2">"lc_src"</span><span class="o">:</span> <span class="s2">"de"</span>
+      <span class="s2">"unit_price"</span><span class="o">:</span> <span class="s2">"0.1000"</span>
     <span class="p">},</span>
     <span class="p">{</span>
-      <span class="s2">"unit_price"</span><span class="o">:</span> <span class="s2">"0.1500"</span><span class="p">,</span>
       <span class="s2">"lc_tgt"</span><span class="o">:</span> <span class="s2">"en"</span><span class="p">,</span>
+      <span class="s2">"lc_src"</span><span class="o">:</span> <span class="s2">"de"</span><span class="p">,</span>
       <span class="s2">"tier"</span><span class="o">:</span> <span class="s2">"ultra"</span><span class="p">,</span>
-      <span class="s2">"lc_src"</span><span class="o">:</span> <span class="s2">"de"</span>
+      <span class="s2">"unit_price"</span><span class="o">:</span> <span class="s2">"0.1500"</span>
     <span class="p">}</span>
   <span class="p">]</span>
 <span class="p">}</span></code></pre>
@@ -145,19 +144,18 @@ print gengo.getServiceLanguagePairs()
 </dd>
 </dl><p><strong>Example call</strong></p>
 
-<pre><code># -*- coding: utf-8 -*-
-#!/usr/bin/python
-from mygengo import MyGengo
+<pre><code class="language-python"><span class="c"># -*- coding: utf-8 -*-</span>
+<span class="c">#!/usr/bin/python</span>
+<span class="kn">from</span> <span class="nn">mygengo</span> <span class="kn">import</span> <span class="n">MyGengo</span>
 
-# Get an instance of MyGengo to work with...
-gengo = MyGengo(
-    public_key = 'your_public_key',
-    private_key = 'your_private_key',
-    sandbox = True, # possibly false, depending on your dev needs )
+<span class="c"># Get an instance of MyGengo to work with...</span>
+<span class="n">gengo</span> <span class="o">=</span> <span class="n">MyGengo</span><span class="p">(</span>
+    <span class="n">public_key</span><span class="o">=</span><span class="s">'your_public_key'</span><span class="p">,</span>
+    <span class="n">private_key</span><span class="o">=</span><span class="s">'your_private_key'</span><span class="p">,</span>
+    <span class="n">sandbox</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="c"># possibly false, depending on your dev needs )</span>
 
-# Get a list of every supported language, with their respective language codes.
-print gengo.getServiceLanguages()
-</code></pre>
+<span class="c"># Get a list of every supported language, with their respective language codes.</span>
+<span class="k">print</span> <span class="n">gengo</span><span class="o">.</span><span class="n">getServiceLanguages</span><span class="p">()</span></code></pre>
 
 <p><strong>Response</strong></p>
 
@@ -168,21 +166,21 @@ print gengo.getServiceLanguages()
   <span class="s2">"response"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
       <span class="s2">"lc"</span><span class="o">:</span> <span class="s2">"en"</span><span class="p">,</span>
+      <span class="s2">"language"</span><span class="o">:</span> <span class="s2">"English"</span><span class="p">,</span>
       <span class="s2">"unit_type"</span><span class="o">:</span> <span class="s2">"word"</span><span class="p">,</span>
-      <span class="s2">"localized_name"</span><span class="o">:</span> <span class="s2">"English"</span><span class="p">,</span>
-      <span class="s2">"language"</span><span class="o">:</span> <span class="s2">"English"</span>
+      <span class="s2">"localized_name"</span><span class="o">:</span> <span class="s2">"English"</span>
     <span class="p">},</span>
     <span class="p">{</span>
       <span class="s2">"lc"</span><span class="o">:</span> <span class="s2">"ja"</span><span class="p">,</span>
+      <span class="s2">"language"</span><span class="o">:</span> <span class="s2">"Japanese"</span><span class="p">,</span>
       <span class="s2">"unit_type"</span><span class="o">:</span> <span class="s2">"character"</span><span class="p">,</span>
-      <span class="s2">"localized_name"</span><span class="o">:</span> <span class="s2">"u65e5u672cu8a9e"</span><span class="p">,</span>
-      <span class="s2">"language"</span><span class="o">:</span> <span class="s2">"Japanese"</span>
+      <span class="s2">"localized_name"</span><span class="o">:</span> <span class="s2">"u65e5u672cu8a9e"</span>
     <span class="p">},</span>
     <span class="p">{</span>
       <span class="s2">"lc"</span><span class="o">:</span> <span class="s2">"es"</span><span class="p">,</span>
+      <span class="s2">"language"</span><span class="o">:</span> <span class="s2">"Spanish (Spain)"</span><span class="p">,</span>
       <span class="s2">"unit_type"</span><span class="o">:</span> <span class="s2">"word"</span><span class="p">,</span>
-      <span class="s2">"localized_name"</span><span class="o">:</span> <span class="s2">"Espau00f1ol"</span><span class="p">,</span>
-      <span class="s2">"language"</span><span class="o">:</span> <span class="s2">"Spanish (Spain)"</span>
+      <span class="s2">"localized_name"</span><span class="o">:</span> <span class="s2">"Espau00f1ol"</span>
     <span class="p">}</span>
   <span class="p">]</span>
 <span class="p">}</span></code></pre>
@@ -215,48 +213,47 @@ print gengo.getServiceLanguages()
 </dd>
 </dl><p><strong>Example call</strong></p>
 
-<pre><code># -*- coding: utf-8 -*-
-#!/usr/bin/python
-from mygengo import MyGengo
+<pre><code class="language-python"><span class="c"># -*- coding: utf-8 -*-</span>
+<span class="c">#!/usr/bin/python</span>
+<span class="kn">from</span> <span class="nn">mygengo</span> <span class="kn">import</span> <span class="n">MyGengo</span>
 
-# Get an instance of MyGengo to work with...
-gengo = MyGengo(
-    public_key = 'your_public_key',
-    private_key = 'your_private_key',
-    sandbox = True, # possibly false, depending on your dev needs )
+<span class="c"># Get an instance of MyGengo to work with...</span>
+<span class="n">gengo</span> <span class="o">=</span> <span class="n">MyGengo</span><span class="p">(</span>
+    <span class="n">public_key</span><span class="o">=</span><span class="s">'your_public_key'</span><span class="p">,</span>
+    <span class="n">private_key</span><span class="o">=</span><span class="s">'your_private_key'</span><span class="p">,</span>
+    <span class="n">sandbox</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="c"># possibly false, depending on your dev needs )</span>
 
-jobs_data = {
-        'job_1': {
-            'type': 'text', # REQUIRED. Type to translate, you'll probably always put 'text' here.
-            'slug': 'Single :: English to Japanese', # REQUIRED. Slug for internally storing, can be generic.
-            'body_src': 'Testing Gengo API library calls.', # REQUIRED. The text you're translating.
-            'lc_src': 'en', # REQUIRED. source_language_code (see getServiceLanguages() for a list of codes)
-            'lc_tgt': 'ja', # REQUIRED. target_language_code (see getServiceLanguages() for a list of codes)
-            'tier': 'standard', # REQUIRED. tier type ("machine", "standard", "pro", or "ultra")  
-            'auto_approve': 0, # OPTIONAL. Hopefully self explanatory (1 = yes, 0 = no)
-            'comment': 'HEY THERE TRANSLATOR', # OPTIONAL. Comment to leave for translator.
-            'callback_url': 'http://...', # OPTIONAL. Callback URL that updates are sent to.
-            'custom_data': 'your optional custom data, limited to 1kb.' # OPTIONAL
-        },
-        'job_2': {
-            'type': 'text', # REQUIRED. Type to translate, you'll probably always put 'text' here.
-            'slug': 'Single :: English to Japanese', # REQUIRED. Slug for internally storing, can be generic.
-            'body_src': 'Testing Gengo API library calls.', # REQUIRED. The text you're translating.
-            'lc_src': 'en', # REQUIRED. source_language_code (see getServiceLanguages() for a list of codes)
-            'lc_tgt': 'ja', # REQUIRED. target_language_code (see getServiceLanguages() for a list of codes)
-            'tier': 'standard', # REQUIRED. tier type ("machine", "standard", "pro", or "ultra")
-            'auto_approve': 0, # OPTIONAL. Hopefully self explanatory (1 = yes, 0 = no)
-            'comment': 'HEY THERE TRANSLATOR', # OPTIONAL. Comment to leave for translator.
-            'callback_url': 'http://...', # OPTIONAL. Callback URL that updates are sent to.
-            'custom_data':'your optional custom data, limited to 1kb.' # OPTIONAL
-        },
-        ...
-        'as_group': 1, # OPTIONAL. 1 (true) / 0 (false, default). Whether all jobs in this group should be done by one translator.
-}
+<span class="n">jobs_data</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s">'job_1'</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s">'type'</span><span class="p">:</span> <span class="s">'text'</span><span class="p">,</span> <span class="c"># REQUIRED. Type to translate, you'll probably always put 'text' here.</span>
+            <span class="s">'slug'</span><span class="p">:</span> <span class="s">'Single :: English to Japanese'</span><span class="p">,</span> <span class="c"># REQUIRED. Slug for internally storing, can be generic.</span>
+            <span class="s">'body_src'</span><span class="p">:</span> <span class="s">'Testing Gengo API library calls.'</span><span class="p">,</span> <span class="c"># REQUIRED. The text you're translating.</span>
+            <span class="s">'lc_src'</span><span class="p">:</span> <span class="s">'en'</span><span class="p">,</span> <span class="c"># REQUIRED. source_language_code (see getServiceLanguages() for a list of codes)</span>
+            <span class="s">'lc_tgt'</span><span class="p">:</span> <span class="s">'ja'</span><span class="p">,</span> <span class="c"># REQUIRED. target_language_code (see getServiceLanguages() for a list of codes)</span>
+            <span class="s">'tier'</span><span class="p">:</span> <span class="s">'standard'</span><span class="p">,</span> <span class="c"># REQUIRED. tier type ("machine", "standard", "pro", or "ultra")</span>
+            <span class="s">'auto_approve'</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="c"># OPTIONAL. Hopefully self explanatory (1 = yes, 0 = no)</span>
+            <span class="s">'comment'</span><span class="p">:</span> <span class="s">'HEY THERE TRANSLATOR'</span><span class="p">,</span> <span class="c"># OPTIONAL. Comment to leave for translator.</span>
+            <span class="s">'callback_url'</span><span class="p">:</span> <span class="s">'http://...'</span><span class="p">,</span> <span class="c"># OPTIONAL. Callback URL that updates are sent to.</span>
+            <span class="s">'custom_data'</span><span class="p">:</span> <span class="s">'your optional custom data, limited to 1kb.'</span> <span class="c"># OPTIONAL</span>
+        <span class="p">},</span>
+        <span class="s">'job_2'</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s">'type'</span><span class="p">:</span> <span class="s">'text'</span><span class="p">,</span> <span class="c"># REQUIRED. Type to translate, you'll probably always put 'text' here.</span>
+            <span class="s">'slug'</span><span class="p">:</span> <span class="s">'Single :: English to Japanese'</span><span class="p">,</span> <span class="c"># REQUIRED. Slug for internally storing, can be generic.</span>
+            <span class="s">'body_src'</span><span class="p">:</span> <span class="s">'Testing Gengo API library calls.'</span><span class="p">,</span> <span class="c"># REQUIRED. The text you're translating.</span>
+            <span class="s">'lc_src'</span><span class="p">:</span> <span class="s">'en'</span><span class="p">,</span> <span class="c"># REQUIRED. source_language_code (see getServiceLanguages() for a list of codes)</span>
+            <span class="s">'lc_tgt'</span><span class="p">:</span> <span class="s">'ja'</span><span class="p">,</span> <span class="c"># REQUIRED. target_language_code (see getServiceLanguages() for a list of codes)</span>
+            <span class="s">'tier'</span><span class="p">:</span> <span class="s">'standard'</span><span class="p">,</span> <span class="c"># REQUIRED. tier type ("machine", "standard", "pro", or "ultra")</span>
+            <span class="s">'auto_approve'</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="c"># OPTIONAL. Hopefully self explanatory (1 = yes, 0 = no)</span>
+            <span class="s">'comment'</span><span class="p">:</span> <span class="s">'HEY THERE TRANSLATOR'</span><span class="p">,</span> <span class="c"># OPTIONAL. Comment to leave for translator.</span>
+            <span class="s">'callback_url'</span><span class="p">:</span> <span class="s">'http://...'</span><span class="p">,</span> <span class="c"># OPTIONAL. Callback URL that updates are sent to.</span>
+            <span class="s">'custom_data'</span><span class="p">:</span><span class="s">'your optional custom data, limited to 1kb.'</span> <span class="c"># OPTIONAL</span>
+        <span class="p">},</span>
+        <span class="o">...</span>
+        <span class="s">'as_group'</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="c"># OPTIONAL. 1 (true) / 0 (false, default). Whether all jobs in this group should be done by one translator.</span>
+<span class="p">}</span>
 
-# Post over our two jobs, use the same translator for both, don't pay for them
-prints gengo.determineTranslationCost(jobs = jobs_data)
-</code></pre>
+<span class="c"># Post over our two jobs, use the same translator for both, don't pay for them</span>
+<span class="k">print</span> <span class="n">gengo</span><span class="o">.</span><span class="n">determineTranslationCost</span><span class="p">(</span><span class="n">jobs</span><span class="o">=</span><span class="n">jobs_data</span><span class="p">)</span></code></pre>
 
 <p><strong>Response</strong></p>
 
@@ -268,14 +265,14 @@ prints gengo.determineTranslationCost(jobs = jobs_data)
     <span class="s2">"jobs"</span><span class="o">:</span> <span class="p">[</span>
       <span class="p">{</span>
         <span class="s2">"job_1"</span><span class="o">:</span> <span class="p">{</span>
-          <span class="s2">"unit_count"</span><span class="o">:</span> <span class="mi">324</span><span class="p">,</span>
-          <span class="s2">"credits"</span><span class="o">:</span> <span class="mf">16.2</span>
+          <span class="s2">"credits"</span><span class="o">:</span> <span class="mf">16.2</span><span class="p">,</span>
+          <span class="s2">"unit_count"</span><span class="o">:</span> <span class="mi">324</span>
         <span class="p">}</span>
       <span class="p">},</span>
       <span class="p">{</span>
         <span class="s2">"job_2"</span><span class="o">:</span> <span class="p">{</span>
-          <span class="s2">"unit_count"</span><span class="o">:</span> <span class="mi">42</span><span class="p">,</span>
-          <span class="s2">"credits"</span><span class="o">:</span> <span class="mf">4.2</span>
+          <span class="s2">"credits"</span><span class="o">:</span> <span class="mf">4.2</span><span class="p">,</span>
+          <span class="s2">"unit_count"</span><span class="o">:</span> <span class="mi">42</span>
         <span class="p">}</span>
       <span class="p">}</span>
     <span class="p">]</span>
@@ -314,47 +311,46 @@ prints gengo.determineTranslationCost(jobs = jobs_data)
 </dd>
 </dl><p><strong>Example call</strong></p>
 
-<pre><code>#!/usr/bin/env ruby
+<pre><code class="language-ruby"><span class="c1">#!/usr/bin/env ruby</span>
 
-require 'mygengo'
+<span class="nb">require</span> <span class="s1">'mygengo'</span>
 
-@mygengo_client = MyGengo::API.new({
-       :public_key =&gt; 'pub_key',
-       :private_key =&gt; 'priv_key',
-       :sandbox =&gt; false,
-})
+<span class="vi">@mygengo_client</span> <span class="o">=</span> <span class="no">MyGengo</span><span class="o">::</span><span class="no">API</span><span class="o">.</span><span class="n">new</span><span class="p">({</span>
+       <span class="ss">:public_key</span> <span class="o">=&gt;</span> <span class="s1">'pub_key'</span><span class="p">,</span>
+       <span class="ss">:private_key</span> <span class="o">=&gt;</span> <span class="s1">'priv_key'</span><span class="p">,</span>
+       <span class="ss">:sandbox</span> <span class="o">=&gt;</span> <span class="kp">false</span><span class="p">,</span>
+<span class="p">})</span>
 
-@jobs_hash = {
-          :jobs =&gt; {
-            :job_1 =&gt; {
-              :type =&gt; "file",
-              :slug =&gt; "File posted from API testing suite, DON'T TOUCH 1",
-              :lc_src =&gt; "en",
-              :lc_tgt =&gt; "ja",
-              :tier =&gt; "standard",
-              :file_path =&gt; File.join(Rails.root, "lib", "assets", "video_on_demand.txt")
-            },
-            :job_2 =&gt; {
-              :type =&gt; "file",
-              :slug =&gt; "File posted from API testing suite, DON'T TOUCH 2",
-              :lc_src =&gt; "en",
-              :lc_tgt =&gt; "ja",
-              :tier =&gt; "standard",
-              :file_path =&gt; File.join(Rails.root, "lib", "assets", "japanese_file.docx")
-            },
-            :job_3 =&gt; {
-              :type =&gt; "file",
-              :slug =&gt; "File posted from API testing suite, DON'T TOUCH 3",
-              :lc_src =&gt; "en",
-              :lc_tgt =&gt; "ja",
-              :tier =&gt; "standard",
-              :file_path =&gt; File.join(Rails.root, "lib", "assets", "test_files", "english", "basics", "sushi_en.doc")
-            }
-        }
-}
+<span class="vi">@jobs_hash</span> <span class="o">=</span> <span class="p">{</span>
+          <span class="ss">:jobs</span> <span class="o">=&gt;</span> <span class="p">{</span>
+            <span class="ss">:job_1</span> <span class="o">=&gt;</span> <span class="p">{</span>
+              <span class="ss">:type</span> <span class="o">=&gt;</span> <span class="s2">"file"</span><span class="p">,</span>
+              <span class="ss">:slug</span> <span class="o">=&gt;</span> <span class="s2">"File posted from API testing suite, DON'T TOUCH 1"</span><span class="p">,</span>
+              <span class="ss">:lc_src</span> <span class="o">=&gt;</span> <span class="s2">"en"</span><span class="p">,</span>
+              <span class="ss">:lc_tgt</span> <span class="o">=&gt;</span> <span class="s2">"ja"</span><span class="p">,</span>
+              <span class="ss">:tier</span> <span class="o">=&gt;</span> <span class="s2">"standard"</span><span class="p">,</span>
+              <span class="ss">:file_path</span> <span class="o">=&gt;</span> <span class="no">File</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="no">Rails</span><span class="o">.</span><span class="n">root</span><span class="p">,</span> <span class="s2">"lib"</span><span class="p">,</span> <span class="s2">"assets"</span><span class="p">,</span> <span class="s2">"video_on_demand.txt"</span><span class="p">)</span>
+            <span class="p">},</span>
+            <span class="ss">:job_2</span> <span class="o">=&gt;</span> <span class="p">{</span>
+              <span class="ss">:type</span> <span class="o">=&gt;</span> <span class="s2">"file"</span><span class="p">,</span>
+              <span class="ss">:slug</span> <span class="o">=&gt;</span> <span class="s2">"File posted from API testing suite, DON'T TOUCH 2"</span><span class="p">,</span>
+              <span class="ss">:lc_src</span> <span class="o">=&gt;</span> <span class="s2">"en"</span><span class="p">,</span>
+              <span class="ss">:lc_tgt</span> <span class="o">=&gt;</span> <span class="s2">"ja"</span><span class="p">,</span>
+              <span class="ss">:tier</span> <span class="o">=&gt;</span> <span class="s2">"standard"</span><span class="p">,</span>
+              <span class="ss">:file_path</span> <span class="o">=&gt;</span> <span class="no">File</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="no">Rails</span><span class="o">.</span><span class="n">root</span><span class="p">,</span> <span class="s2">"lib"</span><span class="p">,</span> <span class="s2">"assets"</span><span class="p">,</span> <span class="s2">"japanese_file.docx"</span><span class="p">)</span>
+            <span class="p">},</span>
+            <span class="ss">:job_3</span> <span class="o">=&gt;</span> <span class="p">{</span>
+              <span class="ss">:type</span> <span class="o">=&gt;</span> <span class="s2">"file"</span><span class="p">,</span>
+              <span class="ss">:slug</span> <span class="o">=&gt;</span> <span class="s2">"File posted from API testing suite, DON'T TOUCH 3"</span><span class="p">,</span>
+              <span class="ss">:lc_src</span> <span class="o">=&gt;</span> <span class="s2">"en"</span><span class="p">,</span>
+              <span class="ss">:lc_tgt</span> <span class="o">=&gt;</span> <span class="s2">"ja"</span><span class="p">,</span>
+              <span class="ss">:tier</span> <span class="o">=&gt;</span> <span class="s2">"standard"</span><span class="p">,</span>
+              <span class="ss">:file_path</span> <span class="o">=&gt;</span> <span class="no">File</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="no">Rails</span><span class="o">.</span><span class="n">root</span><span class="p">,</span> <span class="s2">"lib"</span><span class="p">,</span> <span class="s2">"assets"</span><span class="p">,</span> <span class="s2">"test_files"</span><span class="p">,</span> <span class="s2">"english"</span><span class="p">,</span> <span class="s2">"basics"</span><span class="p">,</span> <span class="s2">"sushi_en.doc"</span><span class="p">)</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+<span class="p">}</span>
 
-@mygengo_client.determineTranslationCost(@jobs_hash)
-</code></pre>
+<span class="vi">@mygengo_client</span><span class="o">.</span><span class="n">determineTranslationCost</span><span class="p">(</span><span class="vi">@jobs_hash</span><span class="p">)</span></code></pre>
 
 <p><strong>Response</strong></p>
 
@@ -366,38 +362,38 @@ require 'mygengo'
     <span class="s2">"jobs"</span><span class="o">:</span> <span class="p">{</span>
       <span class="s2">"job_3"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"err"</span><span class="o">:</span> <span class="p">{</span>
-          <span class="s2">"filename"</span><span class="o">:</span> <span class="s2">"sushi_en.doc"</span><span class="p">,</span>
           <span class="s2">"key"</span><span class="o">:</span> <span class="s2">"job_3"</span><span class="p">,</span>
+          <span class="s2">"filename"</span><span class="o">:</span> <span class="s2">"sushi_en.doc"</span><span class="p">,</span>
           <span class="s2">"code"</span><span class="o">:</span> <span class="mi">1802</span>
         <span class="p">}</span>
       <span class="p">},</span>
       <span class="s2">"job_2"</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">"type"</span><span class="o">:</span> <span class="s2">"file"</span><span class="p">,</span>
-        <span class="s2">"images"</span><span class="o">:</span> <span class="p">[</span>
-
-        <span class="p">],</span>
-        <span class="s2">"title"</span><span class="o">:</span> <span class="s2">"japanese_file.docx"</span><span class="p">,</span>
-        <span class="s2">"unit_count"</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
-        <span class="s2">"body"</span><span class="o">:</span> <span class="s2">""</span><span class="p">,</span>
         <span class="s2">"identifier"</span><span class="o">:</span> <span class="s2">"4fd1551c3a5628f795d645394bfcd0a5442e4e7ae60ad1f163424bdeb8420df4"</span><span class="p">,</span>
+        <span class="s2">"title"</span><span class="o">:</span> <span class="s2">"japanese_file.docx"</span><span class="p">,</span>
+        <span class="s2">"lc_src"</span><span class="o">:</span> <span class="s2">"en"</span><span class="p">,</span>
+        <span class="s2">"type"</span><span class="o">:</span> <span class="s2">"file"</span><span class="p">,</span>
         <span class="s2">"eta"</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
         <span class="s2">"currency"</span><span class="o">:</span> <span class="s2">"USD"</span><span class="p">,</span>
         <span class="s2">"credits"</span><span class="o">:</span> <span class="s2">"0.00"</span><span class="p">,</span>
-        <span class="s2">"lc_src"</span><span class="o">:</span> <span class="s2">"en"</span>
+        <span class="s2">"unit_count"</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="s2">"body"</span><span class="o">:</span> <span class="s2">""</span><span class="p">,</span>
+        <span class="s2">"images"</span><span class="o">:</span> <span class="p">[</span>
+
+        <span class="p">]</span>
       <span class="p">},</span>
       <span class="s2">"job_1"</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">"type"</span><span class="o">:</span> <span class="s2">"file"</span><span class="p">,</span>
-        <span class="s2">"images"</span><span class="o">:</span> <span class="p">[</span>
-
-        <span class="p">],</span>
-        <span class="s2">"title"</span><span class="o">:</span> <span class="s2">"video_on_demand.txt"</span><span class="p">,</span>
-        <span class="s2">"unit_count"</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
-        <span class="s2">"body"</span><span class="o">:</span> <span class="s2">""</span><span class="p">,</span>
         <span class="s2">"identifier"</span><span class="o">:</span> <span class="s2">"49427e41a1b6cefd7444b0d27ec165e7481658791885e71b7602c6babfc80b77"</span><span class="p">,</span>
+        <span class="s2">"title"</span><span class="o">:</span> <span class="s2">"video_on_demand.txt"</span><span class="p">,</span>
+        <span class="s2">"lc_src"</span><span class="o">:</span> <span class="s2">"en"</span><span class="p">,</span>
+        <span class="s2">"type"</span><span class="o">:</span> <span class="s2">"file"</span><span class="p">,</span>
         <span class="s2">"eta"</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
         <span class="s2">"currency"</span><span class="o">:</span> <span class="s2">"USD"</span><span class="p">,</span>
         <span class="s2">"credits"</span><span class="o">:</span> <span class="s2">"0.00"</span><span class="p">,</span>
-        <span class="s2">"lc_src"</span><span class="o">:</span> <span class="s2">"en"</span>
+        <span class="s2">"unit_count"</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="s2">"body"</span><span class="o">:</span> <span class="s2">""</span><span class="p">,</span>
+        <span class="s2">"images"</span><span class="o">:</span> <span class="p">[</span>
+
+        <span class="p">]</span>
       <span class="p">}</span>
     <span class="p">}</span>
   <span class="p">}</span>

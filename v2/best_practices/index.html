@@ -62,8 +62,7 @@
 
 <p>The Gengo API, like many others, relies on a system of API keys to sign and authenticate requests with. However, in most cases API keys as a system are less than ideal. Enter Gengo Passport, the simplest way to get users of your application authenticated with Gengo:</p>
 
-<pre class="highlight">
-    <code class="language-javascript"><span class="kd">var</span> <span class="nx">passport</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">MyGengoPassport</span><span class="p">({</span>
+<pre><code class="language-javascript"><span class="kd">var</span> <span class="nx">passport</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">MyGengoPassport</span><span class="p">({</span>
     <span class="c1">// Your application name</span>
     <span class="nx">appName</span><span class="o">:</span> <span class="s1">'myWork'</span><span class="p">,</span>
 
@@ -78,8 +77,7 @@
         <span class="c1">// data.public_key</span>
         <span class="c1">// data.private_key</span>
     <span class="p">}</span>
-<span class="p">});</span></code>
-</pre>
+<span class="p">});</span></code></pre>
 
 <p>All that’s required to use this is to supply your application name, and users can be automatically taken through a process that authorizes your application to use their API keys. You’ll need to store them yourself for later queries, but otherwise it’s a simple one-step process that lets users hit the ground running on your application!</p>
 

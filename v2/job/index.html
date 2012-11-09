@@ -87,20 +87,19 @@
 </dd>
 </dl><p><strong>Example call</strong></p>
 
-<pre><code># -*- coding: utf-8 -*-
-#!/usr/bin/python
-from mygengo import MyGengo
+<pre><code class="language-python"><span class="c"># -*- coding: utf-8 -*-</span>
+<span class="c">#!/usr/bin/python</span>
+<span class="kn">from</span> <span class="nn">mygengo</span> <span class="kn">import</span> <span class="n">MyGengo</span>
 
-# Get an instance of MyGengo to work with...
-gengo = MyGengo(
-    public_key = 'your_public_key',
-    private_key = 'your_private_key',
-    sandbox = True, # possibly false, depending on your dev needs )
+<span class="c"># Get an instance of MyGengo to work with...</span>
+<span class="n">gengo</span> <span class="o">=</span> <span class="n">MyGengo</span><span class="p">(</span>
+    <span class="n">public_key</span><span class="o">=</span><span class="s">'your_public_key'</span><span class="p">,</span>
+    <span class="n">private_key</span><span class="o">=</span><span class="s">'your_private_key'</span><span class="p">,</span>
+    <span class="n">sandbox</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="c"># possibly false, depending on your dev needs)</span>
 
-# Get the job in question; pre_mt set to 1 will give you a machine translation
-# if the human translation isn't available yet. ;)
-gengo.getTranslationJob(id = 42, pre_mt = 1)
-</code></pre>
+<span class="c"># Get the job in question; pre_mt set to 1 will give you a machine translation</span>
+<span class="c"># if the human translation isn't available yet. ;)</span>
+<span class="n">gengo</span><span class="o">.</span><span class="n">getTranslationJob</span><span class="p">(</span><span class="nb">id</span> <span class="o">=</span> <span class="mi">42</span><span class="p">,</span> <span class="n">pre_mt</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span></code></pre>
 
 <p><strong>Response</strong></p>
 
@@ -110,19 +109,19 @@ gengo.getTranslationJob(id = 42, pre_mt = 1)
   <span class="s2">"opstat"</span><span class="o">:</span> <span class="s2">"ok"</span><span class="p">,</span>
   <span class="s2">"response"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"job"</span><span class="o">:</span> <span class="p">{</span>
-      <span class="s2">"body_src"</span><span class="o">:</span> <span class="s2">"plop!"</span><span class="p">,</span>
       <span class="s2">"job_id"</span><span class="o">:</span> <span class="s2">"384985"</span><span class="p">,</span>
-      <span class="s2">"lc_tgt"</span><span class="o">:</span> <span class="s2">"ja"</span><span class="p">,</span>
-      <span class="s2">"custom_data"</span><span class="o">:</span> <span class="s2">"1234567"</span><span class="p">,</span>
-      <span class="s2">"auto_approve"</span><span class="o">:</span> <span class="s2">"0"</span><span class="p">,</span>
-      <span class="s2">"tier"</span><span class="o">:</span> <span class="s2">"standard"</span><span class="p">,</span>
-      <span class="s2">"unit_count"</span><span class="o">:</span> <span class="s2">"1"</span><span class="p">,</span>
       <span class="s2">"eta"</span><span class="o">:</span> <span class="s2">""</span><span class="p">,</span>
-      <span class="s2">"slug"</span><span class="o">:</span> <span class="s2">"APIJobtest"</span><span class="p">,</span>
-      <span class="s2">"ctime"</span><span class="o">:</span> <span class="mi">1313475693</span><span class="p">,</span>
+      <span class="s2">"lc_tgt"</span><span class="o">:</span> <span class="s2">"ja"</span><span class="p">,</span>
+      <span class="s2">"lc_src"</span><span class="o">:</span> <span class="s2">"en"</span><span class="p">,</span>
+      <span class="s2">"body_src"</span><span class="o">:</span> <span class="s2">"plop!"</span><span class="p">,</span>
       <span class="s2">"credits"</span><span class="o">:</span> <span class="s2">"0.05"</span><span class="p">,</span>
+      <span class="s2">"unit_count"</span><span class="o">:</span> <span class="s2">"1"</span><span class="p">,</span>
       <span class="s2">"status"</span><span class="o">:</span> <span class="s2">"available"</span><span class="p">,</span>
-      <span class="s2">"lc_src"</span><span class="o">:</span> <span class="s2">"en"</span>
+      <span class="s2">"tier"</span><span class="o">:</span> <span class="s2">"standard"</span><span class="p">,</span>
+      <span class="s2">"custom_data"</span><span class="o">:</span> <span class="s2">"1234567"</span><span class="p">,</span>
+      <span class="s2">"ctime"</span><span class="o">:</span> <span class="mi">1313475693</span><span class="p">,</span>
+      <span class="s2">"slug"</span><span class="o">:</span> <span class="s2">"APIJobtest"</span><span class="p">,</span>
+      <span class="s2">"auto_approve"</span><span class="o">:</span> <span class="s2">"0"</span>
     <span class="p">}</span>
   <span class="p">}</span>
 <span class="p">}</span></code></pre>
@@ -179,31 +178,30 @@ Other parameters
 </dd>
 </dl><p><strong>Example call</strong></p>
 
-<pre><code># -*- coding: utf-8 -*-
-#!/usr/bin/python
-from mygengo import MyGengo
+<pre><code class="language-python"><span class="c"># -*- coding: utf-8 -*-</span>
+<span class="c">#!/usr/bin/python</span>
+<span class="kn">from</span> <span class="nn">mygengo</span> <span class="kn">import</span> <span class="n">MyGengo</span>
 
-# Get an instance of MyGengo to work with...
-gengo = MyGengo(
-    public_key = 'your_public_key',
-    private_key = 'your_private_key',
-    sandbox = True, # possibly false, depending on your dev needs
-    )
+<span class="c"># Get an instance of MyGengo to work with...</span>
+<span class="n">gengo</span> <span class="o">=</span> <span class="n">MyGengo</span><span class="p">(</span>
+    <span class="n">public_key</span><span class="o">=</span><span class="s">'your_public_key'</span><span class="p">,</span>
+    <span class="n">private_key</span><span class="o">=</span><span class="s">'your_private_key'</span><span class="p">,</span>
+    <span class="n">sandbox</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="c"># possibly false, depending on your dev needs</span>
+    <span class="p">)</span>
 
-# Update a job that has an id of 42, and reject it, cite the reason,
-# add a comment, and throw up some captcha stuff. See the docs for
-# more information pertaining to this method, it can do quite a bit. :)
+<span class="c"># Update a job that has an id of 42, and reject it, cite the reason,</span>
+<span class="c"># add a comment, and throw up some captcha stuff. See the docs for</span>
+<span class="c"># more information pertaining to this method, it can do quite a bit. :)</span>
 
-gengo.updateTranslationJob(
-    id = 42,
-    action = {
-        'action': 'reject',
-        'reason': 'quality',
-        'comment': 'My grandmother does better.',
-        'captcha': 'bert'
-    }
-)
-</code></pre>
+<span class="n">gengo</span><span class="o">.</span><span class="n">updateTranslationJob</span><span class="p">(</span>
+    <span class="nb">id</span> <span class="o">=</span> <span class="mi">42</span><span class="p">,</span>
+    <span class="n">action</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s">'action'</span><span class="p">:</span> <span class="s">'reject'</span><span class="p">,</span>
+        <span class="s">'reason'</span><span class="p">:</span> <span class="s">'quality'</span><span class="p">,</span>
+        <span class="s">'comment'</span><span class="p">:</span> <span class="s">'My grandmother does better.'</span><span class="p">,</span>
+        <span class="s">'captcha'</span><span class="p">:</span> <span class="s">'bert'</span>
+    <span class="p">}</span>
+<span class="p">)</span></code></pre>
 
 <p><strong>Response</strong></p>
 
@@ -234,20 +232,19 @@ gengo.updateTranslationJob(
 </dd>
 </dl><p><strong>Example call</strong></p>
 
-<pre><code># -*- coding: utf-8 -*-
-#!/usr/bin/python
-from mygengo import MyGengo
+<pre><code class="language-python"><span class="c"># -*- coding: utf-8 -*-</span>
+<span class="c">#!/usr/bin/python</span>
+<span class="kn">from</span> <span class="nn">mygengo</span> <span class="kn">import</span> <span class="n">MyGengo</span>
 
-# Get an instance of MyGengo to work with...
-gengo = MyGengo(
-    public_key = 'your_public_key',
-    private_key = 'your_private_key',
-    sandbox = True, # possibly false, depending on your dev needs )
+<span class="c"># Get an instance of MyGengo to work with...</span>
+<span class="n">gengo</span> <span class="o">=</span> <span class="n">MyGengo</span><span class="p">(</span>
+    <span class="n">public_key</span><span class="o">=</span><span class="s">'your_public_key'</span><span class="p">,</span>
+    <span class="n">private_key</span><span class="o">=</span><span class="s">'your_private_key'</span><span class="p">,</span>
+    <span class="n">sandbox</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="c"># possibly false, depending on your dev needs )</span>
 
-# Get the job in question; pre_mt set to 1 will give you a machine translation
-# if the human translation isn't available yet. ;)
-gengo.deleteTranslationJob(id = 42)
-</code></pre>
+<span class="c"># Get the job in question; pre_mt set to 1 will give you a machine translation</span>
+<span class="c"># if the human translation isn't available yet. ;)</span>
+<span class="n">gengo</span><span class="o">.</span><span class="n">deleteTranslationJob</span><span class="p">(</span><span class="nb">id</span> <span class="o">=</span> <span class="mi">42</span><span class="p">)</span></code></pre>
 
 <p><strong>Response</strong></p>
 
@@ -284,20 +281,19 @@ gengo.deleteTranslationJob(id = 42)
 
 <p><strong>Example call</strong></p>
 
-<pre><code># -*- coding: utf-8 -*-
-#!/usr/bin/python
-from mygengo import MyGengo
+<pre><code class="language-python"><span class="c"># -*- coding: utf-8 -*-</span>
+<span class="c">#!/usr/bin/python</span>
+<span class="kn">from</span> <span class="nn">mygengo</span> <span class="kn">import</span> <span class="n">MyGengo</span>
 
-# Get an instance of MyGengo to work with...
-gengo = MyGengo(
-    public_key = 'your_public_key',
-    private_key = 'your_private_key',
-    sandbox = True, # possibly false, depending on your dev needs
-    )
+<span class="c"># Get an instance of MyGengo to work with...</span>
+<span class="n">gengo</span> <span class="o">=</span> <span class="n">MyGengo</span><span class="p">(</span>
+    <span class="n">public_key</span><span class="o">=</span><span class="s">'your_public_key'</span><span class="p">,</span>
+    <span class="n">private_key</span><span class="o">=</span><span class="s">'your_private_key'</span><span class="p">,</span>
+    <span class="n">sandbox</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="c"># possibly false, depending on your dev needs</span>
+    <span class="p">)</span>
 
-# This method is a bit tricky; you can call it like below, but how you treat # the returned data is very much up to you.
-gengo.getTranslationJobPreview(id = 42)
-</code></pre>
+<span class="c"># This method is a bit tricky; you can call it like below, but how you treat # the returned data is very much up to you.</span>
+<span class="n">gengo</span><span class="o">.</span><span class="n">getTranslationJobPreview</span><span class="p">(</span><span class="nb">id</span> <span class="o">=</span> <span class="mi">42</span><span class="p">)</span></code></pre>
 
 <h2 id="revisions-get">Revisions (GET)</h2>
 
@@ -317,20 +313,19 @@ gengo.getTranslationJobPreview(id = 42)
 </dd>
 </dl><p><strong>Example call</strong></p>
 
-<pre><code># -*- coding: utf-8 -*-
-#!/usr/bin/python
-from mygengo import MyGengo
+<pre><code class="language-python"><span class="c"># -*- coding: utf-8 -*-</span>
+<span class="c">#!/usr/bin/python</span>
+<span class="kn">from</span> <span class="nn">mygengo</span> <span class="kn">import</span> <span class="n">MyGengo</span>
 
-# Get an instance of MyGengo to work with...
-gengo = MyGengo(
-    public_key = 'your_public_key',
-    private_key = 'your_private_key',
-    sandbox = True, # possibly false, depending on your dev needs
-    )
+<span class="c"># Get an instance of MyGengo to work with...</span>
+<span class="n">gengo</span> <span class="o">=</span> <span class="n">MyGengo</span><span class="p">(</span>
+    <span class="n">public_key</span><span class="o">=</span><span class="s">'your_public_key'</span><span class="p">,</span>
+    <span class="n">private_key</span><span class="o">=</span><span class="s">'your_private_key'</span><span class="p">,</span>
+    <span class="n">sandbox</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="c"># possibly false, depending on your dev needs</span>
+    <span class="p">)</span>
 
-# Get every revision on a job. Returns a data set, iterate if need be!
-print gengo.getTranslationJobRevisions(id = 42)
-</code></pre>
+<span class="c"># Get every revision on a job. Returns a data set, iterate if need be!</span>
+<span class="k">print</span> <span class="n">gengo</span><span class="o">.</span><span class="n">getTranslationJobRevisions</span><span class="p">(</span><span class="nb">id</span> <span class="o">=</span> <span class="mi">42</span><span class="p">)</span></code></pre>
 
 <p><strong>Response</strong></p>
 
@@ -376,20 +371,19 @@ print gengo.getTranslationJobRevisions(id = 42)
 </dd>
 </dl><p><strong>Example call</strong></p>
 
-<pre><code># -*- coding: utf-8 -*-
-#!/usr/bin/python
-from mygengo import MyGengo
+<pre><code class="language-python"><span class="c"># -*- coding: utf-8 -*-</span>
+<span class="c">#!/usr/bin/python</span>
+<span class="kn">from</span> <span class="nn">mygengo</span> <span class="kn">import</span> <span class="n">MyGengo</span>
 
-# Get an instance of MyGengo to work with...
-gengo = MyGengo(
-    public_key = 'your_public_key',
-    private_key = 'your_private_key',
-    sandbox = True, # possibly false, depending on your dev needs
-    )
+<span class="c"># Get an instance of MyGengo to work with...</span>
+<span class="n">gengo</span> <span class="o">=</span> <span class="n">MyGengo</span><span class="p">(</span>
+    <span class="n">public_key</span><span class="o">=</span><span class="s">'your_public_key'</span><span class="p">,</span>
+    <span class="n">private_key</span><span class="o">=</span><span class="s">'your_private_key'</span><span class="p">,</span>
+    <span class="n">sandbox</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="c"># possibly false, depending on your dev needs</span>
+    <span class="p">)</span>
 
-# Get specific revision
-print gengo.getTranslationJobRevision(id = 42, rev_id = 1)
-</code></pre>
+<span class="c"># Get specific revision</span>
+<span class="k">print</span> <span class="n">gengo</span><span class="o">.</span><span class="n">getTranslationJobRevision</span><span class="p">(</span><span class="nb">id</span> <span class="o">=</span> <span class="mi">42</span><span class="p">,</span> <span class="n">rev_id</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span></code></pre>
 
 <p><strong>Response</strong></p>
 
@@ -425,20 +419,19 @@ print gengo.getTranslationJobRevision(id = 42, rev_id = 1)
 </dd>
 </dl><p><strong>Example call</strong></p>
 
-<pre><code># -*- coding: utf-8 -*-
-#!/usr/bin/python
-from mygengo import MyGengo
+<pre><code class="language-python"><span class="c"># -*- coding: utf-8 -*-</span>
+<span class="c">#!/usr/bin/python</span>
+<span class="kn">from</span> <span class="nn">mygengo</span> <span class="kn">import</span> <span class="n">MyGengo</span>
 
-# Get an instance of MyGengo to work with...
-gengo = MyGengo(
-    public_key = 'your_public_key',
-    private_key = 'your_private_key',
-    sandbox = True, # possibly false, depending on your dev needs
-    )
+<span class="c"># Get an instance of MyGengo to work with...</span>
+<span class="n">gengo</span> <span class="o">=</span> <span class="n">MyGengo</span><span class="p">(</span>
+    <span class="n">public_key</span><span class="o">=</span><span class="s">'your_public_key'</span><span class="p">,</span>
+    <span class="n">private_key</span><span class="o">=</span><span class="s">'your_private_key'</span><span class="p">,</span>
+    <span class="n">sandbox</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="c"># possibly false, depending on your dev needs</span>
+    <span class="p">)</span>
 
-# Get feedback given on a job
-print gengo.getTranslationJobFeedback(id = 42)
-</code></pre>
+<span class="c"># Get feedback given on a job</span>
+<span class="k">print</span> <span class="n">gengo</span><span class="o">.</span><span class="n">getTranslationJobFeedback</span><span class="p">(</span><span class="nb">id</span> <span class="o">=</span> <span class="mi">42</span><span class="p">)</span></code></pre>
 
 <p><strong>Response</strong></p>
 
@@ -474,21 +467,20 @@ print gengo.getTranslationJobFeedback(id = 42)
   <dd>Possible values for “author” are “translator”, “customer”, and “senior translator”.</dd>
 </dl><p><strong>Example call</strong></p>
 
-<pre><code># -*- coding: utf-8 -*-
-#!/usr/bin/python
-from mygengo import MyGengo
+<pre><code class="language-python"><span class="c"># -*- coding: utf-8 -*-</span>
+<span class="c">#!/usr/bin/python</span>
+<span class="kn">from</span> <span class="nn">mygengo</span> <span class="kn">import</span> <span class="n">MyGengo</span>
 
-# Get an instance of MyGengo to work with...
-gengo = MyGengo(
-    public_key = 'your_public_key',
-    private_key = 'your_private_key',
-    sandbox = True, # possibly false, depending on your dev needs
-    )
+<span class="c"># Get an instance of MyGengo to work with...</span>
+<span class="n">gengo</span> <span class="o">=</span> <span class="n">MyGengo</span><span class="p">(</span>
+    <span class="n">public_key</span><span class="o">=</span><span class="s">'your_public_key'</span><span class="p">,</span>
+    <span class="n">private_key</span><span class="o">=</span><span class="s">'your_private_key'</span><span class="p">,</span>
+    <span class="n">sandbox</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="c"># possibly false, depending on your dev needs</span>
+    <span class="p">)</span>
 
-# Get all the comments on a specific job.
-# Note that this returns a data set, so while we just print it below, you'll # inevitably want to iterate over it and such.
-print gengo.getTranslationJobComments(id = 42)
-</code></pre>
+<span class="c"># Get all the comments on a specific job.</span>
+<span class="c"># Note that this returns a data set, so while we just print it below, you'll # inevitably want to iterate over it and such.</span>
+<span class="k">print</span> <span class="n">gengo</span><span class="o">.</span><span class="n">getTranslationJobComments</span><span class="p">(</span><span class="nb">id</span> <span class="o">=</span> <span class="mi">42</span><span class="p">)</span></code></pre>
 
 <p><strong>Response</strong></p>
 
@@ -536,25 +528,24 @@ print gengo.getTranslationJobComments(id = 42)
 </dd>
 </dl><p><strong>Example call</strong></p>
 
-<pre><code># -*- coding: utf-8 -*-
-#!/usr/bin/python
-from mygengo import MyGengo
+<pre><code class="language-python"><span class="c"># -*- coding: utf-8 -*-</span>
+<span class="c">#!/usr/bin/python</span>
+<span class="kn">from</span> <span class="nn">mygengo</span> <span class="kn">import</span> <span class="n">MyGengo</span>
 
-# Get an instance of MyGengo to work with...
-gengo = MyGengo(
-    public_key = 'your_public_key',
-    private_key = 'your_private_key',
-    sandbox = True, # possibly false, depending on your dev needs
-    )
+<span class="c"># Get an instance of MyGengo to work with...</span>
+<span class="n">gengo</span> <span class="o">=</span> <span class="n">MyGengo</span><span class="p">(</span>
+    <span class="n">public_key</span><span class="o">=</span><span class="s">'your_public_key'</span><span class="p">,</span>
+    <span class="n">private_key</span><span class="o">=</span><span class="s">'your_private_key'</span><span class="p">,</span>
+    <span class="n">sandbox</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="c"># possibly false, depending on your dev needs</span>
+    <span class="p">)</span>
 
-# Post a comment on a specific job; perhaps you have an update for the translator # or something of the sort.
-gengo.postTranslationJobComment(
-    id = 42,
-    comment = {
-        'body': 'I love lamp!'
-    }
-)
-</code></pre>
+<span class="c"># Post a comment on a specific job; perhaps you have an update for the translator # or something of the sort.</span>
+<span class="n">gengo</span><span class="o">.</span><span class="n">postTranslationJobComment</span><span class="p">(</span>
+    <span class="nb">id</span> <span class="o">=</span> <span class="mi">42</span><span class="p">,</span>
+    <span class="n">comment</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s">'body'</span><span class="p">:</span> <span class="s">'I love lamp!'</span>
+    <span class="p">}</span>
+<span class="p">)</span></code></pre>
 
 <p><strong>Response</strong></p>
 

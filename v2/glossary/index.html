@@ -79,18 +79,17 @@
 </dd>
 </dl><p><strong>Example call</strong></p>
 
-<pre><code>#!/usr/bin/env ruby
+<pre><code class="language-ruby"><span class="c1">#!/usr/bin/env ruby</span>
 
-require 'mygengo'
+<span class="nb">require</span> <span class="s1">'mygengo'</span>
 
-@mygengo_client = MyGengo::API.new({
-    :public_key =&gt; 'pub_key',
-    :private_key =&gt; 'priv_key',
-    :sandbox =&gt; false,
-})
+<span class="vi">@mygengo_client</span> <span class="o">=</span> <span class="no">MyGengo</span><span class="o">::</span><span class="no">API</span><span class="o">.</span><span class="n">new</span><span class="p">({</span>
+    <span class="ss">:public_key</span> <span class="o">=&gt;</span> <span class="s1">'pub_key'</span><span class="p">,</span>
+    <span class="ss">:private_key</span> <span class="o">=&gt;</span> <span class="s1">'priv_key'</span><span class="p">,</span>
+    <span class="ss">:sandbox</span> <span class="o">=&gt;</span> <span class="kp">false</span><span class="p">,</span>
+<span class="p">})</span>
 
-puts @mygengo_client.getGlossaryList
-</code></pre>
+<span class="nb">puts</span> <span class="vi">@mygengo_client</span><span class="o">.</span><span class="n">getGlossaryList</span></code></pre>
 
 <p><strong>Response</strong></p>
 
@@ -100,22 +99,22 @@ puts @mygengo_client.getGlossaryList
   <span class="s2">"opstat"</span><span class="o">:</span> <span class="s2">"ok"</span><span class="p">,</span>
   <span class="s2">"response"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
-      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">115</span><span class="p">,</span>
-      <span class="s2">"source_language_id"</span><span class="o">:</span> <span class="mi">8</span><span class="p">,</span>
-      <span class="s2">"description"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
-      <span class="s2">"unit_count"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
+      <span class="s2">"title"</span><span class="o">:</span> <span class="s2">"1342666627_50110_en_ja_glossary.csv"</span><span class="p">,</span>
+      <span class="s2">"customer_user_id"</span><span class="o">:</span> <span class="mi">50110</span><span class="p">,</span>
       <span class="s2">"is_public"</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+      <span class="s2">"unit_count"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
+      <span class="s2">"source_language_id"</span><span class="o">:</span> <span class="mi">8</span><span class="p">,</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">115</span><span class="p">,</span>
       <span class="s2">"target_languages"</span><span class="o">:</span> <span class="p">[</span>
         <span class="p">[</span>
           <span class="mi">14</span><span class="p">,</span>
           <span class="s2">"ja"</span>
         <span class="p">]</span>
       <span class="p">],</span>
-      <span class="s2">"title"</span><span class="o">:</span> <span class="s2">"1342666627_50110_en_ja_glossary.csv"</span><span class="p">,</span>
-      <span class="s2">"customer_user_id"</span><span class="o">:</span> <span class="mi">50110</span><span class="p">,</span>
-      <span class="s2">"source_language_code"</span><span class="o">:</span> <span class="s2">"en-US"</span><span class="p">,</span>
+      <span class="s2">"status"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
       <span class="s2">"ctime"</span><span class="o">:</span> <span class="s2">"2012-07-19 02:57:10.526565"</span><span class="p">,</span>
-      <span class="s2">"status"</span><span class="o">:</span> <span class="mi">1</span>
+      <span class="s2">"source_language_code"</span><span class="o">:</span> <span class="s2">"en-US"</span><span class="p">,</span>
+      <span class="s2">"description"</span><span class="o">:</span> <span class="kc">null</span>
     <span class="p">}</span>
   <span class="p">]</span>
 <span class="p">}</span></code></pre>
@@ -139,18 +138,17 @@ puts @mygengo_client.getGlossaryList
 </dd>
 </dl><p><strong>Example call</strong></p>
 
-<pre><code>#!/usr/bin/env ruby
+<pre><code class="language-ruby"><span class="c1">#!/usr/bin/env ruby</span>
 
-require 'mygengo'
+<span class="nb">require</span> <span class="s1">'mygengo'</span>
 
-@mygengo_client = MyGengo::API.new({
-    :public_key =&gt; 'pub_key',
-    :private_key =&gt; 'priv_key',
-    :sandbox =&gt; false,
-})
+<span class="vi">@mygengo_client</span> <span class="o">=</span> <span class="no">MyGengo</span><span class="o">::</span><span class="no">API</span><span class="o">.</span><span class="n">new</span><span class="p">({</span>
+    <span class="ss">:public_key</span> <span class="o">=&gt;</span> <span class="s1">'pub_key'</span><span class="p">,</span>
+    <span class="ss">:private_key</span> <span class="o">=&gt;</span> <span class="s1">'priv_key'</span><span class="p">,</span>
+    <span class="ss">:sandbox</span> <span class="o">=&gt;</span> <span class="kp">false</span><span class="p">,</span>
+<span class="p">})</span>
 
-puts @mygengo_client.getGlossary(:id =&gt; @glossary_id)
-</code></pre>
+<span class="nb">puts</span> <span class="vi">@mygengo_client</span><span class="o">.</span><span class="n">getGlossary</span><span class="p">(</span><span class="ss">:id</span> <span class="o">=&gt;</span> <span class="vi">@glossary_id</span><span class="p">)</span></code></pre>
 
 <p><strong>Response</strong></p>
 
@@ -159,22 +157,22 @@ puts @mygengo_client.getGlossary(:id =&gt; @glossary_id)
 <pre class="highlight"><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"opstat"</span><span class="o">:</span> <span class="s2">"ok"</span><span class="p">,</span>
   <span class="s2">"response"</span><span class="o">:</span> <span class="p">{</span>
-    <span class="s2">"id"</span><span class="o">:</span> <span class="mi">115</span><span class="p">,</span>
-    <span class="s2">"source_language_id"</span><span class="o">:</span> <span class="mi">8</span><span class="p">,</span>
-    <span class="s2">"description"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
-    <span class="s2">"unit_count"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
+    <span class="s2">"title"</span><span class="o">:</span> <span class="s2">"1342666627_50110_en_ja_glossary.csv"</span><span class="p">,</span>
+    <span class="s2">"customer_user_id"</span><span class="o">:</span> <span class="mi">50110</span><span class="p">,</span>
     <span class="s2">"is_public"</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="s2">"unit_count"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
+    <span class="s2">"source_language_id"</span><span class="o">:</span> <span class="mi">8</span><span class="p">,</span>
+    <span class="s2">"id"</span><span class="o">:</span> <span class="mi">115</span><span class="p">,</span>
     <span class="s2">"target_languages"</span><span class="o">:</span> <span class="p">[</span>
       <span class="p">[</span>
         <span class="mi">14</span><span class="p">,</span>
         <span class="s2">"ja"</span>
       <span class="p">]</span>
     <span class="p">],</span>
-    <span class="s2">"title"</span><span class="o">:</span> <span class="s2">"1342666627_50110_en_ja_glossary.csv"</span><span class="p">,</span>
-    <span class="s2">"customer_user_id"</span><span class="o">:</span> <span class="mi">50110</span><span class="p">,</span>
-    <span class="s2">"source_language_code"</span><span class="o">:</span> <span class="s2">"en-US"</span><span class="p">,</span>
+    <span class="s2">"status"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
     <span class="s2">"ctime"</span><span class="o">:</span> <span class="s2">"2012-07-19 02:57:10.526565"</span><span class="p">,</span>
-    <span class="s2">"status"</span><span class="o">:</span> <span class="mi">1</span>
+    <span class="s2">"source_language_code"</span><span class="o">:</span> <span class="s2">"en-US"</span><span class="p">,</span>
+    <span class="s2">"description"</span><span class="o">:</span> <span class="kc">null</span>
   <span class="p">}</span>
 <span class="p">}</span></code></pre>
       </div>

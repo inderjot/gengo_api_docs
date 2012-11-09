@@ -79,20 +79,19 @@
 </dd>
 </dl><p><strong>Example call</strong></p>
 
-<pre><code># -*- coding: utf-8 -*-
-#!/usr/bin/python
+<pre><code class="language-python"><span class="c"># -*- coding: utf-8 -*-</span>
+<span class="c">#!/usr/bin/python</span>
 
-from mygengo import MyGengo
+<span class="kn">from</span> <span class="nn">mygengo</span> <span class="kn">import</span> <span class="n">MyGengo</span>
 
-# Get an instance of MyGengo to work with...
-gengo = MyGengo(
-    public_key = 'xpU@jqEzqnXCb#OOsAeR4z49IX|j}#dwyliMp2RIq1vM9OIKq-K#{mg~sVBUX^91',
-    private_key = '~Q9hI|sV(I^iX7|8WQ=l5=CvUmEWx3[=c5ms09|$JIuT-$aiTIYkS4~1F7^C9dw3',
-    sandbox = False, # possibly false, depending on your dev needs )
+<span class="c"># Get an instance of MyGengo to work with...</span>
+<span class="n">gengo</span> <span class="o">=</span> <span class="n">MyGengo</span><span class="p">(</span>
+    <span class="n">public_key</span><span class="o">=</span><span class="s">'your_public_key'</span><span class="p">,</span>
+    <span class="n">private_key</span><span class="o">=</span><span class="s">'your_private_key'</span><span class="p">,</span>
+    <span class="n">sandbox</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="c"># possibly false, depending on your dev needs )</span>
 
-# Print the account stats...
-print gengo.getAccountStats()
-</code></pre>
+<span class="c"># Print the account stats...</span>
+<span class="k">print</span> <span class="n">gengo</span><span class="o">.</span><span class="n">getAccountStats</span><span class="p">()</span></code></pre>
 
 <p><strong>Response</strong></p>
 
@@ -125,20 +124,19 @@ print gengo.getAccountStats()
 </dd>
 </dl><p><strong>Example call</strong></p>
 
-<pre><code># -*- coding: utf-8 -*-
-#!/usr/bin/python
-from mygengo import MyGengo
+<pre><code class="language-python"><span class="c"># -*- coding: utf-8 -*-</span>
+<span class="c">#!/usr/bin/python</span>
+<span class="kn">from</span> <span class="nn">mygengo</span> <span class="kn">import</span> <span class="n">MyGengo</span>
 
-# Get an instance of MyGengo to work with...
-gengo = MyGengo(
-    public_key = 'xpU@jqEzqnXCb#OOsAeR4z49IX|j}#dwyliMp2RIq1vM9OIKq-K#{mg~sVBUX^91',
-    private_key = '~Q9hI|sV(I^iX7|8WQ=l5=CvUmEWx3[=c5ms09|$JIuT-$aiTIYkS4~1F7^C9dw3',
-    sandbox = False, # possibly false, depending on your dev needs
-    debug = True )
+<span class="c"># Get an instance of MyGengo to work with...</span>
+<span class="n">gengo</span> <span class="o">=</span> <span class="n">MyGengo</span><span class="p">(</span>
+    <span class="n">public_key</span><span class="o">=</span><span class="s">'your_public_key'</span><span class="p">,</span>
+    <span class="n">private_key</span><span class="o">=</span><span class="s">'your_private_key'</span><span class="p">,</span>
+    <span class="n">sandbox</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="c"># possibly false, depending on your dev needs</span>
+    <span class="n">debug</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
 
-# Retrieve and print the account balance. Properties ahoy!
-print gengo.getAccountBalance()['response']['credits']
-</code></pre>
+<span class="c"># Retrieve and print the account balance. Properties ahoy!</span>
+<span class="k">print</span> <span class="n">gengo</span><span class="o">.</span><span class="n">getAccountBalance</span><span class="p">()[</span><span class="s">'response'</span><span class="p">][</span><span class="s">'credits'</span><span class="p">]</span></code></pre>
 
 <p><strong>Response</strong></p>
 

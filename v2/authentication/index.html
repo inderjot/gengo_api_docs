@@ -73,30 +73,31 @@
   <li>Append the value of this hash to the argument list as a parameter named api_sig</li>
 </ol><h2 id="example-api-authenticated-call">Example API authenticated call</h2>
 
-<pre><code>// submit a comment for job ID 20
+<pre><code class="language-php"><span class="cp">&lt;?php</span>
+<span class="c1">// submit a comment for job ID 20</span>
 
-$params = array('body' =&gt; 'please use British spelling');
+<span class="nv">$params</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span><span class="s1">'body'</span> <span class="o">=&gt;</span> <span class="s1">'please use British spelling'</span><span class="p">);</span>
 
-// curl can't send nested arrays, only straight key-value pairs,
-// so 'data' must be flattened; we use json_encode()
-$params = array(
-    'api_key' =&gt; 'kZ|G@SbBAjffh}!~%',
-    '_method' =&gt; 'put',
-    'data' =&gt; json_encode($params)
-    'ts' =&gt; time());
+<span class="c1">// curl can't send nested arrays, only straight key-value pairs,</span>
+<span class="c1">// so 'data' must be flattened; we use json_encode()</span>
+<span class="nv">$params</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+    <span class="s1">'api_key'</span> <span class="o">=&gt;</span> <span class="s1">'kZ|G@SbBAjffh}!~%'</span><span class="p">,</span>
+    <span class="s1">'_method'</span> <span class="o">=&gt;</span> <span class="s1">'put'</span><span class="p">,</span>
+    <span class="s1">'data'</span> <span class="o">=&gt;</span> <span class="nb">json_encode</span><span class="p">(</span><span class="nv">$params</span><span class="p">)</span>
+    <span class="s1">'ts'</span> <span class="o">=&gt;</span> <span class="nb">time</span><span class="p">());</span>
 
-// use your private_key to create an hmac
-$private_key = '$Z)YI=@ndYn@]zpu=AqOc=I}pGQZ';
-$hmac = hash_hmac('sha1', $params['ts'], $private_key);
-$params['api_sig'] = $hmac;
-$url = 'http://api.gengo.com/v1/translate/job/20/comment'
-$ch = curl_init();
-curl_setopt($ch, CURLOPT_URL, $url);
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-curl_setopt($ch, CURLOPT_POST, 1);
-curl_setopt($ch, CURLOPT_POSTFIELDS, $params);
-$response = curl_exect($ch); curl_close($ch);
-</code></pre>
+<span class="c1">// use your private_key to create an hmac</span>
+<span class="nv">$private_key</span> <span class="o">=</span> <span class="s1">'$Z)YI=@ndYn@]zpu=AqOc=I}pGQZ'</span><span class="p">;</span>
+<span class="nv">$hmac</span> <span class="o">=</span> <span class="nb">hash_hmac</span><span class="p">(</span><span class="s1">'sha1'</span><span class="p">,</span> <span class="nv">$params</span><span class="p">[</span><span class="s1">'ts'</span><span class="p">],</span> <span class="nv">$private_key</span><span class="p">);</span>
+<span class="nv">$params</span><span class="p">[</span><span class="s1">'api_sig'</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$hmac</span><span class="p">;</span>
+<span class="nv">$url</span> <span class="o">=</span> <span class="s1">'http://api.gengo.com/v1/translate/job/20/comment'</span>
+<span class="nv">$ch</span> <span class="o">=</span> <span class="nb">curl_init</span><span class="p">();</span>
+<span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$ch</span><span class="p">,</span> <span class="nx">CURLOPT_URL</span><span class="p">,</span> <span class="nv">$url</span><span class="p">);</span>
+<span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$ch</span><span class="p">,</span> <span class="nx">CURLOPT_RETURNTRANSFER</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+<span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$ch</span><span class="p">,</span> <span class="nx">CURLOPT_POST</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+<span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$ch</span><span class="p">,</span> <span class="nx">CURLOPT_POSTFIELDS</span><span class="p">,</span> <span class="nv">$params</span><span class="p">);</span>
+<span class="nv">$response</span> <span class="o">=</span> <span class="nx">curl_exect</span><span class="p">(</span><span class="nv">$ch</span><span class="p">);</span> <span class="nb">curl_close</span><span class="p">(</span><span class="nv">$ch</span><span class="p">);</span>
+<span class="cp">?&gt;</span><span class="x"></span></code></pre>
       </div>
 
       

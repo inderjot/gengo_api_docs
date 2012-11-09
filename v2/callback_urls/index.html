@@ -72,18 +72,17 @@
 
 <p>Parameters to callbacks are formatted in JSON and submitted with a POST call. For job-related notifications, a Job Payload will be POSTed inside a parameter named “job” as if it were a response. The following is an example of how a client might receive a callback submission for a job from Gengo:</p>
 
-<pre><code>&lt;?php
-if (isset($_POST['job']))
-    { $json_data = $_POST['job'];  }
-else
-    { $json_data = false; }
+<pre><code class="language-php"><span class="cp">&lt;?php</span>
+<span class="k">if</span> <span class="p">(</span><span class="nb">isset</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">[</span><span class="s1">'job'</span><span class="p">]))</span>
+    <span class="p">{</span> <span class="nv">$json_data</span> <span class="o">=</span> <span class="nv">$_POST</span><span class="p">[</span><span class="s1">'job'</span><span class="p">];</span>  <span class="p">}</span>
+<span class="k">else</span>
+    <span class="p">{</span> <span class="nv">$json_data</span> <span class="o">=</span> <span class="k">false</span><span class="p">;</span> <span class="p">}</span>
 
-if ($json_data)
-{
-    $data = json_decode($json_data);
-}
-?&gt;
-</code></pre>
+<span class="k">if</span> <span class="p">(</span><span class="nv">$json_data</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="nv">$data</span> <span class="o">=</span> <span class="nb">json_decode</span><span class="p">(</span><span class="nv">$json_data</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="cp">?&gt;</span><span class="x"></span></code></pre>
 
 <p>Comment-related notifications are sent to the same callback when a translator submits a comment for a job. The payload will be in a parameter named “comment”, and will look like this:</p>
 
@@ -102,27 +101,28 @@ if ($json_data)
 <em>String</em> of the custom data associated with the job (if any)</dd>
 </dl><p>Here’s an example of how a client might receive a callback submission for a job comment:</p>
 
-<pre><code>if (isset($_POST['comment']))
-    { $json_data = $_POST['comment'];  }
-else
-    { $json_data = false; }
+<pre><code class="language-php"><span class="cp">&lt;?php</span>
+<span class="k">if</span> <span class="p">(</span><span class="nb">isset</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">[</span><span class="s1">'comment'</span><span class="p">]))</span>
+    <span class="p">{</span> <span class="nv">$json_data</span> <span class="o">=</span> <span class="nv">$_POST</span><span class="p">[</span><span class="s1">'comment'</span><span class="p">];</span>  <span class="p">}</span>
+<span class="k">else</span>
+    <span class="p">{</span> <span class="nv">$json_data</span> <span class="o">=</span> <span class="k">false</span><span class="p">;</span> <span class="p">}</span>
 
-if ($json_data)
-{
-    $data = json_decode($json_data);
-    $comment = new stdClass();
+<span class="k">if</span> <span class="p">(</span><span class="nv">$json_data</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="nv">$data</span> <span class="o">=</span> <span class="nb">json_decode</span><span class="p">(</span><span class="nv">$json_data</span><span class="p">);</span>
+    <span class="nv">$comment</span> <span class="o">=</span> <span class="k">new</span> <span class="k">stdClass</span><span class="p">();</span>
 
-    // job id to which comment applies
-    $comment-&gt;job_id = $data-&gt;job_id;
+    <span class="c1">// job id to which comment applies</span>
+    <span class="nv">$comment</span><span class="o">-&gt;</span><span class="na">job_id</span> <span class="o">=</span> <span class="nv">$data</span><span class="o">-&gt;</span><span class="na">job_id</span><span class="p">;</span>
 
-    // actual comment text$comment-&gt;body = $data-&gt;body;
-    // comment creation time
-    $comment-&gt;ctime = $data-&gt;ctime;
+    <span class="c1">// actual comment text$comment-&gt;body = $data-&gt;body;</span>
+    <span class="c1">// comment creation time</span>
+    <span class="nv">$comment</span><span class="o">-&gt;</span><span class="na">ctime</span> <span class="o">=</span> <span class="nv">$data</span><span class="o">-&gt;</span><span class="na">ctime</span><span class="p">;</span>
 
-    // custom data from job (if any)
-    $custom_data = $data-&gt;custom_data; // do stuff ...
-}
-</code></pre>
+    <span class="c1">// custom data from job (if any)</span>
+    <span class="nv">$custom_data</span> <span class="o">=</span> <span class="nv">$data</span><span class="o">-&gt;</span><span class="na">custom_data</span><span class="p">;</span> <span class="c1">// do stuff ...</span>
+<span class="p">}</span>
+<span class="cp">?&gt;</span><span class="x"></span></code></pre>
       </div>
 
       
