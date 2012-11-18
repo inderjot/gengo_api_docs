@@ -56,21 +56,21 @@
       <div class="content">
         <h1 id="job-statuses">Job statuses</h1>
 
+<p>Each submitted job goes through a series of statuses before delivery. At any time when you request the contents of a job, it will be in one of the following states:</p>
+
 <dl>
-<dt>unpaid</dt>
-  <dd>Not enough funds to translate</dd>
-  <dt>available</dt>
-  <dd>Awaiting translator</dd>
-  <dt>pending</dt>
-  <dd>Translating</dd>
-  <dt>reviewable</dt>
-  <dd>Translated and awaiting approval</dd>
-  <dt>approved</dt>
-  <dd>User-approved translation</dd>
-  <dt>rejected</dt>
-  <dd>User-rejected translation awaiting new translator</dd>
-  <dt>canceled</dt>
-  <dd>User canceled the translation before it began or when rejecting it</dd>
+<dt><code>available</code></dt>
+  <dd>Ready for a translator to take the job for translation.</dd>
+  <dt><code>pending</code></dt>
+  <dd>Currently being translated.</dd>
+  <dt><code>reviewable</code></dt>
+  <dd>Translation has finished and is awaiting submitter approval.</dd>
+  <dt><code>approved</code></dt>
+  <dd>Submitter has approved the translation.</dd>
+  <dt><code>rejected</code></dt>
+  <dd>Translation has been rejected and is no longer available.</dd>
+  <dt><code>canceled</code></dt>
+  <dd>Translation has been canceled before being picked up, and is no longer available.</dd>
 </dl>
       </div>
 
