@@ -99,31 +99,31 @@
 
 <span class="c"># Get the job in question; pre_mt set to 1 will give you a machine translation</span>
 <span class="c"># if the human translation isn't available yet. ;)</span>
-<span class="n">gengo</span><span class="o">.</span><span class="n">getTranslationJob</span><span class="p">(</span><span class="nb">id</span> <span class="o">=</span> <span class="mi">42</span><span class="p">,</span> <span class="n">pre_mt</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span></code></pre>
+<span class="n">gengo</span><span class="o">.</span><span class="n">getTranslationJob</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="mi">42</span><span class="p">,</span> <span class="n">pre_mt</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span></code></pre>
 
 <p><strong>Response</strong></p>
 
 <pre class="headers"><code>Status: 200 OK</code></pre>
 
 <pre class="highlight"><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"opstat"</span><span class="o">:</span> <span class="s2">"ok"</span><span class="p">,</span>
   <span class="s2">"response"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"job"</span><span class="o">:</span> <span class="p">{</span>
+      <span class="s2">"status"</span><span class="o">:</span> <span class="s2">"available"</span><span class="p">,</span>
       <span class="s2">"eta"</span><span class="o">:</span> <span class="s2">""</span><span class="p">,</span>
       <span class="s2">"body_src"</span><span class="o">:</span> <span class="s2">"plop!"</span><span class="p">,</span>
-      <span class="s2">"credits"</span><span class="o">:</span> <span class="s2">"0.05"</span><span class="p">,</span>
-      <span class="s2">"tier"</span><span class="o">:</span> <span class="s2">"standard"</span><span class="p">,</span>
       <span class="s2">"job_id"</span><span class="o">:</span> <span class="s2">"384985"</span><span class="p">,</span>
-      <span class="s2">"status"</span><span class="o">:</span> <span class="s2">"available"</span><span class="p">,</span>
-      <span class="s2">"slug"</span><span class="o">:</span> <span class="s2">"APIJobtest"</span><span class="p">,</span>
-      <span class="s2">"custom_data"</span><span class="o">:</span> <span class="s2">"1234567"</span><span class="p">,</span>
-      <span class="s2">"lc_src"</span><span class="o">:</span> <span class="s2">"en"</span><span class="p">,</span>
-      <span class="s2">"auto_approve"</span><span class="o">:</span> <span class="s2">"0"</span><span class="p">,</span>
-      <span class="s2">"ctime"</span><span class="o">:</span> <span class="mi">1313475693</span><span class="p">,</span>
+      <span class="s2">"tier"</span><span class="o">:</span> <span class="s2">"standard"</span><span class="p">,</span>
       <span class="s2">"unit_count"</span><span class="o">:</span> <span class="s2">"1"</span><span class="p">,</span>
-      <span class="s2">"lc_tgt"</span><span class="o">:</span> <span class="s2">"ja"</span>
+      <span class="s2">"slug"</span><span class="o">:</span> <span class="s2">"APIJobtest"</span><span class="p">,</span>
+      <span class="s2">"ctime"</span><span class="o">:</span> <span class="mi">1313475693</span><span class="p">,</span>
+      <span class="s2">"credits"</span><span class="o">:</span> <span class="s2">"0.05"</span><span class="p">,</span>
+      <span class="s2">"custom_data"</span><span class="o">:</span> <span class="s2">"1234567"</span><span class="p">,</span>
+      <span class="s2">"auto_approve"</span><span class="o">:</span> <span class="s2">"0"</span><span class="p">,</span>
+      <span class="s2">"lc_tgt"</span><span class="o">:</span> <span class="s2">"ja"</span><span class="p">,</span>
+      <span class="s2">"lc_src"</span><span class="o">:</span> <span class="s2">"en"</span>
     <span class="p">}</span>
-  <span class="p">},</span>
-  <span class="s2">"opstat"</span><span class="o">:</span> <span class="s2">"ok"</span>
+  <span class="p">}</span>
 <span class="p">}</span></code></pre>
 
 <h2 id="job-put">Job (PUT)</h2>
@@ -194,8 +194,8 @@ Other parameters
 <span class="c"># more information pertaining to this method, it can do quite a bit. :)</span>
 
 <span class="n">gengo</span><span class="o">.</span><span class="n">updateTranslationJob</span><span class="p">(</span>
-    <span class="nb">id</span> <span class="o">=</span> <span class="mi">42</span><span class="p">,</span>
-    <span class="n">action</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="nb">id</span><span class="o">=</span><span class="mi">42</span><span class="p">,</span>
+    <span class="n">action</span><span class="o">=</span><span class="p">{</span>
         <span class="s">'action'</span><span class="p">:</span> <span class="s">'reject'</span><span class="p">,</span>
         <span class="s">'reason'</span><span class="p">:</span> <span class="s">'quality'</span><span class="p">,</span>
         <span class="s">'comment'</span><span class="p">:</span> <span class="s">'My grandmother does better.'</span><span class="p">,</span>
@@ -208,10 +208,10 @@ Other parameters
 <pre class="headers"><code>Status: 200 OK</code></pre>
 
 <pre class="highlight"><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"opstat"</span><span class="o">:</span> <span class="s2">"ok"</span><span class="p">,</span>
   <span class="s2">"response"</span><span class="o">:</span> <span class="p">{</span>
 
-  <span class="p">},</span>
-  <span class="s2">"opstat"</span><span class="o">:</span> <span class="s2">"ok"</span>
+  <span class="p">}</span>
 <span class="p">}</span></code></pre>
 
 <h2 id="job-delete">Job (DELETE)</h2>
@@ -244,17 +244,17 @@ Other parameters
 
 <span class="c"># Get the job in question; pre_mt set to 1 will give you a machine translation</span>
 <span class="c"># if the human translation isn't available yet. ;)</span>
-<span class="n">gengo</span><span class="o">.</span><span class="n">deleteTranslationJob</span><span class="p">(</span><span class="nb">id</span> <span class="o">=</span> <span class="mi">42</span><span class="p">)</span></code></pre>
+<span class="n">gengo</span><span class="o">.</span><span class="n">deleteTranslationJob</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span></code></pre>
 
 <p><strong>Response</strong></p>
 
 <pre class="headers"><code>Status: 200 OK</code></pre>
 
 <pre class="highlight"><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"opstat"</span><span class="o">:</span> <span class="s2">"ok"</span><span class="p">,</span>
   <span class="s2">"response"</span><span class="o">:</span> <span class="p">{</span>
 
-  <span class="p">},</span>
-  <span class="s2">"opstat"</span><span class="o">:</span> <span class="s2">"ok"</span>
+  <span class="p">}</span>
 <span class="p">}</span></code></pre>
 
 <h2 id="preview-get">Preview (GET)</h2>
@@ -293,7 +293,7 @@ Other parameters
     <span class="p">)</span>
 
 <span class="c"># This method is a bit tricky; you can call it like below, but how you treat # the returned data is very much up to you.</span>
-<span class="n">gengo</span><span class="o">.</span><span class="n">getTranslationJobPreview</span><span class="p">(</span><span class="nb">id</span> <span class="o">=</span> <span class="mi">42</span><span class="p">)</span></code></pre>
+<span class="n">gengo</span><span class="o">.</span><span class="n">getTranslationJobPreview</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span></code></pre>
 
 <h2 id="revisions-get">Revisions (GET)</h2>
 
@@ -325,13 +325,14 @@ Other parameters
     <span class="p">)</span>
 
 <span class="c"># Get every revision on a job. Returns a data set, iterate if need be!</span>
-<span class="k">print</span> <span class="n">gengo</span><span class="o">.</span><span class="n">getTranslationJobRevisions</span><span class="p">(</span><span class="nb">id</span> <span class="o">=</span> <span class="mi">42</span><span class="p">)</span></code></pre>
+<span class="k">print</span> <span class="n">gengo</span><span class="o">.</span><span class="n">getTranslationJobRevisions</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span></code></pre>
 
 <p><strong>Response</strong></p>
 
 <pre class="headers"><code>Status: 200 OK</code></pre>
 
 <pre class="highlight"><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"opstat"</span><span class="o">:</span> <span class="s2">"ok"</span><span class="p">,</span>
   <span class="s2">"response"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"job_id"</span><span class="o">:</span> <span class="s2">"..."</span><span class="p">,</span>
     <span class="s2">"revisions"</span><span class="o">:</span> <span class="p">[</span>
@@ -349,8 +350,7 @@ Other parameters
       <span class="p">},</span>
       <span class="s2">"..."</span>
     <span class="p">]</span>
-  <span class="p">},</span>
-  <span class="s2">"opstat"</span><span class="o">:</span> <span class="s2">"ok"</span>
+  <span class="p">}</span>
 <span class="p">}</span></code></pre>
 
 <h2 id="revision-get">Revision (GET)</h2>
@@ -383,20 +383,20 @@ Other parameters
     <span class="p">)</span>
 
 <span class="c"># Get specific revision</span>
-<span class="k">print</span> <span class="n">gengo</span><span class="o">.</span><span class="n">getTranslationJobRevision</span><span class="p">(</span><span class="nb">id</span> <span class="o">=</span> <span class="mi">42</span><span class="p">,</span> <span class="n">rev_id</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span></code></pre>
+<span class="k">print</span> <span class="n">gengo</span><span class="o">.</span><span class="n">getTranslationJobRevision</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="mi">42</span><span class="p">,</span> <span class="n">rev_id</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span></code></pre>
 
 <p><strong>Response</strong></p>
 
 <pre class="headers"><code>Status: 200 OK</code></pre>
 
 <pre class="highlight"><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"opstat"</span><span class="o">:</span> <span class="s2">"ok"</span><span class="p">,</span>
   <span class="s2">"response"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"revision"</span><span class="o">:</span> <span class="p">{</span>
-      <span class="s2">"ctime"</span><span class="o">:</span> <span class="s2">"..."</span><span class="p">,</span>
-      <span class="s2">"body_tgt"</span><span class="o">:</span> <span class="s2">"..."</span>
+      <span class="s2">"body_tgt"</span><span class="o">:</span> <span class="s2">"..."</span><span class="p">,</span>
+      <span class="s2">"ctime"</span><span class="o">:</span> <span class="s2">"..."</span>
     <span class="p">}</span>
-  <span class="p">},</span>
-  <span class="s2">"opstat"</span><span class="o">:</span> <span class="s2">"ok"</span>
+  <span class="p">}</span>
 <span class="p">}</span></code></pre>
 
 <h2 id="feedback-get">Feedback (GET)</h2>
@@ -431,20 +431,20 @@ Other parameters
     <span class="p">)</span>
 
 <span class="c"># Get feedback given on a job</span>
-<span class="k">print</span> <span class="n">gengo</span><span class="o">.</span><span class="n">getTranslationJobFeedback</span><span class="p">(</span><span class="nb">id</span> <span class="o">=</span> <span class="mi">42</span><span class="p">)</span></code></pre>
+<span class="k">print</span> <span class="n">gengo</span><span class="o">.</span><span class="n">getTranslationJobFeedback</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span></code></pre>
 
 <p><strong>Response</strong></p>
 
 <pre class="headers"><code>Status: 200 OK</code></pre>
 
 <pre class="highlight"><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"opstat"</span><span class="o">:</span> <span class="s2">"ok"</span><span class="p">,</span>
   <span class="s2">"response"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"feedback"</span><span class="o">:</span> <span class="p">{</span>
       <span class="s2">"rating"</span><span class="o">:</span> <span class="s2">"3.0"</span><span class="p">,</span>
       <span class="s2">"for_translator"</span><span class="o">:</span> <span class="s2">"..."</span>
     <span class="p">}</span>
-  <span class="p">},</span>
-  <span class="s2">"opstat"</span><span class="o">:</span> <span class="s2">"ok"</span>
+  <span class="p">}</span>
 <span class="p">}</span></code></pre>
 
 <h2 id="comments-get">Comments (GET)</h2>
@@ -480,28 +480,28 @@ Other parameters
 
 <span class="c"># Get all the comments on a specific job.</span>
 <span class="c"># Note that this returns a data set, so while we just print it below, you'll # inevitably want to iterate over it and such.</span>
-<span class="k">print</span> <span class="n">gengo</span><span class="o">.</span><span class="n">getTranslationJobComments</span><span class="p">(</span><span class="nb">id</span> <span class="o">=</span> <span class="mi">42</span><span class="p">)</span></code></pre>
+<span class="k">print</span> <span class="n">gengo</span><span class="o">.</span><span class="n">getTranslationJobComments</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span></code></pre>
 
 <p><strong>Response</strong></p>
 
 <pre class="headers"><code>Status: 200 OK</code></pre>
 
 <pre class="highlight"><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"opstat"</span><span class="o">:</span> <span class="s2">"ok"</span><span class="p">,</span>
   <span class="s2">"response"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"thread"</span><span class="o">:</span> <span class="p">[</span>
       <span class="p">{</span>
-        <span class="s2">"body"</span><span class="o">:</span> <span class="s2">"...."</span><span class="p">,</span>
         <span class="s2">"author"</span><span class="o">:</span> <span class="s2">"translator"</span><span class="p">,</span>
+        <span class="s2">"body"</span><span class="o">:</span> <span class="s2">"...."</span><span class="p">,</span>
         <span class="s2">"ctime"</span><span class="o">:</span> <span class="mi">1266322028</span>
       <span class="p">},</span>
       <span class="p">{</span>
-        <span class="s2">"body"</span><span class="o">:</span> <span class="s2">"...."</span><span class="p">,</span>
         <span class="s2">"author"</span><span class="o">:</span> <span class="s2">"customer"</span><span class="p">,</span>
+        <span class="s2">"body"</span><span class="o">:</span> <span class="s2">"...."</span><span class="p">,</span>
         <span class="s2">"ctime"</span><span class="o">:</span> <span class="mi">1266324432</span>
       <span class="p">}</span>
     <span class="p">]</span>
-  <span class="p">},</span>
-  <span class="s2">"opstat"</span><span class="o">:</span> <span class="s2">"ok"</span>
+  <span class="p">}</span>
 <span class="p">}</span></code></pre>
 
 <h2 id="comment-post">Comment (POST)</h2>
@@ -541,8 +541,8 @@ Other parameters
 
 <span class="c"># Post a comment on a specific job; perhaps you have an update for the translator # or something of the sort.</span>
 <span class="n">gengo</span><span class="o">.</span><span class="n">postTranslationJobComment</span><span class="p">(</span>
-    <span class="nb">id</span> <span class="o">=</span> <span class="mi">42</span><span class="p">,</span>
-    <span class="n">comment</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="nb">id</span><span class="o">=</span><span class="mi">42</span><span class="p">,</span>
+    <span class="n">comment</span><span class="o">=</span><span class="p">{</span>
         <span class="s">'body'</span><span class="p">:</span> <span class="s">'I love lamp!'</span>
     <span class="p">}</span>
 <span class="p">)</span></code></pre>
@@ -552,10 +552,10 @@ Other parameters
 <pre class="headers"><code>Status: 200 OK</code></pre>
 
 <pre class="highlight"><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"opstat"</span><span class="o">:</span> <span class="s2">"ok"</span><span class="p">,</span>
   <span class="s2">"response"</span><span class="o">:</span> <span class="p">{</span>
 
-  <span class="p">},</span>
-  <span class="s2">"opstat"</span><span class="o">:</span> <span class="s2">"ok"</span>
+  <span class="p">}</span>
 <span class="p">}</span></code></pre>
       </div>
 
