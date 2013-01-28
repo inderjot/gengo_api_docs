@@ -111,17 +111,17 @@ gengo.getTranslationJob(id = 42, pre_mt = 1)
     <span class="s2">"job"</span><span class="o">:</span> <span class="p">{</span>
       <span class="s2">"eta"</span><span class="o">:</span> <span class="s2">""</span><span class="p">,</span>
       <span class="s2">"lc_tgt"</span><span class="o">:</span> <span class="s2">"ja"</span><span class="p">,</span>
+      <span class="s2">"auto_approve"</span><span class="o">:</span> <span class="s2">"0"</span><span class="p">,</span>
+      <span class="s2">"lc_src"</span><span class="o">:</span> <span class="s2">"en"</span><span class="p">,</span>
+      <span class="s2">"slug"</span><span class="o">:</span> <span class="s2">"APIJobtest"</span><span class="p">,</span>
+      <span class="s2">"ctime"</span><span class="o">:</span> <span class="mi">1313475693</span><span class="p">,</span>
       <span class="s2">"body_src"</span><span class="o">:</span> <span class="s2">"plop!"</span><span class="p">,</span>
       <span class="s2">"job_id"</span><span class="o">:</span> <span class="s2">"384985"</span><span class="p">,</span>
-      <span class="s2">"ctime"</span><span class="o">:</span> <span class="mi">1313475693</span><span class="p">,</span>
       <span class="s2">"tier"</span><span class="o">:</span> <span class="s2">"standard"</span><span class="p">,</span>
-      <span class="s2">"slug"</span><span class="o">:</span> <span class="s2">"APIJobtest"</span><span class="p">,</span>
+      <span class="s2">"status"</span><span class="o">:</span> <span class="s2">"available"</span><span class="p">,</span>
       <span class="s2">"credits"</span><span class="o">:</span> <span class="s2">"0.05"</span><span class="p">,</span>
-      <span class="s2">"lc_src"</span><span class="o">:</span> <span class="s2">"en"</span><span class="p">,</span>
-      <span class="s2">"custom_data"</span><span class="o">:</span> <span class="s2">"1234567"</span><span class="p">,</span>
       <span class="s2">"unit_count"</span><span class="o">:</span> <span class="s2">"1"</span><span class="p">,</span>
-      <span class="s2">"auto_approve"</span><span class="o">:</span> <span class="s2">"0"</span><span class="p">,</span>
-      <span class="s2">"status"</span><span class="o">:</span> <span class="s2">"available"</span>
+      <span class="s2">"custom_data"</span><span class="o">:</span> <span class="s2">"1234567"</span>
     <span class="p">}</span>
   <span class="p">},</span>
   <span class="s2">"opstat"</span><span class="o">:</span> <span class="s2">"ok"</span>
@@ -338,6 +338,7 @@ print gengo.getTranslationJobRevisions(id = 42)
 
 <pre class="highlight"><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"response"</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">"job_id"</span><span class="o">:</span> <span class="s2">"..."</span><span class="p">,</span>
     <span class="s2">"revisions"</span><span class="o">:</span> <span class="p">[</span>
       <span class="p">{</span>
         <span class="s2">"ctime"</span><span class="o">:</span> <span class="s2">"..."</span><span class="p">,</span>
@@ -352,8 +353,7 @@ print gengo.getTranslationJobRevisions(id = 42)
         <span class="s2">"rev_id"</span><span class="o">:</span> <span class="s2">"..."</span>
       <span class="p">},</span>
       <span class="s2">"..."</span>
-    <span class="p">],</span>
-    <span class="s2">"job_id"</span><span class="o">:</span> <span class="s2">"..."</span>
+    <span class="p">]</span>
   <span class="p">},</span>
   <span class="s2">"opstat"</span><span class="o">:</span> <span class="s2">"ok"</span>
 <span class="p">}</span></code></pre>

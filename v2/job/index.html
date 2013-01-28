@@ -110,17 +110,17 @@
     <span class="s2">"job"</span><span class="o">:</span> <span class="p">{</span>
       <span class="s2">"eta"</span><span class="o">:</span> <span class="s2">""</span><span class="p">,</span>
       <span class="s2">"lc_tgt"</span><span class="o">:</span> <span class="s2">"ja"</span><span class="p">,</span>
+      <span class="s2">"auto_approve"</span><span class="o">:</span> <span class="s2">"0"</span><span class="p">,</span>
+      <span class="s2">"lc_src"</span><span class="o">:</span> <span class="s2">"en"</span><span class="p">,</span>
+      <span class="s2">"slug"</span><span class="o">:</span> <span class="s2">"APIJobtest"</span><span class="p">,</span>
+      <span class="s2">"ctime"</span><span class="o">:</span> <span class="mi">1313475693</span><span class="p">,</span>
       <span class="s2">"body_src"</span><span class="o">:</span> <span class="s2">"plop!"</span><span class="p">,</span>
       <span class="s2">"job_id"</span><span class="o">:</span> <span class="s2">"384985"</span><span class="p">,</span>
-      <span class="s2">"ctime"</span><span class="o">:</span> <span class="mi">1313475693</span><span class="p">,</span>
       <span class="s2">"tier"</span><span class="o">:</span> <span class="s2">"standard"</span><span class="p">,</span>
-      <span class="s2">"slug"</span><span class="o">:</span> <span class="s2">"APIJobtest"</span><span class="p">,</span>
+      <span class="s2">"status"</span><span class="o">:</span> <span class="s2">"available"</span><span class="p">,</span>
       <span class="s2">"credits"</span><span class="o">:</span> <span class="s2">"0.05"</span><span class="p">,</span>
-      <span class="s2">"lc_src"</span><span class="o">:</span> <span class="s2">"en"</span><span class="p">,</span>
-      <span class="s2">"custom_data"</span><span class="o">:</span> <span class="s2">"1234567"</span><span class="p">,</span>
       <span class="s2">"unit_count"</span><span class="o">:</span> <span class="s2">"1"</span><span class="p">,</span>
-      <span class="s2">"auto_approve"</span><span class="o">:</span> <span class="s2">"0"</span><span class="p">,</span>
-      <span class="s2">"status"</span><span class="o">:</span> <span class="s2">"available"</span>
+      <span class="s2">"custom_data"</span><span class="o">:</span> <span class="s2">"1234567"</span>
     <span class="p">}</span>
   <span class="p">},</span>
   <span class="s2">"opstat"</span><span class="o">:</span> <span class="s2">"ok"</span>
@@ -148,13 +148,13 @@
     <ul>
 <li>action(required):
         <ul>
-<li>“revise” - Returns this job back to the translator for revisions
+<li>“revise” - Returns this job back to the translator for revisions. 
 Other parameters:
             <ul>
 <li>comment (required) - The reason to the translator for sending the job back for revisions.</li>
             </ul>
 </li>
-          <li>“approve” - Approves job
+          <li>“approve” - Approves job. 
 Other parameters:
             <ul>
 <li>rating (optional) 1 (poor) to 5 (fantastic)</li>
@@ -164,7 +164,7 @@ Other parameters:
             </ul>
 </li>
           <li>“reject” - Rejects the translation. Please see our FAQs for details of the rejection process.
-Other parameters
+Other parameters. 
             <ul>
 <li>reason (required) “quality”, “incomplete”, “other”</li>
               <li>comment (required)</li>
@@ -333,6 +333,7 @@ Other parameters
 
 <pre class="highlight"><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"response"</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">"job_id"</span><span class="o">:</span> <span class="s2">"..."</span><span class="p">,</span>
     <span class="s2">"revisions"</span><span class="o">:</span> <span class="p">[</span>
       <span class="p">{</span>
         <span class="s2">"ctime"</span><span class="o">:</span> <span class="s2">"..."</span><span class="p">,</span>
@@ -347,8 +348,7 @@ Other parameters
         <span class="s2">"rev_id"</span><span class="o">:</span> <span class="s2">"..."</span>
       <span class="p">},</span>
       <span class="s2">"..."</span>
-    <span class="p">],</span>
-    <span class="s2">"job_id"</span><span class="o">:</span> <span class="s2">"..."</span>
+    <span class="p">]</span>
   <span class="p">},</span>
   <span class="s2">"opstat"</span><span class="o">:</span> <span class="s2">"ok"</span>
 <span class="p">}</span></code></pre>
