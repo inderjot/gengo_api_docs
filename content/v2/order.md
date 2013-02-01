@@ -7,6 +7,7 @@ title: Order | Gengo API
 This describes the endpoints that deal with Order on the Gengo API.
 
 * [Order __(GET)__](#order-get)
+* [Order __(DELETE)__](#order-delete)
 
 ## Order (GET)
 
