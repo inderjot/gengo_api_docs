@@ -53,7 +53,7 @@ __Summary__
 : Cancels all available jobs in an order. Please keep in mind, you can only cancel a job if it has not been started already by a translator.
 
 __URL__
-: http://api.gengo.com/v2/translate/job/{id}
+: http://api.gengo.com/v2/translate/order/{id}
 
 __Authentication__
 : Required
