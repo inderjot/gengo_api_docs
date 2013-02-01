@@ -46,3 +46,41 @@ __Response__
 
 <%= headers 200 %>
 <%= json :order_get %>
+
+## Order (DELETE)
+
+__Summary__
+: Cancels all available jobs in an order. Please keep in mind, you can only cancel a job if it has not been started already by a translator.
+
+__URL__
+: http://api.gengo.com/v2/translate/job/{id}
+
+__Authentication__
+: Required
+
+__Parameters__
+: * api_key(required) Your API key.
+  * api_sig(required) Your API signature.
+  * ts(required) Current Unix epoch time as an integer.
+
+__Example call__
+
+    #!python
+    # -*- coding: utf-8 -*-
+    #!/usr/bin/python
+    from gengo import Gengo
+
+    # Get an instance of Gengo to work with...
+    gengo = Gengo(
+        public_key='your_public_key',
+        private_key='your_private_key',
+        sandbox=True, # possibly false, depending on your dev needs )
+
+    # Get the job in question; pre_mt set to 1 will give you a machine translation
+    # if the human translation isn't available yet. ;)
+    gengo.deleteTranslationOrder(id=42)
+
+__Response__
+
+<%= headers 200 %>
+<%= json :ok_empty_response %>
