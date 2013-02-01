@@ -50,7 +50,7 @@ __Response__
 ## Order (DELETE)
 
 __Summary__
-: Cancels all available jobs in an order. Please keep in mind, you can only cancel a job if it has not been started already by a translator.
+: Cancels all available jobs in an order. Please keep in mind, you can only cancel a job if it has not been started already by a translator. This also cancels the order itself.
 
 __URL__
 : http://api.gengo.com/v2/translate/order/{id}
@@ -76,8 +76,7 @@ __Example call__
         private_key='your_private_key',
         sandbox=True, # possibly false, depending on your dev needs )
 
-    # Get the job in question; pre_mt set to 1 will give you a machine translation
-    # if the human translation isn't available yet. ;)
+    # Sends the command to delete all jobs in an order.
     gengo.deleteTranslationOrder(id=42)
 
 __Response__
