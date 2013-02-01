@@ -74,6 +74,7 @@
     <ul>
 <li>api_key(required) Your API key.</li>
       <li>api_sig(required) Your API signature.</li>
+      <li>ts(required) Current Unix epoch time as an integer.</li>
     </ul>
 </dd>
 </dl><p><strong>Example call</strong></p>
@@ -97,32 +98,75 @@
 <pre class="headers"><code>Status: 200 OK</code></pre>
 
 <pre class="highlight"><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"opstat"</span><span class="o">:</span> <span class="s2">"ok"</span><span class="p">,</span>
   <span class="s2">"response"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"order"</span><span class="o">:</span> <span class="p">{</span>
-      <span class="s2">"jobs_approved"</span><span class="o">:</span> <span class="p">[</span>
-
-      <span class="p">],</span>
+      <span class="s2">"order_id"</span><span class="o">:</span> <span class="s2">"232"</span><span class="p">,</span>
+      <span class="s2">"total_credits"</span><span class="o">:</span> <span class="s2">"0.30"</span><span class="p">,</span>
+      <span class="s2">"currency"</span><span class="o">:</span> <span class="s2">"USD"</span><span class="p">,</span>
+      <span class="s2">"total_units"</span><span class="o">:</span> <span class="mi">6</span><span class="p">,</span>
       <span class="s2">"as_group"</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
-      <span class="s2">"jobs_queued"</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
       <span class="s2">"jobs_available"</span><span class="o">:</span> <span class="p">[</span>
         <span class="s2">"243646"</span><span class="p">,</span>
         <span class="s2">"243647"</span><span class="p">,</span>
         <span class="s2">"243645"</span>
       <span class="p">],</span>
-      <span class="s2">"total_units"</span><span class="o">:</span> <span class="mi">6</span><span class="p">,</span>
-      <span class="s2">"total_credits"</span><span class="o">:</span> <span class="s2">"0.30"</span><span class="p">,</span>
+      <span class="s2">"jobs_pending"</span><span class="o">:</span> <span class="p">[</span>
+
+      <span class="p">],</span>
       <span class="s2">"jobs_reviewable"</span><span class="o">:</span> <span class="p">[</span>
 
       <span class="p">],</span>
-      <span class="s2">"currency"</span><span class="o">:</span> <span class="s2">"USD"</span><span class="p">,</span>
-      <span class="s2">"order_id"</span><span class="o">:</span> <span class="s2">"232"</span><span class="p">,</span>
-      <span class="s2">"total_jobs"</span><span class="o">:</span> <span class="s2">"3"</span><span class="p">,</span>
-      <span class="s2">"jobs_pending"</span><span class="o">:</span> <span class="p">[</span>
+      <span class="s2">"jobs_approved"</span><span class="o">:</span> <span class="p">[</span>
 
-      <span class="p">]</span>
+      <span class="p">],</span>
+      <span class="s2">"jobs_queued"</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+      <span class="s2">"total_jobs"</span><span class="o">:</span> <span class="s2">"3"</span>
     <span class="p">}</span>
-  <span class="p">},</span>
-  <span class="s2">"opstat"</span><span class="o">:</span> <span class="s2">"ok"</span>
+  <span class="p">}</span>
+<span class="p">}</span></code></pre>
+
+<h2 id="order-delete">Order (DELETE)</h2>
+
+<dl>
+<dt><strong>Summary</strong></dt>
+  <dd>Cancels all available jobs in an order. Please keep in mind, you can only cancel a job if it has not been started already by a translator. This also cancels the order itself.</dd>
+  <dt><strong>URL</strong></dt>
+  <dd>http://api.gengo.com/v2/translate/order/{id}</dd>
+  <dt><strong>Authentication</strong></dt>
+  <dd>Required</dd>
+  <dt><strong>Parameters</strong></dt>
+  <dd>
+    <ul>
+<li>api_key(required) Your API key.</li>
+      <li>api_sig(required) Your API signature.</li>
+      <li>ts(required) Current Unix epoch time as an integer.</li>
+    </ul>
+</dd>
+</dl><p><strong>Example call</strong></p>
+
+<pre><code class="language-python"><span class="c"># -*- coding: utf-8 -*-</span>
+<span class="c">#!/usr/bin/python</span>
+<span class="kn">from</span> <span class="nn">gengo</span> <span class="kn">import</span> <span class="n">Gengo</span>
+
+<span class="c"># Get an instance of Gengo to work with...</span>
+<span class="n">gengo</span> <span class="o">=</span> <span class="n">Gengo</span><span class="p">(</span>
+    <span class="n">public_key</span><span class="o">=</span><span class="s">'your_public_key'</span><span class="p">,</span>
+    <span class="n">private_key</span><span class="o">=</span><span class="s">'your_private_key'</span><span class="p">,</span>
+    <span class="n">sandbox</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="c"># possibly false, depending on your dev needs )</span>
+
+<span class="c"># Sends the command to delete all jobs in an order.</span>
+<span class="n">gengo</span><span class="o">.</span><span class="n">deleteTranslationOrder</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span></code></pre>
+
+<p><strong>Response</strong></p>
+
+<pre class="headers"><code>Status: 200 OK</code></pre>
+
+<pre class="highlight"><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"opstat"</span><span class="o">:</span> <span class="s2">"ok"</span><span class="p">,</span>
+  <span class="s2">"response"</span><span class="o">:</span> <span class="p">{</span>
+
+  <span class="p">}</span>
 <span class="p">}</span></code></pre>
       </div>
 
