@@ -12,7 +12,8 @@ We provide official client libraries for a few popular programming languages, re
 
  * [PHP](https://github.com/gengo/gengo-php)
  * [Python](https://github.com/gengo/gengo-python)
- * [Ruby](https://rubygems.org/gems/gengo)
+ * [Java](https://github.com/gengo/gengo-java)
+ * [Ruby](https://github.com/gengo/gengo-ruby) (also a [gem](https://rubygems.org/gems/gengo))
 
 
 ### Community Libraries
