@@ -10,12 +10,6 @@ title: API Methods | Gengo API
 [account/balance __(GET)__](/v2/account/#balance-get)
 : Retrieves account balance in credits.
 
-[translate/glossary __(GET)__](/v2/glossary/#glossaries-get)
-: Retrieves a list of glossaries that belongs to the authenticated user
-
-[translate/glossary/{id} __(GET)__](/v2/glossary/#glossary-get)
-: Retreives a glossary by Id
-
 [translate/job/{id} __(GET)__](/v2/job/#job-get)
 : Retrieves a specific job.
 
@@ -54,6 +48,18 @@ title: API Methods | Gengo API
 
 [translate/jobs __(POST)__](/v2/jobs/#jobs-post)
 : Submits a job or group of jobs to translate.
+
+[translate/order __(GET)__](/v2/order/#order-get)
+: Retrieves a specific order containing all jobs.
+
+[translate/order __(DELETE)__](/v2/order/#order-delete)
+: Deletes all available jobs in an order.
+
+[translate/glossary __(GET)__](/v2/glossary/#glossaries-get)
+: Retrieves a list of glossaries that belongs to the authenticated user
+
+[translate/glossary/{id} __(GET)__](/v2/glossary/#glossary-get)
+: Retreives a glossary by Id
 
 [translate/service/language_pairs __(GET)__](/v2/service/#language_pairs-get)
 : Returns supported translation language pairs, tiers, and credit prices.
