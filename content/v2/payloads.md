@@ -51,6 +51,7 @@ ctime
 
 custom_data
 : _String_ of up to 1K of client-specific data that may have been sent when the job was submitted.
+mt This value will be "1" if the text in body_tgt is a machine translation. A machine translation is provided as a convenience while a human translation is pending. You can choose to use or discard the provided translation.
 
 mt
 : _1 (true) / 0 (false)_ of whether the content in body_tgt is a machine translation. A machine translation is always provided as a convenience while a human translation is pending.
@@ -71,6 +72,9 @@ tier
 
 type
 : _String_ of job type. Either 'text' (default) or 'file'. Use 'file' for ordering file jobs via the API using job identifiers from the file quote function.
+
+slug
+: _String_ of job title. For internally storing, can be generic.
 
 identifier _(required if type = 'file')_
 : _String_ of the identifier returned as a response from the file quote method (e.g. identifer = '2ea3a2dbea3be97375ceaf03200fb184')
