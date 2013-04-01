@@ -155,8 +155,7 @@ __Example call__
         private_key='your_private_key',
         sandbox=True, # possibly false, depending on your dev needs )
 
-    # Get the job in question; pre_mt set to 1 will give you a machine translation
-    # if the human translation isn't available yet. ;)
+    # Sets a job to cancelled if it is currently in available status
     gengo.deleteTranslationJob(id=42)
 
 __Response__
