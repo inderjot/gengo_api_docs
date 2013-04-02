@@ -72,6 +72,9 @@ tier
 type
 : _String_ of job type. Either 'text' (default) or 'file'. Use 'file' for ordering file jobs via the API using job identifiers from the file quote function.
 
+slug
+: _String_ of job title. For internally storing, can be generic.
+
 identifier _(required if type = 'file')_
 : _String_ of the identifier returned as a response from the file quote method (e.g. identifer = '2ea3a2dbea3be97375ceaf03200fb184')
 
