@@ -246,8 +246,7 @@ Other parameters.
     <span class="n">private_key</span><span class="o">=</span><span class="s">'your_private_key'</span><span class="p">,</span>
     <span class="n">sandbox</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="c"># possibly false, depending on your dev needs )</span>
 
-<span class="c"># Get the job in question; pre_mt set to 1 will give you a machine translation</span>
-<span class="c"># if the human translation isn't available yet. ;)</span>
+<span class="c"># Sets a job to cancelled if it is currently in available status</span>
 <span class="n">gengo</span><span class="o">.</span><span class="n">deleteTranslationJob</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span></code></pre>
 
 <p><strong>Response</strong></p>
