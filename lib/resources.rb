@@ -396,11 +396,17 @@ module GitHub
             "jobs" => [
                 {"job_1" => {
                     "unit_count" => 324,
-                    "credits" => 16.20
+                    "credits" => 16.20,
+                    "eta" => 45198,
+                    "type" => "text",
+                    "currency" => "USD"
                 }},
                 {"job_2" => {
                     "unit_count" => 42,
-                    "credits" => 4.20
+                    "credits" => 4.20,
+                    "eta" => 25164,
+                    "type" => "text",
+                    "currency" => "USD"
                 }}
             ]
         }
