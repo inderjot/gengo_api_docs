@@ -78,8 +78,9 @@ __Example call__
         sandbox=False, # possibly false, depending on your dev needs
         debug=True)
 
-    # Retrieve and print the account balance. Properties ahoy!
+    # Retrieve and print the account balance and currency. Properties ahoy!
     print gengo.getAccountBalance()['response']['credits']
+    print gengo.getAccountBalance()['response']['currency']
 
 __Response__
 

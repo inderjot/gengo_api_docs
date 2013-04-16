@@ -136,7 +136,8 @@ module GitHub
 
     ACCOUNT_BALANCE = OK_RESPONSE.merge(
         "response" => {
-            "credits" => "25.32"
+            "credits" => "25.32",
+            "currency" => "USD"
         }
     )
 
