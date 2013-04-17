@@ -137,8 +137,9 @@
     <span class="n">sandbox</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="c"># possibly false, depending on your dev needs</span>
     <span class="n">debug</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
 
-<span class="c"># Retrieve and print the account balance. Properties ahoy!</span>
-<span class="k">print</span> <span class="n">gengo</span><span class="o">.</span><span class="n">getAccountBalance</span><span class="p">()[</span><span class="s">'response'</span><span class="p">][</span><span class="s">'credits'</span><span class="p">]</span></code></pre>
+<span class="c"># Retrieve and print the account balance and currency. Properties ahoy!</span>
+<span class="k">print</span> <span class="n">gengo</span><span class="o">.</span><span class="n">getAccountBalance</span><span class="p">()[</span><span class="s">'response'</span><span class="p">][</span><span class="s">'credits'</span><span class="p">]</span>
+<span class="k">print</span> <span class="n">gengo</span><span class="o">.</span><span class="n">getAccountBalance</span><span class="p">()[</span><span class="s">'response'</span><span class="p">][</span><span class="s">'currency'</span><span class="p">]</span></code></pre>
 
 <p><strong>Response</strong></p>
 
@@ -147,7 +148,8 @@
 <pre class="highlight"><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"opstat"</span><span class="o">:</span> <span class="s2">"ok"</span><span class="p">,</span>
   <span class="s2">"response"</span><span class="o">:</span> <span class="p">{</span>
-    <span class="s2">"credits"</span><span class="o">:</span> <span class="s2">"25.32"</span>
+    <span class="s2">"credits"</span><span class="o">:</span> <span class="s2">"25.32"</span><span class="p">,</span>
+    <span class="s2">"currency"</span><span class="o">:</span> <span class="s2">"USD"</span>
   <span class="p">}</span>
 <span class="p">}</span></code></pre>
       </div>
