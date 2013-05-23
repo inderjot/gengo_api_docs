@@ -23,14 +23,3 @@ Also, if you notice any inconsistencies or mistakes in our documentation, please
 support](mailto:support@gengo.com?subject=Gengo API Documentation inconsistency) to let us know or, if you feel up to
 it, issue a pull request to [our Documentation Github repository](https://github.com/mygengo/gengo_api_docs) because it
 is open source !
-
-## Current known issues (Updated 2012-12-12)
-
-Below are a list of current issues that we know exist in our API and are working to resolve. We apologise for any
-inconvenience that they may cause and appreciate your patience in working around them.
-
-* _Ordering a large batch of jobs and then immediately afterwards ordering the first load again (lazy-loading the order)
-may result in double charging if the job queue has not finished processing the jobs that were ordered the first time_
-: Suggested workaround is to get the status of the initial order by [querying using the order id](/v2/order/#order-get)
-or [receiving a callback](/v2/callback_urls/). If this is not possible, please try lazy loading after waiting for at
-least 5 minutes after the initial order.
