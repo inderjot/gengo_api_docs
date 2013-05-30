@@ -39,8 +39,10 @@ __Example call__
         private_key='your_private_key',
         sandbox=True, # possibly false, depending on your dev needs )
 
-    # Useful for figuring out what language paths are supported - e.g, if # we use 'en' below, we'll see what languages we can translate TO from 'en'.
-    print gengo.getServiceLanguagePairs()
+    # Useful for figuring out what language paths are supported - e.g, if 
+    # we use 'en' below, we'll see what languages we can translate TO from 'en'.
+    # The `lc_src` parameter can be omitted to fetch all language pairs.
+    print gengo.getServiceLanguagePairs(lc_src='de')
 
 __Response__
 

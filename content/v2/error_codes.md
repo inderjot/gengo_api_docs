@@ -33,11 +33,29 @@ Code values let you map your own localized message, and msg values are just samp
 * 1301
 : job_type is not supported
 
+* 1302
+: identifier missing
+
+* 1303
+: quote missing
+
+* 1304
+: invalid tier
+
+* 1305
+: quote number of files exceeds limit
+
+* 1306
+: quote file size exceeds limit
+
 * 1350
 : body_src is a required field
 
 * 1351
 : Invalid body text
+
+* 1352
+: content type invalid
 
 * 1400
 : lc_src is a required field
@@ -47,6 +65,9 @@ Code values let you map your own localized message, and msg values are just samp
 
 * 1500
 : tier is a required field
+
+* 1501
+: filename is a required field
 
 * 1551
 : language service is not supported
@@ -69,8 +90,23 @@ Code values let you map your own localized message, and msg values are just samp
 * 1800
 : jobs is a required field
 
+* 1801
+: jobs files mismatch
+
+* 1802
+: file upload failed (did you check that the file is correct and the extension supported?)
+
+* 1803
+: missing file key
+
+* 1804
+: jobs identifier missing
+
 * 1851
 : as_group must be 0 or 1
+
+* 1852
+: allow fork is invalid
 
 * 1901
 : process must be 0 or 1
@@ -131,6 +167,9 @@ Code values let you map your own localized message, and msg values are just samp
 
 * 2502
 : services_api_error_codes_rating_restriction
+
+* 2503
+: public flag must be a boolean
 
 * 2550
 : Jobs' group id is missing
