@@ -3,9 +3,9 @@ source "http://rubygems.org"
 gem 'rake', '~> 0.9.2'
 gem 'nanoc'
 gem 'kramdown', '~> 0.13.2'
-gem 'nokogiri', '~> 1.4.4'
-gem 'yajl-ruby', '~> 0.8.2'
-gem 'pygments.rb'
+gem 'nokogiri', '~> 1.5.9'
+gem 'yajl-ruby', '~> 1.1.0'
+gem 'pygments.rb', '~> 0.3.3'
 gem 'mime-types', '~> 1.16'
 gem 'coderay'
 
