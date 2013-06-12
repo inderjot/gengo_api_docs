@@ -144,5 +144,8 @@ Code values let you map your own localized message, and msg values are just samp
 * 2750
 : Unauthorized order access
 
+* 2751
+: Order cancelled before processing. Please wait until the order is out of our queue.
+
 * 2800
 : API temporarily unavailable
