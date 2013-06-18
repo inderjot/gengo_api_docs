@@ -422,11 +422,8 @@ module GitHub
                     "eta"=>0,
                     "currency"=>"USD",
                     "identifier"=>"49427e41a1b6cefd7444b0d27ec165e7481658791885e71b7602c6babfc80b77",
-                    "images"=>[],
                     "type"=>"file",
-                    "lc_src"=>"en",
-                    "body"=>"",
-                    "title"=>"video_on_demand.txt"
+                    "lc_src"=>"en"
                     },
                 "job_2"=>{
                     "unit_count"=>0,
@@ -434,11 +431,9 @@ module GitHub
                     "eta"=>0,
                     "currency"=>"USD",
                     "identifier"=>"4fd1551c3a5628f795d645394bfcd0a5442e4e7ae60ad1f163424bdeb8420df4",
-                    "images"=>[],
                     "type"=>"file",
-                    "lc_src"=>"en",
-                    "body"=>"",
-                    "title"=>"japanese_file.docx"},
+                    "lc_src"=>"en"
+                    },
                 "job_3"=>{"err"=>{"code"=>1802, "filename"=>"sushi_en.doc", "key"=>"job_3"}}}}
     )
 
