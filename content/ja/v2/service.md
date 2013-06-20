@@ -141,7 +141,6 @@ __Example call__
                 'custom_data': 'your optional custom data, limited to 1kb.' # OPTIONAL
             },
             ...
-            'as_group': 1, # OPTIONAL. 1 (true) / 0 (false, default). Whether all jobs in this group should be done by one translator.
     }
 
     # Post over our two jobs, use the same translator for both, don't pay for them
