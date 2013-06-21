@@ -194,7 +194,6 @@
         <span class="o">...</span>
     <span class="p">}</span>
     <span class="s">'as_group'</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="c"># OPTIONAL. 1 (true) / 0 (false, default). Whether all jobs in this group should be done by one translator.</span>
-    <span class="s">'allow_fork'</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="c"># OPTIONAL. 1 (true, default) / 0 (false). Whether jobs unfinished by a translator in a group order should be cancelled automatically, or to manually choose to let another translator try or manually cancel.</span>
 <span class="p">}</span>
 <span class="c"># And now we post them over...</span>
 <span class="k">print</span> <span class="n">gengo</span><span class="o">.</span><span class="n">postTranslationJobs</span><span class="p">(</span><span class="n">jobs</span><span class="o">=</span><span class="n">data</span><span class="p">)</span></code></pre>
