@@ -121,7 +121,6 @@ __Example call__
             ...
         }
         'as_group': 1, # OPTIONAL. 1 (true) / 0 (false, default). Whether all jobs in this group should be done by one translator.
-        'allow_fork': 0, # OPTIONAL. 1 (true, default) / 0 (false). Whether jobs unfinished by a translator in a group order should be cancelled automatically, or to manually choose to let another translator try or manually cancel.
     }
     # And now we post them over...
     print gengo.postTranslationJobs(jobs=data)
