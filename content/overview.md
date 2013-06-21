@@ -138,7 +138,7 @@ To reject a job, use the [translate/job/{id} (PUT)](/v2/job/#job-put) call with 
 
 ## Order machine translation
 
-We've tried to make it convenient for you to use the Gengo API both for human and machine translation. While we're not big fans of the low quality machine translation can produce, we realise that not all users want, or can afford for, all of their content to be translated by humans. So it's easy for you to switch between the two, and machine translation is free. If you would like to order machine translation only, simply use the tier="machine" when you call the translate/jobs (POST) method and you will not be charged for your order.   Please also note that machine translations have a character limit of 7500 characters.
+We've tried to make it convenient for you to use the Gengo API both for human and machine translation. While we're not big fans of the low quality machine translation can produce, we realise that not all users want, or can afford for, all of their content to be translated by humans. So it's easy for you to switch between the two, and machine translation is free. If you would like to order machine translation only, simply use the tier="machine" when you call the translate/jobs (POST) method and you will not be charged for your order.   Please also note that machine translations have a character limit of 2000 characters per request.
 
 We use Google's Translate API service to supply our machine translation. Let us know if there's another free service you'd like us to add by using the Feedback tab.
 
