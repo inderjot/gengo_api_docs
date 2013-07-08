@@ -103,7 +103,8 @@ __Example call__
                 'comment': 'HEY THERE TRANSLATOR', # OPTIONAL. Comment to leave for translator.
                 'callback_url': 'http://...', # OPTIONAL. Callback URL that updates are sent to.
                 'custom_data': 'your optional custom data, limited to 1kb.' # OPTIONAL
-                'force':  0 # OPTIONAL. 0 (false - default) / 1 (true), whether or not to override lazy loading and force a new translation 
+                'force':  0, # OPTIONAL. 0 (false - default) / 1 (true), whether or not to override lazy loading and force a new translation 
+                'use_preferred': 0 # OPTIONAL. If account has preferred translators then set as 1 to use only them
             },
             'job_2': {
                 'type': 'text', # REQUIRED. Type to translate, you'll probably always put 'text' here.
@@ -117,6 +118,7 @@ __Example call__
                 'callback_url': 'http://...', # OPTIONAL. Callback URL that updates are sent to.
                 'custom_data':'your optional custom data, limited to 1kb.' # OPTIONAL
                 'force':  0 # OPTIONAL. 0 (false - default) / 1 (true), whether or not to override lazy loading and force a new translation 
+                'use_preferred': 0 # OPTIONAL. If account has preferred translators then set as 1 to use only them
             },
             ...
         }
