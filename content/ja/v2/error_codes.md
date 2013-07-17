@@ -16,10 +16,10 @@ Code values let you map your own localized message, and msg values are just samp
 : api_key is a required field
 
 * 1200
-: ts is a required field
+: ts - timestamp is a required field
 
 * 1201
-: ts must be numeric
+: ts - timestamp must be numeric
 
 * 1250
 : data is a required field
