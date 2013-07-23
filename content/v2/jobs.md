@@ -102,7 +102,7 @@ __Example call__
                 'auto_approve': 0, # OPTIONAL. Hopefully self explanatory (1 = yes, 0 = no)
                 'comment': 'HEY THERE TRANSLATOR', # OPTIONAL. Comment to leave for translator.
                 'callback_url': 'http://...', # OPTIONAL. Callback URL that updates are sent to.
-                'custom_data': 'your optional custom data, limited to 1kb.' # OPTIONAL
+                'custom_data': 'your optional custom data, limited to 1kb.', # OPTIONAL
                 'force':  0, # OPTIONAL. 0 (false - default) / 1 (true), whether or not to override lazy loading and force a new translation 
                 'use_preferred': 0 # OPTIONAL. If account has preferred translators then set as 1 to use only them
             },
@@ -116,7 +116,7 @@ __Example call__
                 'auto_approve': 0, # OPTIONAL. Hopefully self explanatory (1 = yes, 0 = no)
                 'comment': 'HEY THERE TRANSLATOR', # OPTIONAL. Comment to leave for translator.
                 'callback_url': 'http://...', # OPTIONAL. Callback URL that updates are sent to.
-                'custom_data':'your optional custom data, limited to 1kb.' # OPTIONAL
+                'custom_data':'your optional custom data, limited to 1kb.', # OPTIONAL
                 'force':  0 # OPTIONAL. 0 (false - default) / 1 (true), whether or not to override lazy loading and force a new translation 
                 'use_preferred': 0 # OPTIONAL. If account has preferred translators then set as 1 to use only them
             },
