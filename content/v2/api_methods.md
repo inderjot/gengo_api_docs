@@ -10,6 +10,9 @@ title: API Methods | Gengo API
 [account/balance __(GET)__](/v2/account/#balance-get)
 : Retrieves account balance in credits.
 
+[account/preferred_translators __(GET)__](/v2/account/#preferred_translators-get)
+: Retrieves preferred translators set by user.
+
 [translate/job/{id} __(GET)__](/v2/job/#job-get)
 : Retrieves a specific job.
 

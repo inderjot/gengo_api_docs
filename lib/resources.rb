@@ -141,6 +141,33 @@ module GitHub
         }
     )
 
+    ACCOUNT_PREFERRED_TRANSLATORS = OK_RESPONSE.merge(
+        "response" => 
+            [
+                {
+                "lc_src" => "en",
+                "lc_tgt" => "ja",
+                "tier" => "standard",
+                "translators" => 
+                    [
+                        {"id" => 8596, "number_of_jobs" => 5, "last_login" => 1375824155},
+                        {"id" => 24123, "number_of_jobs" => 2, "last_login" => 1372822132}
+                    ]
+                },
+                {
+                "lc_src" => "ja",
+                "lc_tgt" => "en",
+                "tier" => "pro",
+                "translators" => 
+                    [
+                        {"id" => 14765, "number_of_jobs" => 10, "last_login" => 1375825234},
+                        {"id" => 3627, "number_of_jobs" => 1, "last_login" => 1372822132}
+                    ]
+                }
+            ]
+        
+    )
+
     REVISIONS_GET = OK_RESPONSE.merge(
         "response" => {
             "job_id" => '...',
