@@ -140,21 +140,27 @@ If there are only new jobs (see lazy loading), or all jobs have the force flag, 
 
 _All jobs are old_
 
-If there are only lazy jobs (i.e. all jobs have already been ordered before and translations exist), the response is a list of the jobs, keyed the same as in the original submission. Notice that each index is a list, as there may be several lazy jobs for a single payload if the force flag has been used in past POSTs.
+If there are only 100% matching jobs (i.e. all jobs have already been ordered before and translations exist), the response is a list of the jobs, keyed the same as in the original submission. The status for these jobs will be updated as "approved". Notice that each index is a list, as there may be several matching jobs for a single payload if the force flag has been used in past POSTs. 
+
+The translation is in the "body_tgt" variable. The order id will be new and the credits_user will be 0, since we have not ordered any new content.
 
 <%= headers 200 %>
 <%= json :jobs_post_all_old %>
 
 _There are repeated jobs in the jobs payload_
 
-If there are any jobs inside a payload that are repeats of any other jobs in the same payload, we return a response identifying the job payloads that were duplicates.
+If there are any jobs inside a payload that are repeats of any other jobs in the same payload, the response will return the same translated text of the previous jobs that were sent.
+
+The job count will be the number of jobs sent, however the credits will only charge for one of the repeated jobs in the payload. A new order id is created for each request.
 
 <%= headers 200 %>
 <%= json :jobs_post_duplicates %>
 
 _Mix of new and old jobs_
 
-If there is a mix of lazy jobs and new jobs in the POST, you will get back a response that contains the old jobs, an order ID for the new jobs, number of new jobs, total cost, and a group ID for the new batch of jobs in the order.
+If there is a mix of previously ordered jobs (100% matching in content and language pair) and new jobs in the POST, you will get back a response that contains the old jobs, an order ID for the new jobs, total cost for the new jobs, and a group ID for the new batch of jobs in the order.
+
+Please Note that the number of total jobs will be the total number of jobs sent in your payload, not just the new ones.
 
 <%= headers 200 %>
 <%= json :jobs_post_mix %>
@@ -205,7 +211,7 @@ __Example call__
 
 __Response__
 
-<%= headers 200 %>
+<%= headers 200 %> 
 <%= json :jobs_get %>
 
 

@@ -1,5 +1,8 @@
 source "http://rubygems.org"
 
+LANG="en_US.UTF-8"
+LC_ALL="en_US.UTF-8"
+
 gem 'rake', '~> 0.9.2'
 gem 'nanoc'
 gem 'kramdown', '~> 0.13.2'
