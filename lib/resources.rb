@@ -239,86 +239,135 @@ module GitHub
 
     JOBS_POST_ALL_OLD = OK_RESPONSE.merge(
         "response" => {
-            "jobs" => {
-                "job_1" => [
-                    {
-                        "job_id"=>"922599",
-                        "slug"=>"slug 0",
-                        "body_src"=>"This is a random string",
-                        "lc_src"=>"en",
-                        "lc_tgt"=>"ja",
-                        "unit_count"=>"10",
-                        "tier"=>"ultra_pro",
-                        "credits"=>"1.70",
-                        "currency"=>"USD",
-                        "status"=>"approved",
-                        "eta"=>-1,
-                        "ctime"=>1348045507,
-                        "auto_approve"=>"0",
-                        "body_tgt"=>"This is a random string in japanese"
-                    }
-                ],
-                "job_2" => [
-                    {
-                        "job_id"=>"922560",
-                        "slug"=>"slug 0",
-                        "body_src"=>"This is another random string",
-                        "lc_src"=>"en",
-                        "lc_tgt"=>"ja",
-                        "unit_count"=>"10",
-                        "tier"=>"ultra_pro",
-                        "credits"=>"1.70",
-                        "currency"=>"USD",
-                        "status"=>"approved",
-                        "eta"=>-1,
-                        "ctime"=>1348045507,
-                        "auto_approve"=>"0",
-                        "body_tgt"=>"This is another random string in japanese"
-                    }
-                ],
-            }
+            "jobs"=>[
+                        [
+                            {
+                                "job_id"=> "1821443",
+                                "slug"=> "3",
+                                "body_src"=> "Second",
+                                "lc_src"=> "en",
+                                "lc_tgt"=> "fr",
+                                "unit_count"=> "1",
+                                "tier"=> "pro",
+                                "credits"=> "0.10",
+                                "currency"=> "USD",
+                                "status"=> "reviewable",
+                                "eta"=> -1,
+                                "ctime"=> 1378703629,
+                                "callback_url"=> "http://example.com",
+                                "auto_approve"=> "0",
+                                "custom_data"=> "1234567",
+                                "body_tgt"=> "Deuxieme"
+                            }
+                        ],
+                        [
+                            {
+                                "job_id"=> "1821444",
+                                "slug"=> "3",
+                                "body_src"=> "Third",
+                                "lc_src"=> "en",
+                                "lc_tgt"=> "fr",
+                                "unit_count"=> "1",
+                                "tier"=> "pro",
+                                "credits"=> "0.10",
+                                "currency"=> "USD",
+                                "status"=> "reviewable",
+                                "eta"=> -1,
+                                "ctime"=> 1378703629,
+                                "callback_url"=> "http://example.com",
+                                "auto_approve"=> "0",
+                                "custom_data"=> "1234567",
+                                "body_tgt"=> "Troisieme"
+                            }
+                        ]
+                    ],
+            "order_id"=> "754511",
+            "job_count"=> 2,
+            "credits_used"=> "0.00",
+            "currency"=> "USD"
         }
     )
 
     JOBS_POST_MIX = OK_RESPONSE.merge(
         "response" => {
-            "jobs" => {
-                "job_1" => [
-                    {"job_id" => "352691" },
-                    {"job_id" => "352692"}
-                ],
-                "job_2" => [
-                    {"job_id" => "352693" }
-                ]
-            },
-            "order_id" => "139370",
-            "job_count" => "5",
-            "credits_used" => "14.50",
-            "currency" => "USD"
-        }
+                "jobs"=> {
+                    "1"=> [
+                        {
+                            "job_id"=> "1821444",
+                            "slug"=> "3",
+                            "body_src"=> "Third",
+                            "lc_src"=> "en",
+                            "lc_tgt"=> "fr",
+                            "unit_count"=> "1",
+                            "tier"=> "pro",
+                            "credits"=> "0.10",
+                            "currency"=> "USD",
+                            "status"=> "reviewable",
+                            "eta"=> -1,
+                            "ctime"=> 1378703629,
+                            "callback_url"=> "http://example.com",
+                            "auto_approve"=> "0",
+                            "custom_data"=> "1234567",
+                            "body_tgt"=> "Troisieme"
+                        }
+                    ]
+                },
+                "order_id"=> "754513",
+                "job_count"=> 2,
+                "credits_used"=> "0.10",
+                "currency"=> "USD"
+            }
     )
 
     JOBS_POST_DUPLICATES = OK_RESPONSE.merge(
 
         "response"=>{
-                "jobs"=>{
-                    "job_2"=>{
-                        "duplicate"=>"job_1",
-                        "custom_data"=>""
-                    },
-                    "job_3"=>{
-                        "duplicate"=>"job_1",
-                        "custom_data"=>""
-                    },
-                    "job_4"=>{
-                        "duplicate"=>"job_1",
-                        "custom_data"=>""
+            "jobs"=>[
+                [
+                    {
+                        "job_id"=> "1087795",
+                        "slug"=> "API Job test",
+                        "body_src"=> "First test.",
+                        "lc_src"=> "en",
+                        "lc_tgt"=> "fr",
+                        "unit_count"=> "2",
+                        "tier"=> "standard",
+                        "credits"=> "0.10",
+                        "currency"=> "USD",
+                        "status"=> "available",
+                        "eta"=> 25308,
+                        "ctime"=> 1378694499,
+                        "callback_url"=> "http://example.com",
+                        "auto_approve"=> "0",
+                        "body_tgt"=> "Premier test.",
+                        "mt"=> 1
                     }
-                },
-                "order_id"=>"122900",
-                "job_count"=>2,
-                "credits_used"=>"0.40",
-                "currency"=>"USD"}
+                ],
+                [
+                    {
+                        "job_id"=> "1087795",
+                        "slug"=> "API Job test",
+                        "body_src"=> "First test.",
+                        "lc_src"=> "en",
+                        "lc_tgt"=> "fr",
+                        "unit_count"=> "2",
+                        "tier"=> "standard",
+                        "credits"=> "0.10",
+                        "currency"=> "USD",
+                        "status"=> "available",
+                        "eta"=> 25308,
+                        "ctime"=> 1378694499,
+                        "callback_url"=> "http://example.com",
+                        "auto_approve"=> "0",
+                        "body_tgt"=> "Premier test.",
+                        "mt"=> 1
+                    }
+                ]
+            ],
+            "order_id"=>"122900",
+            "job_count"=>2,
+            "credits_used"=>"0.40",
+            "currency"=>"USD"}
     )
 
     JOBS_GET = OK_RESPONSE.merge(
