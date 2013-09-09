@@ -236,15 +236,15 @@ __Example call__
     #!ruby
     #!/usr/bin/env ruby
 
-    require 'mygengo'
+    require 'gengo'
 
-    @mygengo_client = MyGengo::API.new({
+    @gengo_client = Gengo::API.new({
         :public_key => 'pub_key',
         :private_key => 'priv_key',
         :sandbox => false,
     })
 
-    puts @mygengo_client.getTranslationJobs(:ids => [1,2,3,4,5])
+    puts @gengo_client.getTranslationJobs(:ids => [1,2,3,4,5])
 
 __Response__
 
