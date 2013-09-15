@@ -67,14 +67,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <p>This describes the endpoints that deal with Jobs on the Gengo API.</p>
 
 <ul>
-<li><a href="#job-group-get">Job Group <strong>(GET)</strong></a></li>
+  <li><a href="#job-group-get">Job Group <strong>(GET)</strong></a></li>
   <li><a href="#jobs-post">Jobs <strong>(POST)</strong></a></li>
   <li><a href="#jobs-get">Jobs <strong>(GET)</strong></a></li>
   <li><a href="#jobs-by-id-get">Jobs by {id} <strong>(GET)</strong></a></li>
-</ul><h2 id="job-group-get">Job group (GET)</h2>
+</ul>
+
+<h2 id="job-group-get">Job group (GET)</h2>
 
 <dl>
-<dt><strong>Summary</strong></dt>
+  <dt><strong>Summary</strong></dt>
   <dd>Retrieves a group of jobs that were previously submitted together by their group id.</dd>
   <dt><strong>URL</strong></dt>
   <dd>http://api.gengo.com/v2/translate/jobs/group/{group_id}</dd>
@@ -83,12 +85,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <dt><strong>Parameters</strong></dt>
   <dd>
     <ul>
-<li>api_key(required) Your API key.</li>
+      <li>api_key(required) Your API key.</li>
       <li>api_sig(required) Your API signature.</li>
       <li>ts(required) Current Unix epoch time as an integer.</li>
     </ul>
-</dd>
-</dl><p><strong>Example call</strong></p>
+  </dd>
+</dl>
+
+<p><strong>Example call</strong></p>
 
 <pre><code class="language-python"><span class="c"># -*- coding: utf-8 -*-</span>
 <span class="c">#!/usr/bin/python</span>
@@ -132,7 +136,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <h2 id="jobs-post">Jobs (POST)</h2>
 
 <dl>
-<dt><strong>Summary</strong></dt>
+  <dt><strong>Summary</strong></dt>
   <dd>Submits a job or group of jobs to translate.</dd>
   <dt><strong>URL</strong></dt>
   <dd>http://api.gengo.com/v2/translate/jobs</dd>
@@ -142,20 +146,22 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <strong>Parameters</strong>_</dt>
   <dd>
     <ul>
-<li>api_key(required) Your API key.</li>
+      <li>api_key(required) Your API key.</li>
       <li>api_sig(required) Your API signature.</li>
       <li>ts(required) Current Unix epoch time as an integer.</li>
     </ul>
-</dd>
+  </dd>
   <dt><strong>Data arguments</strong></dt>
   <dd>
     <ul>
-<li>jobs(required): An array of Job Payloads. Please see the job payloads page for full details of the required parameters.</li>
+      <li>jobs(required): An array of Job Payloads. Please see the job payloads page for full details of the required parameters.</li>
       <li>as_group(optional): 1 (true) / 0 (false, default). Whether all jobs in this group should be done by one translator. Some restrictions apply to what jobs can be grouped, including the requirement that language pairs and tiers must be the same across all jobs.</li>
       <li>allow_fork(optional): 1 (true, default) / 0 (false). If a grouped job is partially completed by a translator, but a translator fails to complete the whole thing, a new order is normally created for the remaining unfinished jobs (it forks) so another translator can take it. If as_group is true and allow_fork is false, then the remaining jobs will instead be cancelled.</li>
     </ul>
-</dd>
-</dl><p><strong>Example call</strong></p>
+  </dd>
+</dl>
+
+<p><strong>Example call</strong></p>
 
 <pre><code class="language-python"><span class="c"># -*- coding: utf-8 -*-</span>
 <span class="c">#!/usr/bin/python</span>
@@ -231,77 +237,117 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <p><em>All jobs are old</em></p>
 
-<p>If there are only lazy jobs (i.e. all jobs have already been ordered before and translations exist), the response is a list of the jobs, keyed the same as in the original submission. Notice that each index is a list, as there may be several lazy jobs for a single payload if the force flag has been used in past POSTs.</p>
+<p>If there are only 100% matching jobs (i.e. all jobs have already been ordered before and translations exist), the response is a list of the jobs, keyed the same as in the original submission. The status for these jobs will be updated as “approved”. Notice that each index is a list, as there may be several matching jobs for a single payload if the force flag has been used in past POSTs. </p>
+
+<p>The translation is in the “body_tgt” variable. The order id will be new and the credits_user will be 0, since we have not ordered any new content.</p>
 
 <pre class="headers"><code>Status: 200 OK</code></pre>
 
 <pre class="highlight"><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"opstat"</span><span class="o">:</span> <span class="s2">"ok"</span><span class="p">,</span>
   <span class="s2">"response"</span><span class="o">:</span> <span class="p">{</span>
-    <span class="s2">"jobs"</span><span class="o">:</span> <span class="p">{</span>
-      <span class="s2">"job_1"</span><span class="o">:</span> <span class="p">[</span>
+    <span class="s2">"jobs"</span><span class="o">:</span> <span class="p">[</span>
+      <span class="p">[</span>
         <span class="p">{</span>
-          <span class="s2">"job_id"</span><span class="o">:</span> <span class="s2">"922599"</span><span class="p">,</span>
-          <span class="s2">"slug"</span><span class="o">:</span> <span class="s2">"slug 0"</span><span class="p">,</span>
-          <span class="s2">"body_src"</span><span class="o">:</span> <span class="s2">"This is a random string"</span><span class="p">,</span>
+          <span class="s2">"job_id"</span><span class="o">:</span> <span class="s2">"1821443"</span><span class="p">,</span>
+          <span class="s2">"slug"</span><span class="o">:</span> <span class="s2">"3"</span><span class="p">,</span>
+          <span class="s2">"body_src"</span><span class="o">:</span> <span class="s2">"Second"</span><span class="p">,</span>
           <span class="s2">"lc_src"</span><span class="o">:</span> <span class="s2">"en"</span><span class="p">,</span>
-          <span class="s2">"lc_tgt"</span><span class="o">:</span> <span class="s2">"ja"</span><span class="p">,</span>
-          <span class="s2">"unit_count"</span><span class="o">:</span> <span class="s2">"10"</span><span class="p">,</span>
-          <span class="s2">"tier"</span><span class="o">:</span> <span class="s2">"ultra_pro"</span><span class="p">,</span>
-          <span class="s2">"credits"</span><span class="o">:</span> <span class="s2">"1.70"</span><span class="p">,</span>
+          <span class="s2">"lc_tgt"</span><span class="o">:</span> <span class="s2">"fr"</span><span class="p">,</span>
+          <span class="s2">"unit_count"</span><span class="o">:</span> <span class="s2">"1"</span><span class="p">,</span>
+          <span class="s2">"tier"</span><span class="o">:</span> <span class="s2">"pro"</span><span class="p">,</span>
+          <span class="s2">"credits"</span><span class="o">:</span> <span class="s2">"0.10"</span><span class="p">,</span>
           <span class="s2">"currency"</span><span class="o">:</span> <span class="s2">"USD"</span><span class="p">,</span>
-          <span class="s2">"status"</span><span class="o">:</span> <span class="s2">"approved"</span><span class="p">,</span>
+          <span class="s2">"status"</span><span class="o">:</span> <span class="s2">"reviewable"</span><span class="p">,</span>
           <span class="s2">"eta"</span><span class="o">:</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span>
-          <span class="s2">"ctime"</span><span class="o">:</span> <span class="mi">1348045507</span><span class="p">,</span>
+          <span class="s2">"ctime"</span><span class="o">:</span> <span class="mi">1378703629</span><span class="p">,</span>
+          <span class="s2">"callback_url"</span><span class="o">:</span> <span class="s2">"http://example.com"</span><span class="p">,</span>
           <span class="s2">"auto_approve"</span><span class="o">:</span> <span class="s2">"0"</span><span class="p">,</span>
-          <span class="s2">"body_tgt"</span><span class="o">:</span> <span class="s2">"This is a random string in japanese"</span>
+          <span class="s2">"custom_data"</span><span class="o">:</span> <span class="s2">"1234567"</span><span class="p">,</span>
+          <span class="s2">"body_tgt"</span><span class="o">:</span> <span class="s2">"Deuxieme"</span>
         <span class="p">}</span>
       <span class="p">],</span>
-      <span class="s2">"job_2"</span><span class="o">:</span> <span class="p">[</span>
+      <span class="p">[</span>
         <span class="p">{</span>
-          <span class="s2">"job_id"</span><span class="o">:</span> <span class="s2">"922560"</span><span class="p">,</span>
-          <span class="s2">"slug"</span><span class="o">:</span> <span class="s2">"slug 0"</span><span class="p">,</span>
-          <span class="s2">"body_src"</span><span class="o">:</span> <span class="s2">"This is another random string"</span><span class="p">,</span>
+          <span class="s2">"job_id"</span><span class="o">:</span> <span class="s2">"1821444"</span><span class="p">,</span>
+          <span class="s2">"slug"</span><span class="o">:</span> <span class="s2">"3"</span><span class="p">,</span>
+          <span class="s2">"body_src"</span><span class="o">:</span> <span class="s2">"Third"</span><span class="p">,</span>
           <span class="s2">"lc_src"</span><span class="o">:</span> <span class="s2">"en"</span><span class="p">,</span>
-          <span class="s2">"lc_tgt"</span><span class="o">:</span> <span class="s2">"ja"</span><span class="p">,</span>
-          <span class="s2">"unit_count"</span><span class="o">:</span> <span class="s2">"10"</span><span class="p">,</span>
-          <span class="s2">"tier"</span><span class="o">:</span> <span class="s2">"ultra_pro"</span><span class="p">,</span>
-          <span class="s2">"credits"</span><span class="o">:</span> <span class="s2">"1.70"</span><span class="p">,</span>
+          <span class="s2">"lc_tgt"</span><span class="o">:</span> <span class="s2">"fr"</span><span class="p">,</span>
+          <span class="s2">"unit_count"</span><span class="o">:</span> <span class="s2">"1"</span><span class="p">,</span>
+          <span class="s2">"tier"</span><span class="o">:</span> <span class="s2">"pro"</span><span class="p">,</span>
+          <span class="s2">"credits"</span><span class="o">:</span> <span class="s2">"0.10"</span><span class="p">,</span>
           <span class="s2">"currency"</span><span class="o">:</span> <span class="s2">"USD"</span><span class="p">,</span>
-          <span class="s2">"status"</span><span class="o">:</span> <span class="s2">"approved"</span><span class="p">,</span>
+          <span class="s2">"status"</span><span class="o">:</span> <span class="s2">"reviewable"</span><span class="p">,</span>
           <span class="s2">"eta"</span><span class="o">:</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span>
-          <span class="s2">"ctime"</span><span class="o">:</span> <span class="mi">1348045507</span><span class="p">,</span>
+          <span class="s2">"ctime"</span><span class="o">:</span> <span class="mi">1378703629</span><span class="p">,</span>
+          <span class="s2">"callback_url"</span><span class="o">:</span> <span class="s2">"http://example.com"</span><span class="p">,</span>
           <span class="s2">"auto_approve"</span><span class="o">:</span> <span class="s2">"0"</span><span class="p">,</span>
-          <span class="s2">"body_tgt"</span><span class="o">:</span> <span class="s2">"This is another random string in japanese"</span>
+          <span class="s2">"custom_data"</span><span class="o">:</span> <span class="s2">"1234567"</span><span class="p">,</span>
+          <span class="s2">"body_tgt"</span><span class="o">:</span> <span class="s2">"Troisieme"</span>
         <span class="p">}</span>
       <span class="p">]</span>
-    <span class="p">}</span>
+    <span class="p">],</span>
+    <span class="s2">"order_id"</span><span class="o">:</span> <span class="s2">"754511"</span><span class="p">,</span>
+    <span class="s2">"job_count"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
+    <span class="s2">"credits_used"</span><span class="o">:</span> <span class="s2">"0.00"</span><span class="p">,</span>
+    <span class="s2">"currency"</span><span class="o">:</span> <span class="s2">"USD"</span>
   <span class="p">}</span>
 <span class="p">}</span></code></pre>
 
 <p><em>There are repeated jobs in the jobs payload</em></p>
 
-<p>If there are any jobs inside a payload that are repeats of any other jobs in the same payload, we return a response identifying the job payloads that were duplicates.</p>
+<p>If there are any jobs inside a payload that are repeats of any other jobs in the same payload, the response will return the same translated text of the previous jobs that were sent.</p>
+
+<p>The job count will be the number of jobs sent, however the credits will only charge for one of the repeated jobs in the payload. A new order id is created for each request.</p>
 
 <pre class="headers"><code>Status: 200 OK</code></pre>
 
 <pre class="highlight"><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"opstat"</span><span class="o">:</span> <span class="s2">"ok"</span><span class="p">,</span>
   <span class="s2">"response"</span><span class="o">:</span> <span class="p">{</span>
-    <span class="s2">"jobs"</span><span class="o">:</span> <span class="p">{</span>
-      <span class="s2">"job_2"</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">"duplicate"</span><span class="o">:</span> <span class="s2">"job_1"</span><span class="p">,</span>
-        <span class="s2">"custom_data"</span><span class="o">:</span> <span class="s2">""</span>
-      <span class="p">},</span>
-      <span class="s2">"job_3"</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">"duplicate"</span><span class="o">:</span> <span class="s2">"job_1"</span><span class="p">,</span>
-        <span class="s2">"custom_data"</span><span class="o">:</span> <span class="s2">""</span>
-      <span class="p">},</span>
-      <span class="s2">"job_4"</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">"duplicate"</span><span class="o">:</span> <span class="s2">"job_1"</span><span class="p">,</span>
-        <span class="s2">"custom_data"</span><span class="o">:</span> <span class="s2">""</span>
-      <span class="p">}</span>
-    <span class="p">},</span>
+    <span class="s2">"jobs"</span><span class="o">:</span> <span class="p">[</span>
+      <span class="p">[</span>
+        <span class="p">{</span>
+          <span class="s2">"job_id"</span><span class="o">:</span> <span class="s2">"1087795"</span><span class="p">,</span>
+          <span class="s2">"slug"</span><span class="o">:</span> <span class="s2">"API Job test"</span><span class="p">,</span>
+          <span class="s2">"body_src"</span><span class="o">:</span> <span class="s2">"First test."</span><span class="p">,</span>
+          <span class="s2">"lc_src"</span><span class="o">:</span> <span class="s2">"en"</span><span class="p">,</span>
+          <span class="s2">"lc_tgt"</span><span class="o">:</span> <span class="s2">"fr"</span><span class="p">,</span>
+          <span class="s2">"unit_count"</span><span class="o">:</span> <span class="s2">"2"</span><span class="p">,</span>
+          <span class="s2">"tier"</span><span class="o">:</span> <span class="s2">"standard"</span><span class="p">,</span>
+          <span class="s2">"credits"</span><span class="o">:</span> <span class="s2">"0.10"</span><span class="p">,</span>
+          <span class="s2">"currency"</span><span class="o">:</span> <span class="s2">"USD"</span><span class="p">,</span>
+          <span class="s2">"status"</span><span class="o">:</span> <span class="s2">"available"</span><span class="p">,</span>
+          <span class="s2">"eta"</span><span class="o">:</span> <span class="mi">25308</span><span class="p">,</span>
+          <span class="s2">"ctime"</span><span class="o">:</span> <span class="mi">1378694499</span><span class="p">,</span>
+          <span class="s2">"callback_url"</span><span class="o">:</span> <span class="s2">"http://example.com"</span><span class="p">,</span>
+          <span class="s2">"auto_approve"</span><span class="o">:</span> <span class="s2">"0"</span><span class="p">,</span>
+          <span class="s2">"body_tgt"</span><span class="o">:</span> <span class="s2">"Premier test."</span><span class="p">,</span>
+          <span class="s2">"mt"</span><span class="o">:</span> <span class="mi">1</span>
+        <span class="p">}</span>
+      <span class="p">],</span>
+      <span class="p">[</span>
+        <span class="p">{</span>
+          <span class="s2">"job_id"</span><span class="o">:</span> <span class="s2">"1087795"</span><span class="p">,</span>
+          <span class="s2">"slug"</span><span class="o">:</span> <span class="s2">"API Job test"</span><span class="p">,</span>
+          <span class="s2">"body_src"</span><span class="o">:</span> <span class="s2">"First test."</span><span class="p">,</span>
+          <span class="s2">"lc_src"</span><span class="o">:</span> <span class="s2">"en"</span><span class="p">,</span>
+          <span class="s2">"lc_tgt"</span><span class="o">:</span> <span class="s2">"fr"</span><span class="p">,</span>
+          <span class="s2">"unit_count"</span><span class="o">:</span> <span class="s2">"2"</span><span class="p">,</span>
+          <span class="s2">"tier"</span><span class="o">:</span> <span class="s2">"standard"</span><span class="p">,</span>
+          <span class="s2">"credits"</span><span class="o">:</span> <span class="s2">"0.10"</span><span class="p">,</span>
+          <span class="s2">"currency"</span><span class="o">:</span> <span class="s2">"USD"</span><span class="p">,</span>
+          <span class="s2">"status"</span><span class="o">:</span> <span class="s2">"available"</span><span class="p">,</span>
+          <span class="s2">"eta"</span><span class="o">:</span> <span class="mi">25308</span><span class="p">,</span>
+          <span class="s2">"ctime"</span><span class="o">:</span> <span class="mi">1378694499</span><span class="p">,</span>
+          <span class="s2">"callback_url"</span><span class="o">:</span> <span class="s2">"http://example.com"</span><span class="p">,</span>
+          <span class="s2">"auto_approve"</span><span class="o">:</span> <span class="s2">"0"</span><span class="p">,</span>
+          <span class="s2">"body_tgt"</span><span class="o">:</span> <span class="s2">"Premier test."</span><span class="p">,</span>
+          <span class="s2">"mt"</span><span class="o">:</span> <span class="mi">1</span>
+        <span class="p">}</span>
+      <span class="p">]</span>
+    <span class="p">],</span>
     <span class="s2">"order_id"</span><span class="o">:</span> <span class="s2">"122900"</span><span class="p">,</span>
     <span class="s2">"job_count"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
     <span class="s2">"credits_used"</span><span class="o">:</span> <span class="s2">"0.40"</span><span class="p">,</span>
@@ -311,7 +357,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <p><em>Mix of new and old jobs</em></p>
 
-<p>If there is a mix of lazy jobs and new jobs in the POST, you will get back a response that contains the old jobs, an order ID for the new jobs, number of new jobs, total cost, and a group ID for the new batch of jobs in the order.</p>
+<p>If there is a mix of previously ordered jobs (100% matching in content and language pair) and new jobs in the POST, you will get back a response that contains the old jobs, an order ID for the new jobs, total cost for the new jobs, and a group ID for the new batch of jobs in the order.</p>
+
+<p>Please Note that the number of total jobs will be the total number of jobs sent in your payload, not just the new ones.</p>
 
 <pre class="headers"><code>Status: 200 OK</code></pre>
 
@@ -319,23 +367,30 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <span class="s2">"opstat"</span><span class="o">:</span> <span class="s2">"ok"</span><span class="p">,</span>
   <span class="s2">"response"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"jobs"</span><span class="o">:</span> <span class="p">{</span>
-      <span class="s2">"job_1"</span><span class="o">:</span> <span class="p">[</span>
+      <span class="s2">"1"</span><span class="o">:</span> <span class="p">[</span>
         <span class="p">{</span>
-          <span class="s2">"job_id"</span><span class="o">:</span> <span class="s2">"352691"</span>
-        <span class="p">},</span>
-        <span class="p">{</span>
-          <span class="s2">"job_id"</span><span class="o">:</span> <span class="s2">"352692"</span>
-        <span class="p">}</span>
-      <span class="p">],</span>
-      <span class="s2">"job_2"</span><span class="o">:</span> <span class="p">[</span>
-        <span class="p">{</span>
-          <span class="s2">"job_id"</span><span class="o">:</span> <span class="s2">"352693"</span>
+          <span class="s2">"job_id"</span><span class="o">:</span> <span class="s2">"1821444"</span><span class="p">,</span>
+          <span class="s2">"slug"</span><span class="o">:</span> <span class="s2">"3"</span><span class="p">,</span>
+          <span class="s2">"body_src"</span><span class="o">:</span> <span class="s2">"Third"</span><span class="p">,</span>
+          <span class="s2">"lc_src"</span><span class="o">:</span> <span class="s2">"en"</span><span class="p">,</span>
+          <span class="s2">"lc_tgt"</span><span class="o">:</span> <span class="s2">"fr"</span><span class="p">,</span>
+          <span class="s2">"unit_count"</span><span class="o">:</span> <span class="s2">"1"</span><span class="p">,</span>
+          <span class="s2">"tier"</span><span class="o">:</span> <span class="s2">"pro"</span><span class="p">,</span>
+          <span class="s2">"credits"</span><span class="o">:</span> <span class="s2">"0.10"</span><span class="p">,</span>
+          <span class="s2">"currency"</span><span class="o">:</span> <span class="s2">"USD"</span><span class="p">,</span>
+          <span class="s2">"status"</span><span class="o">:</span> <span class="s2">"reviewable"</span><span class="p">,</span>
+          <span class="s2">"eta"</span><span class="o">:</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span>
+          <span class="s2">"ctime"</span><span class="o">:</span> <span class="mi">1378703629</span><span class="p">,</span>
+          <span class="s2">"callback_url"</span><span class="o">:</span> <span class="s2">"http://example.com"</span><span class="p">,</span>
+          <span class="s2">"auto_approve"</span><span class="o">:</span> <span class="s2">"0"</span><span class="p">,</span>
+          <span class="s2">"custom_data"</span><span class="o">:</span> <span class="s2">"1234567"</span><span class="p">,</span>
+          <span class="s2">"body_tgt"</span><span class="o">:</span> <span class="s2">"Troisieme"</span>
         <span class="p">}</span>
       <span class="p">]</span>
     <span class="p">},</span>
-    <span class="s2">"order_id"</span><span class="o">:</span> <span class="s2">"139370"</span><span class="p">,</span>
-    <span class="s2">"job_count"</span><span class="o">:</span> <span class="s2">"5"</span><span class="p">,</span>
-    <span class="s2">"credits_used"</span><span class="o">:</span> <span class="s2">"14.50"</span><span class="p">,</span>
+    <span class="s2">"order_id"</span><span class="o">:</span> <span class="s2">"754513"</span><span class="p">,</span>
+    <span class="s2">"job_count"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
+    <span class="s2">"credits_used"</span><span class="o">:</span> <span class="s2">"0.10"</span><span class="p">,</span>
     <span class="s2">"currency"</span><span class="o">:</span> <span class="s2">"USD"</span>
   <span class="p">}</span>
 <span class="p">}</span></code></pre>
@@ -343,7 +398,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <h2 id="jobs-get">Jobs (GET)</h2>
 
 <dl>
-<dt><strong>Summary</strong></dt>
+  <dt><strong>Summary</strong></dt>
   <dd>Retrieves a list of resources for the most recent jobs filtered by the given parameters.</dd>
   <dt><strong>URL</strong></dt>
   <dd>http://api.gengo.com/v2/translate/jobs</dd>
@@ -352,26 +407,30 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <dt><strong>Parameters</strong></dt>
   <dd>
     <ul>
-<li>api_key(required) Your API key.</li>
+      <li>api_key(required) Your API key.</li>
       <li>api_sig(required) Your API signature.</li>
       <li>ts(required) Current Unix epoch time as an integer.</li>
     </ul>
-</dd>
+  </dd>
   <dt><strong>Data arguments</strong></dt>
   <dd>
     <ul>
-<li>status(optional): “available”, “pending”, “reviewable”, “approved”, “rejected”, or “canceled”</li>
+      <li>status(optional): “available”, “pending”, “reviewable”, “approved”, “rejected”, or “canceled”</li>
       <li>timestamp_after(optional): Epoch timestamp from which to filter submitted jobs.</li>
       <li>count(optional): Defaults to 10. Maximum 200.</li>
     </ul>
-</dd>
-</dl><p><strong>Note</strong></p>
+  </dd>
+</dl>
+
+<p><strong>Note</strong></p>
 
 <ul>
-<li>If you only use count, you’ll get the most recent count jobs.</li>
+  <li>If you only use count, you’ll get the most recent count jobs.</li>
   <li>If you use count with timestamp_after, you’ll get count jobs submitted since timestamp_after.</li>
   <li>If you only use timestamp_after, you’ll get all jobs submitted since timestamp_after.</li>
-</ul><p><strong>Example call</strong></p>
+</ul>
+
+<p><strong>Example call</strong></p>
 
 <pre><code class="language-python"><span class="c"># -*- coding: utf-8 -*-</span>
 <span class="c">#!/usr/bin/python</span>
@@ -411,7 +470,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <h2 id="jobs-by-id-get">Jobs by id (GET)</h2>
 
 <dl>
-<dt><strong>Summary</strong></dt>
+  <dt><strong>Summary</strong></dt>
   <dd>Retrieves a list of jobs. They are requested by a comma-separated list of job ids.</dd>
   <dt><strong>URL</strong></dt>
   <dd>http://api.gengo.com/v2/translate/jobs/{ids}</dd>
@@ -420,12 +479,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <dt><strong>Parameters</strong></dt>
   <dd>
     <ul>
-<li>api_key(required) Your API key.</li>
+      <li>api_key(required) Your API key.</li>
       <li>api_sig(required) Your API signature.</li>
       <li>ts(required) Current Unix epoch time as an integer.</li>
     </ul>
-</dd>
-</dl><p><strong>Example call</strong></p>
+  </dd>
+</dl>
+
+<p><strong>Example call</strong></p>
 
 <pre><code class="language-ruby"><span class="c1">#!/usr/bin/env ruby</span>
 
@@ -484,6 +545,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <span class="p">]</span>
   <span class="p">}</span>
 <span class="p">}</span></code></pre>
+
       </div>
 
       

@@ -67,14 +67,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <p>This describes the endpoints that deal with Service on the Gengo API.</p>
 
 <ul>
-<li><a href="#language-pairs-get">Language Pairs <strong>(GET)</strong></a></li>
+  <li><a href="#language-pairs-get">Language Pairs <strong>(GET)</strong></a></li>
   <li><a href="#languages-get">Languages <strong>(GET)</strong></a></li>
   <li><a href="#quote-post">Quote <strong>(POST)</strong></a></li>
   <li><a href="#quote-files-post">Quote files <strong>(POST)</strong></a></li>
-</ul><h2 id="language-pairs-get">Language pairs (GET)</h2>
+</ul>
+
+<h2 id="language-pairs-get">Language pairs (GET)</h2>
 
 <dl>
-<dt><strong>Summary</strong></dt>
+  <dt><strong>Summary</strong></dt>
   <dd>Returns supported translation language pairs, tiers, and credit prices.</dd>
   <dt><strong>URL</strong></dt>
   <dd>http://api.gengo.com/v2/translate/service/language_pairs</dd>
@@ -83,10 +85,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <dt><strong>Parameters</strong></dt>
   <dd>
     <ul>
-<li>api_key(required) Your API key.</li>
+      <li>api_key(required) Your API key.</li>
     </ul>
-</dd>
-</dl><p><strong>Example call</strong></p>
+  </dd>
+</dl>
+
+<p><strong>Example call</strong></p>
 
 <pre><code># -*- coding: utf-8 -*-
 #!/usr/bin/python
@@ -133,7 +137,7 @@ print gengo.getServiceLanguagePairs()
 <h2 id="languages-get">Languages (GET)</h2>
 
 <dl>
-<dt><strong>Summary</strong></dt>
+  <dt><strong>Summary</strong></dt>
   <dd>Returns a list of supported languages and their language codes.</dd>
   <dt><strong>URL</strong></dt>
   <dd>http://api.gengo.com/v2/translate/service/languages</dd>
@@ -142,16 +146,18 @@ print gengo.getServiceLanguagePairs()
   <dt><strong>Parameters</strong></dt>
   <dd>
     <ul>
-<li>api_key(required) Your API key.</li>
+      <li>api_key(required) Your API key.</li>
     </ul>
-</dd>
+  </dd>
   <dt><strong>Data arguments</strong></dt>
   <dd>
     <ul>
-<li>lc_src(optional): Source language code. Submitting this will filter the response to only relevant language pairs.</li>
+      <li>lc_src(optional): Source language code. Submitting this will filter the response to only relevant language pairs.</li>
     </ul>
-</dd>
-</dl><p><strong>Example call</strong></p>
+  </dd>
+</dl>
+
+<p><strong>Example call</strong></p>
 
 <pre><code># -*- coding: utf-8 -*-
 #!/usr/bin/python
@@ -198,7 +204,7 @@ print gengo.getServiceLanguages()
 <h2 id="quote-post">Quote (POST)</h2>
 
 <dl>
-<dt><strong>Summary</strong></dt>
+  <dt><strong>Summary</strong></dt>
   <dd>Returns credit quote and unit count for text based on content, tier, and language pair for job or jobs submitted.</dd>
   <dt><strong>URL</strong></dt>
   <dd>http://api.gengo.com/v2/translate/service/quote</dd>
@@ -207,21 +213,23 @@ print gengo.getServiceLanguages()
   <dt><strong>Parameters</strong></dt>
   <dd>
     <ul>
-<li>api_key(required) Your API key.</li>
+      <li>api_key(required) Your API key.</li>
     </ul>
-</dd>
+  </dd>
   <dd>
     <ul>
-<li>api_sig(required) Your API signature.</li>
+      <li>api_sig(required) Your API signature.</li>
     </ul>
-</dd>
+  </dd>
   <dt><strong>Data arguments</strong></dt>
   <dd>
     <ul>
-<li>jobs(required): An array of Job payloads, but only with the “lc_src”, “lc_tgt”, and “tier” parameters.</li>
+      <li>jobs(required): An array of Job payloads, but only with the “lc_src”, “lc_tgt”, and “tier” parameters.</li>
     </ul>
-</dd>
-</dl><p><strong>Example call</strong></p>
+  </dd>
+</dl>
+
+<p><strong>Example call</strong></p>
 
 <pre><code># -*- coding: utf-8 -*-
 #!/usr/bin/python
@@ -298,7 +306,7 @@ prints gengo.determineTranslationCost(jobs = jobs_data)
 <h2 id="quote-files-post">Quote files (POST)</h2>
 
 <dl>
-<dt><strong>Summary</strong></dt>
+  <dt><strong>Summary</strong></dt>
   <dd>Uploads files to Gengo and returns a quote for each file, with an identifier for when client is ready to place the actual order. Price quote is based on content, tier, and language pair. After using this call, use the identifier return as a parameter in the jobs post method to order the actual job (see Job Payloads ).</dd>
   <dt><strong>URL</strong></dt>
   <dd>http://api.gengo.com/v2/translate/service/quote/file</dd>
@@ -307,22 +315,24 @@ prints gengo.determineTranslationCost(jobs = jobs_data)
   <dt><strong>Parameters</strong></dt>
   <dd>
     <ul>
-<li>api_key(required) Your API key.</li>
+      <li>api_key(required) Your API key.</li>
     </ul>
-</dd>
+  </dd>
   <dd>
     <ul>
-<li>api_sig(required) Your API signature.</li>
+      <li>api_sig(required) Your API signature.</li>
     </ul>
-</dd>
+  </dd>
   <dt><strong>Data arguments</strong></dt>
   <dd>
     <ul>
-<li>jobs(required): An array of Job payloads, but only with the “lc_src”, “lc_tgt”, and “tier” parameters.</li>
+      <li>jobs(required): An array of Job payloads, but only with the “lc_src”, “lc_tgt”, and “tier” parameters.</li>
       <li>files(required): A dictionary of files, where for each key, there is a multipart-encoded file</li>
     </ul>
-</dd>
-</dl><p><strong>Example call</strong></p>
+  </dd>
+</dl>
+
+<p><strong>Example call</strong></p>
 
 <pre><code>#!/usr/bin/env ruby
 
@@ -403,6 +413,7 @@ require 'mygengo'
     <span class="p">}</span>
   <span class="p">}</span>
 <span class="p">}</span></code></pre>
+
       </div>
 
       

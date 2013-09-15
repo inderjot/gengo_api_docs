@@ -67,13 +67,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <p>This describes the endpoints that deal with Account information on Gengo API.</p>
 
 <ul>
-<li><a href="#stats-get">Stats <strong>(GET)</strong></a></li>
+  <li><a href="#stats-get">Stats <strong>(GET)</strong></a></li>
   <li><a href="#balance-get">Balance <strong>(GET)</strong></a></li>
   <li><a href="#preferred-translators-get">Preferred translators <strong>(GET)</strong></a></li>
-</ul><h2 id="stats-get">Stats (GET)</h2>
+</ul>
+
+<h2 id="stats-get">Stats (GET)</h2>
 
 <dl>
-<dt><strong>Summary</strong></dt>
+  <dt><strong>Summary</strong></dt>
   <dd>Retrieves account stats, such as orders made.</dd>
   <dt><strong>URL</strong></dt>
   <dd>http://api.gengo.com/v2/account/stats</dd>
@@ -82,12 +84,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <dt><strong>Parameters</strong></dt>
   <dd>
     <ul>
-<li>api_key(required) Your API key.</li>
+      <li>api_key(required) Your API key.</li>
       <li>api_sig(required) Your API signature.</li>
       <li>ts(required) Current Unix epoch time as an integer.</li>
     </ul>
-</dd>
-</dl><p><strong>Example call</strong></p>
+  </dd>
+</dl>
+
+<p><strong>Example call</strong></p>
 
 <pre><code class="language-python"><span class="c"># -*- coding: utf-8 -*-</span>
 <span class="c">#!/usr/bin/python</span>
@@ -118,7 +122,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <h2 id="balance-get">Balance (GET)</h2>
 
 <dl>
-<dt><strong>Summary</strong></dt>
+  <dt><strong>Summary</strong></dt>
   <dd>Retrieves account balance in credits.</dd>
   <dt><strong>URL</strong></dt>
   <dd>http://api.gengo.com/v2/account/balance</dd>
@@ -128,12 +132,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <strong>Parameters</strong>_</dt>
   <dd>
     <ul>
-<li>api_key(required) Your API key.</li>
+      <li>api_key(required) Your API key.</li>
       <li>api_sig(required) Your API signature.</li>
       <li>ts(required) Current Unix epoch time as an integer.</li>
     </ul>
-</dd>
-</dl><p><strong>Example call</strong></p>
+  </dd>
+</dl>
+
+<p><strong>Example call</strong></p>
 
 <pre><code class="language-python"><span class="c"># -*- coding: utf-8 -*-</span>
 <span class="c">#!/usr/bin/python</span>
@@ -165,7 +171,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <h2 id="preferred-translators-get">Preferred translators (GET)</h2>
 
 <dl>
-<dt><strong>Summary</strong></dt>
+  <dt><strong>Summary</strong></dt>
   <dd>Retrieves preferred translators set by user.</dd>
   <dt><strong>URL</strong></dt>
   <dd>http://api.gengo.com/v2/account/preferred_translators</dd>
@@ -175,12 +181,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <strong>Parameters</strong>_</dt>
   <dd>
     <ul>
-<li>api_key(required) Your API key.</li>
+      <li>api_key(required) Your API key.</li>
       <li>api_sig(required) Your API signature.</li>
       <li>ts(required) Current Unix epoch time as an integer.</li>
     </ul>
-</dd>
-</dl><p><strong>Example call</strong></p>
+  </dd>
+</dl>
+
+<p><strong>Example call</strong></p>
 
 <pre><code class="language-python"><span class="c"># -*- coding: utf-8 -*-</span>
 <span class="c">#!/usr/bin/python</span>
@@ -239,6 +247,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <span class="p">}</span>
   <span class="p">]</span>
 <span class="p">}</span></code></pre>
+
       </div>
 
       

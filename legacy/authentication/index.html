@@ -75,11 +75,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <p>All authenticated calls must be signed. The process for signing is as follows:</p>
 
 <ul>
-<li>Sort the argument list in alphabetical order by parameter name
+  <li>Sort the argument list in alphabetical order by parameter name
 example: “food=steak&amp;cuisine=french&amp;drink=wine” sorts to “cuisine=french&amp;drink=wine&amp;food=steak”</li>
   <li>Calculate the SHA1 hash of the parameters as a string</li>
   <li>Append the value of this hash to the argument list as a parameter named api_sig</li>
-</ul><h2 id="example-api-authenticated-call">Example API authenticated call</h2>
+</ul>
+
+<h2 id="example-api-authenticated-call">Example API authenticated call</h2>
 
 <pre class="code">
     // submit a comment for job ID 20
@@ -105,6 +107,7 @@ example: “food=steak&amp;cuisine=french&amp;drink=wine” sorts to “cuisine=
     curl_setopt($ch, CURLOPT_POSTFIELDS, $params);
     $response = curl_exect($ch); curl_close($ch);
 </pre>
+
       </div>
 
       

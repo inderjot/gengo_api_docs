@@ -69,12 +69,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <p>Callback notifications are sent when:</p>
 
 <ul>
-<li>A job is ready for review</li>
+  <li>A job is ready for review</li>
   <li>A job has been auto-approved (the auto_approve flag was set to 1 when submitting the job)</li>
   <li>A job is manually approved via our Gengo Dashboard customer interface</li>
   <li>A job was ordered and put into our Queue, processed, and ready to be picked up by a translator</li>
   <li>A comment has been posted for a job</li>
-</ul><p>Callback URLs can be assigned per api-key or per job. A callback URL assigned to a job takes precedence over the default callback URL set for an api-key. Up to 3 attempts will be made to submit data to the callback URL - the first time will be immediately when applicable, with subsequent attempts an hour apart.</p>
+</ul>
+
+<p>Callback URLs can be assigned per api-key or per job. A callback URL assigned to a job takes precedence over the default callback URL set for an api-key. Up to 3 attempts will be made to submit data to the callback URL - the first time will be immediately when applicable, with subsequent attempts an hour apart.</p>
 
 <h2 id="parameter-formats">Parameter Formats</h2>
 
@@ -95,7 +97,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <p>Comment-related notifications are sent to the same callback when a translator submits a comment for a job. The payload will be in a parameter named “comment”, and will look like this:</p>
 
 <dl>
-<dt>job_id</dt>
+  <dt>job_id</dt>
   <dd>
 <em>String</em> of the Job ID for which comment applies</dd>
   <dt>body</dt>
@@ -107,7 +109,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <dt>custom_data</dt>
   <dd>
 <em>String</em> of the custom data associated with the job (if any)</dd>
-</dl><p>Here’s an example of how a client might receive a callback submission for a job comment:</p>
+</dl>
+
+<p>Here’s an example of how a client might receive a callback submission for a job comment:</p>
 
 <pre><code class="language-php"><span class="cp">&lt;?php</span>
 <span class="k">if</span> <span class="p">(</span><span class="nb">isset</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">[</span><span class="s1">'comment'</span><span class="p">]))</span>
@@ -131,6 +135,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <span class="nv">$custom_data</span> <span class="o">=</span> <span class="nv">$data</span><span class="o">-&gt;</span><span class="na">custom_data</span><span class="p">;</span> <span class="c1">// do stuff ...</span>
 <span class="p">}</span>
 <span class="cp">?&gt;</span><span class="x"></span></code></pre>
+
       </div>
 
       
