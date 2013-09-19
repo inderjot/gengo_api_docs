@@ -16,6 +16,7 @@ Callback notifications are sent when:
 
 Callback URLs can be assigned per api-key or per job. A callback URL assigned to a job takes precedence over the default callback URL set for an api-key. Up to 3 attempts will be made to submit data to the callback URL - the first time will be immediately when applicable, with subsequent attempts an hour apart.
 
+For file jobs, the request that is sent to your callback will contain a "file_url_tgt" parameter, which is the link to the translated file. This link is different from the url you get from a GET on file jobs in Job(GET), which is "src_file_link".
 
 ## Parameter Formats
 
@@ -48,6 +49,9 @@ ctime
 
 custom_data
 : _String_ of the custom data associated with the job (if any)
+
+file_url_tgt
+:_String_ of the full URL of the target file
 
 Here's an example of how a client might receive a callback submission for a job comment:
 
