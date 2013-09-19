@@ -55,6 +55,9 @@ custom_data
 mt
 : _1 (true) / 0 (false)_ of whether the content in body_tgt is a machine translation. A machine translation is always provided as a convenience while a human translation is pending.
 
+file_url_tgt _(optional)_
+:_String_ of the full URL of translated file (returned with the callback).
+
 ##Job Payload - For submissions
 
 body_src
