@@ -78,6 +78,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <p>Callback URLs can be assigned per api-key or per job. A callback URL assigned to a job takes precedence over the default callback URL set for an api-key. Up to 3 attempts will be made to submit data to the callback URL - the first time will be immediately when applicable, with subsequent attempts an hour apart.</p>
 
+<p>For file jobs, the request that is sent to your callback will contain a “file_url_tgt” parameter, which is the link to the translated file. This link is different from the url you get from a GET on file jobs in Job(GET), which is “src_file_link”.</p>
+
 <h2 id="parameter-formats">Parameter Formats</h2>
 
 <p>Parameters to callbacks are formatted in JSON and submitted with a POST call. For job-related notifications, a Job Payload will be POSTed inside a parameter named “job” as if it were a response. The following is an example of how a client might receive a callback submission for a job from Gengo:</p>
@@ -110,6 +112,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <dd>
 <em>String</em> of the custom data associated with the job (if any)</dd>
 </dl>
+
+<p>file_url_tgt
+:<em>String</em> of the full URL of the target file</p>
 
 <p>Here’s an example of how a client might receive a callback submission for a job comment:</p>
 
