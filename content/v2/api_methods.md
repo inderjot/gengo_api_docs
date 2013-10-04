@@ -40,9 +40,6 @@ title: API Methods | Gengo API
 [translate/job/{id}/comments __(GET)__](/v2/job/#comments-get)
 : Retrieves the comment thread for a job.
 
-[translate/jobs/group/{group_id} __(GET)__](/v2/jobs/#group-get)
-: Retrieves a group of jobs that were previously submitted together by their group id.
-
 [translate/jobs __(GET)__](/v2/jobs/#jobs-get)
 : Retrieves a list of resources for the most recent jobs filtered by the given parameters.
 

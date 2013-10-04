@@ -229,7 +229,6 @@ module GitHub
 
     JOBS_POST_ALL_NEW = OK_RESPONSE.merge(
         "response" => {
-            "group_id" => 23015,
             "order_id" => "139370",
             "job_count" => "10",
             "credits_used" => "100.45",
