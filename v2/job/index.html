@@ -67,7 +67,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <p>This describes the endpoints that deal with singular Job tasks and information on Gengo API.</p>
 
 <ul>
-  <li><a href="#job-get">Job <strong>(GET)</strong></a></li>
+<li><a href="#job-get">Job <strong>(GET)</strong></a></li>
   <li><a href="#job-put">Job <strong>(PUT)</strong></a></li>
   <li><a href="#job-delete">Job <strong>(DELETE)</strong></a></li>
   <li><a href="#preview-get">Preview <strong>(GET)</strong></a></li>
@@ -76,12 +76,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <li><a href="#feedback-get">Feedback <strong>(GET)</strong></a></li>
   <li><a href="#comment-post">Comment <strong>(POST)</strong></a></li>
   <li><a href="#comments-get">Comments <strong>(GET)</strong></a></li>
-</ul>
-
-<h2 id="job-get">Job (GET)</h2>
+</ul><h2 id="job-get">Job (GET)</h2>
 
 <dl>
-  <dt><strong>Summary</strong></dt>
+<dt><strong>Summary</strong></dt>
   <dd>Retrieves a specific job.</dd>
   <dt><strong>URL</strong></dt>
   <dd>http://api.gengo.com/v2/translate/job/{id}</dd>
@@ -90,15 +88,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <dt><strong>Parameters</strong></dt>
   <dd>
     <ul>
-      <li>api_key(required) Your API key.</li>
+<li>api_key(required) Your API key.</li>
       <li>api_sig(required) Your API signature.</li>
       <li>ts(required) Current Unix epoch time as an integer.</li>
       <li>pre_mt(optional) 1 (true) / 0 (false, default). Whether to return a machine translation if the human translation is not complete yet.</li>
     </ul>
-  </dd>
-</dl>
-
-<p><strong>Example call</strong></p>
+</dd>
+</dl><p><strong>Example call</strong></p>
 
 <pre><code class="language-python"><span class="c"># -*- coding: utf-8 -*-</span>
 <span class="c">#!/usr/bin/python</span>
@@ -119,31 +115,31 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <pre class="headers"><code>Status: 200 OK</code></pre>
 
 <pre class="highlight"><code class="language-javascript"><span class="p">{</span>
-  <span class="s2">"opstat"</span><span class="o">:</span> <span class="s2">"ok"</span><span class="p">,</span>
   <span class="s2">"response"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"job"</span><span class="o">:</span> <span class="p">{</span>
-      <span class="s2">"job_id"</span><span class="o">:</span> <span class="s2">"384985"</span><span class="p">,</span>
-      <span class="s2">"order_id"</span><span class="o">:</span> <span class="s2">"54632"</span><span class="p">,</span>
-      <span class="s2">"slug"</span><span class="o">:</span> <span class="s2">"APIJobtest"</span><span class="p">,</span>
-      <span class="s2">"body_src"</span><span class="o">:</span> <span class="s2">"plop!"</span><span class="p">,</span>
-      <span class="s2">"lc_src"</span><span class="o">:</span> <span class="s2">"en"</span><span class="p">,</span>
       <span class="s2">"lc_tgt"</span><span class="o">:</span> <span class="s2">"ja"</span><span class="p">,</span>
-      <span class="s2">"unit_count"</span><span class="o">:</span> <span class="s2">"1"</span><span class="p">,</span>
-      <span class="s2">"tier"</span><span class="o">:</span> <span class="s2">"standard"</span><span class="p">,</span>
-      <span class="s2">"credits"</span><span class="o">:</span> <span class="s2">"0.05"</span><span class="p">,</span>
-      <span class="s2">"status"</span><span class="o">:</span> <span class="s2">"available"</span><span class="p">,</span>
+      <span class="s2">"order_id"</span><span class="o">:</span> <span class="s2">"54632"</span><span class="p">,</span>
+      <span class="s2">"job_id"</span><span class="o">:</span> <span class="s2">"384985"</span><span class="p">,</span>
+      <span class="s2">"lc_src"</span><span class="o">:</span> <span class="s2">"en"</span><span class="p">,</span>
+      <span class="s2">"custom_data"</span><span class="o">:</span> <span class="s2">"1234567"</span><span class="p">,</span>
       <span class="s2">"eta"</span><span class="o">:</span> <span class="s2">""</span><span class="p">,</span>
+      <span class="s2">"status"</span><span class="o">:</span> <span class="s2">"available"</span><span class="p">,</span>
+      <span class="s2">"body_src"</span><span class="o">:</span> <span class="s2">"plop!"</span><span class="p">,</span>
       <span class="s2">"ctime"</span><span class="o">:</span> <span class="mi">1313475693</span><span class="p">,</span>
+      <span class="s2">"tier"</span><span class="o">:</span> <span class="s2">"standard"</span><span class="p">,</span>
+      <span class="s2">"unit_count"</span><span class="o">:</span> <span class="s2">"1"</span><span class="p">,</span>
+      <span class="s2">"slug"</span><span class="o">:</span> <span class="s2">"APIJobtest"</span><span class="p">,</span>
       <span class="s2">"auto_approve"</span><span class="o">:</span> <span class="s2">"0"</span><span class="p">,</span>
-      <span class="s2">"custom_data"</span><span class="o">:</span> <span class="s2">"1234567"</span>
+      <span class="s2">"credits"</span><span class="o">:</span> <span class="s2">"0.05"</span>
     <span class="p">}</span>
-  <span class="p">}</span>
+  <span class="p">},</span>
+  <span class="s2">"opstat"</span><span class="o">:</span> <span class="s2">"ok"</span>
 <span class="p">}</span></code></pre>
 
 <h2 id="job-put">Job (PUT)</h2>
 
 <dl>
-  <dt><strong>Summary</strong></dt>
+<dt><strong>Summary</strong></dt>
   <dd>Updates a job to translate.</dd>
   <dt><strong>URL</strong></dt>
   <dd>http://api.gengo.com/v2/translate/job/{id}</dd>
@@ -153,47 +149,45 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <strong>Parameters</strong>_</dt>
   <dd>
     <ul>
-      <li>api_key(required) Your API key.</li>
+<li>api_key(required) Your API key.</li>
       <li>api_sig(required) Your API signature.</li>
       <li>ts(required) Current Unix epoch time as an integer.</li>
     </ul>
-  </dd>
+</dd>
   <dt><strong>Data arguments</strong></dt>
   <dd>
     <ul>
-      <li>action(required):
+<li>action(required):
         <ul>
-          <li>“revise” - Returns this job back to the translator for revisions. 
+<li>“revise” - Returns this job back to the translator for revisions. 
 Other parameters:
             <ul>
-              <li>comment (required) - The reason to the translator for sending the job back for revisions.</li>
+<li>comment (required) - The reason to the translator for sending the job back for revisions.</li>
             </ul>
-          </li>
+</li>
           <li>“approve” - Approves job. 
 Other parameters:
             <ul>
-              <li>rating (optional) 1 (poor) to 5 (fantastic)</li>
+<li>rating (optional) 1 (poor) to 5 (fantastic)</li>
               <li>for_translator (optional) Comments for the translator</li>
               <li>for_mygengo (optional) Comments for Gengo staff (private)</li>
               <li>public (optional) 1 (true) / 0 (false, default). Whether Gengo can share this feedback publicly</li>
             </ul>
-          </li>
+</li>
           <li>“reject” - Rejects the translation. Please see our FAQs for details of the rejection process.
 Other parameters. 
             <ul>
-              <li>reason (required) “quality”, “incomplete”, “other”</li>
+<li>reason (required) “quality”, “incomplete”, “other”</li>
               <li>comment (required)</li>
               <li>captcha (required) The captcha image text. Each job in a “reviewable” state will have a captcha_url value, which is a URL to an image. This captcha value is required only if a job is to be rejected. If the captcha is wrong, a URL for a new captcha is also included with the error message.</li>
               <li>follow_up (optional) “requeue” (default) or “cancel”. If you choose “requeue” the job will be rejected and then passed onto another translator. If you choose “cancel” the job will be completely cancelled upon rejection.</li>
             </ul>
-          </li>
+</li>
         </ul>
-      </li>
+</li>
     </ul>
-  </dd>
-</dl>
-
-<p><strong>Example call</strong></p>
+</dd>
+</dl><p><strong>Example call</strong></p>
 
 <pre><code class="language-python"><span class="c"># -*- coding: utf-8 -*-</span>
 <span class="c">#!/usr/bin/python</span>
@@ -225,16 +219,16 @@ Other parameters.
 <pre class="headers"><code>Status: 200 OK</code></pre>
 
 <pre class="highlight"><code class="language-javascript"><span class="p">{</span>
-  <span class="s2">"opstat"</span><span class="o">:</span> <span class="s2">"ok"</span><span class="p">,</span>
   <span class="s2">"response"</span><span class="o">:</span> <span class="p">{</span>
 
-  <span class="p">}</span>
+  <span class="p">},</span>
+  <span class="s2">"opstat"</span><span class="o">:</span> <span class="s2">"ok"</span>
 <span class="p">}</span></code></pre>
 
 <h2 id="job-delete">Job (DELETE)</h2>
 
 <dl>
-  <dt><strong>Summary</strong></dt>
+<dt><strong>Summary</strong></dt>
   <dd>Cancels the job. You can only cancel a job if it has not been started already by a translator.</dd>
   <dt><strong>URL</strong></dt>
   <dd>http://api.gengo.com/v2/translate/job/{id}</dd>
@@ -243,14 +237,12 @@ Other parameters.
   <dt><strong>Parameters</strong></dt>
   <dd>
     <ul>
-      <li>api_key(required) Your API key.</li>
+<li>api_key(required) Your API key.</li>
       <li>api_sig(required) Your API signature.</li>
       <li>ts(required) Current Unix epoch time as an integer.</li>
     </ul>
-  </dd>
-</dl>
-
-<p><strong>Example call</strong></p>
+</dd>
+</dl><p><strong>Example call</strong></p>
 
 <pre><code class="language-python"><span class="c"># -*- coding: utf-8 -*-</span>
 <span class="c">#!/usr/bin/python</span>
@@ -270,16 +262,16 @@ Other parameters.
 <pre class="headers"><code>Status: 200 OK</code></pre>
 
 <pre class="highlight"><code class="language-javascript"><span class="p">{</span>
-  <span class="s2">"opstat"</span><span class="o">:</span> <span class="s2">"ok"</span><span class="p">,</span>
   <span class="s2">"response"</span><span class="o">:</span> <span class="p">{</span>
 
-  <span class="p">}</span>
+  <span class="p">},</span>
+  <span class="s2">"opstat"</span><span class="o">:</span> <span class="s2">"ok"</span>
 <span class="p">}</span></code></pre>
 
 <h2 id="preview-get">Preview (GET)</h2>
 
 <dl>
-  <dt><strong>Summary</strong></dt>
+<dt><strong>Summary</strong></dt>
   <dd>Renders a JPEG preview image of the translated text.</dd>
   <dt><strong>URL</strong></dt>
   <dd>http://api.gengo.com/v2/translate/job/{id}/preview</dd>
@@ -288,14 +280,12 @@ Other parameters.
   <dt><strong>Parameters</strong></dt>
   <dd>
     <ul>
-      <li>api_key(required) Your API key.</li>
+<li>api_key(required) Your API key.</li>
       <li>api_sig(required) Your API signature.</li>
       <li>ts(required) Current Unix epoch time as an integer.</li>
     </ul>
-  </dd>
-</dl>
-
-<p><strong>Note</strong></p>
+</dd>
+</dl><p><strong>Note</strong></p>
 
 <p>If the request is valid, a raw JPEG image stream will be returned. The width of the JPEG is 673 pixels, and the height will vary depending on the text length. Please allow enough space within your app to display long preview images (for instance by providing a scrollable area).</p>
 
@@ -320,7 +310,7 @@ Other parameters.
 <h2 id="revisions-get">Revisions (GET)</h2>
 
 <dl>
-  <dt><strong>Summary</strong></dt>
+<dt><strong>Summary</strong></dt>
   <dd>Gets list of revision resources for a job. Revisions are created each time a translator or Senior Translator updates the text.</dd>
   <dt><strong>URL</strong></dt>
   <dd>http://api.gengo.com/v2/translate/job/{id}/revisions</dd>
@@ -329,14 +319,12 @@ Other parameters.
   <dt><strong>Parameters</strong></dt>
   <dd>
     <ul>
-      <li>api_key(required) Your API key.</li>
+<li>api_key(required) Your API key.</li>
       <li>api_sig(required) Your API signature.</li>
       <li>ts(required) Current Unix epoch time as an integer.</li>
     </ul>
-  </dd>
-</dl>
-
-<p><strong>Example call</strong></p>
+</dd>
+</dl><p><strong>Example call</strong></p>
 
 <pre><code class="language-python"><span class="c"># -*- coding: utf-8 -*-</span>
 <span class="c">#!/usr/bin/python</span>
@@ -357,31 +345,31 @@ Other parameters.
 <pre class="headers"><code>Status: 200 OK</code></pre>
 
 <pre class="highlight"><code class="language-javascript"><span class="p">{</span>
-  <span class="s2">"opstat"</span><span class="o">:</span> <span class="s2">"ok"</span><span class="p">,</span>
   <span class="s2">"response"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"job_id"</span><span class="o">:</span> <span class="s2">"..."</span><span class="p">,</span>
     <span class="s2">"revisions"</span><span class="o">:</span> <span class="p">[</span>
       <span class="p">{</span>
-        <span class="s2">"ctime"</span><span class="o">:</span> <span class="s2">"..."</span><span class="p">,</span>
-        <span class="s2">"rev_id"</span><span class="o">:</span> <span class="s2">"..."</span>
+        <span class="s2">"rev_id"</span><span class="o">:</span> <span class="s2">"..."</span><span class="p">,</span>
+        <span class="s2">"ctime"</span><span class="o">:</span> <span class="s2">"..."</span>
       <span class="p">},</span>
       <span class="p">{</span>
-        <span class="s2">"ctime"</span><span class="o">:</span> <span class="s2">"..."</span><span class="p">,</span>
-        <span class="s2">"rev_id"</span><span class="o">:</span> <span class="s2">"..."</span>
+        <span class="s2">"rev_id"</span><span class="o">:</span> <span class="s2">"..."</span><span class="p">,</span>
+        <span class="s2">"ctime"</span><span class="o">:</span> <span class="s2">"..."</span>
       <span class="p">},</span>
       <span class="p">{</span>
-        <span class="s2">"ctime"</span><span class="o">:</span> <span class="s2">"..."</span><span class="p">,</span>
-        <span class="s2">"rev_id"</span><span class="o">:</span> <span class="s2">"..."</span>
+        <span class="s2">"rev_id"</span><span class="o">:</span> <span class="s2">"..."</span><span class="p">,</span>
+        <span class="s2">"ctime"</span><span class="o">:</span> <span class="s2">"..."</span>
       <span class="p">},</span>
       <span class="s2">"..."</span>
     <span class="p">]</span>
-  <span class="p">}</span>
+  <span class="p">},</span>
+  <span class="s2">"opstat"</span><span class="o">:</span> <span class="s2">"ok"</span>
 <span class="p">}</span></code></pre>
 
 <h2 id="revision-get">Revision (GET)</h2>
 
 <dl>
-  <dt><strong>Summary</strong></dt>
+<dt><strong>Summary</strong></dt>
   <dd>Gets a specific revision for a job.</dd>
   <dt><strong>URL</strong></dt>
   <dd>http://api.gengo.com/v2/translate/job/{id}/revision/{rev_id}</dd>
@@ -390,14 +378,12 @@ Other parameters.
   <dt><strong>Parameters</strong></dt>
   <dd>
     <ul>
-      <li>api_key(required) Your API key.</li>
+<li>api_key(required) Your API key.</li>
       <li>api_sig(required) Your API signature.</li>
       <li>ts(required) Current Unix epoch time as an integer.</li>
     </ul>
-  </dd>
-</dl>
-
-<p><strong>Example call</strong></p>
+</dd>
+</dl><p><strong>Example call</strong></p>
 
 <pre><code class="language-python"><span class="c"># -*- coding: utf-8 -*-</span>
 <span class="c">#!/usr/bin/python</span>
@@ -418,13 +404,13 @@ Other parameters.
 <pre class="headers"><code>Status: 200 OK</code></pre>
 
 <pre class="highlight"><code class="language-javascript"><span class="p">{</span>
-  <span class="s2">"opstat"</span><span class="o">:</span> <span class="s2">"ok"</span><span class="p">,</span>
   <span class="s2">"response"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"revision"</span><span class="o">:</span> <span class="p">{</span>
-      <span class="s2">"ctime"</span><span class="o">:</span> <span class="s2">"..."</span><span class="p">,</span>
-      <span class="s2">"body_tgt"</span><span class="o">:</span> <span class="s2">"..."</span>
+      <span class="s2">"body_tgt"</span><span class="o">:</span> <span class="s2">"..."</span><span class="p">,</span>
+      <span class="s2">"ctime"</span><span class="o">:</span> <span class="s2">"..."</span>
     <span class="p">}</span>
-  <span class="p">}</span>
+  <span class="p">},</span>
+  <span class="s2">"opstat"</span><span class="o">:</span> <span class="s2">"ok"</span>
 <span class="p">}</span></code></pre>
 
 <h2 id="feedback-get">Feedback (GET)</h2>
@@ -432,7 +418,7 @@ Other parameters.
 <p>Gets a specific revision for a job.</p>
 
 <dl>
-  <dt><strong>Summary</strong></dt>
+<dt><strong>Summary</strong></dt>
   <dd>Retrieves the feedback you have submitted for a particular job.</dd>
   <dt><strong>URL</strong></dt>
   <dd>http://api.gengo.com/v2/translate/job/{id}/feedback</dd>
@@ -441,14 +427,12 @@ Other parameters.
   <dt><strong>Parameters</strong></dt>
   <dd>
     <ul>
-      <li>api_key(required) Your API key.</li>
+<li>api_key(required) Your API key.</li>
       <li>api_sig(required) Your API signature.</li>
       <li>ts(required) Current Unix epoch time as an integer.</li>
     </ul>
-  </dd>
-</dl>
-
-<p><strong>Example call</strong></p>
+</dd>
+</dl><p><strong>Example call</strong></p>
 
 <pre><code class="language-python"><span class="c"># -*- coding: utf-8 -*-</span>
 <span class="c">#!/usr/bin/python</span>
@@ -469,19 +453,19 @@ Other parameters.
 <pre class="headers"><code>Status: 200 OK</code></pre>
 
 <pre class="highlight"><code class="language-javascript"><span class="p">{</span>
-  <span class="s2">"opstat"</span><span class="o">:</span> <span class="s2">"ok"</span><span class="p">,</span>
   <span class="s2">"response"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"feedback"</span><span class="o">:</span> <span class="p">{</span>
       <span class="s2">"rating"</span><span class="o">:</span> <span class="s2">"3.0"</span><span class="p">,</span>
       <span class="s2">"for_translator"</span><span class="o">:</span> <span class="s2">"..."</span>
     <span class="p">}</span>
-  <span class="p">}</span>
+  <span class="p">},</span>
+  <span class="s2">"opstat"</span><span class="o">:</span> <span class="s2">"ok"</span>
 <span class="p">}</span></code></pre>
 
 <h2 id="comments-get">Comments (GET)</h2>
 
 <dl>
-  <dt><strong>Summary</strong></dt>
+<dt><strong>Summary</strong></dt>
   <dd>Retrieves the comment thread for a job.</dd>
   <dt><strong>URL</strong></dt>
   <dd>http://api.gengo.com/v2/translate/job/{id}/comments</dd>
@@ -490,16 +474,14 @@ Other parameters.
   <dt><strong>Parameters</strong></dt>
   <dd>
     <ul>
-      <li>api_key(required) Your API key.</li>
+<li>api_key(required) Your API key.</li>
       <li>api_sig(required) Your API signature.</li>
       <li>ts(required) Current Unix epoch time as an integer.</li>
     </ul>
-  </dd>
+</dd>
   <dt><strong>Note</strong></dt>
   <dd>Possible values for “author” are “translator”, “customer”, and “senior translator”.</dd>
-</dl>
-
-<p><strong>Example call</strong></p>
+</dl><p><strong>Example call</strong></p>
 
 <pre><code class="language-python"><span class="c"># -*- coding: utf-8 -*-</span>
 <span class="c">#!/usr/bin/python</span>
@@ -521,27 +503,27 @@ Other parameters.
 <pre class="headers"><code>Status: 200 OK</code></pre>
 
 <pre class="highlight"><code class="language-javascript"><span class="p">{</span>
-  <span class="s2">"opstat"</span><span class="o">:</span> <span class="s2">"ok"</span><span class="p">,</span>
   <span class="s2">"response"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"thread"</span><span class="o">:</span> <span class="p">[</span>
       <span class="p">{</span>
-        <span class="s2">"body"</span><span class="o">:</span> <span class="s2">"...."</span><span class="p">,</span>
         <span class="s2">"author"</span><span class="o">:</span> <span class="s2">"translator"</span><span class="p">,</span>
+        <span class="s2">"body"</span><span class="o">:</span> <span class="s2">"...."</span><span class="p">,</span>
         <span class="s2">"ctime"</span><span class="o">:</span> <span class="mi">1266322028</span>
       <span class="p">},</span>
       <span class="p">{</span>
-        <span class="s2">"body"</span><span class="o">:</span> <span class="s2">"...."</span><span class="p">,</span>
         <span class="s2">"author"</span><span class="o">:</span> <span class="s2">"customer"</span><span class="p">,</span>
+        <span class="s2">"body"</span><span class="o">:</span> <span class="s2">"...."</span><span class="p">,</span>
         <span class="s2">"ctime"</span><span class="o">:</span> <span class="mi">1266324432</span>
       <span class="p">}</span>
     <span class="p">]</span>
-  <span class="p">}</span>
+  <span class="p">},</span>
+  <span class="s2">"opstat"</span><span class="o">:</span> <span class="s2">"ok"</span>
 <span class="p">}</span></code></pre>
 
 <h2 id="comment-post">Comment (POST)</h2>
 
 <dl>
-  <dt><strong>Summary</strong></dt>
+<dt><strong>Summary</strong></dt>
   <dd>Submits a new comment to the job’s comment thread.</dd>
   <dt><strong>URL</strong></dt>
   <dd>http://api.gengo.com/v2/translate/job/{id}/comment</dd>
@@ -550,20 +532,18 @@ Other parameters.
   <dt><strong>Parameters</strong></dt>
   <dd>
     <ul>
-      <li>api_key(required) Your API key.</li>
+<li>api_key(required) Your API key.</li>
       <li>api_sig(required) Your API signature.</li>
       <li>ts(required) Current Unix epoch time as an integer.</li>
     </ul>
-  </dd>
+</dd>
   <dt><strong>Data arguments</strong></dt>
   <dd>
     <ul>
-      <li>body(required): The comment body</li>
+<li>body(required): The comment body</li>
     </ul>
-  </dd>
-</dl>
-
-<p><strong>Example call</strong></p>
+</dd>
+</dl><p><strong>Example call</strong></p>
 
 <pre><code class="language-python"><span class="c"># -*- coding: utf-8 -*-</span>
 <span class="c">#!/usr/bin/python</span>
@@ -589,12 +569,11 @@ Other parameters.
 <pre class="headers"><code>Status: 200 OK</code></pre>
 
 <pre class="highlight"><code class="language-javascript"><span class="p">{</span>
-  <span class="s2">"opstat"</span><span class="o">:</span> <span class="s2">"ok"</span><span class="p">,</span>
   <span class="s2">"response"</span><span class="o">:</span> <span class="p">{</span>
 
-  <span class="p">}</span>
+  <span class="p">},</span>
+  <span class="s2">"opstat"</span><span class="o">:</span> <span class="s2">"ok"</span>
 <span class="p">}</span></code></pre>
-
       </div>
 
       
@@ -649,7 +628,6 @@ Other parameters.
       <li class="js-topic">
         <h3><a href="#" class="js-expand-btn collapsed">&nbsp;</a><a href="/v2/jobs/">Jobs</a></h3>
         <ul class="js-guides">
-          <li><a href="/v2/jobs/#job">Job Group (GET)</a></li>
           <li><a href="/v2/jobs/#jobs-post">Jobs (POST)</a></li>
           <li><a href="/v2/jobs/#jobs-get">Jobs (GET)</a></li>
           <li><a href="/v2/jobs/#jobs-by-id-get">Jobs by id (GET)</a></li>

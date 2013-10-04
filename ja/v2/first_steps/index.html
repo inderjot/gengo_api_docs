@@ -67,18 +67,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <h3 id="follow-these-steps-to-get-going-with-the-api-without-any-bumps">Follow these steps to get going with the API without any bumps:</h3>
 
 <ol>
-  <li><a href="#step-1-create-a-sandbox-account-and-obtain-an-api-key">Create a sandbox account and obtain an API key.</a></li>
+<li><a href="#step-1-create-a-sandbox-account-and-obtain-an-api-key">Create a sandbox account and obtain an API key.</a></li>
   <li>
 <a href="#step-2-play-in-the-sandbox-with-your-api-keys">Play in the sandbox with your API keys.</a>
     <ul>
-      <li><a href="#basic-get-call">Basic example: GET language pairs</a></li>
+<li><a href="#basic-get-call">Basic example: GET language pairs</a></li>
       <li><a href="#basic-post-call">Basic example: POST to translate/jobs</a></li>
     </ul>
-  </li>
+</li>
   <li>Setting a default callback and testing it. (Coming soon)</li>
-</ol>
-
-<h2 id="step-1-create-a-sandbox-account-and-obtain-an-api-key">Step 1: Create a sandbox account and obtain an API key</h2>
+</ol><h2 id="step-1-create-a-sandbox-account-and-obtain-an-api-key">Step 1: Create a sandbox account and obtain an API key</h2>
 <p>Every API call must be authorized using an API key. While you’re testing, you should use the sandbox and generate your keys from there. In this tutorial I will show you how to create a sandbox account, so that you can get your API keys to make calls to the Gengo Translate API.</p>
 
 <p>First you need to create a free sandbox account. Click “Create a sandbox account” below, enter your email and password, and verify your account through the email sent to you.</p>
@@ -138,57 +136,57 @@ print_r(json_decode($response));
 <pre class="headers"><code>Status: 200 OK</code></pre>
 
 <pre class="highlight"><code class="language-javascript"><span class="p">{</span>
-  <span class="s2">"opstat"</span><span class="o">:</span> <span class="s2">"ok"</span><span class="p">,</span>
   <span class="s2">"response"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
-      <span class="s2">"lc_src"</span><span class="o">:</span> <span class="s2">"ja"</span><span class="p">,</span>
       <span class="s2">"lc_tgt"</span><span class="o">:</span> <span class="s2">"en"</span><span class="p">,</span>
-      <span class="s2">"tier"</span><span class="o">:</span> <span class="s2">"machine"</span><span class="p">,</span>
-      <span class="s2">"unit_price"</span><span class="o">:</span> <span class="s2">"0.0"</span>
+      <span class="s2">"lc_src"</span><span class="o">:</span> <span class="s2">"ja"</span><span class="p">,</span>
+      <span class="s2">"unit_price"</span><span class="o">:</span> <span class="s2">"0.0"</span><span class="p">,</span>
+      <span class="s2">"tier"</span><span class="o">:</span> <span class="s2">"machine"</span>
     <span class="p">},</span>
     <span class="p">{</span>
-      <span class="s2">"lc_src"</span><span class="o">:</span> <span class="s2">"ja"</span><span class="p">,</span>
       <span class="s2">"lc_tgt"</span><span class="o">:</span> <span class="s2">"es"</span><span class="p">,</span>
-      <span class="s2">"tier"</span><span class="o">:</span> <span class="s2">"machine"</span><span class="p">,</span>
-      <span class="s2">"unit_price"</span><span class="o">:</span> <span class="s2">"0.0"</span>
+      <span class="s2">"lc_src"</span><span class="o">:</span> <span class="s2">"ja"</span><span class="p">,</span>
+      <span class="s2">"unit_price"</span><span class="o">:</span> <span class="s2">"0.0"</span><span class="p">,</span>
+      <span class="s2">"tier"</span><span class="o">:</span> <span class="s2">"machine"</span>
     <span class="p">},</span>
     <span class="p">{</span>
-      <span class="s2">"lc_src"</span><span class="o">:</span> <span class="s2">"ja"</span><span class="p">,</span>
       <span class="s2">"lc_tgt"</span><span class="o">:</span> <span class="s2">"en"</span><span class="p">,</span>
-      <span class="s2">"tier"</span><span class="o">:</span> <span class="s2">"standard"</span><span class="p">,</span>
-      <span class="s2">"unit_price"</span><span class="o">:</span> <span class="s2">"0.0300"</span>
+      <span class="s2">"lc_src"</span><span class="o">:</span> <span class="s2">"ja"</span><span class="p">,</span>
+      <span class="s2">"unit_price"</span><span class="o">:</span> <span class="s2">"0.0300"</span><span class="p">,</span>
+      <span class="s2">"tier"</span><span class="o">:</span> <span class="s2">"standard"</span>
     <span class="p">},</span>
     <span class="p">{</span>
-      <span class="s2">"lc_src"</span><span class="o">:</span> <span class="s2">"ja"</span><span class="p">,</span>
       <span class="s2">"lc_tgt"</span><span class="o">:</span> <span class="s2">"es"</span><span class="p">,</span>
-      <span class="s2">"tier"</span><span class="o">:</span> <span class="s2">"standard"</span><span class="p">,</span>
-      <span class="s2">"unit_price"</span><span class="o">:</span> <span class="s2">"0.0300"</span>
+      <span class="s2">"lc_src"</span><span class="o">:</span> <span class="s2">"ja"</span><span class="p">,</span>
+      <span class="s2">"unit_price"</span><span class="o">:</span> <span class="s2">"0.0300"</span><span class="p">,</span>
+      <span class="s2">"tier"</span><span class="o">:</span> <span class="s2">"standard"</span>
     <span class="p">},</span>
     <span class="p">{</span>
-      <span class="s2">"lc_src"</span><span class="o">:</span> <span class="s2">"ja"</span><span class="p">,</span>
       <span class="s2">"lc_tgt"</span><span class="o">:</span> <span class="s2">"en"</span><span class="p">,</span>
-      <span class="s2">"tier"</span><span class="o">:</span> <span class="s2">"pro"</span><span class="p">,</span>
-      <span class="s2">"unit_price"</span><span class="o">:</span> <span class="s2">"0.0600"</span>
+      <span class="s2">"lc_src"</span><span class="o">:</span> <span class="s2">"ja"</span><span class="p">,</span>
+      <span class="s2">"unit_price"</span><span class="o">:</span> <span class="s2">"0.0600"</span><span class="p">,</span>
+      <span class="s2">"tier"</span><span class="o">:</span> <span class="s2">"pro"</span>
     <span class="p">},</span>
     <span class="p">{</span>
-      <span class="s2">"lc_src"</span><span class="o">:</span> <span class="s2">"ja"</span><span class="p">,</span>
       <span class="s2">"lc_tgt"</span><span class="o">:</span> <span class="s2">"es"</span><span class="p">,</span>
-      <span class="s2">"tier"</span><span class="o">:</span> <span class="s2">"pro"</span><span class="p">,</span>
-      <span class="s2">"unit_price"</span><span class="o">:</span> <span class="s2">"0.0600"</span>
+      <span class="s2">"lc_src"</span><span class="o">:</span> <span class="s2">"ja"</span><span class="p">,</span>
+      <span class="s2">"unit_price"</span><span class="o">:</span> <span class="s2">"0.0600"</span><span class="p">,</span>
+      <span class="s2">"tier"</span><span class="o">:</span> <span class="s2">"pro"</span>
     <span class="p">},</span>
     <span class="p">{</span>
-      <span class="s2">"lc_src"</span><span class="o">:</span> <span class="s2">"ja"</span><span class="p">,</span>
       <span class="s2">"lc_tgt"</span><span class="o">:</span> <span class="s2">"en"</span><span class="p">,</span>
-      <span class="s2">"tier"</span><span class="o">:</span> <span class="s2">"ultra"</span><span class="p">,</span>
-      <span class="s2">"unit_price"</span><span class="o">:</span> <span class="s2">"0.0900"</span>
+      <span class="s2">"lc_src"</span><span class="o">:</span> <span class="s2">"ja"</span><span class="p">,</span>
+      <span class="s2">"unit_price"</span><span class="o">:</span> <span class="s2">"0.0900"</span><span class="p">,</span>
+      <span class="s2">"tier"</span><span class="o">:</span> <span class="s2">"ultra"</span>
     <span class="p">},</span>
     <span class="p">{</span>
-      <span class="s2">"lc_src"</span><span class="o">:</span> <span class="s2">"ja"</span><span class="p">,</span>
       <span class="s2">"lc_tgt"</span><span class="o">:</span> <span class="s2">"es"</span><span class="p">,</span>
-      <span class="s2">"tier"</span><span class="o">:</span> <span class="s2">"ultra"</span><span class="p">,</span>
-      <span class="s2">"unit_price"</span><span class="o">:</span> <span class="s2">"0.0900"</span>
+      <span class="s2">"lc_src"</span><span class="o">:</span> <span class="s2">"ja"</span><span class="p">,</span>
+      <span class="s2">"unit_price"</span><span class="o">:</span> <span class="s2">"0.0900"</span><span class="p">,</span>
+      <span class="s2">"tier"</span><span class="o">:</span> <span class="s2">"ultra"</span>
     <span class="p">}</span>
-  <span class="p">]</span>
+  <span class="p">],</span>
+  <span class="s2">"opstat"</span><span class="o">:</span> <span class="s2">"ok"</span>
 <span class="p">}</span></code></pre>
 
 <p>What we get back is data about each supported target language for Japanese, including the quality level (or tier) and unit price. Here we see that currently Gengo can translate Japanese into English and Spanish, each at Standard, Pro, and Ultra levels, as well as with machine translation.</p>
@@ -260,13 +258,13 @@ php -f jobs-post.php
 <pre class="headers"><code>Status: 200 OK</code></pre>
 
 <pre class="highlight"><code class="language-javascript"><span class="p">{</span>
-  <span class="s2">"opstat"</span><span class="o">:</span> <span class="s2">"ok"</span><span class="p">,</span>
   <span class="s2">"response"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"order_id"</span><span class="o">:</span> <span class="s2">"109655"</span><span class="p">,</span>
-    <span class="s2">"job_count"</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
     <span class="s2">"credits_used"</span><span class="o">:</span> <span class="s2">"0.30"</span><span class="p">,</span>
+    <span class="s2">"job_count"</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
     <span class="s2">"currency"</span><span class="o">:</span> <span class="s2">"USD"</span>
-  <span class="p">}</span>
+  <span class="p">},</span>
+  <span class="s2">"opstat"</span><span class="o">:</span> <span class="s2">"ok"</span>
 <span class="p">}</span></code></pre>
 
 <p>In the response from a job <code>post</code>, one of the most important pieces of info is the <code>order id</code>, which can be used to retrieve information about the order, such as the job ids of the jobs placed:</p>
@@ -274,34 +272,33 @@ php -f jobs-post.php
 <pre class="headers"><code>Status: 200 OK</code></pre>
 
 <pre class="highlight"><code class="language-javascript"><span class="p">{</span>
-  <span class="s2">"opstat"</span><span class="o">:</span> <span class="s2">"ok"</span><span class="p">,</span>
   <span class="s2">"response"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"order"</span><span class="o">:</span> <span class="p">{</span>
-      <span class="s2">"order_id"</span><span class="o">:</span> <span class="s2">"232"</span><span class="p">,</span>
-      <span class="s2">"total_credits"</span><span class="o">:</span> <span class="s2">"0.30"</span><span class="p">,</span>
-      <span class="s2">"currency"</span><span class="o">:</span> <span class="s2">"USD"</span><span class="p">,</span>
+      <span class="s2">"jobs_approved"</span><span class="o">:</span> <span class="p">[</span>
+
+      <span class="p">],</span>
       <span class="s2">"total_units"</span><span class="o">:</span> <span class="mi">6</span><span class="p">,</span>
       <span class="s2">"as_group"</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+      <span class="s2">"total_credits"</span><span class="o">:</span> <span class="s2">"0.30"</span><span class="p">,</span>
+      <span class="s2">"order_id"</span><span class="o">:</span> <span class="s2">"232"</span><span class="p">,</span>
       <span class="s2">"jobs_available"</span><span class="o">:</span> <span class="p">[</span>
         <span class="s2">"243646"</span><span class="p">,</span>
         <span class="s2">"243647"</span><span class="p">,</span>
         <span class="s2">"243645"</span>
       <span class="p">],</span>
-      <span class="s2">"jobs_pending"</span><span class="o">:</span> <span class="p">[</span>
-
-      <span class="p">],</span>
+      <span class="s2">"total_jobs"</span><span class="o">:</span> <span class="s2">"3"</span><span class="p">,</span>
       <span class="s2">"jobs_reviewable"</span><span class="o">:</span> <span class="p">[</span>
 
       <span class="p">],</span>
-      <span class="s2">"jobs_approved"</span><span class="o">:</span> <span class="p">[</span>
+      <span class="s2">"jobs_pending"</span><span class="o">:</span> <span class="p">[</span>
 
       <span class="p">],</span>
-      <span class="s2">"jobs_queued"</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
-      <span class="s2">"total_jobs"</span><span class="o">:</span> <span class="s2">"3"</span>
+      <span class="s2">"currency"</span><span class="o">:</span> <span class="s2">"USD"</span><span class="p">,</span>
+      <span class="s2">"jobs_queued"</span><span class="o">:</span> <span class="mi">0</span>
     <span class="p">}</span>
-  <span class="p">}</span>
+  <span class="p">},</span>
+  <span class="s2">"opstat"</span><span class="o">:</span> <span class="s2">"ok"</span>
 <span class="p">}</span></code></pre>
-
       </div>
 
       
@@ -361,7 +358,6 @@ php -f jobs-post.php
       <li class="js-topic">
         <h3><a href="#" class="js-expand-btn collapsed">&nbsp;</a><a href="/ja/v2/jobs/">Jobs</a></h3>
         <ul class="js-guides">
-          <li><a href="/ja/v2/jobs/#job">Job Group (GET)</a></li>
           <li><a href="/ja/v2/jobs/#jobs-post">Jobs (POST)</a></li>
           <li><a href="/ja/v2/jobs/#jobs-get">Jobs (GET)</a></li>
           <li><a href="/ja/v2/jobs/#jobs-by-id-get">Jobs by id (GET)</a></li>

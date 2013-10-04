@@ -67,14 +67,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <p>This describes the endpoints that deal with Order on the Gengo API.</p>
 
 <ul>
-  <li><a href="#order-get">Order <strong>(GET)</strong></a></li>
+<li><a href="#order-get">Order <strong>(GET)</strong></a></li>
   <li><a href="#order-delete">Order <strong>(DELETE)</strong></a></li>
-</ul>
-
-<h2 id="order-get">Order (GET)</h2>
+</ul><h2 id="order-get">Order (GET)</h2>
 
 <dl>
-  <dt><strong>Summary</strong></dt>
+<dt><strong>Summary</strong></dt>
   <dd>Retrieves a group of jobs that were previously submitted together by their order id.</dd>
   <dt><strong>URL</strong></dt>
   <dd>http://api.gengo.com/v2/translate/order/{order_id}</dd>
@@ -83,14 +81,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <dt><strong>Parameters</strong></dt>
   <dd>
     <ul>
-      <li>api_key(required) Your API key.</li>
+<li>api_key(required) Your API key.</li>
       <li>api_sig(required) Your API signature.</li>
       <li>ts(required) Current Unix epoch time as an integer.</li>
     </ul>
-  </dd>
-</dl>
-
-<p><strong>Example call</strong></p>
+</dd>
+</dl><p><strong>Example call</strong></p>
 
 <pre><code class="language-ruby"><span class="c1">#!/usr/bin/env ruby</span>
 
@@ -111,38 +107,38 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <pre class="headers"><code>Status: 200 OK</code></pre>
 
 <pre class="highlight"><code class="language-javascript"><span class="p">{</span>
-  <span class="s2">"opstat"</span><span class="o">:</span> <span class="s2">"ok"</span><span class="p">,</span>
   <span class="s2">"response"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"order"</span><span class="o">:</span> <span class="p">{</span>
-      <span class="s2">"order_id"</span><span class="o">:</span> <span class="s2">"232"</span><span class="p">,</span>
-      <span class="s2">"total_credits"</span><span class="o">:</span> <span class="s2">"0.30"</span><span class="p">,</span>
-      <span class="s2">"currency"</span><span class="o">:</span> <span class="s2">"USD"</span><span class="p">,</span>
+      <span class="s2">"jobs_approved"</span><span class="o">:</span> <span class="p">[</span>
+
+      <span class="p">],</span>
       <span class="s2">"total_units"</span><span class="o">:</span> <span class="mi">6</span><span class="p">,</span>
       <span class="s2">"as_group"</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+      <span class="s2">"total_credits"</span><span class="o">:</span> <span class="s2">"0.30"</span><span class="p">,</span>
+      <span class="s2">"order_id"</span><span class="o">:</span> <span class="s2">"232"</span><span class="p">,</span>
       <span class="s2">"jobs_available"</span><span class="o">:</span> <span class="p">[</span>
         <span class="s2">"243646"</span><span class="p">,</span>
         <span class="s2">"243647"</span><span class="p">,</span>
         <span class="s2">"243645"</span>
       <span class="p">],</span>
-      <span class="s2">"jobs_pending"</span><span class="o">:</span> <span class="p">[</span>
-
-      <span class="p">],</span>
+      <span class="s2">"total_jobs"</span><span class="o">:</span> <span class="s2">"3"</span><span class="p">,</span>
       <span class="s2">"jobs_reviewable"</span><span class="o">:</span> <span class="p">[</span>
 
       <span class="p">],</span>
-      <span class="s2">"jobs_approved"</span><span class="o">:</span> <span class="p">[</span>
+      <span class="s2">"jobs_pending"</span><span class="o">:</span> <span class="p">[</span>
 
       <span class="p">],</span>
-      <span class="s2">"jobs_queued"</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
-      <span class="s2">"total_jobs"</span><span class="o">:</span> <span class="s2">"3"</span>
+      <span class="s2">"currency"</span><span class="o">:</span> <span class="s2">"USD"</span><span class="p">,</span>
+      <span class="s2">"jobs_queued"</span><span class="o">:</span> <span class="mi">0</span>
     <span class="p">}</span>
-  <span class="p">}</span>
+  <span class="p">},</span>
+  <span class="s2">"opstat"</span><span class="o">:</span> <span class="s2">"ok"</span>
 <span class="p">}</span></code></pre>
 
 <h2 id="order-delete">Order (DELETE)</h2>
 
 <dl>
-  <dt><strong>Summary</strong></dt>
+<dt><strong>Summary</strong></dt>
   <dd>Cancels all available jobs in an order. Please keep in mind, you can only cancel a job if it has not been started already by a translator. This also cancels the order itself.</dd>
   <dt><strong>URL</strong></dt>
   <dd>http://api.gengo.com/v2/translate/order/{id}</dd>
@@ -151,14 +147,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <dt><strong>Parameters</strong></dt>
   <dd>
     <ul>
-      <li>api_key(required) Your API key.</li>
+<li>api_key(required) Your API key.</li>
       <li>api_sig(required) Your API signature.</li>
       <li>ts(required) Current Unix epoch time as an integer.</li>
     </ul>
-  </dd>
-</dl>
-
-<p><strong>Example call</strong></p>
+</dd>
+</dl><p><strong>Example call</strong></p>
 
 <pre><code class="language-python"><span class="c"># -*- coding: utf-8 -*-</span>
 <span class="c">#!/usr/bin/python</span>
@@ -178,12 +172,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <pre class="headers"><code>Status: 200 OK</code></pre>
 
 <pre class="highlight"><code class="language-javascript"><span class="p">{</span>
-  <span class="s2">"opstat"</span><span class="o">:</span> <span class="s2">"ok"</span><span class="p">,</span>
   <span class="s2">"response"</span><span class="o">:</span> <span class="p">{</span>
 
-  <span class="p">}</span>
+  <span class="p">},</span>
+  <span class="s2">"opstat"</span><span class="o">:</span> <span class="s2">"ok"</span>
 <span class="p">}</span></code></pre>
-
       </div>
 
       
@@ -238,7 +231,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       <li class="js-topic">
         <h3><a href="#" class="js-expand-btn collapsed">&nbsp;</a><a href="/v2/jobs/">Jobs</a></h3>
         <ul class="js-guides">
-          <li><a href="/v2/jobs/#job">Job Group (GET)</a></li>
           <li><a href="/v2/jobs/#jobs-post">Jobs (POST)</a></li>
           <li><a href="/v2/jobs/#jobs-get">Jobs (GET)</a></li>
           <li><a href="/v2/jobs/#jobs-by-id-get">Jobs by id (GET)</a></li>

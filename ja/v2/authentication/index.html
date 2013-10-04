@@ -75,13 +75,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <p>All authenticated calls must be signed. The process for signing is as follows:</p>
 
 <ol>
-  <li>Get the current Unix epoch time as an integer</li>
+<li>Get the current Unix epoch time as an integer</li>
   <li>Insert the time as the value to a ‘ts’ key in your argument list</li>
   <li>Calculate the SHA1 hash of the timestamp against your private key</li>
   <li>Append the value of this hash to the argument list as a parameter named api_sig</li>
-</ol>
-
-<h2 id="example-api-authenticated-call">Example API authenticated call</h2>
+</ol><h2 id="example-api-authenticated-call">Example API authenticated call</h2>
 
 <pre><code>// submit a comment for job ID 20
 
@@ -107,7 +105,6 @@ curl_setopt($ch, CURLOPT_POST, 1);
 curl_setopt($ch, CURLOPT_POSTFIELDS, $params);
 $response = curl_exect($ch); curl_close($ch);
 </code></pre>
-
       </div>
 
       
@@ -167,7 +164,6 @@ $response = curl_exect($ch); curl_close($ch);
       <li class="js-topic">
         <h3><a href="#" class="js-expand-btn collapsed">&nbsp;</a><a href="/ja/v2/jobs/">Jobs</a></h3>
         <ul class="js-guides">
-          <li><a href="/ja/v2/jobs/#job">Job Group (GET)</a></li>
           <li><a href="/ja/v2/jobs/#jobs-post">Jobs (POST)</a></li>
           <li><a href="/ja/v2/jobs/#jobs-get">Jobs (GET)</a></li>
           <li><a href="/ja/v2/jobs/#jobs-by-id-get">Jobs by id (GET)</a></li>

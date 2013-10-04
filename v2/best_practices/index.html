@@ -96,16 +96,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <div id="dat_form" style="display: none; margin: 0 auto 10px; width: 700px;">
 
     <p style="float: left; margin-right: 10px;">
-                    <label style="display: block; font-weight: bold;">Your Public Key</label> <input id="public_key" style="width: 320px; padding: 3px; background: #f9f9f9; border: 1px solid #c9c9c9; border-radius: 2px; display: block;" value="">
-    </p>
+                    <label style="display: block; font-weight: bold;">Your Public Key</label> <input id="public_key" style="width: 320px; padding: 3px; background: #f9f9f9; border: 1px solid #c9c9c9; border-radius: 2px; display: block;" value=""></p>
 
     <p style="float: left;">
-                    <label style="display: block; font-weight: bold;">Your Private Key</label> <input id="private_key" style="width: 320px; padding: 3px; background: #f9f9f9; border: 1px solid #c9c9c9; border-radius: 2px; display: block;" value="">
-    </p>
+                    <label style="display: block; font-weight: bold;">Your Private Key</label> <input id="private_key" style="width: 320px; padding: 3px; background: #f9f9f9; border: 1px solid #c9c9c9; border-radius: 2px; display: block;" value=""></p>
 </div>
 
-<script type="text/javascript" src="http://ogneg.com/js/passport.min.js"></script>
-<script type="text/javascript">
+<script type="text/javascript" src="http://ogneg.com/js/passport.min.js"></script><script type="text/javascript">
         var passport = new MyGengoPassport({
             appName: 'myWork',
             button: document.getElementById('mygengo_passport_signin'),
@@ -117,9 +114,7 @@ modal: false,
                 $('#dat_form').slideDown('slow');
             }
         });
-</script>
-
-<h2 id="terms-that-make-sense">Terms that make sense</h2>
+</script><h2 id="terms-that-make-sense">Terms that make sense</h2>
 
 <p>In terms of interacting with the Gengo API, data is shuttled back and forth as a “job”. However, the typical interaction level a user has with Gengo finds them requesting “translations”, and almost nowhere are they made aware of the concept of a “job”. Consistency with the core Gengo experience ensures a user won’t be confused when requesting translations in an otherwise foreign space.</p>
 
@@ -150,7 +145,6 @@ modal: false,
 <p>My teacher gave us [[[ 7 apples ]]] today.</p>
 
 <p>In the above example, “7 apples” would be left untouched by the translator.</p>
-
       </div>
 
       
@@ -205,7 +199,6 @@ modal: false,
       <li class="js-topic">
         <h3><a href="#" class="js-expand-btn collapsed">&nbsp;</a><a href="/v2/jobs/">Jobs</a></h3>
         <ul class="js-guides">
-          <li><a href="/v2/jobs/#job">Job Group (GET)</a></li>
           <li><a href="/v2/jobs/#jobs-post">Jobs (POST)</a></li>
           <li><a href="/v2/jobs/#jobs-get">Jobs (GET)</a></li>
           <li><a href="/v2/jobs/#jobs-by-id-get">Jobs by id (GET)</a></li>

@@ -67,16 +67,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <p>This describes the endpoints that deal with Service on the Gengo API.</p>
 
 <ul>
-  <li><a href="#language-pairs-get">Language Pairs <strong>(GET)</strong></a></li>
+<li><a href="#language-pairs-get">Language Pairs <strong>(GET)</strong></a></li>
   <li><a href="#languages-get">Languages <strong>(GET)</strong></a></li>
   <li><a href="#quote-post">Quote <strong>(POST)</strong></a></li>
   <li><a href="#quote-files-post">Quote files <strong>(POST)</strong></a></li>
-</ul>
-
-<h2 id="language-pairs-get">Language pairs (GET)</h2>
+</ul><h2 id="language-pairs-get">Language pairs (GET)</h2>
 
 <dl>
-  <dt><strong>Summary</strong></dt>
+<dt><strong>Summary</strong></dt>
   <dd>Returns supported translation language pairs, tiers, and credit prices.</dd>
   <dt><strong>URL</strong></dt>
   <dd>http://api.gengo.com/v2/translate/service/language_pairs</dd>
@@ -85,12 +83,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <dt><strong>Parameters</strong></dt>
   <dd>
     <ul>
-      <li>api_key(required) Your API key.</li>
+<li>api_key(required) Your API key.</li>
     </ul>
-  </dd>
-</dl>
-
-<p><strong>Example call</strong></p>
+</dd>
+</dl><p><strong>Example call</strong></p>
 
 <pre><code class="language-python"><span class="c"># -*- coding: utf-8 -*-</span>
 <span class="c">#!/usr/bin/python</span>
@@ -112,33 +108,33 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <pre class="headers"><code>Status: 200 OK</code></pre>
 
 <pre class="highlight"><code class="language-javascript"><span class="p">{</span>
-  <span class="s2">"opstat"</span><span class="o">:</span> <span class="s2">"ok"</span><span class="p">,</span>
   <span class="s2">"response"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
-      <span class="s2">"lc_src"</span><span class="o">:</span> <span class="s2">"de"</span><span class="p">,</span>
       <span class="s2">"lc_tgt"</span><span class="o">:</span> <span class="s2">"en"</span><span class="p">,</span>
-      <span class="s2">"tier"</span><span class="o">:</span> <span class="s2">"standard"</span><span class="p">,</span>
-      <span class="s2">"unit_price"</span><span class="o">:</span> <span class="s2">"0.0500"</span>
+      <span class="s2">"lc_src"</span><span class="o">:</span> <span class="s2">"de"</span><span class="p">,</span>
+      <span class="s2">"unit_price"</span><span class="o">:</span> <span class="s2">"0.0500"</span><span class="p">,</span>
+      <span class="s2">"tier"</span><span class="o">:</span> <span class="s2">"standard"</span>
     <span class="p">},</span>
     <span class="p">{</span>
-      <span class="s2">"lc_src"</span><span class="o">:</span> <span class="s2">"de"</span><span class="p">,</span>
       <span class="s2">"lc_tgt"</span><span class="o">:</span> <span class="s2">"en"</span><span class="p">,</span>
-      <span class="s2">"tier"</span><span class="o">:</span> <span class="s2">"pro"</span><span class="p">,</span>
-      <span class="s2">"unit_price"</span><span class="o">:</span> <span class="s2">"0.1000"</span>
+      <span class="s2">"lc_src"</span><span class="o">:</span> <span class="s2">"de"</span><span class="p">,</span>
+      <span class="s2">"unit_price"</span><span class="o">:</span> <span class="s2">"0.1000"</span><span class="p">,</span>
+      <span class="s2">"tier"</span><span class="o">:</span> <span class="s2">"pro"</span>
     <span class="p">},</span>
     <span class="p">{</span>
-      <span class="s2">"lc_src"</span><span class="o">:</span> <span class="s2">"de"</span><span class="p">,</span>
       <span class="s2">"lc_tgt"</span><span class="o">:</span> <span class="s2">"en"</span><span class="p">,</span>
-      <span class="s2">"tier"</span><span class="o">:</span> <span class="s2">"ultra"</span><span class="p">,</span>
-      <span class="s2">"unit_price"</span><span class="o">:</span> <span class="s2">"0.1500"</span>
+      <span class="s2">"lc_src"</span><span class="o">:</span> <span class="s2">"de"</span><span class="p">,</span>
+      <span class="s2">"unit_price"</span><span class="o">:</span> <span class="s2">"0.1500"</span><span class="p">,</span>
+      <span class="s2">"tier"</span><span class="o">:</span> <span class="s2">"ultra"</span>
     <span class="p">}</span>
-  <span class="p">]</span>
+  <span class="p">],</span>
+  <span class="s2">"opstat"</span><span class="o">:</span> <span class="s2">"ok"</span>
 <span class="p">}</span></code></pre>
 
 <h2 id="languages-get">Languages (GET)</h2>
 
 <dl>
-  <dt><strong>Summary</strong></dt>
+<dt><strong>Summary</strong></dt>
   <dd>Returns a list of supported languages and their language codes.</dd>
   <dt><strong>URL</strong></dt>
   <dd>http://api.gengo.com/v2/translate/service/languages</dd>
@@ -147,18 +143,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <dt><strong>Parameters</strong></dt>
   <dd>
     <ul>
-      <li>api_key(required) Your API key.</li>
+<li>api_key(required) Your API key.</li>
     </ul>
-  </dd>
+</dd>
   <dt><strong>Data arguments</strong></dt>
   <dd>
     <ul>
-      <li>lc_src(optional): Source language code. Submitting this will filter the response to only relevant language pairs.</li>
+<li>lc_src(optional): Source language code. Submitting this will filter the response to only relevant language pairs.</li>
     </ul>
-  </dd>
-</dl>
-
-<p><strong>Example call</strong></p>
+</dd>
+</dl><p><strong>Example call</strong></p>
 
 <pre><code class="language-python"><span class="c"># -*- coding: utf-8 -*-</span>
 <span class="c">#!/usr/bin/python</span>
@@ -178,33 +172,33 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <pre class="headers"><code>Status: 200 OK</code></pre>
 
 <pre class="highlight"><code class="language-javascript"><span class="p">{</span>
-  <span class="s2">"opstat"</span><span class="o">:</span> <span class="s2">"ok"</span><span class="p">,</span>
   <span class="s2">"response"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
-      <span class="s2">"language"</span><span class="o">:</span> <span class="s2">"English"</span><span class="p">,</span>
-      <span class="s2">"localized_name"</span><span class="o">:</span> <span class="s2">"English"</span><span class="p">,</span>
       <span class="s2">"lc"</span><span class="o">:</span> <span class="s2">"en"</span><span class="p">,</span>
-      <span class="s2">"unit_type"</span><span class="o">:</span> <span class="s2">"word"</span>
+      <span class="s2">"localized_name"</span><span class="o">:</span> <span class="s2">"English"</span><span class="p">,</span>
+      <span class="s2">"unit_type"</span><span class="o">:</span> <span class="s2">"word"</span><span class="p">,</span>
+      <span class="s2">"language"</span><span class="o">:</span> <span class="s2">"English"</span>
     <span class="p">},</span>
     <span class="p">{</span>
-      <span class="s2">"language"</span><span class="o">:</span> <span class="s2">"Japanese"</span><span class="p">,</span>
-      <span class="s2">"localized_name"</span><span class="o">:</span> <span class="s2">"日本語"</span><span class="p">,</span>
       <span class="s2">"lc"</span><span class="o">:</span> <span class="s2">"ja"</span><span class="p">,</span>
-      <span class="s2">"unit_type"</span><span class="o">:</span> <span class="s2">"character"</span>
+      <span class="s2">"localized_name"</span><span class="o">:</span> <span class="s2">"u65e5u672cu8a9e"</span><span class="p">,</span>
+      <span class="s2">"unit_type"</span><span class="o">:</span> <span class="s2">"character"</span><span class="p">,</span>
+      <span class="s2">"language"</span><span class="o">:</span> <span class="s2">"Japanese"</span>
     <span class="p">},</span>
     <span class="p">{</span>
-      <span class="s2">"language"</span><span class="o">:</span> <span class="s2">"Spanish (Spain)"</span><span class="p">,</span>
-      <span class="s2">"localized_name"</span><span class="o">:</span> <span class="s2">"Español"</span><span class="p">,</span>
       <span class="s2">"lc"</span><span class="o">:</span> <span class="s2">"es"</span><span class="p">,</span>
-      <span class="s2">"unit_type"</span><span class="o">:</span> <span class="s2">"word"</span>
+      <span class="s2">"localized_name"</span><span class="o">:</span> <span class="s2">"Espau00f1ol"</span><span class="p">,</span>
+      <span class="s2">"unit_type"</span><span class="o">:</span> <span class="s2">"word"</span><span class="p">,</span>
+      <span class="s2">"language"</span><span class="o">:</span> <span class="s2">"Spanish (Spain)"</span>
     <span class="p">}</span>
-  <span class="p">]</span>
+  <span class="p">],</span>
+  <span class="s2">"opstat"</span><span class="o">:</span> <span class="s2">"ok"</span>
 <span class="p">}</span></code></pre>
 
 <h2 id="quote-post">Quote (POST)</h2>
 
 <dl>
-  <dt><strong>Summary</strong></dt>
+<dt><strong>Summary</strong></dt>
   <dd>Returns credit quote and unit count for text based on content, tier, and language pair for job or jobs submitted.</dd>
   <dt><strong>URL</strong></dt>
   <dd>http://api.gengo.com/v2/translate/service/quote</dd>
@@ -213,28 +207,26 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <dt><strong>Parameters</strong></dt>
   <dd>
     <ul>
-      <li>api_key(required) Your API key.</li>
+<li>api_key(required) Your API key.</li>
     </ul>
-  </dd>
+</dd>
   <dd>
     <ul>
-      <li>api_sig(required) Your API signature.</li>
+<li>api_sig(required) Your API signature.</li>
     </ul>
-  </dd>
+</dd>
   <dd>
     <ul>
-      <li>ts(required) Current Unix epoch time as an integer.</li>
+<li>ts(required) Current Unix epoch time as an integer.</li>
     </ul>
-  </dd>
+</dd>
   <dt><strong>Data arguments</strong></dt>
   <dd>
     <ul>
-      <li>jobs(required): An array of Job payloads, but only with the “lc_src”, “lc_tgt”, and “tier” parameters.</li>
+<li>jobs(required): An array of Job payloads, but only with the “lc_src”, “lc_tgt”, and “tier” parameters.</li>
     </ul>
-  </dd>
-</dl>
-
-<p><strong>Example call</strong></p>
+</dd>
+</dl><p><strong>Example call</strong></p>
 
 <pre><code class="language-python"><span class="c"># -*- coding: utf-8 -*-</span>
 <span class="c">#!/usr/bin/python</span>
@@ -282,35 +274,35 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <pre class="headers"><code>Status: 200 OK</code></pre>
 
 <pre class="highlight"><code class="language-javascript"><span class="p">{</span>
-  <span class="s2">"opstat"</span><span class="o">:</span> <span class="s2">"ok"</span><span class="p">,</span>
   <span class="s2">"response"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"jobs"</span><span class="o">:</span> <span class="p">[</span>
       <span class="p">{</span>
         <span class="s2">"job_1"</span><span class="o">:</span> <span class="p">{</span>
-          <span class="s2">"unit_count"</span><span class="o">:</span> <span class="mi">324</span><span class="p">,</span>
-          <span class="s2">"credits"</span><span class="o">:</span> <span class="mf">16.2</span><span class="p">,</span>
-          <span class="s2">"eta"</span><span class="o">:</span> <span class="mi">45198</span><span class="p">,</span>
           <span class="s2">"type"</span><span class="o">:</span> <span class="s2">"text"</span><span class="p">,</span>
-          <span class="s2">"currency"</span><span class="o">:</span> <span class="s2">"USD"</span>
+          <span class="s2">"eta"</span><span class="o">:</span> <span class="mi">45198</span><span class="p">,</span>
+          <span class="s2">"currency"</span><span class="o">:</span> <span class="s2">"USD"</span><span class="p">,</span>
+          <span class="s2">"unit_count"</span><span class="o">:</span> <span class="mi">324</span><span class="p">,</span>
+          <span class="s2">"credits"</span><span class="o">:</span> <span class="mf">16.2</span>
         <span class="p">}</span>
       <span class="p">},</span>
       <span class="p">{</span>
         <span class="s2">"job_2"</span><span class="o">:</span> <span class="p">{</span>
-          <span class="s2">"unit_count"</span><span class="o">:</span> <span class="mi">42</span><span class="p">,</span>
-          <span class="s2">"credits"</span><span class="o">:</span> <span class="mf">4.2</span><span class="p">,</span>
-          <span class="s2">"eta"</span><span class="o">:</span> <span class="mi">25164</span><span class="p">,</span>
           <span class="s2">"type"</span><span class="o">:</span> <span class="s2">"text"</span><span class="p">,</span>
-          <span class="s2">"currency"</span><span class="o">:</span> <span class="s2">"USD"</span>
+          <span class="s2">"eta"</span><span class="o">:</span> <span class="mi">25164</span><span class="p">,</span>
+          <span class="s2">"currency"</span><span class="o">:</span> <span class="s2">"USD"</span><span class="p">,</span>
+          <span class="s2">"unit_count"</span><span class="o">:</span> <span class="mi">42</span><span class="p">,</span>
+          <span class="s2">"credits"</span><span class="o">:</span> <span class="mf">4.2</span>
         <span class="p">}</span>
       <span class="p">}</span>
     <span class="p">]</span>
-  <span class="p">}</span>
+  <span class="p">},</span>
+  <span class="s2">"opstat"</span><span class="o">:</span> <span class="s2">"ok"</span>
 <span class="p">}</span></code></pre>
 
 <h2 id="quote-files-post">Quote files (POST)</h2>
 
 <dl>
-  <dt><strong>Summary</strong></dt>
+<dt><strong>Summary</strong></dt>
   <dd>Uploads files to Gengo and returns a quote for each file, with an identifier for when client is ready to place the actual order. Price quote is based on content, tier, and language pair. After using this call, use the returned identifier as a parameter in the jobs POST method to order the actual job (see Job Payloads).
 
     <p><strong>Note:</strong> When uploading files, there is a limit of 50 files per call</p>
@@ -322,25 +314,23 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <dt><strong>Parameters</strong></dt>
   <dd>
     <ul>
-      <li>api_key(required) Your API key.</li>
+<li>api_key(required) Your API key.</li>
     </ul>
-  </dd>
+</dd>
   <dd>
     <ul>
-      <li>api_sig(required) Your API signature.</li>
+<li>api_sig(required) Your API signature.</li>
       <li>ts(required) Current Unix epoch time as an integer.</li>
     </ul>
-  </dd>
+</dd>
   <dt><strong>Data arguments</strong></dt>
   <dd>
     <ul>
-      <li>jobs(required): An array of Job payloads, but only with the “lc_src”, “lc_tgt”, and “tier” parameters.</li>
+<li>jobs(required): An array of Job payloads, but only with the “lc_src”, “lc_tgt”, and “tier” parameters.</li>
       <li>files(required): A dictionary of files, where for each key, there is a multipart-encoded file</li>
     </ul>
-  </dd>
-</dl>
-
-<p><strong>Example call</strong></p>
+</dd>
+</dl><p><strong>Example call</strong></p>
 
 <pre><code class="language-ruby"><span class="c1">#!/usr/bin/env ruby</span>
 
@@ -388,39 +378,38 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <pre class="headers"><code>Status: 200 OK</code></pre>
 
 <pre class="highlight"><code class="language-javascript"><span class="p">{</span>
-  <span class="s2">"opstat"</span><span class="o">:</span> <span class="s2">"ok"</span><span class="p">,</span>
   <span class="s2">"response"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"jobs"</span><span class="o">:</span> <span class="p">{</span>
-      <span class="s2">"job_1"</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">"unit_count"</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
-        <span class="s2">"order_id"</span><span class="o">:</span> <span class="s2">"54632"</span><span class="p">,</span>
-        <span class="s2">"credits"</span><span class="o">:</span> <span class="s2">"0.00"</span><span class="p">,</span>
-        <span class="s2">"eta"</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
-        <span class="s2">"currency"</span><span class="o">:</span> <span class="s2">"USD"</span><span class="p">,</span>
-        <span class="s2">"identifier"</span><span class="o">:</span> <span class="s2">"49427e41a1b6cefd7444b0d27ec165e7481658791885e71b7602c6babfc80b77"</span><span class="p">,</span>
-        <span class="s2">"type"</span><span class="o">:</span> <span class="s2">"file"</span><span class="p">,</span>
-        <span class="s2">"lc_src"</span><span class="o">:</span> <span class="s2">"en"</span>
-      <span class="p">},</span>
-      <span class="s2">"job_2"</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">"unit_count"</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
-        <span class="s2">"credits"</span><span class="o">:</span> <span class="s2">"0.00"</span><span class="p">,</span>
-        <span class="s2">"eta"</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
-        <span class="s2">"currency"</span><span class="o">:</span> <span class="s2">"USD"</span><span class="p">,</span>
-        <span class="s2">"identifier"</span><span class="o">:</span> <span class="s2">"4fd1551c3a5628f795d645394bfcd0a5442e4e7ae60ad1f163424bdeb8420df4"</span><span class="p">,</span>
-        <span class="s2">"type"</span><span class="o">:</span> <span class="s2">"file"</span><span class="p">,</span>
-        <span class="s2">"lc_src"</span><span class="o">:</span> <span class="s2">"en"</span>
-      <span class="p">},</span>
       <span class="s2">"job_3"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"err"</span><span class="o">:</span> <span class="p">{</span>
           <span class="s2">"code"</span><span class="o">:</span> <span class="mi">1802</span><span class="p">,</span>
-          <span class="s2">"filename"</span><span class="o">:</span> <span class="s2">"sushi_en.doc"</span><span class="p">,</span>
-          <span class="s2">"key"</span><span class="o">:</span> <span class="s2">"job_3"</span>
+          <span class="s2">"key"</span><span class="o">:</span> <span class="s2">"job_3"</span><span class="p">,</span>
+          <span class="s2">"filename"</span><span class="o">:</span> <span class="s2">"sushi_en.doc"</span>
         <span class="p">}</span>
+      <span class="p">},</span>
+      <span class="s2">"job_2"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"type"</span><span class="o">:</span> <span class="s2">"file"</span><span class="p">,</span>
+        <span class="s2">"lc_src"</span><span class="o">:</span> <span class="s2">"en"</span><span class="p">,</span>
+        <span class="s2">"identifier"</span><span class="o">:</span> <span class="s2">"4fd1551c3a5628f795d645394bfcd0a5442e4e7ae60ad1f163424bdeb8420df4"</span><span class="p">,</span>
+        <span class="s2">"eta"</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="s2">"currency"</span><span class="o">:</span> <span class="s2">"USD"</span><span class="p">,</span>
+        <span class="s2">"unit_count"</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="s2">"credits"</span><span class="o">:</span> <span class="s2">"0.00"</span>
+      <span class="p">},</span>
+      <span class="s2">"job_1"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"order_id"</span><span class="o">:</span> <span class="s2">"54632"</span><span class="p">,</span>
+        <span class="s2">"type"</span><span class="o">:</span> <span class="s2">"file"</span><span class="p">,</span>
+        <span class="s2">"lc_src"</span><span class="o">:</span> <span class="s2">"en"</span><span class="p">,</span>
+        <span class="s2">"identifier"</span><span class="o">:</span> <span class="s2">"49427e41a1b6cefd7444b0d27ec165e7481658791885e71b7602c6babfc80b77"</span><span class="p">,</span>
+        <span class="s2">"eta"</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="s2">"currency"</span><span class="o">:</span> <span class="s2">"USD"</span><span class="p">,</span>
+        <span class="s2">"unit_count"</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="s2">"credits"</span><span class="o">:</span> <span class="s2">"0.00"</span>
       <span class="p">}</span>
     <span class="p">}</span>
-  <span class="p">}</span>
+  <span class="p">},</span>
+  <span class="s2">"opstat"</span><span class="o">:</span> <span class="s2">"ok"</span>
 <span class="p">}</span></code></pre>
-
       </div>
 
       
@@ -475,7 +464,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       <li class="js-topic">
         <h3><a href="#" class="js-expand-btn collapsed">&nbsp;</a><a href="/v2/jobs/">Jobs</a></h3>
         <ul class="js-guides">
-          <li><a href="/v2/jobs/#job">Job Group (GET)</a></li>
           <li><a href="/v2/jobs/#jobs-post">Jobs (POST)</a></li>
           <li><a href="/v2/jobs/#jobs-get">Jobs (GET)</a></li>
           <li><a href="/v2/jobs/#jobs-by-id-get">Jobs by id (GET)</a></li>

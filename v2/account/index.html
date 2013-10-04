@@ -67,15 +67,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <p>This describes the endpoints that deal with Account information on Gengo API.</p>
 
 <ul>
-  <li><a href="#stats-get">Stats <strong>(GET)</strong></a></li>
+<li><a href="#stats-get">Stats <strong>(GET)</strong></a></li>
   <li><a href="#balance-get">Balance <strong>(GET)</strong></a></li>
   <li><a href="#preferred-translators-get">Preferred translators <strong>(GET)</strong></a></li>
-</ul>
-
-<h2 id="stats-get">Stats (GET)</h2>
+</ul><h2 id="stats-get">Stats (GET)</h2>
 
 <dl>
-  <dt><strong>Summary</strong></dt>
+<dt><strong>Summary</strong></dt>
   <dd>Retrieves account stats, such as orders made.</dd>
   <dt><strong>URL</strong></dt>
   <dd>http://api.gengo.com/v2/account/stats</dd>
@@ -84,14 +82,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <dt><strong>Parameters</strong></dt>
   <dd>
     <ul>
-      <li>api_key(required) Your API key.</li>
+<li>api_key(required) Your API key.</li>
       <li>api_sig(required) Your API signature.</li>
       <li>ts(required) Current Unix epoch time as an integer.</li>
     </ul>
-  </dd>
-</dl>
-
-<p><strong>Example call</strong></p>
+</dd>
+</dl><p><strong>Example call</strong></p>
 
 <pre><code class="language-python"><span class="c"># -*- coding: utf-8 -*-</span>
 <span class="c">#!/usr/bin/python</span>
@@ -112,17 +108,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <pre class="headers"><code>Status: 200 OK</code></pre>
 
 <pre class="highlight"><code class="language-javascript"><span class="p">{</span>
-  <span class="s2">"opstat"</span><span class="o">:</span> <span class="s2">"ok"</span><span class="p">,</span>
   <span class="s2">"response"</span><span class="o">:</span> <span class="p">{</span>
-    <span class="s2">"credits_spent"</span><span class="o">:</span> <span class="s2">"1023.31"</span><span class="p">,</span>
-    <span class="s2">"user_since"</span><span class="o">:</span> <span class="mi">1234089500</span>
-  <span class="p">}</span>
+    <span class="s2">"user_since"</span><span class="o">:</span> <span class="mi">1234089500</span><span class="p">,</span>
+    <span class="s2">"credits_spent"</span><span class="o">:</span> <span class="s2">"1023.31"</span>
+  <span class="p">},</span>
+  <span class="s2">"opstat"</span><span class="o">:</span> <span class="s2">"ok"</span>
 <span class="p">}</span></code></pre>
 
 <h2 id="balance-get">Balance (GET)</h2>
 
 <dl>
-  <dt><strong>Summary</strong></dt>
+<dt><strong>Summary</strong></dt>
   <dd>Retrieves account balance in credits.</dd>
   <dt><strong>URL</strong></dt>
   <dd>http://api.gengo.com/v2/account/balance</dd>
@@ -132,14 +128,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <strong>Parameters</strong>_</dt>
   <dd>
     <ul>
-      <li>api_key(required) Your API key.</li>
+<li>api_key(required) Your API key.</li>
       <li>api_sig(required) Your API signature.</li>
       <li>ts(required) Current Unix epoch time as an integer.</li>
     </ul>
-  </dd>
-</dl>
-
-<p><strong>Example call</strong></p>
+</dd>
+</dl><p><strong>Example call</strong></p>
 
 <pre><code class="language-python"><span class="c"># -*- coding: utf-8 -*-</span>
 <span class="c">#!/usr/bin/python</span>
@@ -161,17 +155,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <pre class="headers"><code>Status: 200 OK</code></pre>
 
 <pre class="highlight"><code class="language-javascript"><span class="p">{</span>
-  <span class="s2">"opstat"</span><span class="o">:</span> <span class="s2">"ok"</span><span class="p">,</span>
   <span class="s2">"response"</span><span class="o">:</span> <span class="p">{</span>
-    <span class="s2">"credits"</span><span class="o">:</span> <span class="s2">"25.32"</span><span class="p">,</span>
-    <span class="s2">"currency"</span><span class="o">:</span> <span class="s2">"USD"</span>
-  <span class="p">}</span>
+    <span class="s2">"currency"</span><span class="o">:</span> <span class="s2">"USD"</span><span class="p">,</span>
+    <span class="s2">"credits"</span><span class="o">:</span> <span class="s2">"25.32"</span>
+  <span class="p">},</span>
+  <span class="s2">"opstat"</span><span class="o">:</span> <span class="s2">"ok"</span>
 <span class="p">}</span></code></pre>
 
 <h2 id="preferred-translators-get">Preferred translators (GET)</h2>
 
 <dl>
-  <dt><strong>Summary</strong></dt>
+<dt><strong>Summary</strong></dt>
   <dd>Retrieves preferred translators set by user.</dd>
   <dt><strong>URL</strong></dt>
   <dd>http://api.gengo.com/v2/account/preferred_translators</dd>
@@ -181,14 +175,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <strong>Parameters</strong>_</dt>
   <dd>
     <ul>
-      <li>api_key(required) Your API key.</li>
+<li>api_key(required) Your API key.</li>
       <li>api_sig(required) Your API signature.</li>
       <li>ts(required) Current Unix epoch time as an integer.</li>
     </ul>
-  </dd>
-</dl>
-
-<p><strong>Example call</strong></p>
+</dd>
+</dl><p><strong>Example call</strong></p>
 
 <pre><code class="language-python"><span class="c"># -*- coding: utf-8 -*-</span>
 <span class="c">#!/usr/bin/python</span>
@@ -209,45 +201,44 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <pre class="headers"><code>Status: 200 OK</code></pre>
 
 <pre class="highlight"><code class="language-javascript"><span class="p">{</span>
-  <span class="s2">"opstat"</span><span class="o">:</span> <span class="s2">"ok"</span><span class="p">,</span>
   <span class="s2">"response"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
-      <span class="s2">"lc_src"</span><span class="o">:</span> <span class="s2">"en"</span><span class="p">,</span>
-      <span class="s2">"lc_tgt"</span><span class="o">:</span> <span class="s2">"ja"</span><span class="p">,</span>
-      <span class="s2">"tier"</span><span class="o">:</span> <span class="s2">"standard"</span><span class="p">,</span>
       <span class="s2">"translators"</span><span class="o">:</span> <span class="p">[</span>
         <span class="p">{</span>
-          <span class="s2">"id"</span><span class="o">:</span> <span class="mi">8596</span><span class="p">,</span>
           <span class="s2">"number_of_jobs"</span><span class="o">:</span> <span class="mi">5</span><span class="p">,</span>
-          <span class="s2">"last_login"</span><span class="o">:</span> <span class="mi">1375824155</span>
+          <span class="s2">"last_login"</span><span class="o">:</span> <span class="mi">1375824155</span><span class="p">,</span>
+          <span class="s2">"id"</span><span class="o">:</span> <span class="mi">8596</span>
         <span class="p">},</span>
         <span class="p">{</span>
-          <span class="s2">"id"</span><span class="o">:</span> <span class="mi">24123</span><span class="p">,</span>
           <span class="s2">"number_of_jobs"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
-          <span class="s2">"last_login"</span><span class="o">:</span> <span class="mi">1372822132</span>
+          <span class="s2">"last_login"</span><span class="o">:</span> <span class="mi">1372822132</span><span class="p">,</span>
+          <span class="s2">"id"</span><span class="o">:</span> <span class="mi">24123</span>
         <span class="p">}</span>
-      <span class="p">]</span>
+      <span class="p">],</span>
+      <span class="s2">"lc_tgt"</span><span class="o">:</span> <span class="s2">"ja"</span><span class="p">,</span>
+      <span class="s2">"lc_src"</span><span class="o">:</span> <span class="s2">"en"</span><span class="p">,</span>
+      <span class="s2">"tier"</span><span class="o">:</span> <span class="s2">"standard"</span>
     <span class="p">},</span>
     <span class="p">{</span>
-      <span class="s2">"lc_src"</span><span class="o">:</span> <span class="s2">"ja"</span><span class="p">,</span>
-      <span class="s2">"lc_tgt"</span><span class="o">:</span> <span class="s2">"en"</span><span class="p">,</span>
-      <span class="s2">"tier"</span><span class="o">:</span> <span class="s2">"pro"</span><span class="p">,</span>
       <span class="s2">"translators"</span><span class="o">:</span> <span class="p">[</span>
         <span class="p">{</span>
-          <span class="s2">"id"</span><span class="o">:</span> <span class="mi">14765</span><span class="p">,</span>
           <span class="s2">"number_of_jobs"</span><span class="o">:</span> <span class="mi">10</span><span class="p">,</span>
-          <span class="s2">"last_login"</span><span class="o">:</span> <span class="mi">1375825234</span>
+          <span class="s2">"last_login"</span><span class="o">:</span> <span class="mi">1375825234</span><span class="p">,</span>
+          <span class="s2">"id"</span><span class="o">:</span> <span class="mi">14765</span>
         <span class="p">},</span>
         <span class="p">{</span>
-          <span class="s2">"id"</span><span class="o">:</span> <span class="mi">3627</span><span class="p">,</span>
           <span class="s2">"number_of_jobs"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-          <span class="s2">"last_login"</span><span class="o">:</span> <span class="mi">1372822132</span>
+          <span class="s2">"last_login"</span><span class="o">:</span> <span class="mi">1372822132</span><span class="p">,</span>
+          <span class="s2">"id"</span><span class="o">:</span> <span class="mi">3627</span>
         <span class="p">}</span>
-      <span class="p">]</span>
+      <span class="p">],</span>
+      <span class="s2">"lc_tgt"</span><span class="o">:</span> <span class="s2">"en"</span><span class="p">,</span>
+      <span class="s2">"lc_src"</span><span class="o">:</span> <span class="s2">"ja"</span><span class="p">,</span>
+      <span class="s2">"tier"</span><span class="o">:</span> <span class="s2">"pro"</span>
     <span class="p">}</span>
-  <span class="p">]</span>
+  <span class="p">],</span>
+  <span class="s2">"opstat"</span><span class="o">:</span> <span class="s2">"ok"</span>
 <span class="p">}</span></code></pre>
-
       </div>
 
       
@@ -302,7 +293,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       <li class="js-topic">
         <h3><a href="#" class="js-expand-btn collapsed">&nbsp;</a><a href="/v2/jobs/">Jobs</a></h3>
         <ul class="js-guides">
-          <li><a href="/v2/jobs/#job">Job Group (GET)</a></li>
           <li><a href="/v2/jobs/#jobs-post">Jobs (POST)</a></li>
           <li><a href="/v2/jobs/#jobs-get">Jobs (GET)</a></li>
           <li><a href="/v2/jobs/#jobs-by-id-get">Jobs by id (GET)</a></li>

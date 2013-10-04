@@ -67,14 +67,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <p>This describes the endpoints that deal with Glossaries on the Gengo API.</p>
 
 <ul>
-  <li><a href="#glossaries-get">Glossaries <strong>(GET)</strong></a></li>
+<li><a href="#glossaries-get">Glossaries <strong>(GET)</strong></a></li>
   <li><a href="#glossary-get">Glossary <strong>(GET)</strong></a></li>
-</ul>
-
-<h2 id="glossaries-get">Glossaries (GET)</h2>
+</ul><h2 id="glossaries-get">Glossaries (GET)</h2>
 
 <dl>
-  <dt><strong>Summary</strong></dt>
+<dt><strong>Summary</strong></dt>
   <dd>Retrieves a list of glossaries that belongs to the authenticated user</dd>
   <dt><strong>URL</strong></dt>
   <dd>http://api.gengo.com/v2/translate/glossary</dd>
@@ -83,14 +81,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <dt><strong>Parameters</strong></dt>
   <dd>
     <ul>
-      <li>api_key(required) Your API key.</li>
+<li>api_key(required) Your API key.</li>
       <li>api_sig(required) Your API signature.</li>
       <li>ts(required) Current Unix epoch time as an integer.</li>
     </ul>
-  </dd>
-</dl>
-
-<p><strong>Example call</strong></p>
+</dd>
+</dl><p><strong>Example call</strong></p>
 
 <pre><code class="language-ruby"><span class="c1">#!/usr/bin/env ruby</span>
 
@@ -109,33 +105,33 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <pre class="headers"><code>Status: 200 OK</code></pre>
 
 <pre class="highlight"><code class="language-javascript"><span class="p">{</span>
-  <span class="s2">"opstat"</span><span class="o">:</span> <span class="s2">"ok"</span><span class="p">,</span>
   <span class="s2">"response"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
-      <span class="s2">"status"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-      <span class="s2">"source_language_code"</span><span class="o">:</span> <span class="s2">"en-US"</span><span class="p">,</span>
-      <span class="s2">"description"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
-      <span class="s2">"source_language_id"</span><span class="o">:</span> <span class="mi">8</span><span class="p">,</span>
       <span class="s2">"title"</span><span class="o">:</span> <span class="s2">"1342666627_50110_en_ja_glossary.csv"</span><span class="p">,</span>
+      <span class="s2">"source_language_code"</span><span class="o">:</span> <span class="s2">"en-US"</span><span class="p">,</span>
+      <span class="s2">"customer_user_id"</span><span class="o">:</span> <span class="mi">50110</span><span class="p">,</span>
       <span class="s2">"target_languages"</span><span class="o">:</span> <span class="p">[</span>
         <span class="p">[</span>
           <span class="mi">14</span><span class="p">,</span>
           <span class="s2">"ja"</span>
         <span class="p">]</span>
       <span class="p">],</span>
-      <span class="s2">"is_public"</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
-      <span class="s2">"unit_count"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
       <span class="s2">"id"</span><span class="o">:</span> <span class="mi">115</span><span class="p">,</span>
-      <span class="s2">"customer_user_id"</span><span class="o">:</span> <span class="mi">50110</span><span class="p">,</span>
-      <span class="s2">"ctime"</span><span class="o">:</span> <span class="s2">"2012-07-19 02:57:10.526565"</span>
+      <span class="s2">"status"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="s2">"is_public"</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+      <span class="s2">"source_language_id"</span><span class="o">:</span> <span class="mi">8</span><span class="p">,</span>
+      <span class="s2">"ctime"</span><span class="o">:</span> <span class="s2">"2012-07-19 02:57:10.526565"</span><span class="p">,</span>
+      <span class="s2">"unit_count"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
+      <span class="s2">"description"</span><span class="o">:</span> <span class="kc">null</span>
     <span class="p">}</span>
-  <span class="p">]</span>
+  <span class="p">],</span>
+  <span class="s2">"opstat"</span><span class="o">:</span> <span class="s2">"ok"</span>
 <span class="p">}</span></code></pre>
 
 <h2 id="glossary-get">Glossary (GET)</h2>
 
 <dl>
-  <dt><strong>Summary</strong></dt>
+<dt><strong>Summary</strong></dt>
   <dd>Retreives a glossary by Id</dd>
   <dt><strong>URL</strong></dt>
   <dd>http://api.gengo.com/v2/translate/glossary/{glossary_id}</dd>
@@ -145,14 +141,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <strong>Parameters</strong>_</dt>
   <dd>
     <ul>
-      <li>api_key(required) Your API key.</li>
+<li>api_key(required) Your API key.</li>
       <li>api_sig(required) Your API signature.</li>
       <li>ts(required) Current Unix epoch time as an integer.</li>
     </ul>
-  </dd>
-</dl>
-
-<p><strong>Example call</strong></p>
+</dd>
+</dl><p><strong>Example call</strong></p>
 
 <pre><code class="language-ruby"><span class="c1">#!/usr/bin/env ruby</span>
 
@@ -171,27 +165,26 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <pre class="headers"><code>Status: 200 OK</code></pre>
 
 <pre class="highlight"><code class="language-javascript"><span class="p">{</span>
-  <span class="s2">"opstat"</span><span class="o">:</span> <span class="s2">"ok"</span><span class="p">,</span>
   <span class="s2">"response"</span><span class="o">:</span> <span class="p">{</span>
-    <span class="s2">"status"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-    <span class="s2">"source_language_code"</span><span class="o">:</span> <span class="s2">"en-US"</span><span class="p">,</span>
-    <span class="s2">"description"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
-    <span class="s2">"source_language_id"</span><span class="o">:</span> <span class="mi">8</span><span class="p">,</span>
     <span class="s2">"title"</span><span class="o">:</span> <span class="s2">"1342666627_50110_en_ja_glossary.csv"</span><span class="p">,</span>
+    <span class="s2">"source_language_code"</span><span class="o">:</span> <span class="s2">"en-US"</span><span class="p">,</span>
+    <span class="s2">"customer_user_id"</span><span class="o">:</span> <span class="mi">50110</span><span class="p">,</span>
     <span class="s2">"target_languages"</span><span class="o">:</span> <span class="p">[</span>
       <span class="p">[</span>
         <span class="mi">14</span><span class="p">,</span>
         <span class="s2">"ja"</span>
       <span class="p">]</span>
     <span class="p">],</span>
-    <span class="s2">"is_public"</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
-    <span class="s2">"unit_count"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
     <span class="s2">"id"</span><span class="o">:</span> <span class="mi">115</span><span class="p">,</span>
-    <span class="s2">"customer_user_id"</span><span class="o">:</span> <span class="mi">50110</span><span class="p">,</span>
-    <span class="s2">"ctime"</span><span class="o">:</span> <span class="s2">"2012-07-19 02:57:10.526565"</span>
-  <span class="p">}</span>
+    <span class="s2">"status"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="s2">"is_public"</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="s2">"source_language_id"</span><span class="o">:</span> <span class="mi">8</span><span class="p">,</span>
+    <span class="s2">"ctime"</span><span class="o">:</span> <span class="s2">"2012-07-19 02:57:10.526565"</span><span class="p">,</span>
+    <span class="s2">"unit_count"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
+    <span class="s2">"description"</span><span class="o">:</span> <span class="kc">null</span>
+  <span class="p">},</span>
+  <span class="s2">"opstat"</span><span class="o">:</span> <span class="s2">"ok"</span>
 <span class="p">}</span></code></pre>
-
       </div>
 
       
@@ -246,7 +239,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       <li class="js-topic">
         <h3><a href="#" class="js-expand-btn collapsed">&nbsp;</a><a href="/v2/jobs/">Jobs</a></h3>
         <ul class="js-guides">
-          <li><a href="/v2/jobs/#job">Job Group (GET)</a></li>
           <li><a href="/v2/jobs/#jobs-post">Jobs (POST)</a></li>
           <li><a href="/v2/jobs/#jobs-get">Jobs (GET)</a></li>
           <li><a href="/v2/jobs/#jobs-by-id-get">Jobs by id (GET)</a></li>

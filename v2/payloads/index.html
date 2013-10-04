@@ -67,14 +67,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <p><strong>Most of the processing throughout the Translate API will be around a Job Payload. This is a simple container representing the instance of a translation job.</strong></p>
 
 <ul>
-  <li><a href="#job-payload---for-responses">For responses</a></li>
+<li><a href="#job-payload---for-responses">For responses</a></li>
   <li><a href="#job-payload---for-submissions">For submissions</a></li>
-</ul>
-
-<h2 id="job-payload---for-responses">Job Payload - For responses</h2>
+</ul><h2 id="job-payload---for-responses">Job Payload - For responses</h2>
 
 <dl>
-  <dt>job_id</dt>
+<dt>job_id</dt>
   <dd>
 <em>String</em> of Job ID.</dd>
   <dt>body_src</dt>
@@ -118,15 +116,13 @@ callback_url String. The full URL to which we will send system updates (complete
   <dt>mt</dt>
   <dd>
 <em>1 (true) / 0 (false)</em> of whether the content in body_tgt is a machine translation. A machine translation is always provided as a convenience while a human translation is pending.</dd>
-</dl>
-
-<p>file_url_tgt <em>(optional)</em>
+</dl><p>file_url_tgt <em>(optional)</em>
 :<em>String</em> of the full URL of translated file (returned with the callback).</p>
 
 <h2 id="job-payload---for-submissions">Job Payload - For submissions</h2>
 
 <dl>
-  <dt>body_src</dt>
+<dt>body_src</dt>
   <dd>
 <em>String</em> of original body of text (to be translated).</dd>
   <dt>lc_src</dt>
@@ -181,7 +177,6 @@ callback_url String. The full URL to which we will send system updates (complete
   <dd>
 <em>String</em> of up to 1K of storage for client-specific data that may be helpful for you to have mapped to this job.</dd>
 </dl>
-
       </div>
 
       
@@ -236,7 +231,6 @@ callback_url String. The full URL to which we will send system updates (complete
       <li class="js-topic">
         <h3><a href="#" class="js-expand-btn collapsed">&nbsp;</a><a href="/v2/jobs/">Jobs</a></h3>
         <ul class="js-guides">
-          <li><a href="/v2/jobs/#job">Job Group (GET)</a></li>
           <li><a href="/v2/jobs/#jobs-post">Jobs (POST)</a></li>
           <li><a href="/v2/jobs/#jobs-get">Jobs (GET)</a></li>
           <li><a href="/v2/jobs/#jobs-by-id-get">Jobs by id (GET)</a></li>
