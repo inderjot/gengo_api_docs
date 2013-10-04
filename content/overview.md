@@ -55,7 +55,7 @@ To order translation, you should make a [translate/jobs/ (POST)](/v2/jobs/#jobs-
 
 ## Job statuses
 
-Once a job has been added to our system, they are given the status "available" which means our translators can now see them and notifications will be sent out. When a translator picks up a jobthe status becomes "pending" which means a translator is currently working on that job. If the "auto_approve" parameter was set to 0 (false) when the order was placed, the next status the job will change to is "reviewable". At this time you can make a [translate/job/ (PUT)](v2/job/#job-put) call to update the status. However, if the job was ordered with the "auto_approve" paramater set to 1 (true) then the status will be set to "approved" and your translation will be accessible.
+Once a job has been added to our system, they are given the status "available" which means our translators can now see them and notifications will be sent out. When a translator picks up a job, the status becomes "pending" which means a translator is currently working on that job. If the "auto_approve" parameter was set to 0 (false) when the order was placed, the next status the job will change to is "reviewable". At this time you can make a [translate/job/ (PUT)](v2/job/#job-put) call to update the status. However, if the job was ordered with the "auto_approve" paramater set to 1 (true) then the status will be set to "approved" and your translation will be accessible.
 
 ## Working without a database
 

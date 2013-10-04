@@ -215,21 +215,8 @@ module GitHub
         }
     )
 
-    JOB_GROUP_GET = OK_RESPONSE.merge(
-        "response" => {
-            "jobs" => [
-                {"job_id" => "5343"},
-                {"job_id" => "5344"},
-                {"job_id" => "5345"},
-                {"job_id" => "5346"}
-            ],
-            "ctime" => 319238102
-        }
-    )
-
     JOBS_POST_ALL_NEW = OK_RESPONSE.merge(
         "response" => {
-            "group_id" => 23015,
             "order_id" => "139370",
             "job_count" => "10",
             "credits_used" => "100.45",

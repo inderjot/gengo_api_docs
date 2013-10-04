@@ -6,50 +6,9 @@ title: Jobs | Gengo API
 
 This describes the endpoints that deal with Jobs on the Gengo API.
 
-* [Job Group __(GET)__](#job-group-get)
 * [Jobs __(POST)__](#jobs-post)
 * [Jobs __(GET)__](#jobs-get)
 * [Jobs by {id} __(GET)__](#jobs-by-id-get)
-
-
-## Job group (GET)
-
-__Summary__
-: Retrieves a group of jobs that were previously submitted together by their group id.
-
-__URL__
-: http://api.gengo.com/v2/translate/jobs/group/{group_id}
-
-__Authentication__
-: Required
-
-__Parameters__
-: * api_key(required) Your API key.
-  * api_sig(required) Your API signature.
-  * ts(required) Current Unix epoch time as an integer.
-
-__Example call__
-
-    #!python
-    # -*- coding: utf-8 -*-
-    #!/usr/bin/python
-    from gengo import Gengo
-
-    # Get an instance of Gengo to work with...
-    gengo = Gengo(
-        public_key='your_public_key',
-        private_key='your_private_key',
-        sandbox=True, # possibly false, depending on your dev needs )
-
-    # If you have one job id, but want to get the id of every other job that
-    # was submitted with it, you can do this.
-    print gengo.getTranslationJobBatch(id=42)
-
-
-__Response__
-
-<%= headers 200 %>
-<%= json :job_group_get %>
 
 
 ## Jobs (POST)
@@ -133,7 +92,7 @@ In all cases, the response from should be near instant. That said, there are 3 p
 
 _All jobs are new_
 
-If there are only new jobs (see lazy loading), or all jobs have the force flag, the response will have a new order id, the number of jobs, the total cost of the order, as well as a group id if the as_group flag is set to true.
+If there are only new jobs (see lazy loading), or all jobs have the force flag, the response will have a new order id, the number of jobs and the total cost of the order if the as_group flag is set to true.
 
 <%= headers 200 %>
 <%= json :jobs_post_all_new %>
@@ -158,7 +117,7 @@ The job count will be the number of jobs sent, however the credits will only cha
 
 _Mix of new and old jobs_
 
-If there is a mix of lazy jobs and new jobs in the POST, you will get back a response that contains the old jobs, an order ID for the new jobs, total cost for the new jobs, and a group ID for the new batch of jobs in the order.
+If there is a mix of lazy jobs and new jobs in the POST, you will get back a response that contains the old jobs, an order ID for the new jobs and total cost for the new jobs in the order.
 
 Please Note that the number of total jobs will be the total number of jobs sent in your payload, not just the new ones.
 
