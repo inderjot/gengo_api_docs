@@ -9,7 +9,6 @@ This describes the endpoints that deal with singular Job tasks and information o
 * [Job __(GET)__](#job-get)
 * [Job __(PUT)__](#job-put)
 * [Job __(DELETE)__](#job-delete)
-* [Preview __(GET)__](#preview-get)
 * [Revisions __(GET)__](#revisions-get)
 * [Revision __(GET)__](#revision-get)
 * [Feedback __(GET)__](#feedback-get)
@@ -157,44 +156,6 @@ __Response__
 
 <%= headers 200 %>
 <%= json :ok_empty_response %>
-
-
-## Preview (GET)
-
-__Summary__
-: Renders a JPEG preview image of the translated text.
-
-__URL__
-: http://api.gengo.com/v2/translate/job/{id}/preview
-
-__Authentication__
-: Required
-
-__Parameters__
-: * api_key(required) Your API key.
-  * api_sig(required) Your API signature.
-
-__Note__
-
-If the request is valid, a raw JPEG image stream will be returned. The width of the JPEG is 673 pixels, and the height will vary depending on the text length. Please allow enough space within your app to display long preview images (for instance by providing a scrollable area).
-
-In the case of an authentication error, an error response will be returned in JSON or XML format. In the case of other errors, an empty file will be returned.
-
-__Example call__
-
-    # -*- coding: utf-8 -*-
-    #!/usr/bin/python
-    from mygengo import MyGengo
-
-    # Get an instance of MyGengo to work with...
-    gengo = MyGengo(
-        public_key = 'your_public_key',
-        private_key = 'your_private_key',
-        sandbox = True, # possibly false, depending on your dev needs
-        )
-
-    # This method is a bit tricky; you can call it like below, but how you treat # the returned data is very much up to you.
-    gengo.getTranslationJobPreview(id = 42)
 
 
 ## Revisions (GET)

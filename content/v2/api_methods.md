@@ -22,9 +22,6 @@ title: API Methods | Gengo API
 [translate/job/{id} __(DELETE)__](/v2/job/#comment_post)
 : Cancels the job. You can only cancel a job if it has not been started already by a translator.
 
-[translate/job/{id}/preview __(GET)__](/v2/job/#preview-get')
-: Renders a JPEG preview image of the translated text.
-
 [translate/job/{id}/revision/{rev_id} __(GET)__](/v2/job/#revision-get)
 : Gets a specific revision for a job.
 

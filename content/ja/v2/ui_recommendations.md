@@ -269,45 +269,6 @@ __Required__
     </figcaption>
 </figure>
 
-### Translation job review panel
-
-The translation job review panel allows the user to check a completed translation, and potentially approve it. The translation is provided as a raw JPEG image stream (673px wide) and as tall as required via <a href='v2/job/preview-job-id'>translate/job/{id}/preview (GET)</a>. We recommend you also allow them to reject or request corrections for a job (via <a href='v2/job/put-id'>translate/job/{id} (PUT)</a>).
-
-__Required__
-
-* Image preview of the translated text (via <a href='/v2/job/preview-job-id'>translate/job/{id}/preview (GET)</a>)
-* “Approve” button
-
-__Recommended__
-
-* Job # (job_id)
-* Content submitted (body_src)
-* Comment thread panel (incorporated into the review panel, or as a separate linked panel)
-* “Reject” button (→ Job rejection panel)
-* “Request corrections” button (→ Request revisions panel)
-* Show a group of jobs together
-* Include the feedback form panel (associated with the “Approve” button)
-
-__If possible__
-
-* Show or link to previous revisions in the comment thread (via <a href='/v2/job/revisions-job-id'>translate/job/{id}/revisions (GET)</a>)
-* Make the “Approve” button the most prominent
-
-<figure>
-    <img src="/images/ui_recommendations/translation-review-basic.png">
-    <figcaption>
-        <p>
-            A minimal translation review panel wireframe
-        </p>
-        <p>
-            Normal method: <code>translate/job/{id} (PUT) approve</code>
-        </p>
-        <p>
-            Use <code>translate/job/{id}/preview (GET)</code> to receive a raw JPEG preview image stream (673px wide)
-        </p>
-    </figcaption>
-</figure>
-
 ### Feedback panel
 
 The feedback panel allows users to formally rate and comment on the translation (job or group of jobs) when they approve it. This is very valuable feedback that helps us improve Gengo’s service. You can also allow the user to add the translator to their preferred translators list. Currently the feedback form needs to be included within the job review form, as feedback is sent within the approve call using translate/job/{id} (PUT) approve.
