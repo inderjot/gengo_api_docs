@@ -108,11 +108,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <pre class="headers"><code>Status: 200 OK</code></pre>
 
 <pre class="highlight"><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"opstat"</span><span class="o">:</span> <span class="s2">"ok"</span><span class="p">,</span>
   <span class="s2">"response"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"user_since"</span><span class="o">:</span> <span class="mi">1234089500</span><span class="p">,</span>
     <span class="s2">"credits_spent"</span><span class="o">:</span> <span class="s2">"1023.31"</span>
-  <span class="p">},</span>
-  <span class="s2">"opstat"</span><span class="o">:</span> <span class="s2">"ok"</span>
+  <span class="p">}</span>
 <span class="p">}</span></code></pre>
 
 <h2 id="balance-get">Balance (GET)</h2>
@@ -155,11 +155,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <pre class="headers"><code>Status: 200 OK</code></pre>
 
 <pre class="highlight"><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"opstat"</span><span class="o">:</span> <span class="s2">"ok"</span><span class="p">,</span>
   <span class="s2">"response"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"currency"</span><span class="o">:</span> <span class="s2">"USD"</span><span class="p">,</span>
     <span class="s2">"credits"</span><span class="o">:</span> <span class="s2">"25.32"</span>
-  <span class="p">},</span>
-  <span class="s2">"opstat"</span><span class="o">:</span> <span class="s2">"ok"</span>
+  <span class="p">}</span>
 <span class="p">}</span></code></pre>
 
 <h2 id="preferred-translators-get">Preferred translators (GET)</h2>
@@ -201,9 +201,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <pre class="headers"><code>Status: 200 OK</code></pre>
 
 <pre class="highlight"><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"opstat"</span><span class="o">:</span> <span class="s2">"ok"</span><span class="p">,</span>
   <span class="s2">"response"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
+      <span class="s2">"lc_tgt"</span><span class="o">:</span> <span class="s2">"ja"</span><span class="p">,</span>
       <span class="s2">"lc_src"</span><span class="o">:</span> <span class="s2">"en"</span><span class="p">,</span>
+      <span class="s2">"tier"</span><span class="o">:</span> <span class="s2">"standard"</span><span class="p">,</span>
       <span class="s2">"translators"</span><span class="o">:</span> <span class="p">[</span>
         <span class="p">{</span>
           <span class="s2">"id"</span><span class="o">:</span> <span class="mi">8596</span><span class="p">,</span>
@@ -215,12 +218,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           <span class="s2">"number_of_jobs"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
           <span class="s2">"last_login"</span><span class="o">:</span> <span class="mi">1372822132</span>
         <span class="p">}</span>
-      <span class="p">],</span>
-      <span class="s2">"lc_tgt"</span><span class="o">:</span> <span class="s2">"ja"</span><span class="p">,</span>
-      <span class="s2">"tier"</span><span class="o">:</span> <span class="s2">"standard"</span>
+      <span class="p">]</span>
     <span class="p">},</span>
     <span class="p">{</span>
+      <span class="s2">"lc_tgt"</span><span class="o">:</span> <span class="s2">"en"</span><span class="p">,</span>
       <span class="s2">"lc_src"</span><span class="o">:</span> <span class="s2">"ja"</span><span class="p">,</span>
+      <span class="s2">"tier"</span><span class="o">:</span> <span class="s2">"pro"</span><span class="p">,</span>
       <span class="s2">"translators"</span><span class="o">:</span> <span class="p">[</span>
         <span class="p">{</span>
           <span class="s2">"id"</span><span class="o">:</span> <span class="mi">14765</span><span class="p">,</span>
@@ -232,12 +235,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           <span class="s2">"number_of_jobs"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
           <span class="s2">"last_login"</span><span class="o">:</span> <span class="mi">1372822132</span>
         <span class="p">}</span>
-      <span class="p">],</span>
-      <span class="s2">"lc_tgt"</span><span class="o">:</span> <span class="s2">"en"</span><span class="p">,</span>
-      <span class="s2">"tier"</span><span class="o">:</span> <span class="s2">"pro"</span>
+      <span class="p">]</span>
     <span class="p">}</span>
-  <span class="p">],</span>
-  <span class="s2">"opstat"</span><span class="o">:</span> <span class="s2">"ok"</span>
+  <span class="p">]</span>
 <span class="p">}</span></code></pre>
       </div>
 
@@ -282,7 +282,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           <li><a href="/v2/job/#job-get">Job (GET)</a></li>
           <li><a href="/v2/job/#job-put">Job (PUT)</a></li>
           <li><a href="/v2/job/#job-delete">Job (DELETE)</a></li>
-          <li><a href="/v2/job/#preview-get">Preview (GET)</a></li>
           <li><a href="/v2/job/#revisions-get">Revisions (GET)</a></li>
           <li><a href="/v2/job/#revision-get">Revision (GET)</a></li>
           <li><a href="/v2/job/#feedback-get">Feedback (GET)</a></li>
