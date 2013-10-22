@@ -29,8 +29,8 @@ __Parameters__
 __Example call__
 
     #!python
-    # -*- coding: utf-8 -*-
     #!/usr/bin/python
+    # -*- coding: utf-8 -*-
 
     from gengo import Gengo
 
@@ -38,7 +38,7 @@ __Example call__
     gengo = Gengo(
         public_key='your_public_key',
         private_key='your_private_key',
-        sandbox=False, # possibly false, depending on your dev needs )
+        sandbox=False, ) # possibly false, depending on your dev needs
 
     # Print the account stats...
     print gengo.getAccountStats()
@@ -68,20 +68,18 @@ __Parameters___
 __Example call__
 
     #!python
-    # -*- coding: utf-8 -*-
     #!/usr/bin/python
+    # -*- coding: utf-8 -*-
     from gengo import Gengo
 
     # Get an instance of Gengo to work with...
     gengo = Gengo(
         public_key='your_public_key',
         private_key='your_private_key',
-        sandbox=False, # possibly false, depending on your dev needs
-        debug=True)
+        sandbox=False, ) # possibly false, depending on your dev needs
 
     # Retrieve and print the account balance and currency. Properties ahoy!
-    print gengo.getAccountBalance()['response']['credits']
-    print gengo.getAccountBalance()['response']['currency']
+    print gengo.getAccountBalance()
 
 __Response__
 
@@ -107,8 +105,8 @@ __Parameters___
 __Example call__
 
     #!python
-    # -*- coding: utf-8 -*-
     #!/usr/bin/python
+    # -*- coding: utf-8 -*-
     from gengo import Gengo
 
     # Get an instance of Gengo to work with...

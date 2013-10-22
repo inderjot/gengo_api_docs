@@ -108,20 +108,22 @@ module GitHub
         {
             "response"=>{
                 "job"=>{
-                    "job_id"=>"384985",
-                    "order_id"=>"54632",
-                    "slug"=>"APIJobtest",
+                    "auto_approve"=>"0",
                     "body_src"=>"plop!",
+                    "body_tgt"=>"ドスン！",
+                    "callback_url"=>"http://gengo.callback/",
+                    "credits"=>"0.05",
+                    "ctime"=>1313475693,
+                    "currency"=>"USD",
+                    "eta"=>25056,
+                    "job_id"=>"384985",
                     "lc_src"=>"en",
                     "lc_tgt"=>"ja",
-                    "unit_count"=>"1",
-                    "tier"=>"standard",
-                    "credits"=>"0.05",
+                    "order_id"=>"54632",
+                    "slug"=>"APIJobtest",
                     "status"=>"available",
-                    "eta"=>"",
-                    "ctime"=>1313475693,
-                    "auto_approve"=>"0",
-                    "custom_data"=>"1234567"
+                    "tier"=>"standard",
+                    "unit_count"=>"1"
                 }
             }
         }
@@ -129,6 +131,7 @@ module GitHub
 
     ACCOUNT_STATS = OK_RESPONSE.merge(
         "response" => {
+            "currency" => "USD",
             "credits_spent" => "1023.31",
             "user_since" => 1234089500
         }
@@ -170,7 +173,7 @@ module GitHub
 
     REVISIONS_GET = OK_RESPONSE.merge(
         "response" => {
-            "job_id" => '...',
+            "job_id" => '42',
             "revisions" => [
                 {"ctime" => '...', "rev_id" => '...'},
                 {"ctime" => '...', "rev_id" => '...'},
@@ -192,7 +195,7 @@ module GitHub
     FEEDBACK_GET = OK_RESPONSE.merge(
         "response" => {
             "feedback" => {
-                'rating' => '3.0',
+                'rating' => '...',
                 'for_translator' => '...'
             }
         }
@@ -203,7 +206,7 @@ module GitHub
             "thread" => [
                 {
                     "body" => "....",
-                    "author" => "translator",
+                    "author" => "worker",
                     "ctime" => 1266322028
                 },
                 {
@@ -211,7 +214,7 @@ module GitHub
                     "author" => "customer",
                     "ctime" => 1266324432
                 }
-                ]
+            ]
         }
     )
 
