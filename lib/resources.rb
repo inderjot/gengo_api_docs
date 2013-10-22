@@ -108,22 +108,22 @@ module GitHub
         {
             "response"=>{
                 "job"=>{
-                    "auto_approve"=>"0",
-                    "body_src"=>"plop!",
-                    "body_tgt"=>"ドスン！",
-                    "callback_url"=>"http://gengo.callback/",
-                    "credits"=>"0.05",
-                    "ctime"=>1313475693,
-                    "currency"=>"USD",
-                    "eta"=>25056,
                     "job_id"=>"384985",
-                    "lc_src"=>"en",
-                    "lc_tgt"=>"ja",
                     "order_id"=>"54632",
                     "slug"=>"APIJobtest",
-                    "status"=>"available",
+                    "body_src"=>"This is text.",
+                    "lc_src"=>"en",
+                    "lc_tgt"=>"ja",
+                    "unit_count"=>"1",
                     "tier"=>"standard",
-                    "unit_count"=>"1"
+                    "credits"=>"0.05",
+                    "status"=>"available",
+                    "eta"=>25056,
+                    "ctime"=>1313475693,
+                    "auto_approve"=>"0",
+                    "body_tgt"=>"これはテキストです。",
+                    "callback_url"=>"http://gengo.callback/",
+                    "currency"=>"USD",
                 }
             }
         }
