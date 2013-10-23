@@ -222,6 +222,7 @@ module GitHub
         "response" => {
             "order_id" => "139370",
             "job_count" => "10",
+            "group_id" => "132105",
             "credits_used" => "100.45",
             "currency" => "USD"
         }
@@ -229,48 +230,48 @@ module GitHub
 
     JOBS_POST_ALL_OLD = OK_RESPONSE.merge(
         "response" => {
-            "jobs"=>[
-                        [
-                            {
-                                "job_id"=> "1821443",
-                                "slug"=> "3",
-                                "body_src"=> "Second",
-                                "lc_src"=> "en",
-                                "lc_tgt"=> "fr",
-                                "unit_count"=> "1",
-                                "tier"=> "pro",
-                                "credits"=> "0.10",
-                                "currency"=> "USD",
-                                "status"=> "reviewable",
-                                "eta"=> -1,
-                                "ctime"=> 1378703629,
-                                "callback_url"=> "http://example.com",
-                                "auto_approve"=> "0",
-                                "custom_data"=> "1234567",
-                                "body_tgt"=> "Deuxieme"
-                            }
-                        ],
-                        [
-                            {
-                                "job_id"=> "1821444",
-                                "slug"=> "3",
-                                "body_src"=> "Third",
-                                "lc_src"=> "en",
-                                "lc_tgt"=> "fr",
-                                "unit_count"=> "1",
-                                "tier"=> "pro",
-                                "credits"=> "0.10",
-                                "currency"=> "USD",
-                                "status"=> "reviewable",
-                                "eta"=> -1,
-                                "ctime"=> 1378703629,
-                                "callback_url"=> "http://example.com",
-                                "auto_approve"=> "0",
-                                "custom_data"=> "1234567",
-                                "body_tgt"=> "Troisieme"
-                            }
-                        ]
-                    ],
+            "jobs"=> {
+                "job_1" => [
+                    {
+                        "job_id"=> "1821443",
+                        "slug"=> "3",
+                        "body_src"=> "Second",
+                        "lc_src"=> "en",
+                        "lc_tgt"=> "fr",
+                        "unit_count"=> "1",
+                        "tier"=> "pro",
+                        "credits"=> "0.10",
+                        "currency"=> "USD",
+                        "status"=> "reviewable",
+                        "eta"=> -1,
+                        "ctime"=> 1378703629,
+                        "callback_url"=> "http://example.com",
+                        "auto_approve"=> "0",
+                        "custom_data"=> "1234567",
+                        "body_tgt"=> "Deuxieme"
+                    }
+                ],
+                "job_2" => [
+                    {
+                        "job_id"=> "1821444",
+                        "slug"=> "3",
+                        "body_src"=> "Third",
+                        "lc_src"=> "en",
+                        "lc_tgt"=> "fr",
+                        "unit_count"=> "1",
+                        "tier"=> "pro",
+                        "credits"=> "0.10",
+                        "currency"=> "USD",
+                        "status"=> "reviewable",
+                        "eta"=> -1,
+                        "ctime"=> 1378703629,
+                        "callback_url"=> "http://example.com",
+                        "auto_approve"=> "0",
+                        "custom_data"=> "1234567",
+                        "body_tgt"=> "Troisieme"
+                    }
+                ]
+            },
             "order_id"=> "754511",
             "job_count"=> 2,
             "credits_used"=> "0.00",
@@ -281,7 +282,7 @@ module GitHub
     JOBS_POST_MIX = OK_RESPONSE.merge(
         "response" => {
                 "jobs"=> {
-                    "1"=> [
+                    "old_job1"=> [
                         {
                             "job_id"=> "1821444",
                             "slug"=> "3",
@@ -304,7 +305,7 @@ module GitHub
                 },
                 "order_id"=> "754513",
                 "job_count"=> 2,
-                "credits_used"=> "0.10",
+                "credits_used"=> "0.20",
                 "currency"=> "USD"
             }
     )
@@ -356,7 +357,7 @@ module GitHub
             ],
             "order_id"=>"122900",
             "job_count"=>2,
-            "credits_used"=>"0.40",
+            "credits_used"=>"0.10",
             "currency"=>"USD"}
     )
 
@@ -376,6 +377,7 @@ module GitHub
                 {
                     "job_id" => "1",
                     "order_id"=>"54632",
+                    "slug"=> "This is a short story",
                     "body_src" => "This is a short story",
                     "lc_src" => "en",
                     "lc_tgt" => "jp",
@@ -392,6 +394,7 @@ module GitHub
                 },
                 {
                     "job_id" => "2",
+                    "slug"=> "This is a short story as well",
                     "body_src" => "This is a short story as well",
                     "order_id"=>"54632",
                     "lc_src" => "en",
