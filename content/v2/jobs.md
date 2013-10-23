@@ -35,8 +35,8 @@ __Data arguments__
 __Example call__
 
     #!python
-    # -*- coding: utf-8 -*-
     #!/usr/bin/python
+    # -*- coding: utf-8 -*-
     from gengo import Gengo
 
     # Get an instance of Gengo to work with...
@@ -44,8 +44,7 @@ __Example call__
     gengo = Gengo(
         public_key='your_public_key',
         private_key='your_private_key',
-        sandbox=True, # possibly false, depending on your dev needs
-        )
+        sandbox=True,) # possibly false, depending on your dev needs
 
     # This is an exhaustive view of this object; chances are your code will never
     # have to be this verbose because you'd want to build it up programmatically.
@@ -76,11 +75,11 @@ __Example call__
                 'comment': 'HEY THERE TRANSLATOR', # OPTIONAL. Comment to leave for translator.
                 'callback_url': 'http://...', # OPTIONAL. Callback URL that updates are sent to.
                 'custom_data':'your optional custom data, limited to 1kb.', # OPTIONAL
-                'force':  0 # OPTIONAL. 0 (false - default) / 1 (true), whether or not to override lazy loading and force a new translation 
+                'force':  0, # OPTIONAL. 0 (false - default) / 1 (true), whether or not to override lazy loading and force a new translation 
                 'use_preferred': 0 # OPTIONAL. If account has preferred translators then set as 1 to use only them
             },
             ...
-        }
+        },
         'as_group': 1, # OPTIONAL. 1 (true) / 0 (false, default). Whether all jobs in this group should be done by one translator.
     }
     # And now we post them over...
@@ -92,7 +91,7 @@ In all cases, the response from should be near instant. That said, there are 3 p
 
 _All jobs are new_
 
-If there are only new jobs (see lazy loading), or all jobs have the force flag, the response will have a new order id, the number of jobs and the total cost of the order if the as_group flag is set to true.
+If there are only new jobs (see lazy loading), or all jobs have the force flag, the response will have a new order id, the number of jobs and the total cost of the order if the as\_group flag is set to true.
 
 <%= headers 200 %>
 <%= json :jobs_post_all_new %>
@@ -101,7 +100,7 @@ _All jobs are old_
 
 If there are only 100% matching jobs (i.e. all jobs have already been ordered before and translations exist), the response is a list of the jobs, keyed the same as in the original submission. The status for these jobs will be updated as "approved". Notice that each index is a list, as there may be several matching jobs for a single payload if the force flag has been used in past POSTs. 
 
-The translation is in the "body_tgt" variable. The order id will be new and the credits_user will be 0, since we have not ordered any new content.
+The translation is in the "body\_tgt" variable. The order id will be new and the credits\_used will be same amount, but not charged again because we have not orderd any new content.
 
 <%= headers 200 %>
 <%= json :jobs_post_all_old %>
@@ -117,9 +116,9 @@ The job count will be the number of jobs sent, however the credits will only cha
 
 _Mix of new and old jobs_
 
-If there is a mix of previously ordered jobs (100% matching in content and language pair) and new jobs in the POST, you will get back a response that contains the old jobs, an order ID for the new jobs, total cost for the new jobs in the order.
+If there is a mix of previously ordered jobs (100% matching in content and language pair) and new jobs in the POST, you will get back a response that contains the old jobs, an order ID for the new jobs and total cost for the new jobs in the order.
 
-Please Note that the number of total jobs will be the total number of jobs sent in your payload, not just the new ones.
+Please Note that the number of job\_count will be the total number of jobs sent in your payload, not just the new ones.
 
 <%= headers 200 %>
 <%= json :jobs_post_mix %>
@@ -142,27 +141,27 @@ __Parameters__
 
 __Data arguments__
 : * status(optional): "available", "pending", "reviewable", "approved", "rejected", or "canceled"
-  * timestamp_after(optional): Epoch timestamp from which to filter submitted jobs.
+  * timestamp\_after(optional): Epoch timestamp from which to filter submitted jobs.
   * count(optional): Defaults to 10. Maximum 200.
 
 __Note__
 
 * If you only use count, you'll get the most recent count jobs.
-* If you use count with timestamp_after, you'll get count jobs submitted since timestamp_after.
-* If you only use timestamp_after, you'll get all jobs submitted since timestamp_after.
+* If you use count with timestamp\_after, you'll get count jobs submitted since timestamp\_after.
+* If you only use timestamp\_after, you'll get all jobs submitted since timestamp\_after.
 
 __Example call__
 
     #!python
-    # -*- coding: utf-8 -*-
     #!/usr/bin/python
+    # -*- coding: utf-8 -*-
     from gengo import Gengo
 
     # Get an instance of Gengo to work with...
     gengo = Gengo(
         public_key='your_public_key',
         private_key='your_private_key',
-        sandbox=True, # possibly false, depending on your dev needs )
+        sandbox=True,) # possibly false, depending on your dev needs
 
     # Think of this as a "search my jobs" method, and it becomes very self-explanatory.
     print gengo.getTranslationJobs(status="pending", count=15)
@@ -192,18 +191,20 @@ __Parameters__
 
 __Example call__
 
-    #!ruby
-    #!/usr/bin/env ruby
+    #!python
+    #!/usr/bin/python
+    # -*- coding: utf-8 -*-
+    from gengo import Gengo
 
-    require 'mygengo'
+    # Get an instance of Gengo to work with...
+    gengo = Gengo(
+        public_key='your_public_key',
+        private_key='your_private_key',
+        sandbox=True,) # possibly false, depending on your dev needs
 
-    @mygengo_client = MyGengo::API.new({
-        :public_key => 'pub_key',
-        :private_key => 'priv_key',
-        :sandbox => false,
-    })
-
-    puts @mygengo_client.getTranslationJobs(:ids => [1,2,3,4,5])
+    # "id" means job_id
+    # Note: no spaces after commas in "id"
+    print gengo.getTranslationJobBatch(id="1,2")
 
 __Response__
 
