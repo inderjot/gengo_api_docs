@@ -551,6 +551,7 @@ module GitHub
                     "jobs_available"=>["243646", "243647", "243645"],
                     "jobs_pending"=>[],
                     "jobs_reviewable"=>[],
+                    "jobs_revising"=>[],
                     "jobs_approved"=>[],
                     "jobs_queued" => 0,
                     "total_jobs"=>"3"

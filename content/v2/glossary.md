@@ -28,18 +28,18 @@ __Parameters__
 
 __Example call__
 
-    #!ruby
-    #!/usr/bin/env ruby
+    #!python
+    #!/usr/bin/python
+    # -*- coding: utf-8 -*-
+    from gengo import Gengo
 
-    require 'mygengo'
+    # Get an instance of Gengo to work with...
+    gengo = Gengo(
+        public_key='your_public_key',
+        private_key='your_private_key',
+        sandbox=False,) # possibly false, depending on your dev needs
 
-    @mygengo_client = MyGengo::API.new({
-        :public_key => 'pub_key',
-        :private_key => 'priv_key',
-        :sandbox => false,
-    })
-
-    puts @mygengo_client.getGlossaryList
+    print gengo.getGlossaryList()
 
 
 __Response__
@@ -66,18 +66,18 @@ __Parameters___
 
 __Example call__
 
-    #!ruby
-    #!/usr/bin/env ruby
+    #!python
+    #!/usr/bin/python
+    # -*- coding: utf-8 -*-
+    from gengo import Gengo
 
-    require 'mygengo'
+    # Get an instance of Gengo to work with...
+    gengo = Gengo(
+        public_key='your_public_key',
+        private_key='your_private_key',
+        sandbox=False,) # possibly false, depending on your dev needs
 
-    @mygengo_client = MyGengo::API.new({
-        :public_key => 'pub_key',
-        :private_key => 'priv_key',
-        :sandbox => false,
-    })
-
-    puts @mygengo_client.getGlossary(:id => @glossary_id)
+    print gengo.getGlossary(id="115")
 
 __Response__
 

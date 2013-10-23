@@ -27,20 +27,19 @@ __Parameters__
 
 __Example call__
 
-    #!ruby
-    #!/usr/bin/env ruby
+    #!python
+    #!/usr/bin/python
+    # -*- coding: utf-8 -*-
+    from gengo import Gengo
 
-    require 'mygengo'
+    # Get an instance of Gengo to work with...
+    gengo = Gengo(
+        public_key='your_public_key',
+        private_key='your_private_key',
+        sandbox=True,) # possibly false, depending on your dev needs
 
-    @mygengo_client = MyGengo::API.new({
-        :public_key => 'pub_key',
-        :private_key => 'priv_key',
-        :sandbox => false,
-    })
-
-    puts @mygengo_client.getTranslationOrderJobs({
-        :order_id => 559516
-    })
+    # "id" means order_id
+    print gengo.getTranslationOrderJobs(id="232")
 
 
 __Response__
@@ -67,15 +66,15 @@ __Parameters__
 __Example call__
 
     #!python
-    # -*- coding: utf-8 -*-
     #!/usr/bin/python
+    # -*- coding: utf-8 -*-
     from gengo import Gengo
 
     # Get an instance of Gengo to work with...
     gengo = Gengo(
         public_key='your_public_key',
         private_key='your_private_key',
-        sandbox=True, # possibly false, depending on your dev needs )
+        sandbox=True,) # possibly false, depending on your dev needs
 
     # Sends the command to delete all jobs in an order.
     gengo.deleteTranslationOrder(id=42)
