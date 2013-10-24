@@ -417,18 +417,21 @@ module GitHub
     LANG_PAIRS_GET = OK_RESPONSE.merge(
         "response" => [
             {
+                "currency" => "USD",
                 "lc_src" => "de",
                 "lc_tgt" => "en",
                 "tier" => "standard",
                 "unit_price" => "0.0500"
             },
             {
+                "currency" => "USD",
                 "lc_src" => "de",
                 "lc_tgt" => "en",
                 "tier" => "pro",
                 "unit_price" => "0.1000"
             },
             {
+                "currency" => "USD",
                 "lc_src" => "de",
                 "lc_tgt" => "en",
                 "tier" => "ultra",
@@ -447,13 +450,13 @@ module GitHub
             },
             {
                 "language" => "Japanese",
-                "localized_name" => "\u65e5\u672c\u8a9e",
+                "localized_name" => "日本語",
                 "lc" => "ja",
                 "unit_type" => "character"
             },
             {
                 "language" => "Spanish (Spain)",
-                "localized_name" => "Espa\u00f1ol",
+                "localized_name" => "Español",
                 "lc" => "es",
                 "unit_type" => "word"
             }
@@ -462,22 +465,26 @@ module GitHub
 
     QUOTE_POST = OK_RESPONSE.merge(
         "response" => {
-            "jobs" => [
-                {"job_1" => {
+            "jobs" => {
+                "job_1" => {
                     "unit_count" => 324,
                     "credits" => 16.20,
                     "eta" => 45198,
                     "type" => "text",
-                    "currency" => "USD"
-                }},
-                {"job_2" => {
+                    "currency" => "USD",
+                    "custom_data" => "your optional custom data, limited to 1kb.",
+                    "lc_src_detected" => "en"
+                },
+                "job_2" => {
                     "unit_count" => 42,
                     "credits" => 4.20,
                     "eta" => 25164,
                     "type" => "text",
-                    "currency" => "USD"
-                }}
-            ]
+                    "currency" => "USD",
+                    "custom_data" => "your optional custom data, limited to 1kb.",
+                    "lc_src_detected" => "en"
+                }
+            }
         }
     )
 
@@ -485,25 +492,27 @@ module GitHub
         "response"=>{
             "jobs"=>{
                 "job_1"=>{
-                    "unit_count"=>0,
+                    "unit_count"=>6,
                     "order_id"=>"54632",
-                    "credits"=>"0.00",
-                    "eta"=>0,
+                    "credits"=>"0.30",
+                    "eta"=>25128,
                     "currency"=>"USD",
                     "identifier"=>"49427e41a1b6cefd7444b0d27ec165e7481658791885e71b7602c6babfc80b77",
                     "type"=>"file",
+                    "lc_src_detected"=>"en",
                     "lc_src"=>"en"
                     },
                 "job_2"=>{
-                    "unit_count"=>0,
-                    "credits"=>"0.00",
-                    "eta"=>0,
+                    "unit_count"=>6,
+                    "credits"=>"0.30",
+                    "eta"=>25128,
                     "currency"=>"USD",
                     "identifier"=>"4fd1551c3a5628f795d645394bfcd0a5442e4e7ae60ad1f163424bdeb8420df4",
                     "type"=>"file",
+                    "lc_src_detected"=>"en",
                     "lc_src"=>"en"
                     },
-                "job_3"=>{"err"=>{"code"=>1802, "filename"=>"sushi_en.doc", "key"=>"job_3"}}}}
+                "job_3"=>{"err"=>{"code"=>1802, "filename"=>"file_path.foo", "key"=>"job_3"}}}}
     )
 
     GLOSSARY_LIST_GET = OK_RESPONSE.merge(
@@ -551,6 +560,7 @@ module GitHub
                     "jobs_available"=>["243646", "243647", "243645"],
                     "jobs_pending"=>[],
                     "jobs_reviewable"=>[],
+                    "jobs_revising"=>[],
                     "jobs_approved"=>[],
                     "jobs_queued" => 0,
                     "total_jobs"=>"3"

@@ -29,15 +29,15 @@ __Parameters__
 __Example call__
 
     #!python
-    # -*- coding: utf-8 -*-
     #!/usr/bin/python
+    # -*- coding: utf-8 -*-
     from gengo import Gengo
 
     # Get an instance of Gengo to work with...
     gengo = Gengo(
         public_key='your_public_key',
         private_key='your_private_key',
-        sandbox=True, # possibly false, depending on your dev needs )
+        sandbox=True,) # possibly false, depending on your dev needs
 
     # Useful for figuring out what language paths are supported - e.g, if 
     # we use 'en' below, we'll see what languages we can translate TO from 'en'.
@@ -69,15 +69,15 @@ __Data arguments__
 __Example call__
 
     #!python
-    # -*- coding: utf-8 -*-
     #!/usr/bin/python
+    # -*- coding: utf-8 -*-
     from gengo import Gengo
 
     # Get an instance of Gengo to work with...
     gengo = Gengo(
         public_key='your_public_key',
         private_key='your_private_key',
-        sandbox=True, # possibly false, depending on your dev needs )
+        sandbox=True,) # possibly false, depending on your dev needs
 
     # Get a list of every supported language, with their respective language codes.
     print gengo.getServiceLanguages()
@@ -110,15 +110,15 @@ __Data arguments__
 __Example call__
 
     #!python
-    # -*- coding: utf-8 -*-
     #!/usr/bin/python
+    # -*- coding: utf-8 -*-
     from gengo import Gengo
 
     # Get an instance of Gengo to work with...
     gengo = Gengo(
         public_key='your_public_key',
         private_key='your_private_key',
-        sandbox=True, # possibly false, depending on your dev needs )
+        sandbox=True,) # possibly false, depending on your dev needs
 
     jobs_data = {
             'job_1': {
@@ -181,47 +181,43 @@ __Data arguments__
 __Example call__
 
 
-    #!ruby
-    #!/usr/bin/env ruby
+    #!python
+    #!/usr/bin/python
+    # -*- coding: utf-8 -*-
+    from gengo import Gengo
 
-    require 'mygengo'
+    # Get an instance of Gengo to work with...
+    gengo = Gengo(
+        public_key='your_public_key',
+        private_key='your_private_key',
+        sandbox=True,) # possibly false, depending on your dev needs
 
-    @mygengo_client = MyGengo::API.new({
-           :public_key => 'pub_key',
-           :private_key => 'priv_key',
-           :sandbox => false,
-    })
-
-    @jobs_hash = {
-              :jobs => {
-                :job_1 => {
-                  :type => "file",
-                  :slug => "File posted from API testing suite, DON'T TOUCH 1",
-                  :lc_src => "en",
-                  :lc_tgt => "ja",
-                  :tier => "standard",
-                  :file_path => File.join(Rails.root, "lib", "assets", "video_on_demand.txt")
-                },
-                :job_2 => {
-                  :type => "file",
-                  :slug => "File posted from API testing suite, DON'T TOUCH 2",
-                  :lc_src => "en",
-                  :lc_tgt => "ja",
-                  :tier => "standard",
-                  :file_path => File.join(Rails.root, "lib", "assets", "japanese_file.docx")
-                },
-                :job_3 => {
-                  :type => "file",
-                  :slug => "File posted from API testing suite, DON'T TOUCH 3",
-                  :lc_src => "en",
-                  :lc_tgt => "ja",
-                  :tier => "standard",
-                  :file_path => File.join(Rails.root, "lib", "assets", "test_files", "english", "basics", "sushi_en.doc")
-                }
-            }
+    jobs_data = {
+        'job_1': {
+            'type': 'file', # REQUIRED. Type to translate, you'll probably always put 'text' here.
+            'lc_src': 'en', # REQUIRED. source_language_code => Code of langage you are translating from
+            'lc_tgt': 'ja', # REQUIRED. target_language_code => Code of language you are translating to
+            'tier': 'standard', # REQUIRED. tier type ("standard" or "pro")
+            'file_path': '/job_1/file_path.doc', # REQUIRED.
+        },
+        'job_2': {
+            'type': 'file', # REQUIRED. Type to translate, you'll probably always put 'text' here.
+            'lc_src': 'en', # REQUIRED. source_language_code => Code of langage you are translating from
+            'lc_tgt': 'ja', # REQUIRED. target_language_code => Code of language you are translating to
+            'tier': 'standard', # REQUIRED. tier type ("standard" or "pro")
+            'file_path': '/job_2/file_path.pdf', # REQUIRED.
+        },
+        'job_3': {
+            'type': 'file', # REQUIRED. Type to translate, you'll probably always put 'text' here.
+            'lc_src': 'en', # REQUIRED. source_language_code => Code of langage you are translating from
+            'lc_tgt': 'ja', # REQUIRED. target_language_code => Code of language you are translating to
+            'tier': 'standard', # REQUIRED. tier type ("standard" or "pro")
+            'file_path': '/job_3/file_path.foo', # REQUIRED.
+        },
     }
 
-    @mygengo_client.determineTranslationCost(@jobs_hash)
+    # Post over our two jobs, use the same translator for both, don't pay for them
+    print gengo.determineTranslationCost(jobs=jobs_data)
 
 __Response__
 
