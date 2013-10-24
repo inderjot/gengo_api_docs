@@ -195,22 +195,22 @@ __Example call__
     jobs_data = {
         'job_1': {
             'type': 'file', # REQUIRED. Type to translate, you'll probably always put 'text' here.
-            'lc_src': 'en', # REQUIRED. source_language_code (see getServiceLanguages() for a list of codes)
-            'lc_tgt': 'ja', # REQUIRED. target_language_code (see getServiceLanguages() for a list of codes)
+            'lc_src': 'en', # REQUIRED. source_language_code => Code of langage you are translating from
+            'lc_tgt': 'ja', # REQUIRED. target_language_code => Code of language you are translating to
             'tier': 'standard', # REQUIRED. tier type ("standard" or "pro")
             'file_path': '/job_1/file_path.doc', # REQUIRED.
         },
         'job_2': {
             'type': 'file', # REQUIRED. Type to translate, you'll probably always put 'text' here.
-            'lc_src': 'en', # REQUIRED. source_language_code (see getServiceLanguages() for a list of codes)
-            'lc_tgt': 'ja', # REQUIRED. target_language_code (see getServiceLanguages() for a list of codes)
+            'lc_src': 'en', # REQUIRED. source_language_code => Code of langage you are translating from
+            'lc_tgt': 'ja', # REQUIRED. target_language_code => Code of language you are translating to
             'tier': 'standard', # REQUIRED. tier type ("standard" or "pro")
             'file_path': '/job_2/file_path.pdf', # REQUIRED.
         },
         'job_3': {
             'type': 'file', # REQUIRED. Type to translate, you'll probably always put 'text' here.
-            'lc_src': 'en', # REQUIRED. source_language_code (see getServiceLanguages() for a list of codes)
-            'lc_tgt': 'ja', # REQUIRED. target_language_code (see getServiceLanguages() for a list of codes)
+            'lc_src': 'en', # REQUIRED. source_language_code => Code of langage you are translating from
+            'lc_tgt': 'ja', # REQUIRED. target_language_code => Code of language you are translating to
             'tier': 'standard', # REQUIRED. tier type ("standard" or "pro")
             'file_path': '/job_3/file_path.foo', # REQUIRED.
         },
