@@ -314,7 +314,7 @@ __Parameters__
   * ts(required) Current Unix epoch time as an integer.
 
 __Note__
-: Possible values for "author" are "translator", "customer", and "senior translator".
+: Possible values for "author" are "customer" or "worker".
 
 __Example call__
 
