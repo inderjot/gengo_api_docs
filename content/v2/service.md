@@ -39,7 +39,7 @@ __Example call__
         private_key='your_private_key',
         sandbox=True,) # possibly false, depending on your dev needs
 
-    # Useful for figuring out what language paths are supported - e.g, if 
+    # Useful for figuring out what language paths are supported - e.g, if
     # we use 'en' below, we'll see what languages we can translate TO from 'en'.
     # The `lc_src` parameter can be omitted to fetch all language pairs.
     print gengo.getServiceLanguagePairs(lc_src='de')
@@ -125,8 +125,8 @@ __Example call__
                 'type': 'text', # REQUIRED. Type to translate, you'll probably always put 'text' here.
                 'slug': 'Single :: English to Japanese', # REQUIRED. Slug for internally storing, can be generic.
                 'body_src': 'Testing Gengo API library calls.', # REQUIRED. The text you're translating.
-                'lc_src': 'en', # REQUIRED. source_language_code (see getServiceLanguages() for a list of codes)
-                'lc_tgt': 'ja', # REQUIRED. target_language_code (see getServiceLanguages() for a list of codes)
+                'lc_src': 'en', # REQUIRED. The code for the language you are translating *from*
+                'lc_tgt': 'ja', # REQUIRED. The code for the language you are translating *into*
                 'tier': 'standard', # REQUIRED. tier type ("machine", "standard", "pro", or "ultra")
                 'auto_approve': 0, # OPTIONAL. Hopefully self explanatory (1 = yes, 0 = no)
                 'comment': 'HEY THERE TRANSLATOR', # OPTIONAL. Comment to leave for translator.
@@ -137,8 +137,8 @@ __Example call__
                 'type': 'text', # REQUIRED. Type to translate, you'll probably always put 'text' here.
                 'slug': 'Single :: English to Japanese', # REQUIRED. Slug for internally storing, can be generic.
                 'body_src': 'Testing Gengo API library calls.', # REQUIRED. The text you're translating.
-                'lc_src': 'en', # REQUIRED. source_language_code (see getServiceLanguages() for a list of codes)
-                'lc_tgt': 'ja', # REQUIRED. target_language_code (see getServiceLanguages() for a list of codes)
+                'lc_src': 'en', # REQUIRED. The code for the language you are translating *from*
+                'lc_tgt': 'ja', # REQUIRED. The code for the language you are translating *into*
                 'tier': 'standard', # REQUIRED. tier type ("machine", "standard", "pro", or "ultra")
                 'auto_approve': 0, # OPTIONAL. Hopefully self explanatory (1 = yes, 0 = no)
                 'comment': 'HEY THERE TRANSLATOR', # OPTIONAL. Comment to leave for translator.
@@ -195,22 +195,22 @@ __Example call__
     jobs_data = {
         'job_1': {
             'type': 'file', # REQUIRED. Type to translate, you'll probably always put 'text' here.
-            'lc_src': 'en', # REQUIRED. source_language_code => Code of langage you are translating from
-            'lc_tgt': 'ja', # REQUIRED. target_language_code => Code of language you are translating to
+            'lc_src': 'en', # REQUIRED. The code for the language you are translating *from*
+            'lc_tgt': 'ja', # REQUIRED. The code for the language you are translating *into*
             'tier': 'standard', # REQUIRED. tier type ("standard" or "pro")
             'file_path': '/job_1/file_path.doc', # REQUIRED.
         },
         'job_2': {
             'type': 'file', # REQUIRED. Type to translate, you'll probably always put 'text' here.
-            'lc_src': 'en', # REQUIRED. source_language_code => Code of langage you are translating from
-            'lc_tgt': 'ja', # REQUIRED. target_language_code => Code of language you are translating to
+            'lc_src': 'en', # REQUIRED. The code for the language you are translating *from*
+            'lc_tgt': 'ja', # REQUIRED. The code for the language you are translating *into*
             'tier': 'standard', # REQUIRED. tier type ("standard" or "pro")
             'file_path': '/job_2/file_path.pdf', # REQUIRED.
         },
         'job_3': {
             'type': 'file', # REQUIRED. Type to translate, you'll probably always put 'text' here.
-            'lc_src': 'en', # REQUIRED. source_language_code => Code of langage you are translating from
-            'lc_tgt': 'ja', # REQUIRED. target_language_code => Code of language you are translating to
+            'lc_src': 'en', # REQUIRED. The code for the language you are translating *from*
+            'lc_tgt': 'ja', # REQUIRED. The code for the language you are translating *into*
             'tier': 'standard', # REQUIRED. tier type ("standard" or "pro")
             'file_path': '/job_3/file_path.foo', # REQUIRED.
         },
