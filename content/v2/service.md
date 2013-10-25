@@ -18,26 +18,34 @@ __Summary__
 : Returns supported translation language pairs, tiers, and credit prices.
 
 __URL__
-: http://api.gengo.com/v2/translate/service/language_pairs
+: http://api.gengo.com/v2/translate/service/language\_pairs
 
 __Authentication__
 : Not required
 
 __Parameters__
-: * api_key(required) Your API key.
+: * api\_key(required) Your API key.
+  * api\_sig(required) Your API signature.
+  * ts(required) Current Unix epoch time as an integer.
+
+__Data arguments__
+: * lc\_src(optional): Source language code.
+    Submitting this will filter the response to only relevant language pairs.
 
 __Example call__
 
     #!python
     #!/usr/bin/python
     # -*- coding: utf-8 -*-
+
     from gengo import Gengo
 
     # Get an instance of Gengo to work with...
     gengo = Gengo(
         public_key='your_public_key',
         private_key='your_private_key',
-        sandbox=True,) # possibly false, depending on your dev needs
+        sandbox=False, # possibly false, depending on your dev needs
+        debug=False)
 
     # Useful for figuring out what language paths are supported - e.g, if
     # we use 'en' below, we'll see what languages we can translate TO from 'en'.
@@ -61,23 +69,24 @@ __Authentication__
 : Not required
 
 __Parameters__
-: * api_key(required) Your API key.
-
-__Data arguments__
-: * lc_src(optional): Source language code. Submitting this will filter the response to only relevant language pairs.
+: * api\_key(required) Your API key.
+  * api\_sig(required) Your API signature.
+  * ts(required) Current Unix epoch time as an integer.
 
 __Example call__
 
     #!python
     #!/usr/bin/python
     # -*- coding: utf-8 -*-
+
     from gengo import Gengo
 
     # Get an instance of Gengo to work with...
     gengo = Gengo(
         public_key='your_public_key',
         private_key='your_private_key',
-        sandbox=True,) # possibly false, depending on your dev needs
+        sandbox=False, # possibly false, depending on your dev needs
+        debug=False)
 
     # Get a list of every supported language, with their respective language codes.
     print gengo.getServiceLanguages()
@@ -100,25 +109,28 @@ __Authentication__
 : Required
 
 __Parameters__
-: * api_key(required) Your API key.
-: * api_sig(required) Your API signature.
-: * ts(required) Current Unix epoch time as an integer.
+: * api\_key(required) Your API key.
+  * api\_sig(required) Your API signature.
+  * ts(required) Current Unix epoch time as an integer.
 
 __Data arguments__
-: * jobs(required): An array of Job payloads, but only with the "lc_src", "lc_tgt", and "tier" parameters.
+: * jobs(required): An array of Job payloads,
+    but only with the "lc\_src", "lc\_tgt", and "tier" parameters.
 
 __Example call__
 
     #!python
     #!/usr/bin/python
     # -*- coding: utf-8 -*-
+
     from gengo import Gengo
 
     # Get an instance of Gengo to work with...
     gengo = Gengo(
         public_key='your_public_key',
         private_key='your_private_key',
-        sandbox=True,) # possibly false, depending on your dev needs
+        sandbox=False, # possibly false, depending on your dev needs
+        debug=False)
 
     jobs_data = {
             'job_1': {
@@ -159,7 +171,10 @@ __Response__
 ## Quote files (POST)
 
 __Summary__
-: Uploads files to Gengo and returns a quote for each file, with an identifier for when client is ready to place the actual order. Price quote is based on content, tier, and language pair. After using this call, use the returned identifier as a parameter in the jobs POST method to order the actual job (see Job Payloads).
+: Uploads files to Gengo and returns a quote for each file,
+  with an identifier for when client is ready to place the actual order.
+  Price quote is based on content, tier, and language pair.
+  After using this call, use the returned identifier as a parameter in the jobs POST method to order the actual job (see Job Payloads).
 
   __Note:__ When uploading files, there is a limit of 50 files per call
 
@@ -170,12 +185,12 @@ __Authentication__
 : Required
 
 __Parameters__
-: * api_key(required) Your API key.
-: * api_sig(required) Your API signature.
+: * api\_key(required) Your API key.
+  * api\_sig(required) Your API signature.
   * ts(required) Current Unix epoch time as an integer.
 
 __Data arguments__
-: * jobs(required): An array of Job payloads, but only with the "lc_src", "lc_tgt", and "tier" parameters.
+: * jobs(required): An array of Job payloads, but only with the "lc\_src", "lc\_tgt", and "tier" parameters.
   * files(required): A dictionary of files, where for each key, there is a multipart-encoded file
 
 __Example call__
@@ -184,13 +199,15 @@ __Example call__
     #!python
     #!/usr/bin/python
     # -*- coding: utf-8 -*-
+
     from gengo import Gengo
 
     # Get an instance of Gengo to work with...
     gengo = Gengo(
         public_key='your_public_key',
         private_key='your_private_key',
-        sandbox=True,) # possibly false, depending on your dev needs
+        sandbox=False, # possibly false, depending on your dev needs
+        debug=False)
 
     jobs_data = {
         'job_1': {
