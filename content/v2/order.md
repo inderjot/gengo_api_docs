@@ -15,14 +15,14 @@ __Summary__
 : Retrieves a group of jobs that were previously submitted together by their order id.
 
 __URL__
-: http://api.gengo.com/v2/translate/order/{order_id}
+: http://api.gengo.com/v2/translate/order/{order\_id}
 
 __Authentication__
 : Required
 
 __Parameters__
-: * api_key(required) Your API key.
-  * api_sig(required) Your API signature.
+: * api\_key(required) Your API key.
+  * api\_sig(required) Your API signature.
   * ts(required) Current Unix epoch time as an integer.
 
 __Example call__
@@ -30,13 +30,15 @@ __Example call__
     #!python
     #!/usr/bin/python
     # -*- coding: utf-8 -*-
+
     from gengo import Gengo
 
     # Get an instance of Gengo to work with...
     gengo = Gengo(
         public_key='your_public_key',
         private_key='your_private_key',
-        sandbox=True,) # possibly false, depending on your dev needs
+        sandbox=False, # possibly false, depending on your dev needs
+        debug=False)
 
     # "id" means order_id
     print gengo.getTranslationOrderJobs(id="232")
@@ -59,8 +61,8 @@ __Authentication__
 : Required
 
 __Parameters__
-: * api_key(required) Your API key.
-  * api_sig(required) Your API signature.
+: * api\_key(required) Your API key.
+  * api\_sig(required) Your API signature.
   * ts(required) Current Unix epoch time as an integer.
 
 __Example call__
@@ -68,13 +70,15 @@ __Example call__
     #!python
     #!/usr/bin/python
     # -*- coding: utf-8 -*-
+
     from gengo import Gengo
 
     # Get an instance of Gengo to work with...
     gengo = Gengo(
         public_key='your_public_key',
         private_key='your_private_key',
-        sandbox=True,) # possibly false, depending on your dev needs
+        sandbox=False, # possibly false, depending on your dev needs
+        debug=False)
 
     # Sends the command to delete all jobs in an order.
     gengo.deleteTranslationOrder(id=42)
