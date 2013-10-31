@@ -135,7 +135,7 @@ __Example call__
     jobs_data = {
             'job_1': {
                 'type': 'text', # REQUIRED. Type to translate, you'll probably always put 'text' here.
-                'slug': 'Single :: English to Japanese', # REQUIRED. Slug for internally storing, can be generic.
+                'slug': 'Single :: English to Japanese', # OPTIONAL. Slug for internally storing, can be generic.
                 'body_src': 'Testing Gengo API library calls.', # REQUIRED. The text you're translating.
                 'lc_src': 'en', # REQUIRED. The code for the language you are translating *from*
                 'lc_tgt': 'ja', # REQUIRED. The code for the language you are translating *into*
@@ -147,7 +147,7 @@ __Example call__
             },
             'job_2': {
                 'type': 'text', # REQUIRED. Type to translate, you'll probably always put 'text' here.
-                'slug': 'Single :: English to Japanese', # REQUIRED. Slug for internally storing, can be generic.
+                'slug': 'Single :: English to Japanese', # OPTIONAL. Slug for internally storing, can be generic.
                 'body_src': 'Testing Gengo API library calls.', # REQUIRED. The text you're translating.
                 'lc_src': 'en', # REQUIRED. The code for the language you are translating *from*
                 'lc_tgt': 'ja', # REQUIRED. The code for the language you are translating *into*
