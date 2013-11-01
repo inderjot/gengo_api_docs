@@ -88,37 +88,44 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </dd>
 </dl><p><strong>Example call</strong></p>
 
-<pre><code class="language-ruby"><span class="c1">#!/usr/bin/env ruby</span>
+<pre><code class="language-python"><span class="c">#!/usr/bin/python</span>
+<span class="c"># -*- coding: utf-8 -*-</span>
 
-<span class="nb">require</span> <span class="s1">'mygengo'</span>
+<span class="kn">from</span> <span class="nn">gengo</span> <span class="kn">import</span> <span class="n">Gengo</span>
 
-<span class="vi">@mygengo_client</span> <span class="o">=</span> <span class="ss">MyGengo</span><span class="p">:</span><span class="ss">:API</span><span class="o">.</span><span class="n">new</span><span class="p">({</span>
-    <span class="ss">:public_key</span> <span class="o">=&gt;</span> <span class="s1">'pub_key'</span><span class="p">,</span>
-    <span class="ss">:private_key</span> <span class="o">=&gt;</span> <span class="s1">'priv_key'</span><span class="p">,</span>
-    <span class="ss">:sandbox</span> <span class="o">=&gt;</span> <span class="kp">false</span><span class="p">,</span>
-<span class="p">})</span>
+<span class="c"># Get an instance of Gengo to work with...</span>
+<span class="n">gengo</span> <span class="o">=</span> <span class="n">Gengo</span><span class="p">(</span>
+    <span class="n">public_key</span><span class="o">=</span><span class="s">'your_public_key'</span><span class="p">,</span>
+    <span class="n">private_key</span><span class="o">=</span><span class="s">'your_private_key'</span><span class="p">,</span>
+    <span class="n">sandbox</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="c"># possibly false, depending on your dev needs</span>
+    <span class="n">debug</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
 
-<span class="nb">puts</span> <span class="vi">@mygengo_client</span><span class="o">.</span><span class="n">getTranslationOrderJobs</span><span class="p">({</span>
-    <span class="ss">:order_id</span> <span class="o">=&gt;</span> <span class="mi">559516</span>
-<span class="p">})</span></code></pre>
+<span class="c"># "id" means order_id</span>
+<span class="k">print</span> <span class="n">gengo</span><span class="o">.</span><span class="n">getTranslationOrderJobs</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s">"232"</span><span class="p">)</span></code></pre>
 
 <p><strong>Response</strong></p>
 
 <pre class="headers"><code>Status: 200 OK</code></pre>
 
 <pre class="highlight"><code class="language-javascript"><span class="p">{</span>
-  <span class="s2">"opstat"</span><span class="o">:</span> <span class="s2">"ok"</span><span class="p">,</span>
   <span class="s2">"response"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"order"</span><span class="o">:</span> <span class="p">{</span>
-      <span class="s2">"jobs_pending"</span><span class="o">:</span> <span class="p">[</span>
+      <span class="s2">"total_units"</span><span class="o">:</span> <span class="mi">6</span><span class="p">,</span>
+      <span class="s2">"currency"</span><span class="o">:</span> <span class="s2">"USD"</span><span class="p">,</span>
+      <span class="s2">"jobs_approved"</span><span class="o">:</span> <span class="p">[</span>
 
       <span class="p">],</span>
-      <span class="s2">"as_group"</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
-      <span class="s2">"currency"</span><span class="o">:</span> <span class="s2">"USD"</span><span class="p">,</span>
-      <span class="s2">"jobs_queued"</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
-      <span class="s2">"total_credits"</span><span class="o">:</span> <span class="s2">"0.30"</span><span class="p">,</span>
+      <span class="s2">"jobs_revising"</span><span class="o">:</span> <span class="p">[</span>
+
+      <span class="p">],</span>
+      <span class="s2">"jobs_reviewable"</span><span class="o">:</span> <span class="p">[</span>
+
+      <span class="p">],</span>
       <span class="s2">"order_id"</span><span class="o">:</span> <span class="s2">"232"</span><span class="p">,</span>
-      <span class="s2">"jobs_approved"</span><span class="o">:</span> <span class="p">[</span>
+      <span class="s2">"jobs_queued"</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+      <span class="s2">"as_group"</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+      <span class="s2">"total_credits"</span><span class="o">:</span> <span class="s2">"0.30"</span><span class="p">,</span>
+      <span class="s2">"jobs_pending"</span><span class="o">:</span> <span class="p">[</span>
 
       <span class="p">],</span>
       <span class="s2">"total_jobs"</span><span class="o">:</span> <span class="s2">"3"</span><span class="p">,</span>
@@ -126,13 +133,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <span class="s2">"243646"</span><span class="p">,</span>
         <span class="s2">"243647"</span><span class="p">,</span>
         <span class="s2">"243645"</span>
-      <span class="p">],</span>
-      <span class="s2">"jobs_reviewable"</span><span class="o">:</span> <span class="p">[</span>
-
-      <span class="p">],</span>
-      <span class="s2">"total_units"</span><span class="o">:</span> <span class="mi">6</span>
+      <span class="p">]</span>
     <span class="p">}</span>
-  <span class="p">}</span>
+  <span class="p">},</span>
+  <span class="s2">"opstat"</span><span class="o">:</span> <span class="s2">"ok"</span>
 <span class="p">}</span></code></pre>
 
 <h2 id="order-delete">Order (DELETE)</h2>
@@ -154,15 +158,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </dd>
 </dl><p><strong>Example call</strong></p>
 
-<pre><code class="language-python"><span class="c"># -*- coding: utf-8 -*-</span>
-<span class="c">#!/usr/bin/python</span>
+<pre><code class="language-python"><span class="c">#!/usr/bin/python</span>
+<span class="c"># -*- coding: utf-8 -*-</span>
+
 <span class="kn">from</span> <span class="nn">gengo</span> <span class="kn">import</span> <span class="n">Gengo</span>
 
 <span class="c"># Get an instance of Gengo to work with...</span>
 <span class="n">gengo</span> <span class="o">=</span> <span class="n">Gengo</span><span class="p">(</span>
     <span class="n">public_key</span><span class="o">=</span><span class="s">'your_public_key'</span><span class="p">,</span>
     <span class="n">private_key</span><span class="o">=</span><span class="s">'your_private_key'</span><span class="p">,</span>
-    <span class="n">sandbox</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="c"># possibly false, depending on your dev needs )</span>
+    <span class="n">sandbox</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="c"># possibly false, depending on your dev needs</span>
+    <span class="n">debug</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
 
 <span class="c"># Sends the command to delete all jobs in an order.</span>
 <span class="n">gengo</span><span class="o">.</span><span class="n">deleteTranslationOrder</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span></code></pre>
@@ -172,10 +178,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <pre class="headers"><code>Status: 200 OK</code></pre>
 
 <pre class="highlight"><code class="language-javascript"><span class="p">{</span>
-  <span class="s2">"opstat"</span><span class="o">:</span> <span class="s2">"ok"</span><span class="p">,</span>
   <span class="s2">"response"</span><span class="o">:</span> <span class="p">{</span>
 
-  <span class="p">}</span>
+  <span class="p">},</span>
+  <span class="s2">"opstat"</span><span class="o">:</span> <span class="s2">"ok"</span>
 <span class="p">}</span></code></pre>
       </div>
 

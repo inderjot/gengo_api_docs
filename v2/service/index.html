@@ -84,21 +84,32 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <dd>
     <ul>
 <li>api_key(required) Your API key.</li>
+      <li>api_sig(required) Your API signature.</li>
+      <li>ts(required) Current Unix epoch time as an integer.</li>
+    </ul>
+</dd>
+  <dt><strong>Data arguments</strong></dt>
+  <dd>
+    <ul>
+<li>lc_src(optional): Source language code.
+Submitting this will filter the response to only relevant language pairs.</li>
     </ul>
 </dd>
 </dl><p><strong>Example call</strong></p>
 
-<pre><code class="language-python"><span class="c"># -*- coding: utf-8 -*-</span>
-<span class="c">#!/usr/bin/python</span>
+<pre><code class="language-python"><span class="c">#!/usr/bin/python</span>
+<span class="c"># -*- coding: utf-8 -*-</span>
+
 <span class="kn">from</span> <span class="nn">gengo</span> <span class="kn">import</span> <span class="n">Gengo</span>
 
 <span class="c"># Get an instance of Gengo to work with...</span>
 <span class="n">gengo</span> <span class="o">=</span> <span class="n">Gengo</span><span class="p">(</span>
     <span class="n">public_key</span><span class="o">=</span><span class="s">'your_public_key'</span><span class="p">,</span>
     <span class="n">private_key</span><span class="o">=</span><span class="s">'your_private_key'</span><span class="p">,</span>
-    <span class="n">sandbox</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="c"># possibly false, depending on your dev needs )</span>
+    <span class="n">sandbox</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="c"># possibly false, depending on your dev needs</span>
+    <span class="n">debug</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
 
-<span class="c"># Useful for figuring out what language paths are supported - e.g, if </span>
+<span class="c"># Useful for figuring out what language paths are supported - e.g, if</span>
 <span class="c"># we use 'en' below, we'll see what languages we can translate TO from 'en'.</span>
 <span class="c"># The `lc_src` parameter can be omitted to fetch all language pairs.</span>
 <span class="k">print</span> <span class="n">gengo</span><span class="o">.</span><span class="n">getServiceLanguagePairs</span><span class="p">(</span><span class="n">lc_src</span><span class="o">=</span><span class="s">'de'</span><span class="p">)</span></code></pre>
@@ -108,27 +119,30 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <pre class="headers"><code>Status: 200 OK</code></pre>
 
 <pre class="highlight"><code class="language-javascript"><span class="p">{</span>
-  <span class="s2">"opstat"</span><span class="o">:</span> <span class="s2">"ok"</span><span class="p">,</span>
   <span class="s2">"response"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
+      <span class="s2">"tier"</span><span class="o">:</span> <span class="s2">"standard"</span><span class="p">,</span>
+      <span class="s2">"currency"</span><span class="o">:</span> <span class="s2">"USD"</span><span class="p">,</span>
+      <span class="s2">"lc_tgt"</span><span class="o">:</span> <span class="s2">"en"</span><span class="p">,</span>
       <span class="s2">"unit_price"</span><span class="o">:</span> <span class="s2">"0.0500"</span><span class="p">,</span>
-      <span class="s2">"lc_tgt"</span><span class="o">:</span> <span class="s2">"en"</span><span class="p">,</span>
-      <span class="s2">"lc_src"</span><span class="o">:</span> <span class="s2">"de"</span><span class="p">,</span>
-      <span class="s2">"tier"</span><span class="o">:</span> <span class="s2">"standard"</span>
+      <span class="s2">"lc_src"</span><span class="o">:</span> <span class="s2">"de"</span>
     <span class="p">},</span>
     <span class="p">{</span>
+      <span class="s2">"tier"</span><span class="o">:</span> <span class="s2">"pro"</span><span class="p">,</span>
+      <span class="s2">"currency"</span><span class="o">:</span> <span class="s2">"USD"</span><span class="p">,</span>
+      <span class="s2">"lc_tgt"</span><span class="o">:</span> <span class="s2">"en"</span><span class="p">,</span>
       <span class="s2">"unit_price"</span><span class="o">:</span> <span class="s2">"0.1000"</span><span class="p">,</span>
-      <span class="s2">"lc_tgt"</span><span class="o">:</span> <span class="s2">"en"</span><span class="p">,</span>
-      <span class="s2">"lc_src"</span><span class="o">:</span> <span class="s2">"de"</span><span class="p">,</span>
-      <span class="s2">"tier"</span><span class="o">:</span> <span class="s2">"pro"</span>
+      <span class="s2">"lc_src"</span><span class="o">:</span> <span class="s2">"de"</span>
     <span class="p">},</span>
     <span class="p">{</span>
-      <span class="s2">"unit_price"</span><span class="o">:</span> <span class="s2">"0.1500"</span><span class="p">,</span>
+      <span class="s2">"tier"</span><span class="o">:</span> <span class="s2">"ultra"</span><span class="p">,</span>
+      <span class="s2">"currency"</span><span class="o">:</span> <span class="s2">"USD"</span><span class="p">,</span>
       <span class="s2">"lc_tgt"</span><span class="o">:</span> <span class="s2">"en"</span><span class="p">,</span>
-      <span class="s2">"lc_src"</span><span class="o">:</span> <span class="s2">"de"</span><span class="p">,</span>
-      <span class="s2">"tier"</span><span class="o">:</span> <span class="s2">"ultra"</span>
+      <span class="s2">"unit_price"</span><span class="o">:</span> <span class="s2">"0.1500"</span><span class="p">,</span>
+      <span class="s2">"lc_src"</span><span class="o">:</span> <span class="s2">"de"</span>
     <span class="p">}</span>
-  <span class="p">]</span>
+  <span class="p">],</span>
+  <span class="s2">"opstat"</span><span class="o">:</span> <span class="s2">"ok"</span>
 <span class="p">}</span></code></pre>
 
 <h2 id="languages-get">Languages (GET)</h2>
@@ -144,25 +158,23 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <dd>
     <ul>
 <li>api_key(required) Your API key.</li>
-    </ul>
-</dd>
-  <dt><strong>Data arguments</strong></dt>
-  <dd>
-    <ul>
-<li>lc_src(optional): Source language code. Submitting this will filter the response to only relevant language pairs.</li>
+      <li>api_sig(required) Your API signature.</li>
+      <li>ts(required) Current Unix epoch time as an integer.</li>
     </ul>
 </dd>
 </dl><p><strong>Example call</strong></p>
 
-<pre><code class="language-python"><span class="c"># -*- coding: utf-8 -*-</span>
-<span class="c">#!/usr/bin/python</span>
+<pre><code class="language-python"><span class="c">#!/usr/bin/python</span>
+<span class="c"># -*- coding: utf-8 -*-</span>
+
 <span class="kn">from</span> <span class="nn">gengo</span> <span class="kn">import</span> <span class="n">Gengo</span>
 
 <span class="c"># Get an instance of Gengo to work with...</span>
 <span class="n">gengo</span> <span class="o">=</span> <span class="n">Gengo</span><span class="p">(</span>
     <span class="n">public_key</span><span class="o">=</span><span class="s">'your_public_key'</span><span class="p">,</span>
     <span class="n">private_key</span><span class="o">=</span><span class="s">'your_private_key'</span><span class="p">,</span>
-    <span class="n">sandbox</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="c"># possibly false, depending on your dev needs )</span>
+    <span class="n">sandbox</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="c"># possibly false, depending on your dev needs</span>
+    <span class="n">debug</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
 
 <span class="c"># Get a list of every supported language, with their respective language codes.</span>
 <span class="k">print</span> <span class="n">gengo</span><span class="o">.</span><span class="n">getServiceLanguages</span><span class="p">()</span></code></pre>
@@ -172,27 +184,27 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <pre class="headers"><code>Status: 200 OK</code></pre>
 
 <pre class="highlight"><code class="language-javascript"><span class="p">{</span>
-  <span class="s2">"opstat"</span><span class="o">:</span> <span class="s2">"ok"</span><span class="p">,</span>
   <span class="s2">"response"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
       <span class="s2">"lc"</span><span class="o">:</span> <span class="s2">"en"</span><span class="p">,</span>
-      <span class="s2">"unit_type"</span><span class="o">:</span> <span class="s2">"word"</span><span class="p">,</span>
       <span class="s2">"language"</span><span class="o">:</span> <span class="s2">"English"</span><span class="p">,</span>
+      <span class="s2">"unit_type"</span><span class="o">:</span> <span class="s2">"word"</span><span class="p">,</span>
       <span class="s2">"localized_name"</span><span class="o">:</span> <span class="s2">"English"</span>
     <span class="p">},</span>
     <span class="p">{</span>
       <span class="s2">"lc"</span><span class="o">:</span> <span class="s2">"ja"</span><span class="p">,</span>
-      <span class="s2">"unit_type"</span><span class="o">:</span> <span class="s2">"character"</span><span class="p">,</span>
       <span class="s2">"language"</span><span class="o">:</span> <span class="s2">"Japanese"</span><span class="p">,</span>
-      <span class="s2">"localized_name"</span><span class="o">:</span> <span class="s2">"u65e5u672cu8a9e"</span>
+      <span class="s2">"unit_type"</span><span class="o">:</span> <span class="s2">"character"</span><span class="p">,</span>
+      <span class="s2">"localized_name"</span><span class="o">:</span> <span class="s2">"日本語"</span>
     <span class="p">},</span>
     <span class="p">{</span>
       <span class="s2">"lc"</span><span class="o">:</span> <span class="s2">"es"</span><span class="p">,</span>
-      <span class="s2">"unit_type"</span><span class="o">:</span> <span class="s2">"word"</span><span class="p">,</span>
       <span class="s2">"language"</span><span class="o">:</span> <span class="s2">"Spanish (Spain)"</span><span class="p">,</span>
-      <span class="s2">"localized_name"</span><span class="o">:</span> <span class="s2">"Espau00f1ol"</span>
+      <span class="s2">"unit_type"</span><span class="o">:</span> <span class="s2">"word"</span><span class="p">,</span>
+      <span class="s2">"localized_name"</span><span class="o">:</span> <span class="s2">"Español"</span>
     <span class="p">}</span>
-  <span class="p">]</span>
+  <span class="p">],</span>
+  <span class="s2">"opstat"</span><span class="o">:</span> <span class="s2">"ok"</span>
 <span class="p">}</span></code></pre>
 
 <h2 id="quote-post">Quote (POST)</h2>
@@ -208,43 +220,38 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <dd>
     <ul>
 <li>api_key(required) Your API key.</li>
-    </ul>
-</dd>
-  <dd>
-    <ul>
-<li>api_sig(required) Your API signature.</li>
-    </ul>
-</dd>
-  <dd>
-    <ul>
-<li>ts(required) Current Unix epoch time as an integer.</li>
+      <li>api_sig(required) Your API signature.</li>
+      <li>ts(required) Current Unix epoch time as an integer.</li>
     </ul>
 </dd>
   <dt><strong>Data arguments</strong></dt>
   <dd>
     <ul>
-<li>jobs(required): An array of Job payloads, but only with the “lc_src”, “lc_tgt”, and “tier” parameters.</li>
+<li>jobs(required): An array of Job payloads,
+but only with the “lc_src”, “lc_tgt”, and “tier” parameters.</li>
     </ul>
 </dd>
 </dl><p><strong>Example call</strong></p>
 
-<pre><code class="language-python"><span class="c"># -*- coding: utf-8 -*-</span>
-<span class="c">#!/usr/bin/python</span>
+<pre><code class="language-python"><span class="c">#!/usr/bin/python</span>
+<span class="c"># -*- coding: utf-8 -*-</span>
+
 <span class="kn">from</span> <span class="nn">gengo</span> <span class="kn">import</span> <span class="n">Gengo</span>
 
 <span class="c"># Get an instance of Gengo to work with...</span>
 <span class="n">gengo</span> <span class="o">=</span> <span class="n">Gengo</span><span class="p">(</span>
     <span class="n">public_key</span><span class="o">=</span><span class="s">'your_public_key'</span><span class="p">,</span>
     <span class="n">private_key</span><span class="o">=</span><span class="s">'your_private_key'</span><span class="p">,</span>
-    <span class="n">sandbox</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="c"># possibly false, depending on your dev needs )</span>
+    <span class="n">sandbox</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="c"># possibly false, depending on your dev needs</span>
+    <span class="n">debug</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
 
 <span class="n">jobs_data</span> <span class="o">=</span> <span class="p">{</span>
         <span class="s">'job_1'</span><span class="p">:</span> <span class="p">{</span>
             <span class="s">'type'</span><span class="p">:</span> <span class="s">'text'</span><span class="p">,</span> <span class="c"># REQUIRED. Type to translate, you'll probably always put 'text' here.</span>
-            <span class="s">'slug'</span><span class="p">:</span> <span class="s">'Single :: English to Japanese'</span><span class="p">,</span> <span class="c"># REQUIRED. Slug for internally storing, can be generic.</span>
+            <span class="s">'slug'</span><span class="p">:</span> <span class="s">'Single :: English to Japanese'</span><span class="p">,</span> <span class="c"># OPTIONAL. Slug for internally storing, can be generic.</span>
             <span class="s">'body_src'</span><span class="p">:</span> <span class="s">'Testing Gengo API library calls.'</span><span class="p">,</span> <span class="c"># REQUIRED. The text you're translating.</span>
-            <span class="s">'lc_src'</span><span class="p">:</span> <span class="s">'en'</span><span class="p">,</span> <span class="c"># REQUIRED. source_language_code (see getServiceLanguages() for a list of codes)</span>
-            <span class="s">'lc_tgt'</span><span class="p">:</span> <span class="s">'ja'</span><span class="p">,</span> <span class="c"># REQUIRED. target_language_code (see getServiceLanguages() for a list of codes)</span>
+            <span class="s">'lc_src'</span><span class="p">:</span> <span class="s">'en'</span><span class="p">,</span> <span class="c"># REQUIRED. The code for the language you are translating *from*</span>
+            <span class="s">'lc_tgt'</span><span class="p">:</span> <span class="s">'ja'</span><span class="p">,</span> <span class="c"># REQUIRED. The code for the language you are translating *into*</span>
             <span class="s">'tier'</span><span class="p">:</span> <span class="s">'standard'</span><span class="p">,</span> <span class="c"># REQUIRED. tier type ("machine", "standard", "pro", or "ultra")</span>
             <span class="s">'auto_approve'</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="c"># OPTIONAL. Hopefully self explanatory (1 = yes, 0 = no)</span>
             <span class="s">'comment'</span><span class="p">:</span> <span class="s">'HEY THERE TRANSLATOR'</span><span class="p">,</span> <span class="c"># OPTIONAL. Comment to leave for translator.</span>
@@ -253,10 +260,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <span class="p">},</span>
         <span class="s">'job_2'</span><span class="p">:</span> <span class="p">{</span>
             <span class="s">'type'</span><span class="p">:</span> <span class="s">'text'</span><span class="p">,</span> <span class="c"># REQUIRED. Type to translate, you'll probably always put 'text' here.</span>
-            <span class="s">'slug'</span><span class="p">:</span> <span class="s">'Single :: English to Japanese'</span><span class="p">,</span> <span class="c"># REQUIRED. Slug for internally storing, can be generic.</span>
+            <span class="s">'slug'</span><span class="p">:</span> <span class="s">'Single :: English to Japanese'</span><span class="p">,</span> <span class="c"># OPTIONAL. Slug for internally storing, can be generic.</span>
             <span class="s">'body_src'</span><span class="p">:</span> <span class="s">'Testing Gengo API library calls.'</span><span class="p">,</span> <span class="c"># REQUIRED. The text you're translating.</span>
-            <span class="s">'lc_src'</span><span class="p">:</span> <span class="s">'en'</span><span class="p">,</span> <span class="c"># REQUIRED. source_language_code (see getServiceLanguages() for a list of codes)</span>
-            <span class="s">'lc_tgt'</span><span class="p">:</span> <span class="s">'ja'</span><span class="p">,</span> <span class="c"># REQUIRED. target_language_code (see getServiceLanguages() for a list of codes)</span>
+            <span class="s">'lc_src'</span><span class="p">:</span> <span class="s">'en'</span><span class="p">,</span> <span class="c"># REQUIRED. The code for the language you are translating *from*</span>
+            <span class="s">'lc_tgt'</span><span class="p">:</span> <span class="s">'ja'</span><span class="p">,</span> <span class="c"># REQUIRED. The code for the language you are translating *into*</span>
             <span class="s">'tier'</span><span class="p">:</span> <span class="s">'standard'</span><span class="p">,</span> <span class="c"># REQUIRED. tier type ("machine", "standard", "pro", or "ultra")</span>
             <span class="s">'auto_approve'</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="c"># OPTIONAL. Hopefully self explanatory (1 = yes, 0 = no)</span>
             <span class="s">'comment'</span><span class="p">:</span> <span class="s">'HEY THERE TRANSLATOR'</span><span class="p">,</span> <span class="c"># OPTIONAL. Comment to leave for translator.</span>
@@ -274,36 +281,39 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <pre class="headers"><code>Status: 200 OK</code></pre>
 
 <pre class="highlight"><code class="language-javascript"><span class="p">{</span>
-  <span class="s2">"opstat"</span><span class="o">:</span> <span class="s2">"ok"</span><span class="p">,</span>
   <span class="s2">"response"</span><span class="o">:</span> <span class="p">{</span>
-    <span class="s2">"jobs"</span><span class="o">:</span> <span class="p">[</span>
-      <span class="p">{</span>
-        <span class="s2">"job_1"</span><span class="o">:</span> <span class="p">{</span>
-          <span class="s2">"currency"</span><span class="o">:</span> <span class="s2">"USD"</span><span class="p">,</span>
-          <span class="s2">"type"</span><span class="o">:</span> <span class="s2">"text"</span><span class="p">,</span>
-          <span class="s2">"unit_count"</span><span class="o">:</span> <span class="mi">324</span><span class="p">,</span>
-          <span class="s2">"credits"</span><span class="o">:</span> <span class="mf">16.2</span><span class="p">,</span>
-          <span class="s2">"eta"</span><span class="o">:</span> <span class="mi">45198</span>
-        <span class="p">}</span>
+    <span class="s2">"jobs"</span><span class="o">:</span> <span class="p">{</span>
+      <span class="s2">"job_2"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"type"</span><span class="o">:</span> <span class="s2">"text"</span><span class="p">,</span>
+        <span class="s2">"currency"</span><span class="o">:</span> <span class="s2">"USD"</span><span class="p">,</span>
+        <span class="s2">"custom_data"</span><span class="o">:</span> <span class="s2">"your optional custom data, limited to 1kb."</span><span class="p">,</span>
+        <span class="s2">"lc_src_detected"</span><span class="o">:</span> <span class="s2">"en"</span><span class="p">,</span>
+        <span class="s2">"unit_count"</span><span class="o">:</span> <span class="mi">42</span><span class="p">,</span>
+        <span class="s2">"eta"</span><span class="o">:</span> <span class="mi">25164</span><span class="p">,</span>
+        <span class="s2">"credits"</span><span class="o">:</span> <span class="mf">4.2</span>
       <span class="p">},</span>
-      <span class="p">{</span>
-        <span class="s2">"job_2"</span><span class="o">:</span> <span class="p">{</span>
-          <span class="s2">"currency"</span><span class="o">:</span> <span class="s2">"USD"</span><span class="p">,</span>
-          <span class="s2">"type"</span><span class="o">:</span> <span class="s2">"text"</span><span class="p">,</span>
-          <span class="s2">"unit_count"</span><span class="o">:</span> <span class="mi">42</span><span class="p">,</span>
-          <span class="s2">"credits"</span><span class="o">:</span> <span class="mf">4.2</span><span class="p">,</span>
-          <span class="s2">"eta"</span><span class="o">:</span> <span class="mi">25164</span>
-        <span class="p">}</span>
+      <span class="s2">"job_1"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"type"</span><span class="o">:</span> <span class="s2">"text"</span><span class="p">,</span>
+        <span class="s2">"currency"</span><span class="o">:</span> <span class="s2">"USD"</span><span class="p">,</span>
+        <span class="s2">"custom_data"</span><span class="o">:</span> <span class="s2">"your optional custom data, limited to 1kb."</span><span class="p">,</span>
+        <span class="s2">"lc_src_detected"</span><span class="o">:</span> <span class="s2">"en"</span><span class="p">,</span>
+        <span class="s2">"unit_count"</span><span class="o">:</span> <span class="mi">324</span><span class="p">,</span>
+        <span class="s2">"eta"</span><span class="o">:</span> <span class="mi">45198</span><span class="p">,</span>
+        <span class="s2">"credits"</span><span class="o">:</span> <span class="mf">16.2</span>
       <span class="p">}</span>
-    <span class="p">]</span>
-  <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">},</span>
+  <span class="s2">"opstat"</span><span class="o">:</span> <span class="s2">"ok"</span>
 <span class="p">}</span></code></pre>
 
 <h2 id="quote-files-post">Quote files (POST)</h2>
 
 <dl>
 <dt><strong>Summary</strong></dt>
-  <dd>Uploads files to Gengo and returns a quote for each file, with an identifier for when client is ready to place the actual order. Price quote is based on content, tier, and language pair. After using this call, use the returned identifier as a parameter in the jobs POST method to order the actual job (see Job Payloads).
+  <dd>Uploads files to Gengo and returns a quote for each file,
+with an identifier for when client is ready to place the actual order.
+Price quote is based on content, tier, and language pair.
+After using this call, use the returned identifier as a parameter in the jobs POST method to order the actual job (see Job Payloads).
 
     <p><strong>Note:</strong> When uploading files, there is a limit of 50 files per call</p>
   </dd>
@@ -315,11 +325,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <dd>
     <ul>
 <li>api_key(required) Your API key.</li>
-    </ul>
-</dd>
-  <dd>
-    <ul>
-<li>api_sig(required) Your API signature.</li>
+      <li>api_sig(required) Your API signature.</li>
       <li>ts(required) Current Unix epoch time as an integer.</li>
     </ul>
 </dd>
@@ -332,83 +338,83 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </dd>
 </dl><p><strong>Example call</strong></p>
 
-<pre><code class="language-ruby"><span class="c1">#!/usr/bin/env ruby</span>
+<pre><code class="language-python"><span class="c">#!/usr/bin/python</span>
+<span class="c"># -*- coding: utf-8 -*-</span>
 
-<span class="nb">require</span> <span class="s1">'mygengo'</span>
+<span class="kn">from</span> <span class="nn">gengo</span> <span class="kn">import</span> <span class="n">Gengo</span>
 
-<span class="vi">@mygengo_client</span> <span class="o">=</span> <span class="ss">MyGengo</span><span class="p">:</span><span class="ss">:API</span><span class="o">.</span><span class="n">new</span><span class="p">({</span>
-       <span class="ss">:public_key</span> <span class="o">=&gt;</span> <span class="s1">'pub_key'</span><span class="p">,</span>
-       <span class="ss">:private_key</span> <span class="o">=&gt;</span> <span class="s1">'priv_key'</span><span class="p">,</span>
-       <span class="ss">:sandbox</span> <span class="o">=&gt;</span> <span class="kp">false</span><span class="p">,</span>
-<span class="p">})</span>
+<span class="c"># Get an instance of Gengo to work with...</span>
+<span class="n">gengo</span> <span class="o">=</span> <span class="n">Gengo</span><span class="p">(</span>
+    <span class="n">public_key</span><span class="o">=</span><span class="s">'your_public_key'</span><span class="p">,</span>
+    <span class="n">private_key</span><span class="o">=</span><span class="s">'your_private_key'</span><span class="p">,</span>
+    <span class="n">sandbox</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="c"># possibly false, depending on your dev needs</span>
+    <span class="n">debug</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
 
-<span class="vi">@jobs_hash</span> <span class="o">=</span> <span class="p">{</span>
-          <span class="ss">:jobs</span> <span class="o">=&gt;</span> <span class="p">{</span>
-            <span class="ss">:job_1</span> <span class="o">=&gt;</span> <span class="p">{</span>
-              <span class="ss">:type</span> <span class="o">=&gt;</span> <span class="s2">"file"</span><span class="p">,</span>
-              <span class="ss">:slug</span> <span class="o">=&gt;</span> <span class="s2">"File posted from API testing suite, DON'T TOUCH 1"</span><span class="p">,</span>
-              <span class="ss">:lc_src</span> <span class="o">=&gt;</span> <span class="s2">"en"</span><span class="p">,</span>
-              <span class="ss">:lc_tgt</span> <span class="o">=&gt;</span> <span class="s2">"ja"</span><span class="p">,</span>
-              <span class="ss">:tier</span> <span class="o">=&gt;</span> <span class="s2">"standard"</span><span class="p">,</span>
-              <span class="ss">:file_path</span> <span class="o">=&gt;</span> <span class="no">File</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="no">Rails</span><span class="o">.</span><span class="n">root</span><span class="p">,</span> <span class="s2">"lib"</span><span class="p">,</span> <span class="s2">"assets"</span><span class="p">,</span> <span class="s2">"video_on_demand.txt"</span><span class="p">)</span>
-            <span class="p">},</span>
-            <span class="ss">:job_2</span> <span class="o">=&gt;</span> <span class="p">{</span>
-              <span class="ss">:type</span> <span class="o">=&gt;</span> <span class="s2">"file"</span><span class="p">,</span>
-              <span class="ss">:slug</span> <span class="o">=&gt;</span> <span class="s2">"File posted from API testing suite, DON'T TOUCH 2"</span><span class="p">,</span>
-              <span class="ss">:lc_src</span> <span class="o">=&gt;</span> <span class="s2">"en"</span><span class="p">,</span>
-              <span class="ss">:lc_tgt</span> <span class="o">=&gt;</span> <span class="s2">"ja"</span><span class="p">,</span>
-              <span class="ss">:tier</span> <span class="o">=&gt;</span> <span class="s2">"standard"</span><span class="p">,</span>
-              <span class="ss">:file_path</span> <span class="o">=&gt;</span> <span class="no">File</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="no">Rails</span><span class="o">.</span><span class="n">root</span><span class="p">,</span> <span class="s2">"lib"</span><span class="p">,</span> <span class="s2">"assets"</span><span class="p">,</span> <span class="s2">"japanese_file.docx"</span><span class="p">)</span>
-            <span class="p">},</span>
-            <span class="ss">:job_3</span> <span class="o">=&gt;</span> <span class="p">{</span>
-              <span class="ss">:type</span> <span class="o">=&gt;</span> <span class="s2">"file"</span><span class="p">,</span>
-              <span class="ss">:slug</span> <span class="o">=&gt;</span> <span class="s2">"File posted from API testing suite, DON'T TOUCH 3"</span><span class="p">,</span>
-              <span class="ss">:lc_src</span> <span class="o">=&gt;</span> <span class="s2">"en"</span><span class="p">,</span>
-              <span class="ss">:lc_tgt</span> <span class="o">=&gt;</span> <span class="s2">"ja"</span><span class="p">,</span>
-              <span class="ss">:tier</span> <span class="o">=&gt;</span> <span class="s2">"standard"</span><span class="p">,</span>
-              <span class="ss">:file_path</span> <span class="o">=&gt;</span> <span class="no">File</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="no">Rails</span><span class="o">.</span><span class="n">root</span><span class="p">,</span> <span class="s2">"lib"</span><span class="p">,</span> <span class="s2">"assets"</span><span class="p">,</span> <span class="s2">"test_files"</span><span class="p">,</span> <span class="s2">"english"</span><span class="p">,</span> <span class="s2">"basics"</span><span class="p">,</span> <span class="s2">"sushi_en.doc"</span><span class="p">)</span>
-            <span class="p">}</span>
-        <span class="p">}</span>
+<span class="n">jobs_data</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s">'job_1'</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s">'type'</span><span class="p">:</span> <span class="s">'file'</span><span class="p">,</span> <span class="c"># REQUIRED. Type to translate, you'll probably always put 'text' here.</span>
+        <span class="s">'lc_src'</span><span class="p">:</span> <span class="s">'en'</span><span class="p">,</span> <span class="c"># REQUIRED. The code for the language you are translating *from*</span>
+        <span class="s">'lc_tgt'</span><span class="p">:</span> <span class="s">'ja'</span><span class="p">,</span> <span class="c"># REQUIRED. The code for the language you are translating *into*</span>
+        <span class="s">'tier'</span><span class="p">:</span> <span class="s">'standard'</span><span class="p">,</span> <span class="c"># REQUIRED. tier type ("standard" or "pro")</span>
+        <span class="s">'file_path'</span><span class="p">:</span> <span class="s">'/job_1/file_path.doc'</span><span class="p">,</span> <span class="c"># REQUIRED.</span>
+    <span class="p">},</span>
+    <span class="s">'job_2'</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s">'type'</span><span class="p">:</span> <span class="s">'file'</span><span class="p">,</span> <span class="c"># REQUIRED. Type to translate, you'll probably always put 'text' here.</span>
+        <span class="s">'lc_src'</span><span class="p">:</span> <span class="s">'en'</span><span class="p">,</span> <span class="c"># REQUIRED. The code for the language you are translating *from*</span>
+        <span class="s">'lc_tgt'</span><span class="p">:</span> <span class="s">'ja'</span><span class="p">,</span> <span class="c"># REQUIRED. The code for the language you are translating *into*</span>
+        <span class="s">'tier'</span><span class="p">:</span> <span class="s">'standard'</span><span class="p">,</span> <span class="c"># REQUIRED. tier type ("standard" or "pro")</span>
+        <span class="s">'file_path'</span><span class="p">:</span> <span class="s">'/job_2/file_path.pdf'</span><span class="p">,</span> <span class="c"># REQUIRED.</span>
+    <span class="p">},</span>
+    <span class="s">'job_3'</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s">'type'</span><span class="p">:</span> <span class="s">'file'</span><span class="p">,</span> <span class="c"># REQUIRED. Type to translate, you'll probably always put 'text' here.</span>
+        <span class="s">'lc_src'</span><span class="p">:</span> <span class="s">'en'</span><span class="p">,</span> <span class="c"># REQUIRED. The code for the language you are translating *from*</span>
+        <span class="s">'lc_tgt'</span><span class="p">:</span> <span class="s">'ja'</span><span class="p">,</span> <span class="c"># REQUIRED. The code for the language you are translating *into*</span>
+        <span class="s">'tier'</span><span class="p">:</span> <span class="s">'standard'</span><span class="p">,</span> <span class="c"># REQUIRED. tier type ("standard" or "pro")</span>
+        <span class="s">'file_path'</span><span class="p">:</span> <span class="s">'/job_3/file_path.foo'</span><span class="p">,</span> <span class="c"># REQUIRED.</span>
+    <span class="p">},</span>
 <span class="p">}</span>
 
-<span class="vi">@mygengo_client</span><span class="o">.</span><span class="n">determineTranslationCost</span><span class="p">(</span><span class="vi">@jobs_hash</span><span class="p">)</span></code></pre>
+<span class="c"># Post over our two jobs, use the same translator for both, don't pay for them</span>
+<span class="k">print</span> <span class="n">gengo</span><span class="o">.</span><span class="n">determineTranslationCost</span><span class="p">(</span><span class="n">jobs</span><span class="o">=</span><span class="n">jobs_data</span><span class="p">)</span></code></pre>
 
 <p><strong>Response</strong></p>
 
 <pre class="headers"><code>Status: 200 OK</code></pre>
 
 <pre class="highlight"><code class="language-javascript"><span class="p">{</span>
-  <span class="s2">"opstat"</span><span class="o">:</span> <span class="s2">"ok"</span><span class="p">,</span>
   <span class="s2">"response"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"jobs"</span><span class="o">:</span> <span class="p">{</span>
       <span class="s2">"job_3"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"err"</span><span class="o">:</span> <span class="p">{</span>
-          <span class="s2">"filename"</span><span class="o">:</span> <span class="s2">"sushi_en.doc"</span><span class="p">,</span>
           <span class="s2">"key"</span><span class="o">:</span> <span class="s2">"job_3"</span><span class="p">,</span>
+          <span class="s2">"filename"</span><span class="o">:</span> <span class="s2">"file_path.foo"</span><span class="p">,</span>
           <span class="s2">"code"</span><span class="o">:</span> <span class="mi">1802</span>
         <span class="p">}</span>
       <span class="p">},</span>
       <span class="s2">"job_2"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"type"</span><span class="o">:</span> <span class="s2">"file"</span><span class="p">,</span>
         <span class="s2">"currency"</span><span class="o">:</span> <span class="s2">"USD"</span><span class="p">,</span>
-        <span class="s2">"unit_count"</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
-        <span class="s2">"credits"</span><span class="o">:</span> <span class="s2">"0.00"</span><span class="p">,</span>
-        <span class="s2">"eta"</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
         <span class="s2">"lc_src"</span><span class="o">:</span> <span class="s2">"en"</span><span class="p">,</span>
-        <span class="s2">"identifier"</span><span class="o">:</span> <span class="s2">"4fd1551c3a5628f795d645394bfcd0a5442e4e7ae60ad1f163424bdeb8420df4"</span>
+        <span class="s2">"lc_src_detected"</span><span class="o">:</span> <span class="s2">"en"</span><span class="p">,</span>
+        <span class="s2">"identifier"</span><span class="o">:</span> <span class="s2">"4fd1551c3a5628f795d645394bfcd0a5442e4e7ae60ad1f163424bdeb8420df4"</span><span class="p">,</span>
+        <span class="s2">"unit_count"</span><span class="o">:</span> <span class="mi">6</span><span class="p">,</span>
+        <span class="s2">"eta"</span><span class="o">:</span> <span class="mi">25128</span><span class="p">,</span>
+        <span class="s2">"credits"</span><span class="o">:</span> <span class="s2">"0.30"</span>
       <span class="p">},</span>
       <span class="s2">"job_1"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"type"</span><span class="o">:</span> <span class="s2">"file"</span><span class="p">,</span>
         <span class="s2">"currency"</span><span class="o">:</span> <span class="s2">"USD"</span><span class="p">,</span>
-        <span class="s2">"unit_count"</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
-        <span class="s2">"credits"</span><span class="o">:</span> <span class="s2">"0.00"</span><span class="p">,</span>
         <span class="s2">"order_id"</span><span class="o">:</span> <span class="s2">"54632"</span><span class="p">,</span>
-        <span class="s2">"eta"</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
         <span class="s2">"lc_src"</span><span class="o">:</span> <span class="s2">"en"</span><span class="p">,</span>
-        <span class="s2">"identifier"</span><span class="o">:</span> <span class="s2">"49427e41a1b6cefd7444b0d27ec165e7481658791885e71b7602c6babfc80b77"</span>
+        <span class="s2">"lc_src_detected"</span><span class="o">:</span> <span class="s2">"en"</span><span class="p">,</span>
+        <span class="s2">"identifier"</span><span class="o">:</span> <span class="s2">"49427e41a1b6cefd7444b0d27ec165e7481658791885e71b7602c6babfc80b77"</span><span class="p">,</span>
+        <span class="s2">"unit_count"</span><span class="o">:</span> <span class="mi">6</span><span class="p">,</span>
+        <span class="s2">"eta"</span><span class="o">:</span> <span class="mi">25128</span><span class="p">,</span>
+        <span class="s2">"credits"</span><span class="o">:</span> <span class="s2">"0.30"</span>
       <span class="p">}</span>
     <span class="p">}</span>
-  <span class="p">}</span>
+  <span class="p">},</span>
+  <span class="s2">"opstat"</span><span class="o">:</span> <span class="s2">"ok"</span>
 <span class="p">}</span></code></pre>
       </div>
 
