@@ -39,4 +39,4 @@ which will move the job into "approved", "revising" or "rejected".
 If no PUT request is made within 72hrs,
 we automatically move the status to "approved".
 
-The completed is available in the "reviewable" and "approved" status.
+The completed translation is available in the "reviewable" and "approved" status.
