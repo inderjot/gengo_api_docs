@@ -64,22 +64,35 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       <div class="content">
         <h1 id="job-statuses">Job statuses</h1>
 
-<p>Each submitted job goes through a series of statuses before delivery. At any time when you request the contents of a job, it will be in one of the following states:</p>
+<p>Each submitted job goes through a series of statuses before delivery.
+At any time when you request the contents of a job, it will be in one of the following states:</p>
 
 <dl>
-<dt><code>available</code></dt>
-  <dd>Ready for a translator to take the job for translation.</dd>
+<dt><code>queued</code></dt>
+  <dd>The jobs are being processed by our system but are not currently visible to our translators.</dd>
+  <dt><code>available</code></dt>
+  <dd>The jobs are now on our system and waiting for a translator to begin work.</dd>
   <dt><code>pending</code></dt>
-  <dd>Currently being translated.</dd>
+  <dd>A translator is now working on the content, but has not finished.</dd>
   <dt><code>reviewable</code></dt>
-  <dd>Translation has finished and is awaiting submitter approval.</dd>
+  <dd>Unless the parameter “auto-approve” is set to 1,
+this is the status that indicates the translation has been finished by our team. </dd>
   <dt><code>approved</code></dt>
-  <dd>Submitter has approved the translation.</dd>
+  <dd>The job has been approved by the customer and the translator has been paid for their work
+(if “auto-approve” is set to 1, this happens as soon the content is submitted by the translator)</dd>
+  <dt><code>revising</code></dt>
+  <dd>The customer has requested that some changes are made to the translation.</dd>
   <dt><code>rejected</code></dt>
-  <dd>Translation has been rejected and is no longer available.</dd>
+  <dd>The customer has rejected the completed job and our support team has been triggered to follow up on the job.</dd>
   <dt><code>canceled</code></dt>
-  <dd>Translation has been canceled before being picked up, and is no longer available.</dd>
-</dl>
+  <dd>The job has been cancelled before the translator has started working on the content.</dd>
+</dl><p>When a job is in the “reviewable” status,
+you may send a request to the PUT /translate/job/ endpoint,
+which will move the job into “approved”, “revising” or “rejected”.
+If no PUT request is made within 72hrs,
+we automatically move the status to “approved”.</p>
+
+<p>The completed translation is available in the “reviewable” and “approved” status.</p>
       </div>
 
       
