@@ -157,7 +157,7 @@ __Parameters__
   * ts(required) Current Unix epoch time as an integer.
 
 __Data arguments__
-: * status(optional): "queued", "available", "pending", "reviewable", "approved", "revising", "rejected", or "canceled"
+: * status(optional): "queued", "available", "pending", "reviewable", "approved", "revising", "rejected" or "canceled"
   * timestamp\_after(optional): Epoch timestamp from which to filter submitted jobs.
   * count(optional): Defaults to 10. Maximum 200.
 

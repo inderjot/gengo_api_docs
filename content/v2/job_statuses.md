@@ -18,7 +18,7 @@ At any time when you request the contents of a job, it will be in one of the fol
 
 `reviewable`
 : Unless the parameter "auto-approve" is set to 1,
-  this is the status that indicates the translation has  been finished by our team. 
+  this is the status that indicates the translation has been finished by our team. 
 
 `approved`
 : The job has been approved by the customer and the translator has been paid for their work
