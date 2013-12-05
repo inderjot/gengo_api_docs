@@ -260,7 +260,7 @@ __Response__
 Gets a specific revision for a job.
 
 __Summary__
-: Retrieves the feedback you have submitted for a particular job.
+: Gets the feedback left for the translator for this job.
 
 __URL__
 : http://api.gengo.com/v2/translate/job/{id}/feedback
