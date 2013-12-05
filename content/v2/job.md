@@ -257,7 +257,7 @@ __Response__
 
 ## Feedback (GET)
 
-Gets a specific revision for a job.
+Gets the feedback left for the translator for this job.
 
 __Summary__
 : Retrieves the feedback you have submitted for a particular job.
