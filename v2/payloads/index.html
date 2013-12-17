@@ -75,6 +75,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <dt>job_id</dt>
   <dd>
 <em>String</em> of Job ID.</dd>
+  <dt>order_id</dt>
+  <dd>
+<em>String</em> of Order ID.</dd>
   <dt>body_src</dt>
   <dd>
 <em>String</em> of original body of text (to be translated).</dd>
@@ -116,6 +119,9 @@ callback_url String. The full URL to which we will send system updates (complete
   <dt>mt</dt>
   <dd>
 <em>1 (true) / 0 (false)</em> of whether the content in body_tgt is a machine translation. A machine translation is always provided as a convenience while a human translation is pending.</dd>
+  <dt>glossary_id</dt>
+  <dd>
+<em>String</em> of glossary id. If glossary assignable to this job, this parameter appears.</dd>
 </dl><p>file_url_tgt <em>(optional)</em>
 :<em>String</em> of the full URL of translated file (returned with the callback).</p>
 
