@@ -14,6 +14,9 @@ __Most of the processing throughout the Translate API will be around a Job Paylo
 job_id
 : _String_ of Job ID.
 
+order_id
+: _String_ of Order ID.
+
 body_src
 : _String_ of original body of text (to be translated).
 
@@ -54,6 +57,9 @@ custom_data
 
 mt
 : _1 (true) / 0 (false)_ of whether the content in body_tgt is a machine translation. A machine translation is always provided as a convenience while a human translation is pending.
+
+glossary_id
+: _String_ of glossary id. If glossary assignable to this job, this parameter appears.
 
 file_url_tgt _(optional)_
 :_String_ of the full URL of translated file (returned with the callback).
