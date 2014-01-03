@@ -28,7 +28,7 @@ if (window.location.protocol === "https:")
 <link rel="apple-touch-icon-precomposed" href="http://gengo.com/wp-content/themes/gengo/images/common/apple-touch-icon-precomposed.png">
 
 <!-- This site is optimized with the Yoast WordPress SEO plugin v1.4.7 - http://yoast.com/wordpress/seo/ -->
-<title>Sandbox Testing | Gengo API</title>
+<title>Payloads | Gengo API</title>
 <meta name="description" content="Integrate professional translation with Gengo's Translation API" />
 <meta name="keywords" content="Gengo,Translation,API" />
 
@@ -93,106 +93,180 @@ if (window.location.protocol === "https:")
 <div class="container">
 <div class="row">
 	
-    <div id="js-sidebar" class="sidebar-shell">
-  <div class="js-toggle-list sidebar-module expandable">
-    <ul>
-      <li class="js-guides"><h3><a href="/legacy/">Legacy API Documentation</a></h3></li>
-      <li class="js-topic">
-        <h3><a href="#" class="js-expand-btn collapsed">&nbsp;</a><a href="/ja/overview/">システム概観</a></h3>
-        <ul class="js-guides">
-          <li><a href="/ja/overview/client_libraries/">Client Libraries</a></li>
-          <li><a href="/ja/v2/authentication/">Authentication</a></li>
-          <li><a href="/ja/v2/callback_urls/">Callback URLS</a></li>
-          <li><a href="/ja/v2/sandbox/">Sandbox Testing</a></li>
-          <li><a href="/ja/v2/first_steps/">First Steps</a></li>
-          <li><a href="/ja/v2/best_practices/">Best Practices</a></li>
-          <li><a href="/ja/v2/ui_recommendations/">UI Recommendations</a></li>
-          <li><a href="/ja/v2/api_methods/">API Methods</a></li>
-          <li><a href="/ja/v2/throttling/">Throttling</a></li>
-        </ul>
-      </li>
-      <li class="js-topic">
-        <h3><a href="#" class="js-expand-btn collapsed">&nbsp;</a><a href="/ja/v2/payloads/">Payloads</a></h3>
-        <ul class="js-guides">
-          <li><a href="/ja/v2/error_codes/">Error codes</a></li>
-          <li><a href="http://gengo.com/how-it-works/pricing-languages/">Supported translation languages</a></li>
-        </ul>
-      </li>
-      <li class="js-topic">
-        <h3><a href="#" class="js-expand-btn collapsed">&nbsp;</a><a href="/ja/v2/account/">Account</a></h3>
-        <ul class="js-guides">
-          <li><a href="/ja/v2/account/#stats-get">Stats (GET)</a></li>
-          <li><a href="/ja/v2/account/#balance-get">Balance (GET)</a></li>
-        </ul>
-      </li>
-      <li class="js-topic">
-        <h3><a href="#" class="js-expand-btn collapsed">&nbsp;</a><a href="/ja/v2/job/">Job</a></h3>
-        <ul class="js-guides">
-          <li><a href="/ja/v2/job/#job-get">Job (GET)</a></li>
-          <li><a href="/ja/v2/job/#job-put">Job (PUT)</a></li>
-          <li><a href="/ja/v2/job/#job-delete">Job (DELETE)</a></li>
-          <li><a href="/ja/v2/job/#revisions-get">Revisions (GET)</a></li>
-          <li><a href="/ja/v2/job/#revision-get">Revision (GET)</a></li>
-          <li><a href="/ja/v2/job/#feedback-get">Feedback (GET)</a></li>
-          <li><a href="/ja/v2/job/#comment-post">Comment (POST)</a></li>
-          <li><a href="/ja/v2/job/#comments-get">Comments (GET)</a></li>
-        </ul>
-      </li>
-      <li class="js-topic">
-        <h3><a href="#" class="js-expand-btn collapsed">&nbsp;</a><a href="/ja/v2/glossary/">Glossary</a></h3>
-        <ul class="js-guides">
-          <li><a href="/ja/v2/glossary/#glossaries-get">Glossary (GET)</a></li>
-          <li><a href="/ja/v2/glossary/#glossary-get">Glossary by id (GET)</a></li>
-        </ul>
-      </li>
-      <li class="js-topic">
-        <h3><a href="#" class="js-expand-btn collapsed">&nbsp;</a><a href="/ja/v2/jobs/">Jobs</a></h3>
-        <ul class="js-guides">
-          <li><a href="/ja/v2/jobs/#jobs-post">Jobs (POST)</a></li>
-          <li><a href="/ja/v2/jobs/#jobs-get">Jobs (GET)</a></li>
-          <li><a href="/ja/v2/jobs/#jobs-by-id-get">Jobs by id (GET)</a></li>
-        </ul>
-      </li>
-      <li class="js-topic">
-        <h3><a href="#" class="js-expand-btn collapsed">&nbsp;</a><a href="/ja/v2/service/">Service</a></h3>
-        <ul class="js-guides">
-          <li><a href="/ja/v2/service/#language-pairs-get">Language Pairs (GET)</a></li>
-          <li><a href="/ja/v2/service/#languages-get">Languages (GET)</a></li>
-          <li><a href="/ja/v2/service/#quote-post">Quote (POSt)</a></li>
-          <li><a href="/ja/v2/service/#quote-files-post">Quote files (POST)</a></li>
-        </ul>
-      </li>
-    </ul>
-  </div> <!-- /sidebar-module -->
-</div><!-- /sidebar-shell -->
+    <div class="span3" id="sidebar">
+<div id="tos-stacked-tabs">
+<ul class="nav nav-tabs nav-stacked" id="navtos">
+	<li class=""><a href="/overview/">System Overview</a></li>
+  <li class=""><a href="/client_libraries/">Client Libraries</a></li>
+  <li class=""><a href="/v2/authentication/">Authentication</a></li>
+  <li class=""><a href="/v2/callback_urls/">Callback URLS</a></li>
+  <li class=""><a href="/v2/sandbox/">Sandbox Testing</a></li>
+  <li class=""><a href="/v2/first_steps/">First Steps</a></li>
+  <li class=""><a href="/v2/best_practices/">Best Practices</a></li>
+  <li class=""><a href="/v2/ui_recommendations/">UI Recommendations</a></li>
+  <li class="strong active"><a href="/v2/api_methods/">API Methods</a></li>
+
+
+		
+		
+		<li class="sub strong"><a href="/v2/api_methods/payloads/"> Payloads</a></li>
+	  <li class="sub "><a href="/v2/api_methods/error_codes/">  Error codes</a></li>
+		
+		<li class="sub "><a href="/v2/api_methods/account/"> Account</a></li>
+		
+		
+		<li class="sub  "><a href="/v2/api_methods/job/"> Job</a></li>
+		
+		
+		<li class="sub  "><a href="/v2/api_methods/jobs/"> Jobs</a></li>
+		
+		
+		<li class="sub  "><a href="/v2/api_methods/order/"> Order</a></li>
+		
+		
+		<li class="sub  "><a href="/v2/api_methods/glossary/"> Glossary</a></li>
+		
+		
+		<li class="sub  "><a href="/v2/api_methods/service/"> Service</a></li>
+		
+		
+		
+
+  <li class=""><a href="/v2/job_statuses/">Job Statuses</a></li>
+  <li class=""><a href="/v2/throttling/">Throttling</a></li>
+	<li><a href="http://gengo.com/how-it-works/pricing-languages/">  Supported languages</a></li>
+</ul>
+
+</div>
+</div>
+<!-- /sidebar -->
 
   
 
 	<div class="span9" id="article-details"><header class="block-head">
 
 
-	<h1 id="sandbox-testing">Sandbox testing</h1>
+	<h1 id="payloads">Payloads</h1>
 
-<h3 id="the-testing-area-for-your-api-code">The testing area for your API code.</h3>
-
-<p>What’s different about the sandbox?</p>
+<p><strong>Most of the processing throughout the Translate API will be around a Job Payload. This is a simple container representing the instance of a translation job.</strong></p>
 
 <ul>
-<li>You can add free credits to your account at will, for testing.</li>
-  <li>You can trigger the “completion” of your translation jobs (i.e. be a faux translator) so that you can test what your code does in response.</li>
-  <li>Additional controls for you to manually trigger job status changes and other actions, so that you can test your callbacks.</li>
-  <li>The sandbox jobs database may occasionally be wiped clean to prepare it for new features. As such you should not rely on the sandbox for permanent storage.</li>
-</ul><h2 id="how-to-use-the-sandbox">How to use the sandbox</h2>
+<li><a href="#job-payload---for-responses">For responses</a></li>
+  <li><a href="#job-payload---for-submissions">For submissions</a></li>
+</ul><h2 id="job-payload---for-responses">Job Payload - For responses</h2>
 
-<ul>
-<li>Check out the <a href="/">developer documentation</a>.</li>
-  <li>Create your sandbox account</li>
-  <li>Log in and visit your Account API Keys page to generate a set of sandbox API keys.</li>
-  <li>Test your app, using http://api.sandbox.gengo.com/v2/ as the base call URL.</li>
-  <li>Ready to deploy? Head over to the live <a href="http://gengo.com">gengo.com</a> site. Create a full user account, generate a set of live API keys - and remember to paste them into your app.</li>
-</ul><h2 id="ready-get-started-on-the-sandbox">Ready? Get started on the sandbox.</h2>
+<dl>
+<dt>job_id</dt>
+  <dd>
+<em>String</em> of Job ID.</dd>
+  <dt>order_id</dt>
+  <dd>
+<em>String</em> of Order ID.</dd>
+  <dt>body_src</dt>
+  <dd>
+<em>String</em> of original body of text (to be translated).</dd>
+  <dt>body_tgt</dt>
+  <dd>
+<em>String</em> of translated body of text (if available).</dd>
+  <dt>lc_src</dt>
+  <dd>
+<em>String</em> of source language code. Gengo uses IETF codes to define languages and language pairs.</dd>
+  <dt>lc_tgt</dt>
+  <dd>
+<em>String</em> of target language code.</dd>
+  <dt>unit_count</dt>
+  <dd>
+<em>Integer</em> of count of source language units (either words or characters depending on source language)
+tier String. Quality level (“machine”, “standard”, “pro”, or “ultra”)</dd>
+  <dt>credits</dt>
+  <dd>
+<em>Decimal</em> of credit price based on language pair and tier.</dd>
+  <dt>status</dt>
+  <dd>
+<em>String</em> of current status of job. Either “available”, “pending”, “reviewable”, “revising”, “approved”, or “cancelled”.</dd>
+  <dt>captcha_url</dt>
+  <dd>
+<em>String</em> of the full URL to a captcha image, used only if a job is in the “reviewable” state and you wish to reject the job.</dd>
+  <dt>eta</dt>
+  <dd>
+<em>Integer</em> of Estimated seconds until completion.
+callback_url String. The full URL to which we will send system updates (completed jobs, new comments, etc.).</dd>
+  <dt>auto_approve</dt>
+  <dd>
+<em>1 (true) / 0 (false)</em> of whether the job will be automatically approved after translation has completed.</dd>
+  <dt>ctime</dt>
+  <dd>
+<em>String</em> of Unix Timestamp for when this job was submitted (by you - not by the translator).</dd>
+  <dt>custom_data</dt>
+  <dd>
+<em>String</em> of up to 1K of client-specific data that may have been sent when the job was submitted.</dd>
+  <dt>mt</dt>
+  <dd>
+<em>1 (true) / 0 (false)</em> of whether the content in body_tgt is a machine translation. A machine translation is always provided as a convenience while a human translation is pending.</dd>
+  <dt>glossary_id</dt>
+  <dd>
+<em>String</em> of glossary id. If glossary assignable to this job, this parameter appears.</dd>
+</dl><p>file_url_tgt <em>(optional)</em>
+:<em>String</em> of the full URL of translated file (returned with the callback).</p>
 
-<p>Create your <a href="http://sandbox.gengo.com">sandbox account</a></p>
+<h2 id="job-payload---for-submissions">Job Payload - For submissions</h2>
+
+<dl>
+<dt>body_src</dt>
+  <dd>
+<em>String</em> of original body of text (to be translated).</dd>
+  <dt>lc_src</dt>
+  <dd>
+<em>String</em> of source language code. Gengo uses IETF codes to define languages and language pairs.</dd>
+  <dt>lc_tgt</dt>
+  <dd>
+<em>String</em> of target language code.</dd>
+  <dt>tier</dt>
+  <dd>
+<em>String</em> of quality level (“machine”, “standard”, “pro”, or “ultra”)</dd>
+  <dt>type</dt>
+  <dd>
+<em>String</em> of job type. Either ‘text’ (default) or ‘file’. Use ‘file’ for ordering file jobs via the API using job identifiers from the file quote function.</dd>
+  <dt>slug</dt>
+  <dd>
+<em>String</em> of job title. For internally storing, can be generic.</dd>
+  <dt>identifier <em>(required if type = ‘file’)</em>
+</dt>
+  <dd>
+<em>String</em> of the identifier returned as a response from the file quote method (e.g. identifer = ‘2ea3a2dbea3be97375ceaf03200fb184’)</dd>
+  <dt>glossary_id <em>(optional)</em>
+</dt>
+  <dd>
+<em>String</em> id of the glossary that you want to use.</dd>
+  <dt>position <em>(optional)</em>
+</dt>
+  <dd>
+<em>String</em> of the position of the job in a group of jobs. When the job group is displayed to translators, this ensures that ordering is maintained. This parameter is ignored when a group of jobs is submitted without as_group or if the string of the position cannot be casted into an integer.</dd>
+  <dt>force <em>(optional) 1 (true) / 0 (false - default)</em>
+</dt>
+  <dd>
+<em>Integer</em> of whether or not to override lazy loading and force a new translation. Read about lazy loading here.</dd>
+  <dt>comment <em>(optional)</em>
+</dt>
+  <dd>
+<em>String</em> of instructions or comments for translator to consider when translating.</dd>
+  <dt>use_preferred <em>(optional) 1 (true) / 0 (false)</em>
+</dt>
+  <dd>
+<em>Integer</em> of whether to use translators from the preferred translators list associated with the account.</dd>
+  <dt>callback_url <em>(optional)</em>
+</dt>
+  <dd>
+<em>String</em> of the full URL to which we will send system updates (completed jobs, new comments, etc.).</dd>
+  <dt>auto_approve <em>(optional) 1 (true) / 0 (false)</em>
+</dt>
+  <dd>
+<em>Integer</em> of whether to automatically approve jobs after they’ve been translated. Default is false. If false, completed jobs will await review and approval by customer for 72 hours.</dd>
+  <dt>custom_data <em>(optional)</em>
+</dt>
+  <dd>
+<em>String</em> of up to 1K of storage for client-specific data that may be helpful for you to have mapped to this job.</dd>
+</dl>
 
 
     </div><!-- #wrapper -->
