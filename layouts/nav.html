@@ -1,0 +1,75 @@
+<div class="span3" id="sidebar">
+<div id="tos-stacked-tabs">
+<ul class="nav nav-tabs nav-stacked" id="navtos">
+	<li class="<% if @item.identifier =~ %r{^/overview/} %>strong active<% end %>"><a href="/<%= language_root_url_of(@item) %>overview/">System Overview</a></li>
+  <li class="<% if @item.identifier =~ %r{^/client_libraries/} %>strong active<% end %>"><a href="/<%= language_root_url_of(@item) %>client_libraries/">Client Libraries</a></li>
+  <li class="<% if @item.identifier =~ %r{^/v2/authentication/} %>strong active<% end %>"><a href="/<%= language_root_url_of(@item) %>v2/authentication/">Authentication</a></li>
+  <li class="<% if @item.identifier =~ %r{^/v2/callback_urls/} %>strong active<% end %>"><a href="/<%= language_root_url_of(@item) %>v2/callback_urls/">Callback URLS</a></li>
+  <li class="<% if @item.identifier =~ %r{^/v2/sandbox/} %>strong active<% end %>"><a href="/<%= language_root_url_of(@item) %>v2/sandbox/">Sandbox Testing</a></li>
+  <li class="<% if @item.identifier =~ %r{^/v2/first_steps/} %>strong active<% end %>"><a href="/<%= language_root_url_of(@item) %>v2/first_steps/">First Steps</a></li>
+  <li class="<% if @item.identifier =~ %r{^/v2/best_practices/} %>strong active<% end %>"><a href="/<%= language_root_url_of(@item) %>v2/best_practices/">Best Practices</a></li>
+  <li class="<% if @item.identifier =~ %r{^/v2/ui_recommendations/} %>strong active<% end %>"><a href="/<%= language_root_url_of(@item) %>v2/ui_recommendations/">UI Recommendations</a></li>
+  <li class="<% if @item.identifier =~ %r{^/v2/api_methods/} %>strong active<% end %>"><a href="/<%= language_root_url_of(@item) %>v2/api_methods/">API Methods</a></li>
+
+
+		<% if @item.identifier =~ %r{^/v2/api_methods/} %>
+		
+		<li class="sub <% if @item.identifier =~ %r{^/v2/api_methods/payloads/} %>strong<% end %>"><a href="/<%= language_root_url_of(@item) %>v2/api_methods/payloads/"> Payloads</a></li>
+	  <li class="sub <% if @item.identifier =~ %r{^/v2/api_methods/error_codes/} %>strong<% end %>"><a href="/<%= language_root_url_of(@item) %>v2/api_methods/error_codes/">  Error codes</a></li>
+		
+		<li class="sub <% if @item.identifier =~ %r{^/v2/api_methods/account/} %>strong<% end %>"><a href="/<%= language_root_url_of(@item) %>v2/api_methods/account/"> Account</a></li>
+		<% if @item.identifier =~ %r{^/v2/api_methods/account/} %>
+		<li class="sub-nav"><a href="/<%= language_root_url_of(@item) %>v2/api_methods/account/#stats-get">  Stats (GET)</a></li>
+	  <li class="sub-nav"><a href="/<%= language_root_url_of(@item) %>v2/api_methods/account/#balance-get">  Balance (GET)</a></li>
+	  <li class="sub-nav"><a href="/<%= language_root_url_of(@item) %>v2/api_methods/account/#preferred-translators-get">  Preferred translators (GET)</a></li>
+		<% end %>
+		
+		<li class="sub <% if @item.identifier =~ %r{^/v2/api_methods/job/} %>strong<% end %> "><a href="/<%= language_root_url_of(@item) %>v2/api_methods/job/"> Job</a></li>
+		<% if @item.identifier =~ %r{^/v2/api_methods/job/} %>
+		<li class="sub-nav"><a href="/<%= language_root_url_of(@item) %>v2/api_methods/job/#job-get">  Job (GET)</a></li>
+	  <li class="sub-nav"><a href="/<%= language_root_url_of(@item) %>v2/api_methods/job/#job-put">  Job (PUT)</a></li>
+	  <li class="sub-nav"><a href="/<%= language_root_url_of(@item) %>v2/api_methods/job/#job-delete">  Job (DELETE)</a></li>
+	  <li class="sub-nav"><a href="/<%= language_root_url_of(@item) %>v2/api_methods/job/#revisions-get">  Revisions (GET)</a></li>
+	  <li class="sub-nav"><a href="/<%= language_root_url_of(@item) %>v2/api_methods/job/#revision-get">  Revision (GET)</a></li>
+	  <li class="sub-nav"><a href="/<%= language_root_url_of(@item) %>v2/api_methods/job/#feedback-get">  Feedback (GET)</a></li>
+	  <li class="sub-nav"><a href="/<%= language_root_url_of(@item) %>v2/api_methods/job/#comment-post">  Comment (POST)</a></li>
+	  <li class="sub-nav"><a href="/<%= language_root_url_of(@item) %>v2/api_methods/job/#comments-get">  Comments (GET)</a></li>
+		<% end %>
+		
+		<li class="sub <% if @item.identifier =~ %r{^/v2/api_methods/jobs/} %>strong<% end %> "><a href="/<%= language_root_url_of(@item) %>v2/api_methods/jobs/"> Jobs</a></li>
+		<% if @item.identifier =~ %r{^/v2/api_methods/jobs/} %>
+		<li class="sub-nav  "><a href="/<%= language_root_url_of(@item) %>v2/api_methods/jobs/#jobs-post">  Jobs (POST)</a></li>
+	  <li class="sub-nav  "><a href="/<%= language_root_url_of(@item) %>v2/api_methods/jobs/#jobs-get">  Jobs (GET)</a></li>
+	  <li class="sub-nav  "><a href="/<%= language_root_url_of(@item) %>v2/api_methods/jobs/#jobs-by-id-get">  Jobs by id (GET)</a></li>
+		<% end %>
+		
+		<li class="sub <% if @item.identifier =~ %r{^/v2/api_methods/order/} %>strong<% end %> "><a href="/<%= language_root_url_of(@item) %>v2/api_methods/order/"> Order</a></li>
+		<% if @item.identifier =~ %r{^/v2/api_methods/order/} %>
+	  <li class="sub-nav  "><a href="/<%= language_root_url_of(@item) %>v2/api_methods/order/#order-get">  Order (GET)</a></li>
+	  <li class="sub-nav  "><a href="/<%= language_root_url_of(@item) %>v2/api_methods/order/#order-delete">  Order (DELETE)</a></li>
+		<% end %>
+		
+		<li class="sub <% if @item.identifier =~ %r{^/v2/api_methods/glossary/} %>strong<% end %> "><a href="/<%= language_root_url_of(@item) %>v2/api_methods/glossary/"> Glossary</a></li>
+		<% if @item.identifier =~ %r{^/v2/api_methods/glossary/} %>
+	  <li class="sub-nav  "><a href="/<%= language_root_url_of(@item) %>v2/api_methods/glossary/#glossaries-get">  Glossary (GET)</a></li>
+	  <li class="sub-nav  "><a href="/<%= language_root_url_of(@item) %>v2/api_methods/glossary/#glossary-get">  Glossary by id (GET)</a></li>
+		<% end %>
+		
+		<li class="sub <% if @item.identifier =~ %r{^/v2/api_methods/service/} %>strong<% end %> "><a href="/<%= language_root_url_of(@item) %>v2/api_methods/service/"> Service</a></li>
+		<% if @item.identifier =~ %r{^/v2/api_methods/service/} %>
+		<li class="sub-nav  "><a href="/<%= language_root_url_of(@item) %>v2/api_methods/service/#language-pairs-get">  Language Pairs (GET)</a></li>
+	  <li class="sub-nav  "><a href="/<%= language_root_url_of(@item) %>v2/api_methods/service/#languages-get">  Languages (GET)</a></li>
+	  <li class="sub-nav  "><a href="/<%= language_root_url_of(@item) %>v2/api_methods/service/#quote-post">  Quote (POST)</a></li>
+	  <li class="sub-nav  "><a href="/<%= language_root_url_of(@item) %>v2/api_methods/service/#quote-files-post">  Quote files (POST)</a></li>
+		<% end %>
+		
+		<% end %>
+
+  <li class="<% if @item.identifier =~ %r{^/v2/job_statuses/} %>strong active<% end %>"><a href="/<%= language_root_url_of(@item) %>v2/job_statuses/">Job Statuses</a></li>
+  <li class="<% if @item.identifier =~ %r{^/v2/throttling/} %>strong active<% end %>"><a href="/<%= language_root_url_of(@item) %>v2/throttling/">Throttling</a></li>
+	<li><a href="http://gengo.com/how-it-works/pricing-languages/">  Supported languages</a></li>
+</ul>
+
+</div>
+</div>
+<!-- /sidebar -->
