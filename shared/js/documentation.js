@@ -5,8 +5,6 @@ $(function() {
       firstOccurance = true
 
 
-	alert(window.location.toString());
-
   // hide list items at startup
   if($('body.api') && window.location){
     var reg = /\/\/[^\/]+(\/.+)/g,
