@@ -4,14 +4,18 @@ $(function() {
       helpList = $('#js-sidebar .js-topic'),
       firstOccurance = true
 
+
+	alert(window.location.toString());
+
   // hide list items at startup
   if($('body.api') && window.location){
     var reg = /\/\/[^\/]+(\/.+)/g,
         docUrl = reg.exec(window.location.toString())
     if(docUrl){
-      $('#js-sidebar .js-topic a').each(function(){
-        var url = $(this).attr('href').toString()
+      $('#tos-stacked-tabs .js-topic a').each(function(){
+        var url = $(this).attr('href').toString();
         if(url.indexOf(docUrl[1]) >= 0 && url.length == docUrl[1].length){
+	
           $(this).parent('li').addClass('disable')
           var parentTopic = $(this).parentsUntil('div.sidebar-module > ul').last()
           parentTopic.addClass('js-current')
@@ -21,7 +25,7 @@ $(function() {
     }
   }
 
-  $('#js-sidebar .js-topic').each(function(){
+  $('#tos-stacked-tabs .js-topic').each(function(){
     if(($(this).find('.disable').length == 0 || firstOccurance == false) &&
     $(this).hasClass('js-current') != true){
       $(this).find('.js-guides').children().hide()
@@ -33,7 +37,7 @@ $(function() {
 
   // Toggle style list. Expanded items stay
   // expanded when new items are clicked.
-  $('#js-sidebar .js-toggle-list .js-expand-btn').click(function(){
+  $('#tos-stacked-tabs .js-toggle-list .js-expand-btn').click(function(){
     var clickedTopic = $(this).parents('.js-topic'),
         topicGuides  = clickedTopic.find('.js-guides li')
     $(this).toggleClass('collapsed expanded')
@@ -43,7 +47,7 @@ $(function() {
 
   // Accordion style list. Expanded items
   // collapse when new items are clicked.
-  $('#js-sidebar .js-accordion-list .js-topic h3 a').click(function(){
+  $('#tos-stacked-tabs .js-accordion-list .js-topic h3 a').click(function(){
     var clickedTopic = $(this).parents('.js-topic'),
         topicGuides = clickedTopic.find('.js-guides li')
 

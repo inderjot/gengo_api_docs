@@ -236,6 +236,16 @@ a img {
 /*------------------------------------------------------------------------------
      Sidebar
 ------------------------------------------------------------------------------*/
+/* I KNOW THIS IS A HACK --Rob */
+
+li.sub {
+	text-indent:15px;
+}
+
+li.sub-nav {
+	text-indent:30px;
+}
+
 
 div.sidebar-shell {
   position: relative;
