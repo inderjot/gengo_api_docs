@@ -34,6 +34,6 @@ task :publish => [:clean] do
     puts `git show #{csha} --stat`
     puts "Updating gh-pages from #{old_sha}"
     `git update-ref refs/heads/gh-pages #{csha}`
-    `git push gengo gh-pages`
+    `git push origin gh-pages`
   end
 end
