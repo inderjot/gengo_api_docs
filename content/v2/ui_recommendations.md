@@ -69,7 +69,7 @@ __Note:__ While the core unit of the Gengo API is a “job”, please maintain c
 
 ### Order translation panel
 
-In this view the user will confirm the settings for translating one (or more) pieces of content and place an order. Depending on your app this might be a step in a publishing process, a part of another panel, or an individual panel within your system. You can allow the user to bundle a group of translations with the same settings together (a group of jobs), and to order multiple translations with different settings at the same time. Refer to the [translate/jobs/ (POST)](/v2/jobs/#jobs-post) method and [Translate API - Job Payload](/v2/payloads/) for more information.
+In this view the user will confirm the settings for translating one (or more) pieces of content and place an order. Depending on your app this might be a step in a publishing process, a part of another panel, or an individual panel within your system. You can allow the user to bundle a group of translations with the same settings together (a group of jobs), and to order multiple translations with different settings at the same time. Refer to the [translate/jobs/ (POST)](/v2/api_methods/jobs/#jobs-post) method and [Translate API - Job Payload](/v2/api_methods/payloads/) for more information.
 
 _The following apply per job or group of jobs:_
 
@@ -111,7 +111,7 @@ __Note:__ Preferred translators are translators the user has indicated they’d 
         A minimal translation order panel wireframe
     </p>
     <p>
-        Normal method: <a href="/v2/jobs/#jobs-post"><code>translate/jobs (POST)</code></a>
+        Normal method: <a href="/v2/api_methods/jobs/#jobs-post"><code>translate/jobs (POST)</code></a>
     </p>
     </figcaption>
 </figure>
@@ -123,14 +123,14 @@ __Note:__ Preferred translators are translators the user has indicated they’d 
         A translation panel wireframe for a group of jobs (preset by the application)
     </p>
     <p>
-        Normal method: <a href="/v2/jobs/#jobs-post"><code>translate/jobs (POST)</code></a> as an array of job payloads (one per <code>body_src</code>)
+        Normal method: <a href="/v2/api_methods/jobs/#jobs-post"><code>translate/jobs (POST)</code></a> as an array of job payloads (one per <code>body_src</code>)
     </p>
     </figcaption>
 </figure>
 
 ### Translation jobs overview (essential)
 
-This shows the current status of all translations that have been ordered through Gengo (ref: [translate/jobs (GET)](/v2/jobs/#jobs-get) method and [Job payload response](/v2/payloads/#job-payload---for-responses). You might make it a separate page, or simply add the information from Gengo to an existing UI. Content management systems often have a list of all articles, which can be a good place to add it.
+This shows the current status of all translations that have been ordered through Gengo (ref: [translate/jobs (GET)](/v2/api_methods/jobs/#jobs-get) method and [Job payload response](/v2/api_methods/payloads/#job-payload---for-responses). You might make it a separate page, or simply add the information from Gengo to an existing UI. Content management systems often have a list of all articles, which can be a good place to add it.
 
 __Statuses of jobs__
 
@@ -183,7 +183,7 @@ __If possible__
             Translation overview wireframe showing all recommended functionality (with a guide below)
         </p>
         <p>
-            Normal method: <a href="/v2/jobs/#jobs-get"><code>translate/jobs (GET)</code></a>
+            Normal method: <a href="/v2/api_methods/jobs/#jobs-get"><code>translate/jobs (GET)</code></a>
         </p>
     </figcaption>
 </figure>
@@ -212,7 +212,7 @@ Show a machine translation (body_tgt)
         A basic pending job panel wireframe underneath the job’s overview information
     </p>
     <p>
-        Normal method: <a href="/v2/job/#job-get"><code>translate/job/{id} (GET)</code></a>
+        Normal method: <a href="/v2/api_methods/job/#job-get"><code>translate/job/{id} (GET)</code></a>
     </p>
     </figcaption>
 </figure>
@@ -241,7 +241,7 @@ __Recommended__
             A simple comment thread wireframe
         </p>
         <p>
-            Normal method: <a href="/v2/job/#comments-get"><code>translate/job/{id}/comments (GET)</code></a>
+            Normal method: <a href="/v2/api_methods/job/#comments-get"><code>translate/job/{id}/comments (GET)</code></a>
         </p>
     </figcaption>
 </figure>
@@ -264,7 +264,7 @@ __Required__
             A comment submission panel wireframe
         </p>
         <p>
-            Normal method: <a href="/v2/job/#comment-post"><code>translate/job/{id}/comment (POST)</code></a>
+            Normal method: <a href="/v2/api_methods/job/#comment-post"><code>translate/job/{id}/comment (POST)</code></a>
         </p>
     </figcaption>
 </figure>
@@ -292,7 +292,7 @@ __If possible__
             A wireframe of a recommended feedback panel as part of the translation job review panel, for a group of jobs
         </p>
         <p>
-            Normal method: part of <a href="/v2/job/#job-put"><code>translate/job/{id} (PUT) approve</code></a>
+            Normal method: part of <a href="/v2/api_methods/job/#job-put"><code>translate/job/{id} (PUT) approve</code></a>
         </p>
     </figcaption>
 </figure>
@@ -322,7 +322,7 @@ __If possible__
                 An approved job panel wireframe, including optional submitted feedback
             </p>
             <p>
-                Normal method: <a href='/v2/job/#job-get'><code>translate/job/{id} (GET)</code></a>
+                Normal method: <a href='/v2/api_methods/job/#job-get'><code>translate/job/{id} (GET)</code></a>
             </p>
         </figcaption>
 </figure>
@@ -349,7 +349,7 @@ __Recommended__
             A request revisions panel wireframe
         </p>
         <p>
-            Normal method: <a href='/v2/job/#job-put'><code>translate/job/{id} (PUT)</code></a>
+            Normal method: <a href='/v2/api_methods/job/#job-put'><code>translate/job/{id} (PUT)</code></a>
         </p>
     </figcaption>
 </figure>
@@ -380,7 +380,7 @@ Change “Reject” button to “Reject and reopen”, and add a “Reject and c
             A job rejection panel wireframe
         </p>
         <p>
-            Normal method: <a href='/v2/job/#job-put'><code>translate/job/{id} (PUT)</code></a>
+            Normal method: <a href='/v2/api_methods/job/#job-put'><code>translate/job/{id} (PUT)</code></a>
         </p>
     </figcaption>
 </figure>
@@ -415,7 +415,7 @@ __Potential options__
             A remaining credits panel wireframe, allowing the user to top up their credits
         </p>
         <p>
-            Normal method: <a href='/v2/account/#balance-get'><code>account/balance (GET)</code></a>
+            Normal method: <a href='/v2/api_methods/account/#balance-get'><code>account/balance (GET)</code></a>
         </p>
     </figcaption>
 </figure>
