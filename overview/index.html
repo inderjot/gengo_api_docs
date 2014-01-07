@@ -175,7 +175,7 @@ if (window.location.protocol === "https:")
 
 <h2 id="job-statuses">Job statuses</h2>
 
-<p>Once a job has been added to our system, they are given the status “available” which means our translators can now see them and notifications will be sent out. When a translator picks up a job, the status becomes “pending” which means a translator is currently working on that job. If the “auto_approve” parameter was set to 0 (false) when the order was placed, the next status the job will change to is “reviewable”. At this time you can make a translate/job/ (PUT) call to update the status. However, if the job was ordered with the “auto_approve” paramater set to 1 (true) then the status will be set to “approved” and your translation will be accessible.</p>
+<p>Once a job has been added to our system, they are given the status “available” which means our translators can now see them and notifications will be sent out. When a translator picks up a job, the status becomes “pending” which means a translator is currently working on that job. If the “auto_approve” parameter was set to 0 (false) when the order was placed, the next status the job will change to is “reviewable”. At this time you can make a <a href="/v2/api_methods/job/#job-put">translate/job/ (PUT)</a> call to update the status. However, if the job was ordered with the “auto_approve” paramater set to 1 (true) then the status will be set to “approved” and your translation will be accessible.</p>
 
 <h2 id="working-without-a-database">Working without a database</h2>
 
