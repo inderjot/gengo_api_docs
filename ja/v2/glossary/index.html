@@ -56,7 +56,7 @@ if (window.location.protocol === "https:")
             <div class="pull-right btn-m">
                 <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
             </div>
-            <a href="/" class="brand"></a>
+            <a href="http://gengo.com/" class="brand"></a>
             <nav class="nav-collapse collapse" role="navigation">
 
                 
@@ -214,27 +214,27 @@ puts @mygengo_client.getGlossaryList
 <pre class="headers"><code>Status: 200 OK</code></pre>
 
 <pre class="highlight"><code class="language-javascript"><span class="p">{</span>
-  <span class="s2">"opstat"</span><span class="o">:</span> <span class="s2">"ok"</span><span class="p">,</span>
   <span class="s2">"response"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
-      <span class="s2">"status"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-      <span class="s2">"source_language_code"</span><span class="o">:</span> <span class="s2">"en-US"</span><span class="p">,</span>
-      <span class="s2">"description"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
-      <span class="s2">"source_language_id"</span><span class="o">:</span> <span class="mi">8</span><span class="p">,</span>
-      <span class="s2">"title"</span><span class="o">:</span> <span class="s2">"1342666627_50110_en_ja_glossary.csv"</span><span class="p">,</span>
+      <span class="s2">"is_public"</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+      <span class="s2">"customer_user_id"</span><span class="o">:</span> <span class="mi">50110</span><span class="p">,</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">115</span><span class="p">,</span>
       <span class="s2">"target_languages"</span><span class="o">:</span> <span class="p">[</span>
         <span class="p">[</span>
           <span class="mi">14</span><span class="p">,</span>
           <span class="s2">"ja"</span>
         <span class="p">]</span>
       <span class="p">],</span>
-      <span class="s2">"is_public"</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
-      <span class="s2">"unit_count"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
-      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">115</span><span class="p">,</span>
-      <span class="s2">"customer_user_id"</span><span class="o">:</span> <span class="mi">50110</span><span class="p">,</span>
-      <span class="s2">"ctime"</span><span class="o">:</span> <span class="s2">"2012-07-19 02:57:10.526565"</span>
+      <span class="s2">"source_language_id"</span><span class="o">:</span> <span class="mi">8</span><span class="p">,</span>
+      <span class="s2">"ctime"</span><span class="o">:</span> <span class="s2">"2012-07-19 02:57:10.526565"</span><span class="p">,</span>
+      <span class="s2">"title"</span><span class="o">:</span> <span class="s2">"1342666627_50110_en_ja_glossary.csv"</span><span class="p">,</span>
+      <span class="s2">"description"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"status"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="s2">"source_language_code"</span><span class="o">:</span> <span class="s2">"en-US"</span><span class="p">,</span>
+      <span class="s2">"unit_count"</span><span class="o">:</span> <span class="mi">2</span>
     <span class="p">}</span>
-  <span class="p">]</span>
+  <span class="p">],</span>
+  <span class="s2">"opstat"</span><span class="o">:</span> <span class="s2">"ok"</span>
 <span class="p">}</span></code></pre>
 
 <h2 id="glossary-get">Glossary (GET)</h2>
@@ -274,25 +274,25 @@ puts @mygengo_client.getGlossary(:id =&gt; @glossary_id)
 <pre class="headers"><code>Status: 200 OK</code></pre>
 
 <pre class="highlight"><code class="language-javascript"><span class="p">{</span>
-  <span class="s2">"opstat"</span><span class="o">:</span> <span class="s2">"ok"</span><span class="p">,</span>
   <span class="s2">"response"</span><span class="o">:</span> <span class="p">{</span>
-    <span class="s2">"status"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-    <span class="s2">"source_language_code"</span><span class="o">:</span> <span class="s2">"en-US"</span><span class="p">,</span>
-    <span class="s2">"description"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
-    <span class="s2">"source_language_id"</span><span class="o">:</span> <span class="mi">8</span><span class="p">,</span>
-    <span class="s2">"title"</span><span class="o">:</span> <span class="s2">"1342666627_50110_en_ja_glossary.csv"</span><span class="p">,</span>
+    <span class="s2">"is_public"</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="s2">"customer_user_id"</span><span class="o">:</span> <span class="mi">50110</span><span class="p">,</span>
+    <span class="s2">"id"</span><span class="o">:</span> <span class="mi">115</span><span class="p">,</span>
     <span class="s2">"target_languages"</span><span class="o">:</span> <span class="p">[</span>
       <span class="p">[</span>
         <span class="mi">14</span><span class="p">,</span>
         <span class="s2">"ja"</span>
       <span class="p">]</span>
     <span class="p">],</span>
-    <span class="s2">"is_public"</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
-    <span class="s2">"unit_count"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
-    <span class="s2">"id"</span><span class="o">:</span> <span class="mi">115</span><span class="p">,</span>
-    <span class="s2">"customer_user_id"</span><span class="o">:</span> <span class="mi">50110</span><span class="p">,</span>
-    <span class="s2">"ctime"</span><span class="o">:</span> <span class="s2">"2012-07-19 02:57:10.526565"</span>
-  <span class="p">}</span>
+    <span class="s2">"source_language_id"</span><span class="o">:</span> <span class="mi">8</span><span class="p">,</span>
+    <span class="s2">"ctime"</span><span class="o">:</span> <span class="s2">"2012-07-19 02:57:10.526565"</span><span class="p">,</span>
+    <span class="s2">"title"</span><span class="o">:</span> <span class="s2">"1342666627_50110_en_ja_glossary.csv"</span><span class="p">,</span>
+    <span class="s2">"description"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+    <span class="s2">"status"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="s2">"source_language_code"</span><span class="o">:</span> <span class="s2">"en-US"</span><span class="p">,</span>
+    <span class="s2">"unit_count"</span><span class="o">:</span> <span class="mi">2</span>
+  <span class="p">},</span>
+  <span class="s2">"opstat"</span><span class="o">:</span> <span class="s2">"ok"</span>
 <span class="p">}</span></code></pre>
 
 
@@ -310,20 +310,20 @@ puts @mygengo_client.getGlossary(:id =&gt; @glossary_id)
 		        <a class="btn btn-navbar" data-target="#footer-links .f-nav-collapse" data-toggle="collapse"> <span class="menu">MENU</span> <i class="icon-plus icon-white"></i> </a>
 		        <nav class="collapse in f-nav-collapse" role="navigation" style="height:auto">
 		          <ul class="nav">
-		            <li><a href="/about-us/">About us</a></li>
+		            <li><a href="http://gengo.com/about-us/">About us</a></li>
 		            <li><a href="http://blog.gengo.com/">Blog</a></li>
 		            <li><a href="http://careers.gengo.com/">Careers</a></li>
-		            <li><a href="/press/coverage/">Press</a></li>
+		            <li><a href="http://gengo.com/press/coverage/">Press</a></li>
 		            <li><a href="https://support.gengo.com/home">Support</a></li>
-		            <li class="translators"><a href="/translators/">Translators</a></li>
-		            <li><a href="/customers/">Customers</a></li>
-		            <li class="legal"><a href="/legal">Legal</a></li>
+		            <li class="translators"><a href="http://gengo.com/translators/">Translators</a></li>
+		            <li><a href="http://gengo.com/customers/">Customers</a></li>
+		            <li class="legal"><a href="http://gengo.com/legal">Legal</a></li>
 		            <li class="quality"><a href="http://translate.gengo.com/translation-quality/">Quality Policy</a></li>
 		          </ul>
 		        </nav>
 		      </div>
 		            <div id="footer-btm" class="span7">
-		        <div class="span3">
+		        <div class="span3" style="display:none;">
 		          <div class="btn-group dropup hidden-phone">
 		            <button class="btn btn-large gengo" data-toggle="dropdown"> <i class="icon-globe icon-white"></i> English <i class="icon-plus icon-white"></i></button>
 		            <button class="btn btn-large dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></button>
@@ -340,7 +340,7 @@ puts @mygengo_client.getGlossary(:id =&gt; @glossary_id)
 		          </div>
 		          <!-- /btn-group -->
 		        </div>
-		        <div class="social">
+		        <div class="social" style="margin-left:0px; margin-right:400px;">
 		          <a class="facebook" href="http://www.facebook.com/mygengo" title="Gengo on Facebook"></a>
 		          <a class="twitter" href="http://www.twitter.com/gengoit" title="Gengo on Twitter"></a>
 		          <a class="googleplus" href="https://google.com/+GengoIt" title="Gengo on Google+"></a>
@@ -348,7 +348,7 @@ puts @mygengo_client.getGlossary(:id =&gt; @glossary_id)
 		        </div>
 		        <div class="footnote">
 		          <span> &copy; 2008-2013 Gengo, Inc. </span>
-		          <span class="legal"><a href="/legal">Legal</a></span>
+		          <span class="legal"><a href="http://gengo.com/legal">Legal</a></span>
 		          <span class="quality"><a href="http://translate.gengo.com/translation-quality/">Quality Policy</a></span>
 		        </div>
 		      </div>

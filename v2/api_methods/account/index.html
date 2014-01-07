@@ -56,7 +56,7 @@ if (window.location.protocol === "https:")
             <div class="pull-right btn-m">
                 <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
             </div>
-            <a href="/" class="brand"></a>
+            <a href="http://gengo.com/" class="brand"></a>
             <nav class="nav-collapse collapse" role="navigation">
 
                 
@@ -197,12 +197,12 @@ if (window.location.protocol === "https:")
 <pre class="headers"><code>Status: 200 OK</code></pre>
 
 <pre class="highlight"><code class="language-javascript"><span class="p">{</span>
-  <span class="s2">"opstat"</span><span class="o">:</span> <span class="s2">"ok"</span><span class="p">,</span>
   <span class="s2">"response"</span><span class="o">:</span> <span class="p">{</span>
-    <span class="s2">"currency"</span><span class="o">:</span> <span class="s2">"USD"</span><span class="p">,</span>
     <span class="s2">"credits_spent"</span><span class="o">:</span> <span class="s2">"1023.31"</span><span class="p">,</span>
-    <span class="s2">"user_since"</span><span class="o">:</span> <span class="mi">1234089500</span>
-  <span class="p">}</span>
+    <span class="s2">"user_since"</span><span class="o">:</span> <span class="mi">1234089500</span><span class="p">,</span>
+    <span class="s2">"currency"</span><span class="o">:</span> <span class="s2">"USD"</span>
+  <span class="p">},</span>
+  <span class="s2">"opstat"</span><span class="o">:</span> <span class="s2">"ok"</span>
 <span class="p">}</span></code></pre>
 
 <h2 id="balance-get">Balance (GET)</h2>
@@ -244,11 +244,11 @@ if (window.location.protocol === "https:")
 <pre class="headers"><code>Status: 200 OK</code></pre>
 
 <pre class="highlight"><code class="language-javascript"><span class="p">{</span>
-  <span class="s2">"opstat"</span><span class="o">:</span> <span class="s2">"ok"</span><span class="p">,</span>
   <span class="s2">"response"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"credits"</span><span class="o">:</span> <span class="s2">"25.32"</span><span class="p">,</span>
     <span class="s2">"currency"</span><span class="o">:</span> <span class="s2">"USD"</span>
-  <span class="p">}</span>
+  <span class="p">},</span>
+  <span class="s2">"opstat"</span><span class="o">:</span> <span class="s2">"ok"</span>
 <span class="p">}</span></code></pre>
 
 <h2 id="preferred-translators-get">Preferred translators (GET)</h2>
@@ -289,43 +289,43 @@ if (window.location.protocol === "https:")
 <pre class="headers"><code>Status: 200 OK</code></pre>
 
 <pre class="highlight"><code class="language-javascript"><span class="p">{</span>
-  <span class="s2">"opstat"</span><span class="o">:</span> <span class="s2">"ok"</span><span class="p">,</span>
   <span class="s2">"response"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
-      <span class="s2">"lc_src"</span><span class="o">:</span> <span class="s2">"en"</span><span class="p">,</span>
-      <span class="s2">"lc_tgt"</span><span class="o">:</span> <span class="s2">"ja"</span><span class="p">,</span>
-      <span class="s2">"tier"</span><span class="o">:</span> <span class="s2">"standard"</span><span class="p">,</span>
       <span class="s2">"translators"</span><span class="o">:</span> <span class="p">[</span>
         <span class="p">{</span>
           <span class="s2">"id"</span><span class="o">:</span> <span class="mi">8596</span><span class="p">,</span>
-          <span class="s2">"number_of_jobs"</span><span class="o">:</span> <span class="mi">5</span><span class="p">,</span>
-          <span class="s2">"last_login"</span><span class="o">:</span> <span class="mi">1375824155</span>
+          <span class="s2">"last_login"</span><span class="o">:</span> <span class="mi">1375824155</span><span class="p">,</span>
+          <span class="s2">"number_of_jobs"</span><span class="o">:</span> <span class="mi">5</span>
         <span class="p">},</span>
         <span class="p">{</span>
           <span class="s2">"id"</span><span class="o">:</span> <span class="mi">24123</span><span class="p">,</span>
-          <span class="s2">"number_of_jobs"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
-          <span class="s2">"last_login"</span><span class="o">:</span> <span class="mi">1372822132</span>
+          <span class="s2">"last_login"</span><span class="o">:</span> <span class="mi">1372822132</span><span class="p">,</span>
+          <span class="s2">"number_of_jobs"</span><span class="o">:</span> <span class="mi">2</span>
         <span class="p">}</span>
-      <span class="p">]</span>
+      <span class="p">],</span>
+      <span class="s2">"tier"</span><span class="o">:</span> <span class="s2">"standard"</span><span class="p">,</span>
+      <span class="s2">"lc_tgt"</span><span class="o">:</span> <span class="s2">"ja"</span><span class="p">,</span>
+      <span class="s2">"lc_src"</span><span class="o">:</span> <span class="s2">"en"</span>
     <span class="p">},</span>
     <span class="p">{</span>
-      <span class="s2">"lc_src"</span><span class="o">:</span> <span class="s2">"ja"</span><span class="p">,</span>
-      <span class="s2">"lc_tgt"</span><span class="o">:</span> <span class="s2">"en"</span><span class="p">,</span>
-      <span class="s2">"tier"</span><span class="o">:</span> <span class="s2">"pro"</span><span class="p">,</span>
       <span class="s2">"translators"</span><span class="o">:</span> <span class="p">[</span>
         <span class="p">{</span>
           <span class="s2">"id"</span><span class="o">:</span> <span class="mi">14765</span><span class="p">,</span>
-          <span class="s2">"number_of_jobs"</span><span class="o">:</span> <span class="mi">10</span><span class="p">,</span>
-          <span class="s2">"last_login"</span><span class="o">:</span> <span class="mi">1375825234</span>
+          <span class="s2">"last_login"</span><span class="o">:</span> <span class="mi">1375825234</span><span class="p">,</span>
+          <span class="s2">"number_of_jobs"</span><span class="o">:</span> <span class="mi">10</span>
         <span class="p">},</span>
         <span class="p">{</span>
           <span class="s2">"id"</span><span class="o">:</span> <span class="mi">3627</span><span class="p">,</span>
-          <span class="s2">"number_of_jobs"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-          <span class="s2">"last_login"</span><span class="o">:</span> <span class="mi">1372822132</span>
+          <span class="s2">"last_login"</span><span class="o">:</span> <span class="mi">1372822132</span><span class="p">,</span>
+          <span class="s2">"number_of_jobs"</span><span class="o">:</span> <span class="mi">1</span>
         <span class="p">}</span>
-      <span class="p">]</span>
+      <span class="p">],</span>
+      <span class="s2">"tier"</span><span class="o">:</span> <span class="s2">"pro"</span><span class="p">,</span>
+      <span class="s2">"lc_tgt"</span><span class="o">:</span> <span class="s2">"en"</span><span class="p">,</span>
+      <span class="s2">"lc_src"</span><span class="o">:</span> <span class="s2">"ja"</span>
     <span class="p">}</span>
-  <span class="p">]</span>
+  <span class="p">],</span>
+  <span class="s2">"opstat"</span><span class="o">:</span> <span class="s2">"ok"</span>
 <span class="p">}</span></code></pre>
 
 
@@ -343,20 +343,20 @@ if (window.location.protocol === "https:")
 		        <a class="btn btn-navbar" data-target="#footer-links .f-nav-collapse" data-toggle="collapse"> <span class="menu">MENU</span> <i class="icon-plus icon-white"></i> </a>
 		        <nav class="collapse in f-nav-collapse" role="navigation" style="height:auto">
 		          <ul class="nav">
-		            <li><a href="/about-us/">About us</a></li>
+		            <li><a href="http://gengo.com/about-us/">About us</a></li>
 		            <li><a href="http://blog.gengo.com/">Blog</a></li>
 		            <li><a href="http://careers.gengo.com/">Careers</a></li>
-		            <li><a href="/press/coverage/">Press</a></li>
+		            <li><a href="http://gengo.com/press/coverage/">Press</a></li>
 		            <li><a href="https://support.gengo.com/home">Support</a></li>
-		            <li class="translators"><a href="/translators/">Translators</a></li>
-		            <li><a href="/customers/">Customers</a></li>
-		            <li class="legal"><a href="/legal">Legal</a></li>
+		            <li class="translators"><a href="http://gengo.com/translators/">Translators</a></li>
+		            <li><a href="http://gengo.com/customers/">Customers</a></li>
+		            <li class="legal"><a href="http://gengo.com/legal">Legal</a></li>
 		            <li class="quality"><a href="http://translate.gengo.com/translation-quality/">Quality Policy</a></li>
 		          </ul>
 		        </nav>
 		      </div>
 		            <div id="footer-btm" class="span7">
-		        <div class="span3">
+		        <div class="span3" style="display:none;">
 		          <div class="btn-group dropup hidden-phone">
 		            <button class="btn btn-large gengo" data-toggle="dropdown"> <i class="icon-globe icon-white"></i> English <i class="icon-plus icon-white"></i></button>
 		            <button class="btn btn-large dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></button>
@@ -373,7 +373,7 @@ if (window.location.protocol === "https:")
 		          </div>
 		          <!-- /btn-group -->
 		        </div>
-		        <div class="social">
+		        <div class="social" style="margin-left:0px; margin-right:400px;">
 		          <a class="facebook" href="http://www.facebook.com/mygengo" title="Gengo on Facebook"></a>
 		          <a class="twitter" href="http://www.twitter.com/gengoit" title="Gengo on Twitter"></a>
 		          <a class="googleplus" href="https://google.com/+GengoIt" title="Gengo on Google+"></a>
@@ -381,7 +381,7 @@ if (window.location.protocol === "https:")
 		        </div>
 		        <div class="footnote">
 		          <span> &copy; 2008-2013 Gengo, Inc. </span>
-		          <span class="legal"><a href="/legal">Legal</a></span>
+		          <span class="legal"><a href="http://gengo.com/legal">Legal</a></span>
 		          <span class="quality"><a href="http://translate.gengo.com/translation-quality/">Quality Policy</a></span>
 		        </div>
 		      </div>

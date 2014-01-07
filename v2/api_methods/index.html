@@ -56,7 +56,7 @@ if (window.location.protocol === "https:")
             <div class="pull-right btn-m">
                 <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
             </div>
-            <a href="/" class="brand"></a>
+            <a href="http://gengo.com/" class="brand"></a>
             <nav class="nav-collapse collapse" role="navigation">
 
                 
@@ -149,49 +149,49 @@ if (window.location.protocol === "https:")
 	<h1 id="api-methods">API Methods</h1>
 
 <dl>
-<dt><a href="/v2/account/#stats-get">account/stats <strong>(GET)</strong></a></dt>
+<dt><a href="/v2/api_methods/account/#stats-get">account/stats <strong>(GET)</strong></a></dt>
   <dd>Retrieves account stats, such as orders made.</dd>
-  <dt><a href="/v2/account/#balance-get">account/balance <strong>(GET)</strong></a></dt>
+  <dt><a href="/v2/api_methods/account/#balance-get">account/balance <strong>(GET)</strong></a></dt>
   <dd>Retrieves account balance in credits.</dd>
-  <dt><a href="/v2/account/#preferred_translators-get">account/preferred_translators <strong>(GET)</strong></a></dt>
+  <dt><a href="/v2/api_methods/account/#preferred_translators-get">account/preferred_translators <strong>(GET)</strong></a></dt>
   <dd>Retrieves preferred translators set by user.</dd>
-  <dt><a href="/v2/job/#job-get">translate/job/{id} <strong>(GET)</strong></a></dt>
+  <dt><a href="/v2/api_methods/job/#job-get">translate/job/{id} <strong>(GET)</strong></a></dt>
   <dd>Retrieves a specific job.</dd>
-  <dt><a href="/v2/job/#job-put">translate/job/{id} <strong>(PUT)</strong></a></dt>
+  <dt><a href="/v2/api_methods/job/#job-put">translate/job/{id} <strong>(PUT)</strong></a></dt>
   <dd>Updates a job to translate.</dd>
-  <dt><a href="/v2/job/#comment_post">translate/job/{id} <strong>(DELETE)</strong></a></dt>
+  <dt><a href="/v2/api_methods/job/#comment_post">translate/job/{id} <strong>(DELETE)</strong></a></dt>
   <dd>Cancels the job. You can only cancel a job if it has not been started already by a translator.</dd>
-  <dt><a href="/v2/job/#revision-get">translate/job/{id}/revision/{rev_id} <strong>(GET)</strong></a></dt>
+  <dt><a href="/v2/api_methods/job/#revision-get">translate/job/{id}/revision/{rev_id} <strong>(GET)</strong></a></dt>
   <dd>Gets a specific revision for a job.</dd>
-  <dt><a href="/v2/job/#revisions-get">translate/job/{id}/revisions <strong>(GET)</strong></a></dt>
+  <dt><a href="/v2/api_methods/job/#revisions-get">translate/job/{id}/revisions <strong>(GET)</strong></a></dt>
   <dd>Gets list of revision resources for a job. Revisions are created each time a translator or Senior Translator updates the text.</dd>
-  <dt><a href="/v2/job/#feedback-get">translate/job/{id}/feedback <strong>(GET)</strong></a></dt>
+  <dt><a href="/v2/api_methods/job/#feedback-get">translate/job/{id}/feedback <strong>(GET)</strong></a></dt>
   <dd>Retrieves the feedback you have submitted for a particular job.</dd>
-  <dt><a href="/v2/job/#comment_post">translate/job/{id}/comment <strong>(POST)</strong></a></dt>
+  <dt><a href="/v2/api_methods/job/#comment_post">translate/job/{id}/comment <strong>(POST)</strong></a></dt>
   <dd>Submits a new comment to the job’s comment thread.</dd>
-  <dt><a href="/v2/job/#comments-get">translate/job/{id}/comments <strong>(GET)</strong></a></dt>
+  <dt><a href="/v2/api_methods/job/#comments-get">translate/job/{id}/comments <strong>(GET)</strong></a></dt>
   <dd>Retrieves the comment thread for a job.</dd>
-  <dt><a href="/v2/jobs/#jobs-get">translate/jobs <strong>(GET)</strong></a></dt>
+  <dt><a href="/v2/api_methods/jobs/#jobs-get">translate/jobs <strong>(GET)</strong></a></dt>
   <dd>Retrieves a list of resources for the most recent jobs filtered by the given parameters.</dd>
-  <dt><a href="/v2/jobs/#jobs-get-by-ids">translate/jobs/{ids} <strong>(GET)</strong></a></dt>
+  <dt><a href="/v2/api_methods/jobs/#jobs-get-by-ids">translate/jobs/{ids} <strong>(GET)</strong></a></dt>
   <dd>Retrieves a list of jobs. They are requested by a comma-separated list of job ids.</dd>
-  <dt><a href="/v2/jobs/#jobs-post">translate/jobs <strong>(POST)</strong></a></dt>
+  <dt><a href="/v2/api_methods/jobs/#jobs-post">translate/jobs <strong>(POST)</strong></a></dt>
   <dd>Submits a job or group of jobs to translate.</dd>
-  <dt><a href="/v2/order/#order-get">translate/order <strong>(GET)</strong></a></dt>
+  <dt><a href="/v2/api_methods/order/#order-get">translate/order <strong>(GET)</strong></a></dt>
   <dd>Retrieves a specific order containing all jobs.</dd>
-  <dt><a href="/v2/order/#order-delete">translate/order <strong>(DELETE)</strong></a></dt>
+  <dt><a href="/v2/api_methods/order/#order-delete">translate/order <strong>(DELETE)</strong></a></dt>
   <dd>Deletes all available jobs in an order.</dd>
-  <dt><a href="/v2/glossary/#glossaries-get">translate/glossary <strong>(GET)</strong></a></dt>
+  <dt><a href="/v2/api_methods/glossary/#glossaries-get">translate/glossary <strong>(GET)</strong></a></dt>
   <dd>Retrieves a list of glossaries that belongs to the authenticated user</dd>
-  <dt><a href="/v2/glossary/#glossary-get">translate/glossary/{id} <strong>(GET)</strong></a></dt>
+  <dt><a href="/v2/api_methods/glossary/#glossary-get">translate/glossary/{id} <strong>(GET)</strong></a></dt>
   <dd>Retreives a glossary by Id</dd>
-  <dt><a href="/v2/service/#language_pairs-get">translate/service/language_pairs <strong>(GET)</strong></a></dt>
+  <dt><a href="/v2/api_methods/service/#language_pairs-get">translate/service/language_pairs <strong>(GET)</strong></a></dt>
   <dd>Returns supported translation language pairs, tiers, and credit prices.</dd>
-  <dt><a href="/v2/service/#language-get">translate/service/languages <strong>(GET)</strong></a></dt>
+  <dt><a href="/v2/api_methods/service/#language-get">translate/service/languages <strong>(GET)</strong></a></dt>
   <dd>Returns a list of supported languages and their language codes.</dd>
-  <dt><a href="/v2/service/#quote-post">translate/service/quote <strong>(POST)</strong></a></dt>
+  <dt><a href="/v2/api_methods/service/#quote-post">translate/service/quote <strong>(POST)</strong></a></dt>
   <dd>Returns credit quote and unit count for text based on content, tier, and language pair for job or jobs submitted.</dd>
-  <dt><a href="/v2/service/#quote-files-post">translate/service/quote/file <strong>(POST)</strong></a></dt>
+  <dt><a href="/v2/api_methods/service/#quote-files-post">translate/service/quote/file <strong>(POST)</strong></a></dt>
   <dd>Uploads files to Gengo and returns a quote for each file, with an identifier for when client is ready to place the actual order. Price quote is based on content, tier, and language pair.</dd>
 </dl>
 
@@ -210,20 +210,20 @@ if (window.location.protocol === "https:")
 		        <a class="btn btn-navbar" data-target="#footer-links .f-nav-collapse" data-toggle="collapse"> <span class="menu">MENU</span> <i class="icon-plus icon-white"></i> </a>
 		        <nav class="collapse in f-nav-collapse" role="navigation" style="height:auto">
 		          <ul class="nav">
-		            <li><a href="/about-us/">About us</a></li>
+		            <li><a href="http://gengo.com/about-us/">About us</a></li>
 		            <li><a href="http://blog.gengo.com/">Blog</a></li>
 		            <li><a href="http://careers.gengo.com/">Careers</a></li>
-		            <li><a href="/press/coverage/">Press</a></li>
+		            <li><a href="http://gengo.com/press/coverage/">Press</a></li>
 		            <li><a href="https://support.gengo.com/home">Support</a></li>
-		            <li class="translators"><a href="/translators/">Translators</a></li>
-		            <li><a href="/customers/">Customers</a></li>
-		            <li class="legal"><a href="/legal">Legal</a></li>
+		            <li class="translators"><a href="http://gengo.com/translators/">Translators</a></li>
+		            <li><a href="http://gengo.com/customers/">Customers</a></li>
+		            <li class="legal"><a href="http://gengo.com/legal">Legal</a></li>
 		            <li class="quality"><a href="http://translate.gengo.com/translation-quality/">Quality Policy</a></li>
 		          </ul>
 		        </nav>
 		      </div>
 		            <div id="footer-btm" class="span7">
-		        <div class="span3">
+		        <div class="span3" style="display:none;">
 		          <div class="btn-group dropup hidden-phone">
 		            <button class="btn btn-large gengo" data-toggle="dropdown"> <i class="icon-globe icon-white"></i> English <i class="icon-plus icon-white"></i></button>
 		            <button class="btn btn-large dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></button>
@@ -240,7 +240,7 @@ if (window.location.protocol === "https:")
 		          </div>
 		          <!-- /btn-group -->
 		        </div>
-		        <div class="social">
+		        <div class="social" style="margin-left:0px; margin-right:400px;">
 		          <a class="facebook" href="http://www.facebook.com/mygengo" title="Gengo on Facebook"></a>
 		          <a class="twitter" href="http://www.twitter.com/gengoit" title="Gengo on Twitter"></a>
 		          <a class="googleplus" href="https://google.com/+GengoIt" title="Gengo on Google+"></a>
@@ -248,7 +248,7 @@ if (window.location.protocol === "https:")
 		        </div>
 		        <div class="footnote">
 		          <span> &copy; 2008-2013 Gengo, Inc. </span>
-		          <span class="legal"><a href="/legal">Legal</a></span>
+		          <span class="legal"><a href="http://gengo.com/legal">Legal</a></span>
 		          <span class="quality"><a href="http://translate.gengo.com/translation-quality/">Quality Policy</a></span>
 		        </div>
 		      </div>
