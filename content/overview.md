@@ -50,16 +50,16 @@ The Translate API attempts to follow a [REST-based architecture](http://en.wikip
 
 ## Ordering jobs
 
-To order translation, you should make a [translate/jobs/ (POST)](/v2/jobs/#jobs-post) call. See the method page for details. As a response to this request, Gengo will return back an order_id number and then begin inserting your jobs into our system. At this time, you can make a request to [translate/order/ (GET)](/v2/order/) and check the result of "jobs_queued" to see if your order is processed or not. Alternatively, once a translator starts working on one of the jobs, a callback will be sent - which indicates all jobs are in your system from that order.
+To order translation, you should make a [translate/jobs/ (POST)](/v2/api_methods/jobs/#jobs-post) call. See the method page for details. As a response to this request, Gengo will return back an order_id number and then begin inserting your jobs into our system. At this time, you can make a request to [translate/order/ (GET)](/v2/api_methods/order/) and check the result of "jobs_queued" to see if your order is processed or not. Alternatively, once a translator starts working on one of the jobs, a callback will be sent - which indicates all jobs are in your system from that order.
 
 
 ## Job statuses
 
-Once a job has been added to our system, they are given the status "available" which means our translators can now see them and notifications will be sent out. When a translator picks up a job, the status becomes "pending" which means a translator is currently working on that job. If the "auto_approve" parameter was set to 0 (false) when the order was placed, the next status the job will change to is "reviewable". At this time you can make a [translate/job/ (PUT)](v2/job/#job-put) call to update the status. However, if the job was ordered with the "auto_approve" paramater set to 1 (true) then the status will be set to "approved" and your translation will be accessible.
+Once a job has been added to our system, they are given the status "available" which means our translators can now see them and notifications will be sent out. When a translator picks up a job, the status becomes "pending" which means a translator is currently working on that job. If the "auto_approve" parameter was set to 0 (false) when the order was placed, the next status the job will change to is "reviewable". At this time you can make a [translate/job/ (PUT)](v2/api_methods/job/#job-put) call to update the status. However, if the job was ordered with the "auto_approve" paramater set to 1 (true) then the status will be set to "approved" and your translation will be accessible.
 
 ## Working without a database
 
-If you want to order translations within your app without using a database, you can use what we call "lazy loading" to request strings to be translated without having to pass an ID to our app every time you want to check on their progress or receive a translation back. For instance, if you have a simple PHP website that just has a few strings in it, you might not want to have to store the unique ID we return from our translate/jobs/ POST call - instead, you can use [translate/jobs/ (POST)](/v2/jobs/#jobs-post) and simply pass us a string. If it has already been requested by you, you won't be charged again for the translation - and if has been translated you will receive back the translation at that point.
+If you want to order translations within your app without using a database, you can use what we call "lazy loading" to request strings to be translated without having to pass an ID to our app every time you want to check on their progress or receive a translation back. For instance, if you have a simple PHP website that just has a few strings in it, you might not want to have to store the unique ID we return from our translate/jobs/ POST call - instead, you can use [translate/jobs/ (POST)](/v2/api_methods/jobs/#jobs-post) and simply pass us a string. If it has already been requested by you, you won't be charged again for the translation - and if has been translated you will receive back the translation at that point.
 
 
 ## Polling
@@ -74,7 +74,7 @@ Callbacks are our recommended way of being notified when a translation job is re
 
 ## Grouping jobs
 
-If you want a set of jobs to be completed by one translator, you can group them when you place the [translate/jobs/ (POST)](/v2/jobs/#jobs-post) call. This is useful if you want to ensure consistency - but please bear in mind it will take longer than a non-grouped order as the jobs will have to be done sequentially rather than in parallel.
+If you want a set of jobs to be completed by one translator, you can group them when you place the [translate/jobs/ (POST)](/v2/api_methods/jobs/#jobs-post) call. This is useful if you want to ensure consistency - but please bear in mind it will take longer than a non-grouped order as the jobs will have to be done sequentially rather than in parallel.
 
 
 ## Escaping text from a job
@@ -89,12 +89,12 @@ Please see our [Quality Policy](http://gengo.com/help/quality_policy) page for m
 
 ## Cancelling jobs
 
-Call [translate/job/{id} (DELETE)](/v2/job/#job-delete) to cancel a job. If you are unable to use the DELETE http method, you can fake the method by adding the _method="delete" parameter. You may only cancel translations while their status is "available" - this is to avoid wasting translator time.
+Call [translate/job/{id} (DELETE)](/v2/api_methods/job/#job-delete) to cancel a job. If you are unable to use the DELETE http method, you can fake the method by adding the _method="delete" parameter. You may only cancel translations while their status is "available" - this is to avoid wasting translator time.
 
 
 ## Comments
 
-You can add comments to each job, whatever status it is in. Use the [translate/job/{id}/comment (POST)](/v2/job/#comment-post) method to add comments to a job that you have already submitted, and attach a comment to your job within the [translate/jobs/ (POST)](/v2/jobs/#jobs-post) call when you order.
+You can add comments to each job, whatever status it is in. Use the [translate/job/{id}/comment (POST)](/v2/api_methods/job/#comment-post) method to add comments to a job that you have already submitted, and attach a comment to your job within the [translate/jobs/ (POST)](/v2/api_methods/jobs/#jobs-post) call when you order.
 
 We recommend you do add comments to all jobs to give context and direction to the translator. Jobs that have comments are usually picked up and translated more quickly than those that don't. Translators can also add comments to a job to add detail, or ask for clarifications.
 
@@ -114,7 +114,7 @@ If you prefer not to manually approve jobs, or your system does not have the cap
 
 ### Approving jobs
 
-To approve a job, send a [translate/job/{id} (PUT)](/v2/job/#job-put) call with the action set to "approve". You can also add feedback at this time, consisting of a rating from 1-5, a comment for the translator and a comment for Gengo. The feedback rating and comment for the translator are sent to the translator, and Gengo receives the rating, comment for translator and comment for Gengo.
+To approve a job, send a [translate/job/{id} (PUT)](/v2/api_methods/job/#job-put) call with the action set to "approve". You can also add feedback at this time, consisting of a rating from 1-5, a comment for the translator and a comment for Gengo. The feedback rating and comment for the translator are sent to the translator, and Gengo receives the rating, comment for translator and comment for Gengo.
 
 It really helps us to receive feedback ratings for each translation, as we can see how well our translators are doing, reward good work, and provide guidance to any translator that is not performing well. We may also use the feedback ratings in future to prioritize translator-job matchings.
 
@@ -126,7 +126,7 @@ If a job is in a reviewable state for a certain time, it will be automatically a
 
 ### Revising jobs
 
-If a job requires corrections, you can request them using the [translate/job/{id} (PUT)](/v2/job/#job-put) call, and the "revise" action. Please be as descriptive as possible with your comment when you request a correction.
+If a job requires corrections, you can request them using the [translate/job/{id} (PUT)](/v2/api_methods/job/#job-put) call, and the "revise" action. Please be as descriptive as possible with your comment when you request a correction.
 
 ### Rejecting jobs
 
@@ -134,7 +134,7 @@ If you are unhappy with a translation from Gengo, you have the opportunity to re
 
 All rejections are reviewed by our staff, and we take each one seriously - normally we will contact the translator and review what has gone wrong with that particular translation. While we are obviously happy to uphold fair rejections, if you persistently reject jobs without reason, your account will be suspended as this kind of behaviour is unfair to the translator and time-consuming for us.
 
-To reject a job, use the [translate/job/{id} (PUT)](/v2/job/#job-put) call with the action parameter set to "reject". We insist that rejections are made by humans (because we don't want machines rejecting translations) so we require you to complete a captcha when you submit a rejection. See the translate/job/{id} (PUT) page for more details.
+To reject a job, use the [translate/job/{id} (PUT)](/v2/api_methods/job/#job-put) call with the action parameter set to "reject". We insist that rejections are made by humans (because we don't want machines rejecting translations) so we require you to complete a captcha when you submit a rejection. See the translate/job/{id} (PUT) page for more details.
 
 ## Order machine translation
 
@@ -148,14 +148,14 @@ If you have ordered human translation, and are still waiting for the job to be r
 
 ## Retrieve orders placed from Web UI via the API and vice versa
 
-If you place an order via the web form, you can retrieve it via the API by using the job ID which is found through your customer dashboard, and use it in calls like [translate/job/{id} (GET)](/v2/job/#job-get). Please note that jobs ordered via the web form do not trigger API callbacks.
+If you place an order via the web form, you can retrieve it via the API by using the job ID which is found through your customer dashboard, and use it in calls like [translate/job/{id} (GET)](/v2/api_methods/job/#job-get). Please note that jobs ordered via the web form do not trigger API callbacks.
 
 You can see jobs placed through the API on the website, on your customer dashboard, by logging into the gengo.com site.
 
 
 ## Using credits
 
-All human translation jobs ordered via the API require up-front payment of Gengo credits. Credits are deducted from your account when you order jobs via a [translate/jobs/ (POST)](/v2/jobs/#jobs-post) call (except when you use a tier of "machine" to order machine translation). You can buy credits by logging into the gengo.com site and visiting your Account page. The current version of the Gengo Translate API requires accounts to maintain a positive credit balance for jobs to be translated.  If there are not enough credits to process a job when it is submitted via the API, the response will indicate this.
+All human translation jobs ordered via the API require up-front payment of Gengo credits. Credits are deducted from your account when you order jobs via a [translate/jobs/ (POST)](/v2/api_methods/jobs/#jobs-post) call (except when you use a tier of "machine" to order machine translation). You can buy credits by logging into the gengo.com site and visiting your Account page. The current version of the Gengo Translate API requires accounts to maintain a positive credit balance for jobs to be translated.  If there are not enough credits to process a job when it is submitted via the API, the response will indicate this.
 
 ## Call Formats
 All API calls require the api_key parameter to be sent.  Authenticated calls must also be signed and sent with the api_sig parameter.  If the call is by POST, parameters specific to the entry-point should be wrapped in a parameter named "data".

@@ -1,4 +1,4 @@
-[![Build Status](https://secure.travis-ci.org/myGengo/gengo_api_docs.png?branch=master)](https://travis-ci.org/myGengo/gengo_api_docs)
+[![Build Status](https://secure.travis-ci.org/gengo/gengo_api_docs.png?branch=master)](https://travis-ci.org/gengo/gengo_api_docs)
 
 # Gengo API documentation
 
