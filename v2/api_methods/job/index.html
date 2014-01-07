@@ -213,20 +213,20 @@ Whether to return a machine translation if the human translation is not complete
   <span class="s2">"opstat"</span><span class="o">:</span> <span class="s2">"ok"</span><span class="p">,</span>
   <span class="s2">"response"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"job"</span><span class="o">:</span> <span class="p">{</span>
-      <span class="s2">"auto_approve"</span><span class="o">:</span> <span class="s2">"0"</span><span class="p">,</span>
-      <span class="s2">"ctime"</span><span class="o">:</span> <span class="mi">1313475693</span><span class="p">,</span>
+      <span class="s2">"body_src"</span><span class="o">:</span> <span class="s2">"This is text."</span><span class="p">,</span>
       <span class="s2">"unit_count"</span><span class="o">:</span> <span class="s2">"1"</span><span class="p">,</span>
-      <span class="s2">"eta"</span><span class="o">:</span> <span class="mi">25056</span><span class="p">,</span>
-      <span class="s2">"currency"</span><span class="o">:</span> <span class="s2">"USD"</span><span class="p">,</span>
-      <span class="s2">"callback_url"</span><span class="o">:</span> <span class="s2">"http://gengo.callback/"</span><span class="p">,</span>
       <span class="s2">"lc_src"</span><span class="o">:</span> <span class="s2">"en"</span><span class="p">,</span>
       <span class="s2">"job_id"</span><span class="o">:</span> <span class="s2">"384985"</span><span class="p">,</span>
-      <span class="s2">"body_src"</span><span class="o">:</span> <span class="s2">"This is text."</span><span class="p">,</span>
-      <span class="s2">"order_id"</span><span class="o">:</span> <span class="s2">"54632"</span><span class="p">,</span>
+      <span class="s2">"currency"</span><span class="o">:</span> <span class="s2">"USD"</span><span class="p">,</span>
       <span class="s2">"tier"</span><span class="o">:</span> <span class="s2">"standard"</span><span class="p">,</span>
-      <span class="s2">"status"</span><span class="o">:</span> <span class="s2">"available"</span><span class="p">,</span>
+      <span class="s2">"callback_url"</span><span class="o">:</span> <span class="s2">"http://gengo.callback/"</span><span class="p">,</span>
+      <span class="s2">"eta"</span><span class="o">:</span> <span class="mi">25056</span><span class="p">,</span>
+      <span class="s2">"order_id"</span><span class="o">:</span> <span class="s2">"54632"</span><span class="p">,</span>
       <span class="s2">"credits"</span><span class="o">:</span> <span class="s2">"0.05"</span><span class="p">,</span>
+      <span class="s2">"auto_approve"</span><span class="o">:</span> <span class="s2">"0"</span><span class="p">,</span>
+      <span class="s2">"ctime"</span><span class="o">:</span> <span class="mi">1313475693</span><span class="p">,</span>
       <span class="s2">"slug"</span><span class="o">:</span> <span class="s2">"APIJobtest"</span><span class="p">,</span>
+      <span class="s2">"status"</span><span class="o">:</span> <span class="s2">"available"</span><span class="p">,</span>
       <span class="s2">"body_tgt"</span><span class="o">:</span> <span class="s2">"これはテキストです。"</span><span class="p">,</span>
       <span class="s2">"lc_tgt"</span><span class="o">:</span> <span class="s2">"ja"</span>
     <span class="p">}</span>
@@ -414,7 +414,6 @@ Revisions are created each time a translator or Senior Translator updates the te
 <pre class="highlight"><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"opstat"</span><span class="o">:</span> <span class="s2">"ok"</span><span class="p">,</span>
   <span class="s2">"response"</span><span class="o">:</span> <span class="p">{</span>
-    <span class="s2">"job_id"</span><span class="o">:</span> <span class="s2">"42"</span><span class="p">,</span>
     <span class="s2">"revisions"</span><span class="o">:</span> <span class="p">[</span>
       <span class="p">{</span>
         <span class="s2">"rev_id"</span><span class="o">:</span> <span class="s2">"..."</span><span class="p">,</span>
@@ -429,7 +428,8 @@ Revisions are created each time a translator or Senior Translator updates the te
         <span class="s2">"ctime"</span><span class="o">:</span> <span class="s2">"..."</span>
       <span class="p">},</span>
       <span class="s2">"..."</span>
-    <span class="p">]</span>
+    <span class="p">],</span>
+    <span class="s2">"job_id"</span><span class="o">:</span> <span class="s2">"42"</span>
   <span class="p">}</span>
 <span class="p">}</span></code></pre>
 
@@ -578,13 +578,13 @@ Revisions are created each time a translator or Senior Translator updates the te
   <span class="s2">"response"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"thread"</span><span class="o">:</span> <span class="p">[</span>
       <span class="p">{</span>
-        <span class="s2">"ctime"</span><span class="o">:</span> <span class="mi">1266322028</span><span class="p">,</span>
         <span class="s2">"author"</span><span class="o">:</span> <span class="s2">"worker"</span><span class="p">,</span>
+        <span class="s2">"ctime"</span><span class="o">:</span> <span class="mi">1266322028</span><span class="p">,</span>
         <span class="s2">"body"</span><span class="o">:</span> <span class="s2">"...."</span>
       <span class="p">},</span>
       <span class="p">{</span>
-        <span class="s2">"ctime"</span><span class="o">:</span> <span class="mi">1266324432</span><span class="p">,</span>
         <span class="s2">"author"</span><span class="o">:</span> <span class="s2">"customer"</span><span class="p">,</span>
+        <span class="s2">"ctime"</span><span class="o">:</span> <span class="mi">1266324432</span><span class="p">,</span>
         <span class="s2">"body"</span><span class="o">:</span> <span class="s2">"...."</span>
       <span class="p">}</span>
     <span class="p">]</span>
