@@ -33,10 +33,6 @@ __Data arguments__
   * as\_group(optional): 1 (true) / 0 (false, default).
     Whether all jobs in this group should be done by one translator.
     Some restrictions apply to what jobs can be grouped, including the requirement that language pairs and tiers must be the same across all jobs.
-  * allow\_fork(optional): 1 (true, default) / 0 (false).
-    If a grouped job is partially completed by a translator, but a translator fails to complete the whole thing,
-    a new order is normally created for the remaining unfinished jobs (it forks) so another translator can take it.
-    If as\_group is true and allow\_fork is false, then the remaining jobs will instead be cancelled.
 
 __Example call__
 
